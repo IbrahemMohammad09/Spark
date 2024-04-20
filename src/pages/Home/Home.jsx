@@ -1,8 +1,8 @@
-import NavigationBar from "./NavigationBar/NavigationBar";
-import ServicesSection from "./ServicesSection/ServicesSection";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import './Home.css'
-import ProjectsSection from "./ProjectsSection/ProjectsSection";
-import BrushImage from "./SharedComponents/BrushImage/BrushImage";
+import ProjectsSection from "../../components/ProjectsSection/ProjectsSection";
+import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 
 const Home = () => {
   return (
