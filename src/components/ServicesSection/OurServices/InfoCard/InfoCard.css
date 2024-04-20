@@ -1,0 +1,38 @@
+.info-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 246, 249, 1);
+    border-radius: 12px;
+    height: 295px;
+    flex-basis: 49%;
+    padding: 10px;
+}
+
+.info-card div h1 {
+    font-size: 2.125rem;
+    line-height: 39.84px;
+}
+
+.info-card img {
+    width: 228px;
+    height: 118.1px;
+}
+
+@media screen and (min-width: 991px) and (max-width:1230px) {
+    .info-card {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .info-card {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .info-card {
+        flex-direction: column-reverse;
+    }
+}

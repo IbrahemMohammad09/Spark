@@ -1,0 +1,5 @@
+.brush-image {
+    position: absolute;
+    z-index: 0;
+    transform: translateY(-50%);
+}

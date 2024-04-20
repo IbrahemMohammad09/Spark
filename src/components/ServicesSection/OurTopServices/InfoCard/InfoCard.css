@@ -1,0 +1,52 @@
+.topservice-info-card {
+    background-color: rgba(47, 176, 205, 1);
+    border-radius: 12px;
+    min-height: 364px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 58px 10px;
+    color: white;
+}
+
+.topservice-info-card .topservice-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.topservice-info-card h1 {
+    font-size: 1.75rem;
+    line-height: 32.81px;
+}
+
+.topservice-info-card h6 {
+    font-size: 1rem;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 100;
+}
+
+.topservice-info-card span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    transition: .3s ease;
+}
+
+.topservice-info-card span:hover {
+    margin-left: 5px;
+}
+
+.topservice-info-card span a {
+    color: rgba(255, 255, 255, 1);
+    display: block;
+}
+
+.topservice-info-card span img {
+    width: 20px;
+    height: 20px;
+}
+

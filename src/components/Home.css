@@ -1,0 +1,21 @@
+
+
+.main-section {
+    margin-top: 5rem;
+} 
+
+.brush1 {
+    left: 0;
+    top: 10%;
+}
+
+.brush2 {
+    right: 0;
+    top: 50%;
+}
+
+.brush3 {
+    left: 0;
+    top: 70%;
+
+}

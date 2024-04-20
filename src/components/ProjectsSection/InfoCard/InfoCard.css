@@ -1,0 +1,71 @@
+.project-card .project-card-top {
+    background-color: #f1f6f9;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 54px 10px;
+    gap: 5px;
+}
+
+.project-card .project-card-top h1 {
+    font-size: 1.5rem;
+    color: rgba(10, 12, 20, 1);
+    line-height: 28.13px;
+}
+
+.project-card .project-card-top h3 {
+    font-size: .875rem;
+    color: rgba(73, 76, 88, 0.7);
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.project-card .project-card-top img {
+    max-width: 328px;
+    max-height: 183px;
+    object-fit: cover;
+}
+
+.project-card-button {
+    padding: 9.5px 14.5px !important;
+    font-size: .75rem !important;
+    color: rgba(255, 255, 255, 1) !important;
+    line-height: 14.06px !important;
+}
+
+.project-card .project-card-bottom {
+    margin-top: 10px;
+}
+
+.project-card .project-card-bottom h1 {
+    font-size: 2rem;
+    color: rgba(10, 3, 56, 1);
+    line-height: 37.5px;
+}
+
+.project-card .project-card-bottom h3 {
+    font-size: 1.125rem;
+    color: rgba(10, 3, 56, 0.6);
+    line-height: 28px;
+}
+
+@media screen and (max-width: 768px) {
+    .project-card .project-card-top {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .project-card .project-card-top {
+        text-align: center;
+    }
+    .project-card .project-card-top div {
+        max-width: 320px;
+    }
+    .project-card-button {
+        width: fit-content !important;
+        margin: 0 auto;
+    }
+}

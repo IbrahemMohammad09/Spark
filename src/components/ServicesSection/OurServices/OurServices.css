@@ -1,0 +1,41 @@
+.our-services .wallpaper {
+    background-color: rgba(44, 144, 167, 1);
+    border-radius: 12px;
+    width: 1229px;
+    height: 263px;
+    left: 50%;
+    position: relative;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+.our-services .services-cards {
+    transform: translateY(-50%);
+}
+
+
+@media screen and (max-width: 1229px) {
+    .our-services .wallpaper {
+        width: 100vmax;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .our-services .wallpaper {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .our-services .services-cards {
+        transform: translateY(-25%);
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .our-services .wallpaper {
+        width: 1380px;
+    }
+}
+
