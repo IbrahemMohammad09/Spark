@@ -17,7 +17,7 @@
   font-weight: 800;
 }
 
-.our-team .swiper-slide h3 span {
+.our-team .swiper-slide h3 span:last-of-type {
   color: blue;
 }
 
@@ -35,10 +35,22 @@
 }
 
 .our-team .swiper .swiper-slide {
-  margin: 0 !important;
+  display: flex;
+  justify-content: center;
 }
-.our-team .swiper-slide .slide-body {
-  margin: 0 auto;
 
+.our-team .swiper-slide .slide-body {
   max-width: 500px;
+  padding: 0 30px;
+  height: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .our-team .swiper .swiper-button-prev:after,
+  .our-team .swiper .swiper-button-next:after {
+    font-size: 35px !important;
+  }
+  .our-team .swiper-slide .slide-body p {
+    font-size: 20px;
+  }
 }
