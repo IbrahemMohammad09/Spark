@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
+import Skeleton from "react-loading-skeleton";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
@@ -37,18 +38,29 @@ const OurTeam = () => {
         modules={[Pagination, Navigation]}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {teamData?.members.map((member) => (
-          <SwiperSlide key={member.id} className="d-flex flex-column gap-3">
-            <div className="slide-body">
-              <img src={BaseURL + member?.member_picture} alt="" />
-              <h3 className="w-fit mx-auto">
-                {member?.member_name.EN}{" "}
-                <span>{member?.member_position.EN}</span>
-              </h3>
-              <p>{member?.member_desc.EN}</p>
-            </div>
-          </SwiperSlide>
-        ))}
+        {teamData?.members.map((member) =>
+          member ? (
+            <SwiperSlide key={member.id}>
+              <div className="slide-body">
+                <img
+                  className="d-block mx-auto"
+                  src={BaseURL + member?.member_picture}
+                  alt=""
+                />
+                <h3 className="w-fit text-center mx-auto d-flex gap-1 flex-column flex-md-row">
+                  {member?.member_name.EN}
+                  <span className="d-none d-md-block">,</span>
+                  <span>{member?.member_position.EN}</span>
+                </h3>
+                <p>{member?.member_desc.EN}</p>
+              </div>
+            </SwiperSlide>
+          ) : (
+            <SwiperSlide>
+              <Skeleton height={300} />
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
     </section>
   );

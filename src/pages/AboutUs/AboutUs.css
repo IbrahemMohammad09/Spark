@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-right: 20px;
   padding-left: 35px;
 }
@@ -28,6 +28,7 @@
   font-size: 24px;
   font-weight: 400;
   width: 88%;
+  margin-bottom: 150px;
 }
 .about-image {
   width: 530px;
@@ -61,14 +62,15 @@
 .web-image {
   width: 40px;
   height: 40px;
+  margin-bottom: 10px;
 }
 .about-icons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 35px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .icon-about {
   color: #165069;
@@ -83,6 +85,7 @@
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 0;
   }
   .about-image {
     width: 370px;
@@ -96,9 +99,11 @@
   }
   .text-about p {
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
   }
+
   .about-image {
     padding-top: 20px;
     padding-bottom: 20px;

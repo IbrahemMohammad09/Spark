@@ -11,8 +11,12 @@ import OurTeam from './components/OurTeam/OurTeam';
 import ContactUs from './components/ContactUs/ContactUs';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 import DownloadAppSection from './components/DownloadAppSection/DownloadAppSection';
+import "swiper/css";
 
-function App() {
+
+
+
+  function App() {
   return (
     <div className="App">
         <BrowserRouter>
