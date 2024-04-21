@@ -9,12 +9,12 @@ const OurServices = () => {
     const services = [
         {
             title: 'Company Services',
-            url: '/',
+            url: '/company-services',
             img: Img1
         },
         {
             title: 'Student Services',
-            url: '/',
+            url: '/studnet-services',
             img: Img2
         },
     ];

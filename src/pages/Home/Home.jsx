@@ -9,7 +9,6 @@ import OurTeam from "../../components/OurTeam/OurTeam";
 const Home = () => {
   return (
     <div className="main-container">
-      
       <main className="position-relative">
         <BrushImage key={0} type={"l"} postion={"brush1"} />
         <BrushImage key={1} type={"r"} postion={"brush2"} />
