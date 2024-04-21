@@ -10,6 +10,7 @@ import ServicesSection from "./components/ServicesSection/ServicesSection";
 import OurTeam from "./components/OurTeam/OurTeam";
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSection";
+import "swiper/css";
 
 function App() {
   return (
