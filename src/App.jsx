@@ -25,7 +25,7 @@ import "swiper/css";
             <Route path={'/'} element={<Home/>}/>
             <Route path={'/about_us'} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
-            <Route path={"/our_services"} element={<ServicesSection />} />
+            <Route path={"/services"} element={<ServicesSection />} />
             <Route path={"/our_team"} element={<OurTeam />} />
             <Route path={"/our_projects"} element={<ProjectsSection />} />
             <Route path={"/our_app"} element={<DownloadAppSection />} />

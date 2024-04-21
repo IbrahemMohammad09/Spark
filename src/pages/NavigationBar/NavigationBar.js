@@ -27,7 +27,7 @@ const NavigationBar = () => {
               <Link className="nav-link" to="/about_us">
                 About US
               </Link>
-              <Link className="nav-link" to="/our_services" href="#Services">
+              <Link className="nav-link" to="/services" href="#Services">
                 Services
               </Link>
               <Link
