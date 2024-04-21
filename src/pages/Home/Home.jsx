@@ -1,4 +1,3 @@
-import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import "./Home.css";
 import ProjectsSection from "../../components/ProjectsSection/ProjectsSection";
@@ -10,7 +9,7 @@ import OurTeam from "../../components/OurTeam/OurTeam";
 const Home = () => {
   return (
     <div className="main-container">
-      <NavigationBar />
+      
       <main className="position-relative">
         <BrushImage key={0} type={"l"} postion={"brush1"} />
         <BrushImage key={1} type={"r"} postion={"brush2"} />
