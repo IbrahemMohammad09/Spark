@@ -5,14 +5,14 @@
   padding-left: 150px;
   padding-right: 150px;
 }
-.spark-footer{
+.spark-footer {
   margin-top: 10px;
   padding-left: 10px;
   position: relative;
   display: inline-block;
   min-width: 47px;
-  color: #0D0D0D;
-  font-family: 'Times New Roman';
+  color: #0d0d0d;
+  font-family: "Times New Roman";
   font-style: normal;
 }
 .containerFooter {
@@ -48,14 +48,16 @@
   gap: 5px;
 }
 
-.gridLinks p {
+.theLink {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 33.53px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
-.gridLinks p:hover {
+.theLink:hover {
   color: #ffff;
 }
 .socialFooter {
