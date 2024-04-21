@@ -13,10 +13,13 @@ import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 import DownloadAppSection from './components/DownloadAppSection/DownloadAppSection';
 import "swiper/css";
 
-function App() {
+
+
+
+  function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+        <BrowserRouter>
           <NavigationBar/>
           <Routes>
             <Route path={'/'} element={<Home/>}/>

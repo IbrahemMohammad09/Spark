@@ -10,25 +10,25 @@ const OurTopServices = () => {
     const topServices = [
         {
             title: 'Web Development',
-            url: '/',
+            url: '/company-services',
             subtitle: 'Developing websites using the latest technologies with continuous and permanent technical support',
             icon: Icon1
         },
         {
             title: 'UI/UX Desigen',
-            url: '/',
+            url: '/company-services',
             subtitle: 'design user interfaces to give him a wider and easier experience in dealing with applications.',
             icon: Icon2
         },
         {
             title: 'Branding',
-            url: '/',
+            url: '/company-services',
             subtitle: 'Visual identity design including all elements of logo, colors and fonts',
             icon: Icon3
         },
         {
             title: 'E-Marketing',
-            url: '/',
+            url: '/company-services',
             subtitle: 'E-marketing and management of social media platforms.',
             icon: Icon4
         },

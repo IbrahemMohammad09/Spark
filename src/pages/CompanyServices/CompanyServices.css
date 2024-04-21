@@ -1,0 +1,16 @@
+.company-services {
+    padding: 7rem 0 32px; 
+    min-height: 100vh;
+}
+
+.company-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(552px ,1fr));
+    gap: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .company-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
