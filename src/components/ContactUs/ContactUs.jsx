@@ -5,7 +5,7 @@ import "./contact-us.css";
 
 const ContactUs = () => {
   return (
-    <section className="contact-us py-6">
+    <section id="Contact_us" className="contact-us py-6">
       <Container>
         <Row className="justify-content-center">
           <Col className="d-flex align-items-center" xs={10} lg={3}>

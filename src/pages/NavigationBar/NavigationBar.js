@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const NavigationBar = () =>{
     return(
         <div className='nav'>
-            <Navbar expand="sm" collapseOnSelect variant="white" fixed="top" bg="white">
+            <Navbar expand="sm" fixed="top"  bg="white">
                 <Container>
                     <Navbar.Brand to='/'>
                         <img
@@ -22,15 +22,14 @@ const NavigationBar = () =>{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav className="justify-content-center" style={{ width: "80%" }} >
-                            <Link to='/'>Home</Link>
-                            <Link to='/about_us' >About US</Link>
-                            <Link href="#Services">Services</Link>
-                            <Link href="#Our_Projects">Our Projects</Link>
-                            <Link href="#Contact_us">Contact US</Link>
-                            <Link href="#Our_Family">Our Family</Link>
+                            <Link className='nav-link' to='/'>Home</Link>
+                            <Link className='nav-link' to='/about_us' >About US</Link>
+                            <Link className='nav-link' href="#Services">Services</Link>
+                            <Link className='nav-link' href="#Our_Projects">Our Projects</Link>
+                            <Link className='nav-link' href="#Contact_us">Contact US</Link>
+                            <Link className='nav-link' href="#Our_Family">Our Family</Link>
                         </Nav>
                     </Navbar.Collapse>
-                    
                 </Container>
             </Navbar>
         </div>

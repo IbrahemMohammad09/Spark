@@ -7,78 +7,43 @@
 }
 
 .spark{
+    font-family: 'Times New Roman';
+    font-style: normal;
+    padding-left: 10px;
     position: relative;
     display: inline-block;
     min-width: 47px;
-    color: rgb(6, 6, 6);
+    color: #0D0D0D;
+    font-family: 'Times New Roman';
+    font-style: normal;
+}
+
+.nav{
+    background-color: aliceblue;
+    font-size: 20px;
 }
 
 
-.navbar-dark .navbar-nav .nav-link {
-    color: white;
+.nav-link {
+    color: gray;
+    font-family: bold;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
-    color: rgb(26, 146, 206);
+
+.nav-link.hover {
+    color: rgb(26, 146, 206) !important;
+    
 }
 
-.change-language-button,
-.change-language-button.mobile {
-    all: unset;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    border-radius: 30px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+.nav-link.active{
+    color: blue;
 }
 
-.change-language-button.mobile {
-    display: none;
-}
 
-.change-language-button span {
-    display: block;
-    padding: 1px 3px;
-    transition: 1s ease;
-}
 
-.change-language-button div {
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    background-color: rgb(26, 146, 206);
-    top: 0;
-    z-index: -1;
-    transition: .5s ease;
-    /* border-radius: 10px; */
-}
 
-/* .change-language-button.en,
-.change-language-button.ar {
-    transition: 1s ease;
-} */
 
-.change-language-button.en div {
-    left: 51%;
-    transform: rotate(180deg);
-}
 
-.change-language-button.ar span:first-child {
-    color: white;
-}
-
-.change-language-button.en span:nth-child(2) {
-    color: white;
-}
-
-.change-language-button.ar div {
-    left: -1%;
-    transform: rotate(-180deg);
-}
 
 @media only screen and (max-width: 986px) {
     .nav{
@@ -88,15 +53,7 @@
 
 @media only screen and (max-width: 728px) {
     .nav{
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
-@media screen and (max-width: 575px) {
-    .change-language-button {
-        display: none;
-    }
-    .change-language-button.mobile {
-        display: flex;
-    }
-}

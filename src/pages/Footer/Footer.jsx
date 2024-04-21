@@ -12,7 +12,7 @@ export const Footer = () => {
           <div>
             <img src={logo} alt="logo" />
           </div>
-          <p>Spark</p>
+          <p className="spark-footer">SPARK</p>
         </div>
         <div className="gridLinks">
           <div className="links">
