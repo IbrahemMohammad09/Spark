@@ -21,23 +21,31 @@
 .nav{
     background-color: aliceblue;
     font-size: 20px;
+   
 }
 
 
-.nav-link {
-    color: gray;
+.navlink {
+    color: rgb(172, 166, 166);
     font-family: bold;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.navlink-active{
+    color: rgb(26, 146, 206);
+    font-family: bold;
+    padding-right: 20px;
+    text-decoration: none;
 }
 
 
-.nav-link.hover {
-    color: rgb(26, 146, 206) !important;
+.navlink:hover {
+    color: rgb(26, 146, 206);
     
 }
 
-.nav-link.active{
-    color: blue;
-}
+
 
 
 

@@ -26,7 +26,7 @@ const ServiceCard = ( { info } ) => {
             </div>
             <div className="company-service-card-info">
                 <h1>{info?.service_name[language]}</h1>
-                <p>{handleDescriptionSize(info?.service_description[language], 400)}</p>
+                {/* <p>{handleDescriptionSize(info?.service_description[language], 400)}</p> */}
                 <MainButton title={'Register now'} url={'/'} addStyle="company-service-card-button"/>
             </div>
             {/* <div>                

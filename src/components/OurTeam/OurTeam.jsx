@@ -26,7 +26,7 @@ const OurTeam = () => {
   }, []);
 
   return (
-    <section className="our-team">
+    <section className="our-team" id="our-team">
       <Container>
         <h1>Our Team</h1>
       </Container>
