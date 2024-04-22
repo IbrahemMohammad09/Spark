@@ -1,17 +1,18 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Home from './pages/Home/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Footer } from './pages/Footer/Footer';
-import AboutUs from '../src/pages/AboutUs/AboutUs'
-import NavigationBar from './pages/NavigationBar/NavigationBar';
-import CompanyServices from './pages/CompanyServices/CompanyServices';
-import ServicesSection from './components/ServicesSection/ServicesSection';
-import OurTeam from './components/OurTeam/OurTeam';
-import ContactUs from './components/ContactUs/ContactUs';
-import ProjectsSection from './components/ProjectsSection/ProjectsSection';
-import DownloadAppSection from './components/DownloadAppSection/DownloadAppSection';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Footer } from "./pages/Footer/Footer";
+import AboutUs from "../src/pages/AboutUs/AboutUs";
+import NavigationBar from "./pages/NavigationBar/NavigationBar";
+import ContactUs from "./components/ContactUs/ContactUs";
+import OurTeam from "./components/OurTeam/OurTeam";
+import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSection";
+import ServicesSection from "./components/ServicesSection/ServicesSection";
 import "swiper/css";
+import CompanyServices from './pages/CompanyServices/CompanyServices';
 
 
 

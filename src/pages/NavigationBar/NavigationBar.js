@@ -50,9 +50,9 @@ const NavigationBar = () => {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-          <Navbar.Collapse>
-            <Nav className="justify-content-center" style={{ width: "80%" }}>
-              <Link className="navlink" to="/">
+          <Navbar.Collapse style={{ paddingLeft: "15px" }}>
+            <Nav className="justify-content-center" style={{ width: "85%" }}>
+              <Link className="nav-link" to="/">
                 Home
               </Link>
               <Link className="navlink" to="/about_us">
