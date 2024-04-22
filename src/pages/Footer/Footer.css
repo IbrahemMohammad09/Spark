@@ -2,24 +2,25 @@
   width: 100%;
   height: 227px;
   background-color: #2fb0cd;
-  padding-left: 150px;
-  padding-right: 150px;
+
+  margin-top: 100px;
 }
-.spark-footer{
+.spark-footer {
   margin-top: 10px;
   padding-left: 10px;
   position: relative;
   display: inline-block;
   min-width: 47px;
-  color: #0D0D0D;
-  font-family: 'Times New Roman';
+  color: #0d0d0d;
+  font-family: "Times New Roman";
   font-style: normal;
 }
 .containerFooter {
-  padding: 22px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-right: 22px;
+  padding-top: 22px;
 }
 .logoFooter {
   display: flex;
@@ -48,20 +49,31 @@
   gap: 5px;
 }
 
-.gridLinks p {
+.theLink {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 33.53px;
+  white-space: nowrap;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  transition: 3s;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition-delay: 200ms;
+  transition-duration: 300ms;
 }
-.gridLinks p:hover {
+.theLink:hover {
   color: #ffff;
 }
 .socialFooter {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-top: 15px;
 }
 .socialFooter p {
   font-size: 13px;
@@ -73,7 +85,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 150px;
+  margin-right: 120px;
   gap: 20px;
   cursor: pointer;
 }
@@ -91,6 +103,12 @@
   height: 35px;
   background-color: black;
   color: white;
+  transition: 3s;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition-duration: 300ms;
 }
 .icon:hover {
   background-color: white;

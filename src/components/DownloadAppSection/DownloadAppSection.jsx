@@ -5,10 +5,12 @@ import GooglePlayIcon from "../../images/DownloadAppSection/google-play.svg";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
 import { Link } from "react-scroll";
+import NavigationBar from "../../pages/NavigationBar/NavigationBar";
 
 const DownloadAppSection = () => {
   return (
     <section className="download-sec">
+      <NavigationBar />
       <Container>
         <Row className="gap-y-4 justify-content-center align-items-center">
           <Col xs={6} md={3} className="d-flex p-0">

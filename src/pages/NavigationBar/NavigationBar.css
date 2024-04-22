@@ -1,59 +1,61 @@
-.logo{
-    height: 45px;
-    width: 45px;
-    position: relative;
-    border-radius: 50%;
-    object-fit: cover;
+.logo {
+  height: 45px;
+  width: 45px;
+  position: relative;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.spark{
-    font-family: 'Times New Roman';
-    font-style: normal;
-    padding-left: 10px;
-    position: relative;
-    display: inline-block;
-    min-width: 47px;
-    color: #0D0D0D;
-    font-family: 'Times New Roman';
-    font-style: normal;
+.spark {
+  font-family: "Times New Roman";
+  font-style: normal;
+  padding-left: 10px;
+  position: relative;
+  display: inline-block;
+  min-width: 47px;
+  color: #0d0d0d;
+  font-family: "Times New Roman";
+  font-style: normal;
 }
+
 
 .nav{
     background-color: aliceblue;
     font-size: 20px;
+   
 }
 
 
-.nav-link {
-    color: gray;
+.navlink {
+    color: rgb(172, 166, 166);
     font-family: bold;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.navlink-active{
+    color: rgb(26, 146, 206);
+    font-family: bold;
+    padding-right: 20px;
+    text-decoration: none;
 }
 
 
-.nav-link.hover {
-    color: rgb(26, 146, 206) !important;
+.navlink:hover {
+    color: rgb(26, 146, 206);
     
 }
-
-.nav-link.active{
-    color: blue;
-}
-
-
-
-
 
 
 
 @media only screen and (max-width: 986px) {
-    .nav{
-        font-size: small;
-    }
+  .nav {
+    font-size: small;
+  }
 }
 
 @media only screen and (max-width: 728px) {
-    .nav{
-        font-size: 12px;
-    }
+  .nav {
+    font-size: 12px;
+  }
 }
-

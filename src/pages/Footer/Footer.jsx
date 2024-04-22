@@ -4,6 +4,7 @@ import { GrFacebookOption } from "react-icons/gr";
 import { BiLogoInstagram } from "react-icons/bi";
 import { MdWhatsapp } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
+import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <div className="Footer">
@@ -16,16 +17,28 @@ export const Footer = () => {
         </div>
         <div className="gridLinks">
           <div className="links">
-            <p>About Us</p>
-            <p>Contact Us</p>
+            <Link className="theLink" to="/about_us">
+              About Us
+            </Link>
+            <Link className="theLink" to="/contact_us">
+              Contact Us
+            </Link>
           </div>
           <div className="links">
-            <p>Our Services</p>
-            <p>Our Team</p>
+            <Link className="theLink" to="/services">
+              Our Services
+            </Link>
+            <Link className="theLink" to="/our_team">
+              Our Team
+            </Link>
           </div>
           <div className="links">
-            <p>Our Projects</p>
-            <p>Our App</p>
+            <Link className="theLink" to="/our_projects">
+              Our Projects
+            </Link>
+            <Link className="theLink" to="/our_app">
+              Our App
+            </Link>
           </div>
         </div>
       </div>
