@@ -7,6 +7,7 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import { useLanguageContext } from '../../hooks/useLanguageContext';
 
 import './DetailServices.css'
+import NavigationBar from '../NavigationBar/NavigationBar';
 
 const DetailServices = () => {
     const [serviceData, setServiceData] = useState(null);
@@ -47,10 +48,11 @@ const DetailServices = () => {
 
     return (
         <div className='service-details'>
+            <NavigationBar />
             <Container>
                 <div>
                     <div className='img-cover'>
-                        <img src={`${BaseURL}/${serviceData?.service_picture}`} alt={serviceData?.service_picture} loading='lazy'/>
+                        <img className='detail-img' src={`${BaseURL}/${serviceData?.service_picture}`} alt={serviceData?.service_picture} loading='lazy'/>
                     </div>
                     <div>
                         <p>{serviceData?.service_description[language]}</p>

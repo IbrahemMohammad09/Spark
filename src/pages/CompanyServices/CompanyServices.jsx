@@ -4,7 +4,7 @@ import { Axios } from "../../api/axios";
 
 import './CompanyServices.css'
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
-import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
+// import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 
 const CompanyServices = () => {
     const [services, setServices] = useState([]);
@@ -33,8 +33,8 @@ const CompanyServices = () => {
                     </div>
                 </Container>
             </div>
-            <BrushImage key={3} type={"r"} postion={"brush4"} />
-            <BrushImage key={4} type={"l"} postion={"brush5"} />
+            {/* <BrushImage key={3} type={"r"} postion={"brush4"} />
+            <BrushImage key={4} type={"l"} postion={"brush5"} /> */}
         </div>
     )
 }

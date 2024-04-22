@@ -15,7 +15,7 @@ const ServiceCard = ( { info } ) => {
             </div>
             <div className="company-service-card-info">
                 <h1>{info?.service_name[language]}</h1>
-                <MainButton title={'Register now'} url={`/service/${info.id}`} addStyle="company-service-card-button"/>
+                <MainButton title={'See more details'} url={`/service/${info.id}`} addStyle="company-service-card-button"/>
             </div>
         </div>
     )
