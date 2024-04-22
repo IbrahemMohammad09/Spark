@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import { useEffect , useState } from "react";
 
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
 
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState(props.sectionName);
 
+ 
   useEffect(() => {
+
     const handleScroll = () => {
       const sections = document.querySelectorAll('section'); 
       const scrollPosition = window.scrollY;
@@ -52,13 +54,13 @@ const NavigationBar = () => {
 
           <Navbar.Collapse style={{ paddingLeft: "15px" }}>
             <Nav className="justify-content-center" style={{ width: "85%" }}>
-              <Link className="navlink" to="/">
+              <Link className={activeSection === 'home' ? 'navlink-active' : 'navlink'} to="/">
                 Home
               </Link>
-              <Link className="navlink" to="/about_us">
+              <Link className={activeSection === 'about-us' ? 'navlink-active' : 'navlink' }  to="/about_us">
                 About US
               </Link>
-              <Link className={activeSection === 'services' ? 'navlink-active' : 'navlink'} to="/services" href="#Services">
+              <Link className={activeSection === 'services' ? 'navlink-active' : 'navlink'} to="/services" href="#Services" >
                 Services
               </Link>
               <Link className={activeSection === 'our-projects' ? 'navlink-active' : 'navlink'} to="/our_projects" href="#Our_Projects">

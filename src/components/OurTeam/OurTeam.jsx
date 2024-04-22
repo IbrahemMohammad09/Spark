@@ -8,6 +8,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
+import NavigationBar from "../../pages/NavigationBar/NavigationBar";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
@@ -27,6 +28,7 @@ const OurTeam = () => {
 
   return (
     <section className="our-team" id="our-team">
+      <NavigationBar sectionName="our-team" />
       <Container>
         <h1>Our Team</h1>
       </Container>

@@ -5,6 +5,7 @@ import Img2 from '../../images/OurProjectsImage/Home Page 9.png'
 import InfoCard from "./InfoCard/InfoCard"
 import './ProjectsSection.css'
 import { Container } from "react-bootstrap"
+import NavigationBar from "../../pages/NavigationBar/NavigationBar"
 
 const ProjectsSection = () => {
     const projects = [
@@ -24,6 +25,7 @@ const ProjectsSection = () => {
 
     return (
         <section id="our-projects">
+            <NavigationBar sectionName="our-projects" />
             <Container className="main-section our-projects position-relative">
                 <MainHomeTitle title={'Our Projects'}/>
                 <div className="our-projects-cards">
