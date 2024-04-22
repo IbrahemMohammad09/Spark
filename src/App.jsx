@@ -11,6 +11,7 @@ import OurTeam from './components/OurTeam/OurTeam';
 import ContactUs from './components/ContactUs/ContactUs';
 import ProjectsSection from './components/ProjectsSection/ProjectsSection';
 import DownloadAppSection from './components/DownloadAppSection/DownloadAppSection';
+import DetailServices from './pages/DetailServices/DetailServices';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
             <Route path={"/our_team"} element={<OurTeam />} />
             <Route path={"/our_projects"} element={<ProjectsSection />} />
             <Route path={"/our_app"} element={<DownloadAppSection />} />
-            <Route path={'/company-services'} element={<CompanyServices />} />
+            <Route path={'/company-services'} element={<CompanyServices />}/>
+            <Route path={'/service/:id'} element={<DetailServices />}/>
           </Routes>
           <Footer />
         </BrowserRouter>
