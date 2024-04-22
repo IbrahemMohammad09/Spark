@@ -7,6 +7,12 @@
     height: 324px;
     overflow: hidden;
     border-radius: 10px;
+    transition: .2s;
+}
+
+.company-service-card .img-cover:hover {
+    box-shadow: 2px 2px 8px #ccc;
+    transform: translate(-1px, -1px);
 }
 
 .company-service-card .img-cover img {
