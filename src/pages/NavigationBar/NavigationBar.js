@@ -19,8 +19,8 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse>
-            <Nav className="justify-content-center" style={{ width: "80%" }}>
+          <Navbar.Collapse style={{ paddingLeft: "15px" }}>
+            <Nav className="justify-content-center" style={{ width: "85%" }}>
               <Link className="nav-link" to="/">
                 Home
               </Link>
