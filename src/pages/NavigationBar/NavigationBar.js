@@ -54,7 +54,7 @@ const NavigationBar = (props) => {
 
           <Navbar.Collapse style={{ paddingLeft: "15px" }}>
             <Nav className="justify-content-center" style={{ width: "85%" }}>
-              <Link className={activeSection === 'home' ? 'navlink-active' : 'navlink'} to="/">
+              <Link className={activeSection === 'hero' ? 'navlink-active' : 'navlink'} to="/">
                 Home
               </Link>
               <Link className={activeSection === 'about-us' ? 'navlink-active' : 'navlink' }  to="/about_us">
