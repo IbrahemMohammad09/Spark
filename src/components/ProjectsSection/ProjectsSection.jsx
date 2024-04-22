@@ -23,13 +23,15 @@ const ProjectsSection = () => {
     ];
 
     return (
-        <Container className="main-section our-projects position-relative">
-            <MainHomeTitle title={'Our Projects'}/>
-            <div className="our-projects-cards">
-                {projects?.map((e, i) => <InfoCard key={i} info={e}/>)}
-            </div>
-            <MainButton url={'/'} title={'See all'} addStyle={'projects-button-see-all'}/>
-        </Container>
+        <section id="our-projects">
+            <Container className="main-section our-projects position-relative">
+                <MainHomeTitle title={'Our Projects'}/>
+                <div className="our-projects-cards">
+                    {projects?.map((e, i) => <InfoCard key={i} info={e}/>)}
+                </div>
+                <MainButton url={'/'} title={'See all'} addStyle={'projects-button-see-all'}/>
+            </Container>
+        </section>
     )
 }
 

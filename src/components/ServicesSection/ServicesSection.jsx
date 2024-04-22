@@ -5,10 +5,12 @@ import { Container } from "react-bootstrap";
 
 const ServicesSection = () => {
   return (
-    <Container className="services-section">
-      <OurServices/>
-      <OurTopServices/>
-    </Container>
+    <section id="services">
+      <Container  className="services-section">
+        <OurServices/>
+        <OurTopServices/>
+      </Container>
+    </section>
 
   );
 };
