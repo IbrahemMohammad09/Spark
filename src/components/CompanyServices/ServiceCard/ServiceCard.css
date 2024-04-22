@@ -1,3 +1,8 @@
+.company-service-card {
+    position: relative;
+    z-index: 10;
+}
+
 .company-service-card .img-cover {
     height: 324px;
     overflow: hidden;

@@ -13,6 +13,8 @@ import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSecti
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import "swiper/css";
 import CompanyServices from './pages/CompanyServices/CompanyServices';
+import DetailServices from './pages/DetailServices/DetailServices';
+
 
 
 
@@ -30,7 +32,8 @@ import CompanyServices from './pages/CompanyServices/CompanyServices';
             <Route path={"/our_team"} element={<OurTeam />} />
             <Route path={"/our_projects"} element={<ProjectsSection />} />
             <Route path={"/our_app"} element={<DownloadAppSection />} />
-            <Route path={'/company-services'} element={<CompanyServices />} />
+            <Route path={'/company-services'} element={<CompanyServices />}/>
+            <Route path={'/service/:id'} element={<DetailServices />}/>
           </Routes>
           <Footer />
         </BrowserRouter>
