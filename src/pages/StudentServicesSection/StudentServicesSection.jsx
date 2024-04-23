@@ -1,6 +1,5 @@
 import { Container } from 'react-bootstrap';
 import Img1 from '../../images/StudentSectionServicesImages/Rectangle 168.png'
-
 import './StudentServicesSection.css'
 import InfoStudentServiceCard from '../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard';
 

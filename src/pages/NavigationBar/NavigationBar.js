@@ -11,15 +11,11 @@ const NavigationBar = (props) => {
 
   
 
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(props.activePage1);
   console.log(useActiveSection);
  
   useEffect(() => {
-    // const path = window.location.pathname;
 
-    // if(path === "/about_us"){
-    //   setActiveSection('about-us')
-    // }else if(path === "/"){
     
       const handleScroll = () => {
         const sections = document.querySelectorAll('section'); 
