@@ -30,23 +30,28 @@ const AboutUs = () => {
           <h3>SPARK</h3>
           <div className="about-web">
             <p>Engineering Company</p>
-            <div className="web-image">
-              <img src={web} alt="web" />
-            </div>
           </div>
           <hr />
           <div className="about-icons">
             <div className="icon-about">
-              <GrFacebookOption size={56} />
+              <a>
+                <GrFacebookOption size={56} />
+              </a>
             </div>
             <div className="icon-about">
-              <PiInstagramLogoFill size={46} />
+              <a>
+                <PiInstagramLogoFill size={46} />
+              </a>
             </div>
             <div className="icon-about">
-              <RiWhatsappFill size={46} />
+              <a>
+                <RiWhatsappFill size={46} />
+              </a>
             </div>
             <div className="icon-about">
-              <TiSocialLinkedin size={56} />
+              <a>
+                <TiSocialLinkedin size={56} />
+              </a>
             </div>
           </div>
         </div>
