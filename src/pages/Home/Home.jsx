@@ -5,11 +5,15 @@ import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage"
 import DownloadAppSection from "../../components/DownloadAppSection/DownloadAppSection";
 import ContactUs from "../../components/ContactUs/ContactUs";
 import OurTeam from "../../components/OurTeam/OurTeam";
+import useActiveState from "../../hooks/useActiveSection";
+
 
 const Home = () => {
+
+
   return (
     <main className="position-relative">
-      <div id="home" className="main-container">
+      <div  className="main-container">
         
 
           <BrushImage key={0} type={"l"} postion={"brush1"} />

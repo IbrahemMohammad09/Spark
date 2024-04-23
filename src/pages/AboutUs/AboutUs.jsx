@@ -1,13 +1,14 @@
 import "./AboutUs.css";
 import about from "../../images/AboutUsImags/About.png";
-import web from "../../images/AboutUsImags/iconWeb.svg";
 import { GrFacebookOption } from "react-icons/gr";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
-import NavigationBar from "../NavigationBar/NavigationBar";
+
 
 const AboutUs = () => {
+
+
   return (
     <section id="about-us">
       <div className="About">

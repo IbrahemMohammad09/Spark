@@ -1,5 +1,4 @@
 import './StudentServicesSection.css'
-import Img1 from '../../images/StudentSectionServicesImages/Rectangle 168.png'
 import { Container } from 'react-bootstrap';
 import InfoStudentServiceCard from '../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard';
 import { Axios } from '../../api/axios';
