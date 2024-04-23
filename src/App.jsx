@@ -15,15 +15,18 @@ import DetailServices from './pages/DetailServices/DetailServices';
 import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
+import { useState } from "react";
 
 function App() {
+  const [activePage, setActivePage] = useState ("home");
+
   return (
     <div className="App">
         <BrowserRouter>
           <ScrollToTopOnPageChange />
-          <NavigationBar />
+          <NavigationBar activePage1={activePage}  />
           <Routes>
-            <Route path={""} element={<Home/>}/>
+            <Route path={""} element={<Home/>}  />
             <Route path={'/about_us'} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
             <Route path={"/services"} element={<ServicesSection />} />
