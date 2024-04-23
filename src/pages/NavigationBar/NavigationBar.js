@@ -4,38 +4,42 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import { useEffect , useState } from "react";
+import useActiveSection from "../../hooks/useActiveSection";
 
 
 const NavigationBar = (props) => {
 
-  const [activeSection, setActiveSection] = useState(props.sectionName);
-
- 
-  useEffect(() => {
-
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section'); 
-      const scrollPosition = window.scrollY;
-
-      sections.forEach(section => {
-        const top = (section.offsetTop);
-        const height = (section.offsetHeight);
-
-        if (scrollPosition >= top && scrollPosition <(top + height)) {
-          setActiveSection(section.id);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   
 
+  const [activeSection, setActiveSection] = useState('home');
+  console.log(useActiveSection);
+ 
+  useEffect(() => {
+    // const path = window.location.pathname;
 
+    // if(path === "/about_us"){
+    //   setActiveSection('about-us')
+    // }else if(path === "/"){
+    
+      const handleScroll = () => {
+        const sections = document.querySelectorAll('section'); 
+        const scrollPosition = window.scrollY;
+        sections.forEach(section => {
+          const top = (section.offsetTop);
+          const height = (section.offsetHeight);
+          if (scrollPosition >= top && scrollPosition <(top + height)) {
+            setActiveSection(section.id);
+          }
+        });
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+
+
+  
+  }, []);
   return (
     <div className="nav">
       <Navbar expand="sm" fixed="top" bg="white">
@@ -54,7 +58,7 @@ const NavigationBar = (props) => {
 
           <Navbar.Collapse style={{ paddingLeft: "15px" }}>
             <Nav className="justify-content-center" style={{ width: "85%" }}>
-              <Link className={activeSection === 'hero' ? 'navlink-active' : 'navlink'} to="/">
+              <Link className={activeSection === 'home' ? 'navlink-active' : 'navlink'} to="" >
                 Home
               </Link>
               <Link className={activeSection === 'about-us' ? 'navlink-active' : 'navlink' }  to="/about_us">

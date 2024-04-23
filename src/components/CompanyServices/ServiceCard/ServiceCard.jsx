@@ -9,7 +9,6 @@ const ServiceCard = ( { info } ) => {
 
     return (
         <div className="company-service-card">
-            <NavigationBar />
             <div className="img-cover">
                 <img src={`${BaseURL}/${info?.service_picture}`} alt={info?.service_picture} loading="lazy"/>
             </div>

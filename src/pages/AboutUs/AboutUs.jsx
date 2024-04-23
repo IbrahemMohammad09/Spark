@@ -12,7 +12,7 @@ const AboutUs = () => {
     <section id="about-us">
       <div className="About">
         <div className="about-left">
-          <NavigationBar sectionName='about-us'/>
+  
           <h3>Description</h3>
           <p>
             As a UX designer, I specialize in crafting seamless user experiences

@@ -48,7 +48,7 @@ const DetailServices = () => {
 
     return (
         <div className='service-details'>
-            <NavigationBar />
+            
             <Container>
                 <div>
                     <div className='img-cover'>

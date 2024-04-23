@@ -10,7 +10,7 @@ import NavigationBar from "../../pages/NavigationBar/NavigationBar";
 const DownloadAppSection = () => {
   return (
     <section className="download-sec">
-      <NavigationBar />
+      {/* <NavigationBar /> */}
       <Container>
         <Row className="gap-y-4 justify-content-center align-items-center">
           <Col xs={6} md={3} className="d-flex p-0">

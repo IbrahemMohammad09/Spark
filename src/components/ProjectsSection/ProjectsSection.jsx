@@ -25,7 +25,7 @@ const ProjectsSection = () => {
 
     return (
         <section id="our-projects">
-            <NavigationBar sectionName="our-projects" />
+
             <Container className="main-section our-projects position-relative">
                 <MainHomeTitle title={'Our Projects'}/>
                 <div className="our-projects-cards">

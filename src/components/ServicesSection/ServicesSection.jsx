@@ -8,7 +8,7 @@ import NavigationBar from "../../pages/NavigationBar/NavigationBar";
 const ServicesSection = () => {
   return (
     <section id="services">
-      <NavigationBar sectionName='services'/>
+
       <Container  className="services-section">
         <OurServices/>
         <OurTopServices/>

@@ -28,7 +28,7 @@ const OurTeam = () => {
 
   return (
     <section className="our-team" id="our-team">
-      <NavigationBar sectionName="our-team" />
+
       <Container>
         <h1>Our Team</h1>
       </Container>
