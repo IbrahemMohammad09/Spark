@@ -14,15 +14,11 @@ import CompanyServices from './pages/CompanyServices/CompanyServices';
 import DetailServices from './pages/DetailServices/DetailServices';
 import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
+import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
 
-
-
-
-
-  function App() {
+function App() {
   return (
     <div className="App">
-      
         <BrowserRouter>
           <ScrollToTopOnPageChange />
           <NavigationBar />
@@ -36,8 +32,8 @@ import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
             <Route path={"/our_app"} element={<DownloadAppSection />} />
             <Route path={'/company-services'} element={<CompanyServices />}/>
             <Route path={'/service/:id'} element={<DetailServices />}/>
+            <Route path={'/student-section-services'} element={<StudentServicesSection />}/>
           </Routes>
-
           <Footer />
         </BrowserRouter>
     </div>

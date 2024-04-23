@@ -47,7 +47,7 @@ const DetailServices = () => {
     
 
     return (
-        <div className='service-details'>
+        <section className='service-details'>
             
             <Container>
                 <div>
@@ -61,7 +61,7 @@ const DetailServices = () => {
                     </div>
                 </div>
             </Container>
-        </div>
+        </section>
     )
 }
 
