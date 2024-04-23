@@ -14,7 +14,7 @@ const OurServices = () => {
         },
         {
             title: 'Student Services',
-            url: '/studnet-services',
+            url: '/student-section-services',
             img: Img2
         },
     ];

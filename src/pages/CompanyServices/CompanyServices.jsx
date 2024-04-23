@@ -25,7 +25,7 @@ const CompanyServices = () => {
     
 
     return (
-        <div className="company-services position-relative">
+        <section className="company-services position-relative">
             <div className="main-container">
                 <Container>
                     <div className="company-services-grid">
@@ -35,7 +35,7 @@ const CompanyServices = () => {
             </div>
             {/* <BrushImage key={3} type={"r"} postion={"brush4"} />
             <BrushImage key={4} type={"l"} postion={"brush5"} /> */}
-        </div>
+        </section>
     )
 }
 

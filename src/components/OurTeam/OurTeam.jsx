@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
-import Skeleton from "react-loading-skeleton";
+// import Skeleton from "react-loading-skeleton";
 import NavigationBar from "../../pages/NavigationBar/NavigationBar";
 
 const OurTeam = () => {
@@ -59,7 +59,7 @@ const OurTeam = () => {
             </SwiperSlide>
           ) : (
             <SwiperSlide>
-              <Skeleton height={300} />
+              {/* <Skeleton height={300} /> */}
             </SwiperSlide>
           )
         )}
