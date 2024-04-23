@@ -9,7 +9,7 @@ import OurTeam from "../../components/OurTeam/OurTeam";
 const Home = () => {
   return (
     <main className="position-relative">
-      <section id="home" className="main-container">
+      <div id="home" className="main-container">
         
 
           <BrushImage key={0} type={"l"} postion={"brush1"} />
@@ -21,7 +21,7 @@ const Home = () => {
           <ContactUs />
           <OurTeam />
         
-      </section>
+      </div>
     </main>
   );
 };

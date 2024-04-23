@@ -34,9 +34,9 @@ const AboutUs = () => {
             <h3>SPARK</h3>
             <div className="about-web">
               <p>Engineering Company</p>
-              <div className="web-image">
+              {/* <div className="web-image">
                 <img src={web} alt="web" />
-              </div>
+              </div> */}
             </div>
             <hr />
             <div className="about-icons">
