@@ -10,16 +10,14 @@ const HeroSection = () =>{
 
             <Container>
                 <Row>
-                    <Col>
-                        <div>
-                            <h1>Biuld Your Dreams</h1>
-                            <p>With us dreams will turn into reality</p>
+                    <Col md="6">
+                        <div className="hero-text">
+                            <h1 className="hero-h1">Biuld Your Dreams</h1>
+                            <p className="hero-p">With us dreams will turn into reality</p>
                         </div>
                     </Col>
-                    <Col>
-                        <div>
-                            <img src={hero} />
-                        </div>
+                    <Col md="6" className="div-img">
+                        <img className="hero-img" src={hero} alt="hero img"/>
                     </Col>
                 </Row>
             </Container>
