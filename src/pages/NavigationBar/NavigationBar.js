@@ -4,23 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import { useEffect , useState } from "react";
-import useActiveSection from "../../hooks/useActiveSection";
+
 
 
 const NavigationBar = (props) => {
-
-  
-
-  const [activeSection, setActiveSection] = useState('home');
-  console.log(useActiveSection);
+  const [activeSection, setActiveSection] = useState(props.activePage1);
+  // console.log(useActiveSection);
  
   useEffect(() => {
-    // const path = window.location.pathname;
-
-    // if(path === "/about_us"){
-    //   setActiveSection('about-us')
-    // }else if(path === "/"){
-    
       const handleScroll = () => {
         const sections = document.querySelectorAll('section'); 
         const scrollPosition = window.scrollY;
@@ -36,10 +27,8 @@ const NavigationBar = (props) => {
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-
-
-  
   }, []);
+
   return (
     <div className="nav">
       <Navbar expand="sm" fixed="top" bg="white">
@@ -58,24 +47,25 @@ const NavigationBar = (props) => {
 
           <Navbar.Collapse style={{ paddingLeft: "15px" }}>
             <Nav className="justify-content-center" style={{ width: "85%" }}>
-              <Link className={activeSection === 'home' ? 'navlink-active' : 'navlink'} to="" >
+              <Link className={activeSection === 'hero' ? 'navlink-active' : 'navlink'} to="" >
                 Home
               </Link>
               <Link className={activeSection === 'about-us' ? 'navlink-active' : 'navlink' }  to="/about_us">
                 About US
               </Link>
-              <Link className={activeSection === 'services' ? 'navlink-active' : 'navlink'} to="/services" href="#Services" >
+              <Link className={activeSection === 'services' ? 'navlink-active' : 'navlink'} to="/services" >
                 Services
               </Link>
-              <Link className={activeSection === 'our-projects' ? 'navlink-active' : 'navlink'} to="/our_projects" href="#Our_Projects">
+              <Link className={activeSection === 'our-projects' ? 'navlink-active' : 'navlink'} to="/our_projects">
                 Our Projects
               </Link>
-              <Link className={activeSection === 'contact-us' ? 'navlink-active' : 'navlink'} to="/contact_us" href="#Contact_us">
+              <Link className={activeSection === 'contact-us' ? 'navlink-active' : 'navlink'} to="/contact_us">
                 Contact US
               </Link>
-              <Link className={activeSection === 'our-team' ? 'navlink-active' : 'navlink'} to="/our_team" href="#Our_Family">
+              <Link className={activeSection === 'our-team' ? 'navlink-active' : 'navlink'} to="/our_team">
                 Our Team
               </Link>
+              
               
             </Nav>
           </Navbar.Collapse>

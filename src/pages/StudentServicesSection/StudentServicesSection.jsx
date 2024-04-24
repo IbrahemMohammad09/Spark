@@ -1,6 +1,5 @@
-import { Container } from 'react-bootstrap';
-
 import './StudentServicesSection.css'
+import { Container } from 'react-bootstrap';
 import InfoStudentServiceCard from '../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard';
 import { Axios } from '../../api/axios';
 import { useEffect, useState } from 'react';

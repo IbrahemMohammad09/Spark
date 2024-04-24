@@ -19,14 +19,16 @@ import StudentServicesSection from "./pages/StudentServicesSection/StudentServic
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
 import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
 
+
 function App() {
+
   return (
     <div className="App position-relative">
         <BrowserRouter>
           <ScrollToTopOnPageChange />
-          <NavigationBar />
+          <NavigationBar/>
           <Routes>
-            <Route path={""} element={<Home/>}/>
+            <Route path={""} element={<Home/>}  />
             <Route path={'/about_us'} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
             <Route path={"/services"} element={<ServicesSection />} />

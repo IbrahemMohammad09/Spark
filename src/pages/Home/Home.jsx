@@ -5,13 +5,18 @@ import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage"
 import DownloadAppSection from "../../components/DownloadAppSection/DownloadAppSection";
 import ContactUs from "../../components/ContactUs/ContactUs";
 import OurTeam from "../../components/OurTeam/OurTeam";
+import HeroSection from "../../components/HeroSection/HeroSection";
+
+
 
 const Home = () => {
+
+
   return (
     <main className="position-relative">
-      <div id="home" className="main-container">
+      <div  className="main-container">
         
-
+          <HeroSection />
           <BrushImage key={0} type={"l"} postion={"brush1"} />
           <BrushImage key={1} type={"r"} postion={"brush2"} />
           <ServicesSection />
