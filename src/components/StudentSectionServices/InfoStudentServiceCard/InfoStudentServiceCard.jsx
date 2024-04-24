@@ -9,7 +9,7 @@ const InfoStudentServiceCard = ( { info } ) => {
     }
 
     return (
-        <div className='student-service-section-card fade-in-bottom'>
+        <div className='student-service-section-card bounceInUp'>
             <div className='img-cover'>
                 <img src={`${BaseURL}/${info.section_image}`} alt={info.section_image} loading='lazy'/>
             </div>

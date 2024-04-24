@@ -1,0 +1,43 @@
+.main-input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.main-input label {
+    font-weight: 400;
+    font-size: 1.375rem;
+    line-height: 25.78px;
+    color: rgba(16, 16, 16, 1);
+    margin-bottom: 5px;
+}
+
+.main-input label:has(+[required])::after {
+    content: ' *';
+    color: red;
+}
+
+.main-input input {
+    width: 100%;
+    border-radius: 6px;
+    background-color: rgba(245, 245, 245, 1);
+    padding: 10px;
+    border: none;
+}
+
+/* .main-input input {
+    outline: red 1px;
+} */
+
+.main-input textarea {
+    width: 100%;
+    border-radius: 6px;
+    background-color: rgba(245, 245, 245, 1);
+    padding: 10px;
+    border: none;
+    height: 160px;
+}
+
+.main-input input:focus, 
+.main-input textarea:focus {
+    outline: 2px solid rgba(47, 176, 205, 1);
+}

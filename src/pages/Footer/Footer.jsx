@@ -7,7 +7,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
-    <div className="Footer">
+    <div className="Footer position-relative z-1">
       <div className="containerFooter">
         <div className="logoFooter">
           <div>

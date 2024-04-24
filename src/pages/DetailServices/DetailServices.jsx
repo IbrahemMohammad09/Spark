@@ -48,7 +48,6 @@ const DetailServices = () => {
 
     return (
         <section className='service-details'>
-            
             <Container>
                 <div>
                     <div className='img-cover'>
@@ -57,7 +56,7 @@ const DetailServices = () => {
                     <div>
                         <p>{serviceData?.service_description[language]}</p>
                         <h2>What, Why and How?</h2>
-                        <MainButton title={'Service Request'} url={'/'} addStyle='service-details-button'/>
+                        <MainButton title={'Service Request'} url={`/company-request/${id}`} addStyle='service-details-button'/>
                     </div>
                 </div>
             </Container>
