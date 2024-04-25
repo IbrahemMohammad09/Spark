@@ -14,6 +14,7 @@ const CompanyRequestPage = () => {
     const [phone, setPhone] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [task, setTask] = useState('');
+    const [errorRequest, setErrorRequest] = useState({});
 
     const { id } = useParams();
 
@@ -36,6 +37,7 @@ const CompanyRequestPage = () => {
         {
             label: 'Full Name',
             type: 'text',
+            name: 'agent_name',
             value: name,
             setValue: setName,
             required: true,
@@ -43,6 +45,7 @@ const CompanyRequestPage = () => {
         {
             label: 'Email Address',
             type: 'email',
+            name: 'email',
             value: email,
             setValue: setEmail,
             required: true,
@@ -51,18 +54,21 @@ const CompanyRequestPage = () => {
             label: 'Phone',
             type: 'tel',
             value: phone,
+            name: 'phone',
             setValue: setPhone,
             required: true,
         },
         {
             label: 'Company Name',
             type: 'text',
+            name: 'company_name',
             value: companyName,
             setValue: setCompanyName,
         },
         {
             label: 'Tell us about your task',
             value: task,
+            name: 'desc',
             setValue: setTask,
             textarea: true,
         },
@@ -86,7 +92,8 @@ const CompanyRequestPage = () => {
                 navigate('/completed');
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.response.data);
+                setErrorRequest(error.response.data)
             });
     }
 
@@ -98,7 +105,7 @@ const CompanyRequestPage = () => {
             <div className="main-container">
                 {!error && <Container>
                     <form method="POST">
-                        {inputs.map((e, i) => <MainInput key={i} label={e.label} required={e.required} setValue={e.setValue} type={e.type} textarea={e.textarea}/>)}
+                        {inputs.map((e, i) => <MainInput key={i} label={e.label} required={e.required} setValue={e.setValue} type={e.type} textarea={e.textarea} errorRequest={errorRequest} filed={e.name}/>)}
                         <button onClick={handleSendRequest}>
                             <MainButton title={'Send request'} url={'#'} addStyle='company-request-page-main-button'/>
                         </button>

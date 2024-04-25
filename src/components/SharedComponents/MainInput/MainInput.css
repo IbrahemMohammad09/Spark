@@ -24,9 +24,14 @@
     border: none;
 }
 
-/* .main-input input {
-    outline: red 1px;
-} */
+.main-input .error {
+    outline: red 2px solid !important;
+}
+
+.main-input .error_note {
+    color: red;
+    margin-top: 2px;
+}
 
 .main-input textarea {
     width: 100%;
