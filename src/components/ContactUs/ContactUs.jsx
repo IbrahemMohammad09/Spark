@@ -3,6 +3,10 @@ import WorldMap from "../../images/ContactUSSection/Huge Global.svg";
 import "./contact-us.css";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+
+
+
+
 const ContactUs = () => {
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
@@ -16,6 +20,7 @@ const ContactUs = () => {
   }, [inView, entry]);
 
   return (
+
     <section id="Contact_us" className="contact-us py-6">
       <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
         <Container>
@@ -29,6 +34,7 @@ const ContactUs = () => {
           </Row>
         </Container>
       </div>
+
     </section>
   );
 };

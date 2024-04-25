@@ -8,6 +8,7 @@ import "./OurTopServices.css";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 const OurTopServices = () => {
+
   const topServices = [
     {
       title: "Web Development",
@@ -41,6 +42,7 @@ const OurTopServices = () => {
     triggerOnce: true, // Only trigger once
     threshold: 0.5, // Trigger animation when 50% of the item is visible
   });
+
 
   // Log values to console whenever inView or entry changes
   useEffect(() => {

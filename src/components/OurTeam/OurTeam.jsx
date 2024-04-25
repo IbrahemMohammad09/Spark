@@ -11,6 +11,7 @@ import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
+
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
 
@@ -95,6 +96,7 @@ const OurTeam = () => {
           )}
         </Swiper>
       </div>
+
     </section>
   );
 };

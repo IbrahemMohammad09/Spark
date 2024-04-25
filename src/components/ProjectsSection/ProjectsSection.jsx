@@ -1,3 +1,4 @@
+
 import MainButton from "../SharedComponents/MainButton/MainButton";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 import Img1 from "../../images/OurProjectsImage/UI Design.png";
@@ -7,6 +8,7 @@ import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+
 const ProjectsSection = () => {
   const projects = [
     {
@@ -28,6 +30,7 @@ const ProjectsSection = () => {
     triggerOnce: true, // Only trigger once
     threshold: 0.5, // Trigger animation when 50% of the item is visible
   });
+
 
   // Log values to console whenever inView or entry changes
   useEffect(() => {
@@ -52,5 +55,6 @@ const ProjectsSection = () => {
     </Container>
   );
 };
+
 
 export default ProjectsSection;

@@ -1,3 +1,4 @@
+
 import MainHomeTitle from "../../SharedComponents/MainHomeTitle/MainHomeTitle";
 import "./OurServices.css";
 import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).png";
@@ -41,4 +42,5 @@ const OurServices = () => {
   );
 };
 
-export default OurServices;
+
+export default OurServices

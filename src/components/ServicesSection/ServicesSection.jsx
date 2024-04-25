@@ -2,13 +2,18 @@ import "./ServicesSection.css";
 import OurServices from './OurServices/OurServices'
 import OurTopServices from './OurTopServices/OurTopServices'
 import { Container } from "react-bootstrap";
+import NavigationBar from "../../pages/NavigationBar/NavigationBar";
+
 
 const ServicesSection = () => {
   return (
-    <Container className="services-section">
-      <OurServices/>
-      <OurTopServices/>
-    </Container>
+    <section id="services">
+
+      <Container  className="services-section">
+        <OurServices/>
+        <OurTopServices/>
+      </Container>
+    </section>
 
   );
 };

@@ -1,0 +1,17 @@
+.student-section-services {
+    padding: 7rem 0 92px; 
+    min-height: 100vh;
+    width: 100%;
+}
+
+.student-section-services .student-section-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(552px ,1fr));
+    gap: 92px 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .student-section-services .student-section-services-grid {
+        grid-template-columns: 1fr;
+    }
+}

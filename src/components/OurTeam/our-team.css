@@ -78,6 +78,7 @@
   justify-content: center;
 }
 
+
 .our-team .swiper-slide .slide-body {
   width: 50%;
 }
@@ -164,4 +165,5 @@
 
 .fade-in-bottom {
   animation: fadeInBottom 1.5s ease-in-out forwards;
+
 }
