@@ -39,7 +39,7 @@
 }
 .gridLinks {
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 .links {
   display: flex;
@@ -63,7 +63,7 @@
   -moz-transition: 3s;
   -ms-transition: 3s;
   -o-transition: 3s;
-  transition-delay: 50ms;
+  transition-delay: 200ms;
   transition-duration: 300ms;
 }
 .theLink:hover {
