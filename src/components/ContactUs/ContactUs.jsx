@@ -3,9 +3,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import WorldMap from "../../images/ContactUSSection/Huge Global.svg";
 import "./contact-us.css";
 
+
 const ContactUs = () => {
   return (
-    <section id="Contact_us" className="contact-us py-6">
+    <section id="contact-us" className="contact-us py-6">
+
       <Container>
         <Row className="justify-content-center">
           <Col className="d-flex align-items-center" xs={10} lg={3}>

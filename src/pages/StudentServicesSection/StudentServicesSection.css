@@ -1,0 +1,39 @@
+.student-section-services {
+    padding: 7rem 0 92px; 
+    min-height: 100vh;
+    width: 100%;
+}
+
+.student-section-services .student-section-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(552px ,1fr));
+    gap: 92px 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .student-section-services .student-section-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@keyframes fadeInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    80% {        
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.fade-in-bottom {
+    animation: fadeInBottom 1.5s ease-in-out forwards;
+}
