@@ -1,4 +1,5 @@
 import "./AboutUs.css";
+import { useState, useEffect } from "react";
 import about from "../../images/AboutUsImags/About.png";
 import { GrFacebookOption } from "react-icons/gr";
 import { PiInstagramLogoFill } from "react-icons/pi";
@@ -8,12 +9,16 @@ import { TiSocialLinkedin } from "react-icons/ti";
 
 const AboutUs = () => {
 
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    // Set isVisible to true after component mounts
+    setIsVisible(true);
+  }, []);
   return (
-    <section id="about-us">
+    <div className={`${isVisible ? "fade-in-bottom" : ""}`}>
       <div className="About">
         <div className="about-left">
-  
           <h3>Description</h3>
           <p>
             As a UX designer, I specialize in crafting seamless user experiences
@@ -21,10 +26,12 @@ const AboutUs = () => {
             services encompass comprehensive user research, wireframing,
             prototyping, and interface design. I focus on understanding user
             behaviors, pain points, and preferences to create intuitive and
-            engaging digital products. Whether it's improving existing interfaces
-            or creating new ones from scratch, I ensure designs that are
-            user-centric, visually appealing, and optimized for usability across
-            devices and platforms.
+
+            engaging digital products. Whether it's improving existing
+            interfaces or creating new ones from scratch, I ensure designs that
+            are user-centric, visually appealing, and optimized for usability
+            across devices and platforms.
+
           </p>
         </div>
         <div className="about-right">
@@ -35,23 +42,30 @@ const AboutUs = () => {
             <h3>SPARK</h3>
             <div className="about-web">
               <p>Engineering Company</p>
-              {/* <div className="web-image">
-                <img src={web} alt="web" />
-              </div> */}
+
+
             </div>
             <hr />
             <div className="about-icons">
               <div className="icon-about">
-                <GrFacebookOption size={56} />
+                <a>
+                  <GrFacebookOption size={56} />
+                </a>
               </div>
               <div className="icon-about">
-                <PiInstagramLogoFill size={46} />
+                <a>
+                  <PiInstagramLogoFill size={46} />
+                </a>
               </div>
               <div className="icon-about">
-                <RiWhatsappFill size={46} />
+                <a>
+                  <RiWhatsappFill size={46} />
+                </a>
               </div>
               <div className="icon-about">
-                <TiSocialLinkedin size={56} />
+                <a>
+                  <TiSocialLinkedin size={56} />
+                </a>
               </div>
             </div>
           </div>
