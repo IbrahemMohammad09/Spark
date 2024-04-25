@@ -27,32 +27,34 @@ const AboutUs = () => {
             devices and platforms.
           </p>
         </div>
-        <div className="about-right">
-          <div>
-            <img src={about} alt="" className="about-image" />
+
+        <div className="about-contact">
+          <h3>SPARK</h3>
+          <div className="about-web">
+            <p>Engineering Company</p>
           </div>
-          <div className="about-contact">
-            <h3>SPARK</h3>
-            <div className="about-web">
-              <p>Engineering Company</p>
-              {/* <div className="web-image">
-                <img src={web} alt="web" />
-              </div> */}
-            </div>
-            <hr />
-            <div className="about-icons">
-              <div className="icon-about">
+          <hr />
+          <div className="about-icons">
+            <div className="icon-about">
+              <a>
                 <GrFacebookOption size={56} />
-              </div>
-              <div className="icon-about">
+              </a>
+            </div>
+            <div className="icon-about">
+              <a>
                 <PiInstagramLogoFill size={46} />
-              </div>
-              <div className="icon-about">
+              </a>
+            </div>
+            <div className="icon-about">
+              <a>
                 <RiWhatsappFill size={46} />
-              </div>
-              <div className="icon-about">
+              </a>
+            </div>
+            <div className="icon-about">
+              <a>
                 <TiSocialLinkedin size={56} />
-              </div>
+              </a>
+
             </div>
           </div>
         </div>
