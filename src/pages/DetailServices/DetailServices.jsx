@@ -7,7 +7,7 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import { useLanguageContext } from '../../hooks/useLanguageContext';
 
 import './DetailServices.css'
-import NavigationBar from '../NavigationBar/NavigationBar';
+
 
 const DetailServices = () => {
     const [serviceData, setServiceData] = useState(null);
