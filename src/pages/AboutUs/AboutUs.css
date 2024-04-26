@@ -91,7 +91,7 @@
   -o-transition: 3s;
   transition-duration: 300ms;
 }
-.icon-about a :hover {
+.icon-about a:hover {
   padding-bottom: 20px;
   color: #14455b;
   border-bottom: 1px solid #165069;
