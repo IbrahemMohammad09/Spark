@@ -63,7 +63,7 @@
   -moz-transition: 3s;
   -ms-transition: 3s;
   -o-transition: 3s;
-  transition-delay: 200ms;
+  transition-delay: 30ms;
   transition-duration: 300ms;
 }
 .theLink:hover {
