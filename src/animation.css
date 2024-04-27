@@ -36,3 +36,40 @@
     }
 }
 
+.rotate {
+    animation: rotate 2s forwards;
+}
+
+@keyframes rotate {
+    0% {
+        width: 0;
+        transform: translateX(-50%) translateY(50%) rotateX(0deg);
+    }
+    100% {
+        width: 200px;
+        transform: translateX(-50%) translateY(50%) rotateX(360deg);
+    }
+}
+
+
+@keyframes shrink1 {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 103px;
+        height: 42px;
+    }
+}
+
+@keyframes shrink2 {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 152px;
+        height: 37px;
+    }
+}

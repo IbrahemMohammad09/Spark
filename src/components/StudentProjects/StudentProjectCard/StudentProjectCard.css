@@ -1,0 +1,121 @@
+.student-project-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.student-project-card .student-project-img-box {
+    background-color: rgba(168, 219, 239, 1);
+    border-radius: 12px;
+    position: relative;
+    height: 348px;
+    min-width: 571px;
+    overflow: hidden;
+}
+
+.student-project-card .student-project-img-box img:first-child {
+    position: absolute;
+    left: 13%;
+    bottom: -5px;
+    width: 334px;
+    height: 292px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.student-project-card .student-project-img-box img:last-child {
+    position: absolute;
+    right: 10%;
+    top: 0;
+    width: 333px;
+    height: 348px;
+    object-fit: cover;
+}
+
+.student-project-card .student-project-info-box h1 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0.03em;
+    color: rgba(22, 80, 105, 1);
+}
+
+.student-project-card .student-project-info-box h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 28.13px;
+    letter-spacing: 0.03em;
+    color: rgba(30, 30, 30, 1);
+    margin: 1rem 0;
+}
+.student-project-card .student-project-info-box h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 33.74px;
+    letter-spacing: 0.01em;
+    color: rgba(66, 66, 66, 0.6);
+}
+
+.student-project-card .student-project-card-main-button {
+    margin-top: 1.5rem;
+    background-color: rgba(22, 80, 105, 1);
+    color: white;
+    padding: 14px 59px;
+}
+
+@media screen and (max-width: 1250px) {
+    .student-project-card {
+        flex-direction: column;
+    }    
+    .student-project-card .student-project-img-box {
+        width: 100%;
+    }
+    .student-project-card .student-project-img-box img:first-child {
+        left: 23%;
+    }
+    .student-project-card .student-project-img-box img:last-child {
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .student-project-card {
+        flex-direction: column;
+    }    
+    .student-project-card .student-project-img-box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .student-project-card {
+        flex-direction: column;
+    }    
+    .student-project-card .student-project-img-box {
+        width: 100%;
+        min-width: 0;
+    }
+    .student-project-card .student-project-img-box img:first-child {
+        left: 5%;
+    }
+    .student-project-card .student-project-img-box img:last-child {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 470px) { 
+    .student-project-card .student-project-img-box img:first-child {
+        width: 90%;
+        left: 5%;
+    }
+    .student-project-card .student-project-img-box img:last-child {
+        display: none;
+    }
+    .student-project-card .student-project-info-box {
+        text-align: center;
+    }
+    .student-project-card-main-button {
+        margin: 1.5rem auto;
+    }
+}
+

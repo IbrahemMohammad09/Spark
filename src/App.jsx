@@ -19,6 +19,8 @@ import StudentServicesSection from "./pages/StudentServicesSection/StudentServic
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
 import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
 import StudentServices from "./pages/StudentServices/StudentServices";
+import StudentProjects from "./pages/StudentProjects/StudentProjects";
+import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 
 
 function App() {
@@ -43,7 +45,8 @@ function App() {
             <Route path={'/company-request/:id'} element={<CompanyRequestPage />}/>
             <Route path={'/completed'} element={<CompleteRequest />}/>
             <Route path={'/student-section-services/:id/student-section-detail'} element={<StudentServices />} />
-
+            <Route path={'/student-projects'} element={<StudentProjects />}/>
+            <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
           </Routes>
           <Footer />
         </BrowserRouter>
