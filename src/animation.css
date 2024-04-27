@@ -1,39 +1,39 @@
 .bounceInUp {
-    animation-name: bounceInUp;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 @keyframes bounceInUp {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 3000px, 0);
-    }
-    60% {
-        opacity: 1;
-        transform: translate3d(0, -20px, 0);
-    }
-    80% {
-        transform: translate3d(0, 10px, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+  80% {
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 .zoomIn {
-    animation-name: zoomIn;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 @keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale3d(0.3, 0.3, 0.3);
-    }
-    50% {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .rotate {

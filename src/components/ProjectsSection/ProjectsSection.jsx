@@ -1,4 +1,3 @@
-
 import MainButton from "../SharedComponents/MainButton/MainButton";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 import Img1 from "../../images/OurProjectsImage/UI Design.png";
@@ -33,30 +32,30 @@ const ProjectsSection = () => {
     threshold: 0.5, // Trigger animation when 50% of the item is visible
   });
 
-
   // Log values to console whenever inView or entry changes
   useEffect(() => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
   return (
-    <Container className="main-section our-projects position-relative">
-      <MainHomeTitle title={"Our Projects"} />
-      <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
-        <div className="our-projects-cards">
-          {projects?.map((e, i) => (
-            <InfoCard key={i} info={e} />
-          ))}
+    <section id="ourProject">
+      <Container className="main-section our-projects position-relative">
+        <MainHomeTitle title={"Our Projects"} />
+        <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
+          <div className="our-projects-cards">
+            {projects?.map((e, i) => (
+              <InfoCard key={i} info={e} />
+            ))}
+          </div>
+          <MainButton
+            url={"/"}
+            title={"See all"}
+            addStyle={"projects-button-see-all"}
+          />
         </div>
-        <MainButton
-          url={"/"}
-          title={"See all"}
-          addStyle={"projects-button-see-all"}
-        />
-      </div>
-    </Container>
+      </Container>
+    </section>
   );
 };
-
 
 export default ProjectsSection;
