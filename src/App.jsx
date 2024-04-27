@@ -18,6 +18,7 @@ import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
 import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
+import StudentServices from "./pages/StudentServices/StudentServices";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
             <Route path={'/student-section-services'} element={<StudentServicesSection />}/>
             <Route path={'/company-request/:id'} element={<CompanyRequestPage />}/>
             <Route path={'/completed'} element={<CompleteRequest />}/>
+            <Route path={'/student-section-services/:id/student-section-detail'} element={<StudentServices />} />
+            
           </Routes>
           <Footer />
         </BrowserRouter>

@@ -24,7 +24,8 @@ const StudentServicesSection = () => {
     return (
         <section className='student-section-services main-container'>
             <Container className='student-section-services-grid'>
-                {services && services.map((e, i) => <InfoStudentServiceCard key={i} info={e}/>)}
+                {services && services.map((e, i) => <InfoStudentServiceCard key={i} info={e} resturl={"/student-section-detail"}/>)}
+
             </Container>
         </section>
     )
