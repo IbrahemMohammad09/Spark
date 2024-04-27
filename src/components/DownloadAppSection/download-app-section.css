@@ -63,7 +63,10 @@
   text-decoration: none;
   cursor: pointer;
 }
-
+.download-btn:hover {
+  background-color: black;
+  color: white;
+}
 .download-sec h1 {
   font-size: 54px;
 }

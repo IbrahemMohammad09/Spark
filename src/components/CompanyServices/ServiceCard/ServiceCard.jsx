@@ -2,7 +2,7 @@ import { useLanguageContext } from "../../../hooks/useLanguageContext"
 import MainButton from '../../SharedComponents/MainButton/MainButton'
 import { BaseURL } from '../../../utils/constants'
 import './ServiceCard.css'
-import NavigationBar from "../../../pages/NavigationBar/NavigationBar"
+
 
 const ServiceCard = ( { info } ) => {
     const { language } = useLanguageContext();

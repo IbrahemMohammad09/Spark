@@ -7,9 +7,13 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import { useLanguageContext } from '../../hooks/useLanguageContext';
 
 import './DetailServices.css'
-import NavigationBar from '../NavigationBar/NavigationBar';
+import TabTitle from '../../utils/TabTitle';
+
 
 const DetailServices = () => {
+
+    TabTitle ('Spark | Service details');
+    
     const [serviceData, setServiceData] = useState(null);
     const [error, setError] = useState(null);
     const { id } = useParams();
@@ -48,7 +52,6 @@ const DetailServices = () => {
 
     return (
         <section className='service-details'>
-            
             <Container>
                 <div>
                     <div className='img-cover'>
@@ -57,7 +60,7 @@ const DetailServices = () => {
                     <div>
                         <p>{serviceData?.service_description[language]}</p>
                         <h2>What, Why and How?</h2>
-                        <MainButton title={'Service Request'} url={'/'} addStyle='service-details-button'/>
+                        <MainButton title={'Service Request'} url={`/company-request/${id}`} addStyle='service-details-button'/>
                     </div>
                 </div>
             </Container>

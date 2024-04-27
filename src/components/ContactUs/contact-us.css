@@ -5,10 +5,10 @@
   padding-bottom: 0px;
 }
 
-.contact-us h1 {
-  margin: 0 auto 60px;
-}
-
 .contact-us img.world-map {
   width: 100%;
+}
+
+.contact-us a {
+  color: #212529;
 }

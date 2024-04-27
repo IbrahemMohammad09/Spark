@@ -1,0 +1,71 @@
+.student-section{
+    padding: 7rem 0 92px; 
+    min-height: 10vh;
+    width: 100%;
+}
+.student-section .student-section-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(552px ,1fr));
+    gap: 92px 32px;
+}
+
+.student-card-main-button {
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 1);
+    width: 250px;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .student-section .student-section-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ////////////////////////////// */
+.student-section-card .img-cover {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 324px;
+    transition: .2s;
+}
+
+.student-section-card .img-cover:hover {
+    box-shadow: 2px 2px 8px #ccc;
+    transform: translate(-1px, -1px);
+}
+
+.student-section-card .img-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.student-section-card h1 {
+    font-size: 3.125rem;
+    line-height: 75px;
+    color: rgba(22, 80, 105, 1);
+    font-weight: 600;
+}
+
+.student-section-card h2 {
+    font-size: 2.1875rem;
+    line-height: 20px;
+    color: rgba(22, 80, 105, 1);
+    letter-spacing: -1%;
+    font-weight: 600;
+}
+
+
+.student-section-card .student-section-card-main-button {
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (min-width: 450px) {
+    .student-section-card .student-section-card-main-button {
+        padding-right: 110.5px;
+        padding-left: 110.5px
+    }
+}

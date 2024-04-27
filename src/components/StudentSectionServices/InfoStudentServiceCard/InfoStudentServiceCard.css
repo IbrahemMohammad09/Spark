@@ -2,6 +2,12 @@
     overflow: hidden;
     border-radius: 10px;
     height: 324px;
+    transition: .2s;
+}
+
+.student-service-section-card .img-cover:hover {
+    box-shadow: 2px 2px 8px #ccc;
+    transform: translate(-1px, -1px);
 }
 
 .student-service-section-card .img-cover img {
@@ -9,6 +15,7 @@
     height: 100%;
     object-fit: cover;
 }
+
 
 .student-service-section-card h1 {
     font-size: 3.125rem;

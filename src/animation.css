@@ -1,0 +1,90 @@
+.bounceInUp {
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+  80% {
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.zoomIn {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fade-in-bottom {
+  animation: fadeInBottom 1.5s ease-in-out forwards;
+}
+@keyframes fade-top {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  75% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.fade-top-services .name1 {
+  animation: fade-top 1.5s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.fade-top-services .name2 {
+  animation: fade-top 1.5s ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.fade-top-services .name3 {
+  animation: fade-top 1.5s ease-in-out;
+  animation-delay: 0.5s;
+}
+.fade-top-services .name4 {
+  animation: fade-top 1.5s ease-in-out;
+  animation-delay: 0.6s;
+}

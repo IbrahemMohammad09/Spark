@@ -1,19 +1,38 @@
 .our-projects .our-projects-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .our-projects .projects-button-see-all {
-    margin: 40px auto;
-    padding: 17px 110.5px;
-    font-size: 1.375rem;
-    line-height: 25.78px;
+  margin: 40px auto;
+  padding: 17px 110.5px;
+  font-size: 1.375rem;
+  line-height: 25.78px;
+}
+@keyframes fadeInBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
+.fade-in-bottom {
+  animation: fadeInBottom 1.5s ease-in-out forwards;
+}
 @media screen and (min-width: 769px) {
-    .our-projects .our-projects-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(588px ,1fr));
-    }
+  .our-projects .our-projects-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(588px, 1fr));
+  }
 }
