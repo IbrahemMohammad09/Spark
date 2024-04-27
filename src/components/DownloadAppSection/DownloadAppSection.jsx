@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.png";
 import DownloadIcon from "../../images/DownloadAppSection/download.png";
-import GooglePlayIcon from "../../images/DownloadAppSection/google-play.svg";
+// import GooglePlayIcon from "../../images/DownloadAppSection/google-play.svg";
+import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
 import { Link } from "react-scroll";
@@ -22,8 +23,7 @@ const DownloadAppSection = () => {
   }, [inView, entry]);
 
   return (
-    <section className="download-sec">
-      {/* <NavigationBar /> */}
+    <section id="hero" className="download-sec">
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
@@ -47,7 +47,8 @@ const DownloadAppSection = () => {
                 target="_blank"
                 className="download-btn d-none d-md-flex"
               >
-                <img src={GooglePlayIcon} alt="" />
+                {/* <img src={GooglePlayIcon} alt="" /> */}
+                <RiGooglePlayFill size={30} />
                 google play
               </Link>
             </Col>
@@ -60,7 +61,8 @@ const DownloadAppSection = () => {
                 target="_blank"
                 className="download-btn"
               >
-                <img src={GooglePlayIcon} alt="" />
+                <RiGooglePlayFill size={30} />
+                {/* <img src={GooglePlayIcon} alt="" /> */}
                 google play
               </Link>
             </Col>

@@ -33,13 +33,12 @@ const OurTeam = () => {
     threshold: 0.5, // Trigger animation when 50% of the item is visible
   });
 
-  // Log values to console whenever inView or entry changes
   useEffect(() => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
   return (
-    <section className="our-team" id="our-team">
+    <section className="our-team" id="ourTeam">
       <Container>
         <h1>Our Team</h1>
       </Container>
@@ -96,7 +95,6 @@ const OurTeam = () => {
           )}
         </Swiper>
       </div>
-
     </section>
   );
 };

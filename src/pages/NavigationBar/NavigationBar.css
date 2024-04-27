@@ -7,47 +7,47 @@
 }
 
 .spark {
-  font-family: "Times New Roman";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   padding-left: 10px;
   position: relative;
   display: inline-block;
   min-width: 47px;
   color: #0d0d0d;
-  font-family: "Times New Roman";
   font-style: normal;
 }
 
-
-.nav{
-    background-color: aliceblue;
-    font-size: 20px;
-   
+.nav {
+  background-color: aliceblue;
+  font-size: 20px;
 }
-
 
 .navlink {
-    color: rgb(172, 166, 166);
-    font-family: bold;
-    padding-right: 20px;
-    text-decoration: none;
+  color: #aca6a6;
+  font-weight: 600;
+  padding-right: 20px;
+  text-decoration: none;
 }
 
-.navlink-active{
-    color: rgb(26, 146, 206);
-    font-family: bold;
-    padding-right: 20px;
-    text-decoration: none;
+.navlink-active {
+  color: #1a92ce;
+  font-weight: 600;
+  padding-right: 20px;
+  text-decoration: none;
 }
-
 
 .navlink:hover {
-    color: rgb(26, 146, 206);
-    
+  color: #1a92ce;
 }
-
-
-
+.navlink2 {
+  color: black;
+  font-weight: 600;
+  padding-right: 20px;
+  text-decoration: none;
+}
+.navlink2:hover {
+  color: white;
+}
 @media only screen and (max-width: 986px) {
   .nav {
     font-size: small;
@@ -58,4 +58,24 @@
   .nav {
     font-size: 12px;
   }
+}
+
+.active1 .navlink:hover {
+  color: white;
+}
+
+.active1 .navlink {
+  color: black;
+}
+
+.active1 .navlink-active:hover {
+  color: white;
+}
+
+.active2 {
+  color: #aca6a6;
+}
+
+.active2 .navlink:hover {
+  color: #1a92ce;
 }
