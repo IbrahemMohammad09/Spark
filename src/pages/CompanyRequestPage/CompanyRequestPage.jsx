@@ -6,8 +6,12 @@ import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
 import Img from '../../images/CompanyRequestPageImages/company-request-page.png'
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
+import TabTitle from '../../utils/TabTitle';
 
 const CompanyRequestPage = () => {
+
+    TabTitle('Spark | service request');
+
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

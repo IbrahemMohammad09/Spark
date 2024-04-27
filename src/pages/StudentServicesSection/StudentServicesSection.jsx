@@ -3,8 +3,12 @@ import { Container } from 'react-bootstrap';
 import InfoStudentServiceCard from '../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard';
 import { Axios } from '../../api/axios';
 import { useEffect, useState } from 'react';
+import TabTitle from '../../utils/TabTitle';
 
 const StudentServicesSection = () => {
+
+    TabTitle('Spark | Student section');
+
     const [services, setServices] = useState([]);
 
     const getStudentSectionsServicesData = async () => {

@@ -3,11 +3,15 @@ import WorldMap from "../../images/ContactUSSection/Huge Global.svg";
 import "./contact-us.css";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import TabTitle from "../../utils/TabTitle";
 
 
 
 
 const ContactUs = () => {
+  TabTitle ('Spark | Contact us');
+
+
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.5, // Trigger animation when 50% of the item is visible

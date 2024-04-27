@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap"
 import { Axios } from "../../api/axios";
-
 import './CompanyServices.css'
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
+import TabTitle from "../../utils/TabTitle";
 // import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 
 const CompanyServices = () => {
+    TabTitle ('Spark | Company services');
     const [services, setServices] = useState([]);
 
     const getCompanyServicesData = async () => {

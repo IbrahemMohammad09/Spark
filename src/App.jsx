@@ -23,13 +23,14 @@ import StudentServices from "./pages/StudentServices/StudentServices";
 
 function App() {
 
+
   return (
     <div className="App position-relative">
         <BrowserRouter>
           <ScrollToTopOnPageChange />
           <NavigationBar/>
           <Routes>
-            <Route path={""} element={<Home/>}  />
+            <Route path={"/"} exact element={<Home />}  />
             <Route path={'/about_us'} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
             <Route path={"/services"} element={<ServicesSection />} />
@@ -42,7 +43,7 @@ function App() {
             <Route path={'/company-request/:id'} element={<CompanyRequestPage />}/>
             <Route path={'/completed'} element={<CompleteRequest />}/>
             <Route path={'/student-section-services/:id/student-section-detail'} element={<StudentServices />} />
-            
+
           </Routes>
           <Footer />
         </BrowserRouter>

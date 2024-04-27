@@ -5,7 +5,10 @@ import { Axios } from '../../api/axios';
 import { useEffect, useState } from 'react';
 import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import img1 from '../../images/StudentServices/img.jpg'
+import TabTitle from '../../utils/TabTitle';
 const StudentServices = () => {
+  
+    TabTitle('Spark | Student services');
     const studentServices = [
         {
           title: 'Students projects',

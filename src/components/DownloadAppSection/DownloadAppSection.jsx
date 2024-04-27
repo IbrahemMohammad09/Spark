@@ -7,9 +7,10 @@ import GooglePlayIcon from "../../images/DownloadAppSection/google-play.svg";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
 import { Link } from "react-scroll";
-import NavigationBar from "../../pages/NavigationBar/NavigationBar";
+import TabTitle from "../../utils/TabTitle";
 
 const DownloadAppSection = () => {
+  TabTitle ('Spark | Our App  ');
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.5, // Trigger animation when 50% of the item is visible

@@ -5,9 +5,12 @@ import { GrFacebookOption } from "react-icons/gr";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
+import TabTitle from "../../utils/TabTitle";
 
 
 const AboutUs = () => {
+
+  TabTitle ('Spark | About us');
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -16,6 +19,7 @@ const AboutUs = () => {
     setIsVisible(true);
   }, []);
   return (
+    
     <section className={`${isVisible ? "fade-in-bottom" : ""}`}>
       <div className="About">
         <div className="about-left">

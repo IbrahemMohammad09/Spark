@@ -11,8 +11,11 @@ import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
+import TabTitle from "../../utils/TabTitle";
 
 const OurTeam = () => {
+  TabTitle ('Spark | Our team')
+
   const [teamData, setTeamData] = useState(null);
 
   const getTeamData = async () => {
