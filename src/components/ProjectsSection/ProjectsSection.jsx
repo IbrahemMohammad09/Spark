@@ -10,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 import TabTitle from "../../utils/TabTitle";
 
 const ProjectsSection = () => {
-  TabTitle ('Spark | Our projects');
+  TabTitle("Spark | Our projects");
   const projects = [
     {
       title: "MStore",
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
   ];
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the item is visible
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
   // Log values to console whenever inView or entry changes

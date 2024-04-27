@@ -9,16 +9,12 @@ import { RiWhatsappLine } from "react-icons/ri";
 
 import TabTitle from "../../utils/TabTitle";
 
-
-
-
 const ContactUs = () => {
-  TabTitle ('Spark | Contact us');
-
+  TabTitle("Spark | Contact us");
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the item is visible
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
   // Log values to console whenever inView or entry changes
@@ -39,10 +35,10 @@ const ContactUs = () => {
             >
               <h1>Contact Us</h1>
               <div className="d-flex align-items-start gap-1 justify-content-start">
-                <a href="mailto:spark.contact.it@gmail.com">
+                <a href="mailto:http://Spark.contact.it@gmail.com">
                   <RiMailLine size={30} />
                 </a>
-                <a href="tel:+963962272881">
+                <a href="https://wa.me/+963962272881">
                   <RiWhatsappLine size={30} />
                 </a>
               </div>

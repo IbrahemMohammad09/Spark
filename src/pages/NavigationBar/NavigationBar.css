@@ -67,7 +67,9 @@
 .active1 .navlink {
   color: black;
 }
-
+.active1 .fixed-top {
+  background-color: #2fb0cd !important;
+}
 .active1 .navlink-active:hover {
   color: white;
 }
@@ -75,7 +77,9 @@
 .active2 {
   color: #aca6a6;
 }
-
+.active2 .fixed-top {
+  background-color: white;
+}
 .active2 .navlink:hover {
   color: #1a92ce;
 }
