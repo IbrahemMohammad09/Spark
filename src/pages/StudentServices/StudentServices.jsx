@@ -13,7 +13,7 @@ const StudentServices = () => {
         {
           title: 'Students projects',
           img: img1,
-          url: '/students-projects'
+          url: '/student-projects'
         },
         {
           title: 'Student Courses',
