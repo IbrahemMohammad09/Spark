@@ -63,7 +63,10 @@
   text-decoration: none;
   cursor: pointer;
 }
-
+.download-btn:hover {
+  background-color: black;
+  color: white;
+}
 .download-sec h1 {
   font-size: 54px;
 }
@@ -108,24 +111,4 @@
   .download-sec img.mobiles {
     width: 180px;
   }
-}
-@keyframes fadeInBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(-20px);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.fade-in-bottom {
-  animation: fadeInBottom 1.5s ease-in-out forwards;
 }

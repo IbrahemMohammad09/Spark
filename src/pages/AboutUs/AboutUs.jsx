@@ -7,10 +7,11 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
 import TabTitle from "../../utils/TabTitle";
 
-
 const AboutUs = () => {
 
+
   TabTitle ('Spark | About us');
+
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,8 +20,12 @@ const AboutUs = () => {
     setIsVisible(true);
   }, []);
   return (
+
+    <section id="about" className={`${isVisible ? "fade-in-bottom" : ""}`}>
+
     
-    <section className={`${isVisible ? "fade-in-bottom" : ""}`}>
+
+
       <div className="About">
         <div className="about-left">
           <h3>Description</h3>
@@ -30,12 +35,10 @@ const AboutUs = () => {
             services encompass comprehensive user research, wireframing,
             prototyping, and interface design. I focus on understanding user
             behaviors, pain points, and preferences to create intuitive and
-
             engaging digital products. Whether it's improving existing
             interfaces or creating new ones from scratch, I ensure designs that
             are user-centric, visually appealing, and optimized for usability
             across devices and platforms.
-
           </p>
         </div>
         <div className="about-right">
@@ -46,8 +49,6 @@ const AboutUs = () => {
             <h3>SPARK</h3>
             <div className="about-web">
               <p>Engineering Company</p>
-
-
             </div>
             <hr />
             <div className="about-icons">
