@@ -7,9 +7,13 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import { useLanguageContext } from '../../hooks/useLanguageContext';
 
 import './DetailServices.css'
+import TabTitle from '../../utils/TabTitle';
 
 
 const DetailServices = () => {
+
+    TabTitle ('Spark | Service details');
+    
     const [serviceData, setServiceData] = useState(null);
     const [error, setError] = useState(null);
     const { id } = useParams();

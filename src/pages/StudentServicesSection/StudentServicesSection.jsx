@@ -3,8 +3,12 @@ import { Container } from 'react-bootstrap';
 import InfoStudentServiceCard from '../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard';
 import { Axios } from '../../api/axios';
 import { useEffect, useState } from 'react';
+import TabTitle from '../../utils/TabTitle';
 
 const StudentServicesSection = () => {
+
+    TabTitle('Spark | Student section');
+
     const [services, setServices] = useState([]);
 
     const getStudentSectionsServicesData = async () => {
@@ -24,7 +28,8 @@ const StudentServicesSection = () => {
     return (
         <section className='student-section-services main-container'>
             <Container className='student-section-services-grid'>
-                {services && services.map((e, i) => <InfoStudentServiceCard key={i} info={e}/>)}
+                {services && services.map((e, i) => <InfoStudentServiceCard key={i} info={e} resturl={"/student-section-detail"}/>)}
+
             </Container>
         </section>
     )

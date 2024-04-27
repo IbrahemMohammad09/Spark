@@ -7,8 +7,10 @@ import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import TabTitle from "../../utils/TabTitle";
 
 const ProjectsSection = () => {
+  TabTitle ('Spark | Our projects');
   const projects = [
     {
       title: "MStore",

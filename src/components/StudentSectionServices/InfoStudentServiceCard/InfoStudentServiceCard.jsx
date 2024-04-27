@@ -3,7 +3,7 @@ import { BaseURL } from '../../../utils/constants'
 
 import './InfoStudentServiceCard.css'
 
-const InfoStudentServiceCard = ( { info } ) => {
+const InfoStudentServiceCard = ( { info, resturl } ) => {
     const handleTitleSplit = (index) => {
         return info.section_name.split(' ')[index];
     }
@@ -18,7 +18,7 @@ const InfoStudentServiceCard = ( { info } ) => {
                     <h1>{handleTitleSplit(0)}</h1>
                     <h2>{handleTitleSplit(1) || 'Engineering'}</h2>
                 </div>
-                <MainButton title={'See all'} url={info.id} addStyle='student-service-section-card-main-button' />
+                <MainButton title={'See all'} url={info.id+resturl} addStyle='student-service-section-card-main-button'  />
             </div>
         </div>
     )
