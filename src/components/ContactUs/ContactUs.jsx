@@ -10,6 +10,7 @@ import { RiWhatsappLine } from "react-icons/ri";
 import TabTitle from "../../utils/TabTitle";
 
 const ContactUs = () => {
+  const companyEmail = "Spark.contact.it@gmail.com";
   TabTitle("Spark | Contact us");
 
   const { ref, inView, entry } = useInView({
@@ -22,6 +23,7 @@ const ContactUs = () => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
+  
 
   return (
     <section id="contact" className="contact-us py-6">
@@ -35,7 +37,7 @@ const ContactUs = () => {
             >
               <h1>Contact Us</h1>
               <div className="d-flex align-items-start gap-1 justify-content-start">
-                <a href="mailto:http://Spark.contact.it@gmail.com">
+                <a  href={`mailto:${companyEmail}`}>
                   <RiMailLine size={30} />
                 </a>
                 <a href="https://wa.me/+963962272881">
