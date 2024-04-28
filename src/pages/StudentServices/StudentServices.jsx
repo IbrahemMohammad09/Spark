@@ -8,19 +8,23 @@ import img1 from "../../images/StudentServices/img.jpg";
 import TabTitle from "../../utils/TabTitle";
 import { useInView } from "react-intersection-observer";
 const StudentServices = () => {
-  TabTitle("Spark | Student services");
-  const studentServices = [
-    {
-      title: "Students projects",
-      img: img1,
-      url: "/students-projects",
-    },
-    {
-      title: "Student Courses",
-      img: img1,
-      url: "/students-courses",
-    },
-  ];
+
+
+  
+    TabTitle('Spark | Student services');
+    const studentServices = [
+        {
+          title: 'Students projects',
+          img: img1,
+          url: '/student-projects'
+        },
+        {
+          title: 'Student Courses',
+          img: img1,
+          url: '/students-courses'
+        }
+      ];
+
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once

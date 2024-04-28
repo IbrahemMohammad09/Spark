@@ -19,39 +19,36 @@ import StudentServicesSection from "./pages/StudentServicesSection/StudentServic
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
 import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
 import StudentServices from "./pages/StudentServices/StudentServices";
+import StudentProjects from "./pages/StudentProjects/StudentProjects";
+import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 
 function App() {
   return (
     <div className="App position-relative">
-      <BrowserRouter>
-        <ScrollToTopOnPageChange />
-        <NavigationBar />
-        <Routes>
-          <Route path={"/"} exact element={<Home />} />
-          <Route path={"/about_us"} element={<AboutUs />} />
-          <Route path={"/contact_us"} element={<ContactUs />} />
-          <Route path={"/services"} element={<ServicesSection />} />
-          <Route path={"/our_team"} element={<OurTeam />} />
-          <Route path={"/our_projects"} element={<ProjectsSection />} />
-          <Route path={"/our_app"} element={<DownloadAppSection />} />
-          <Route path={"/company-services"} element={<CompanyServices />} />
-          <Route path={"/service/:id"} element={<DetailServices />} />
-          <Route
-            path={"/student-section-services"}
-            element={<StudentServicesSection />}
-          />
-          <Route
-            path={"/company-request/:id"}
-            element={<CompanyRequestPage />}
-          />
-          <Route path={"/completed"} element={<CompleteRequest />} />
-          <Route
-            path={"/student-section-services/:id/student-section-detail"}
-            element={<StudentServices />}
-          />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+
+        <BrowserRouter>
+          <ScrollToTopOnPageChange />
+          <NavigationBar/>
+          <Routes>
+            <Route path={"/"} exact element={<Home />}  />
+            <Route path={'/about_us'} element={<AboutUs />} />
+            <Route path={"/contact_us"} element={<ContactUs />} />
+            <Route path={"/services"} element={<ServicesSection />} />
+            <Route path={"/our_team"} element={<OurTeam />} />
+            <Route path={"/our_projects"} element={<ProjectsSection />} />
+            <Route path={"/our_app"} element={<DownloadAppSection />} />
+            <Route path={'/company-services'} element={<CompanyServices />}/>
+            <Route path={'/service/:id'} element={<DetailServices />}/>
+            <Route path={'/student-section-services'} element={<StudentServicesSection />}/>
+            <Route path={'/company-request/:id'} element={<CompanyRequestPage />}/>
+            <Route path={'/completed'} element={<CompleteRequest />}/>
+            <Route path={'/student-section-services/:id/student-section-detail'} element={<StudentServices />} />
+            <Route path={'/student-projects'} element={<StudentProjects />}/>
+            <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+
     </div>
   );
 }
