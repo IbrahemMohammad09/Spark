@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./animation.css";
 import "./App.css";
 import Home from "./pages/Home/Home";
@@ -21,6 +21,7 @@ import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
 import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
             <Route path={'/student-section-services/:id/student-section-detail'} element={<StudentServices />} />
             <Route path={'/student-projects'} element={<StudentProjects />}/>
             <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
+            <Route path="/error-page" element={<ErrorPage />}/>
+            <Route path="*"  element={<Navigate to={'/error-page'} />} />
           </Routes>
           <Footer />
         </BrowserRouter>

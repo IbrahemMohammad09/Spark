@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Axios } from "../../api/axios";
 import { Container } from "react-bootstrap";
@@ -18,6 +18,8 @@ const DetailServices = () => {
 
   const { language } = useLanguageContext();
 
+  const navigate = useNavigate();
+
   const getServiceData = async () => {
     try {
       const res = await Axios.get("/rest/service_web/");
@@ -26,6 +28,7 @@ const DetailServices = () => {
 
       if (!service) {
         setError(`Service with ID ${id} not found.`);
+        navigate('/error-page');
       } else {
         setServiceData(service);
       }
