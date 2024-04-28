@@ -15,7 +15,7 @@ const NavigationBar = () => {
   useEffect(() => {
     if (
       location.pathname === "/student_courses" ||
-      location.pathname === "/student_projects"
+      location.pathname === "/student-projects"
     ) {
       setActiveClass("active1");
     } else {
