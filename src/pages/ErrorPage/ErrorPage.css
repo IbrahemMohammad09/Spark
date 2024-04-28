@@ -1,0 +1,19 @@
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.error-page h1 {
+    color: rgba(47, 176, 205, 1);
+    font-size: 11rem;
+    font-weight: 700;
+    letter-spacing: 5%;
+}
+
+.error-page-main-button {
+    color: white;
+}

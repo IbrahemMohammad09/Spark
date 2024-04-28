@@ -93,7 +93,12 @@ const CompanyRequestPage = () => {
         Axios.post('rest/company_request/', data)
             .then(response => {
                 console.log(response.data);
-                navigate('/completed');
+                localStorage.setItem('hasCompletedRequest');
+                if(response.data.message !== 'Request Duplicated') {
+                    navigate('/completed');
+                } else {
+                    setError('Request Duplicated');
+                }
             })
             .catch(error => {
                 console.log(error.response.data);

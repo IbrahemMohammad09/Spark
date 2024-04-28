@@ -4,10 +4,19 @@ import { GrFacebookOption } from "react-icons/gr";
 import { BiLogoInstagram } from "react-icons/bi";
 import { MdWhatsapp } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 export const Footer = () => {
+  const [hideFooter, setHideFooter] = useState(false);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setHideFooter(pathname == "/error-page");
+  }, [pathname]);
+
   return (
-    <section>
+    <section className={`${hideFooter && 'd-none'}`}>
       <div className="Footer position-relative z-1">
         <div className="containerFooter">
           <div className="logoFooter">

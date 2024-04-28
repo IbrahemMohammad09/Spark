@@ -1,6 +1,6 @@
 import './StudentProjectRequest.css'
 import { Container } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../api/axios";
 import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
@@ -23,6 +23,14 @@ const StudentProjectRequest = () => {
 
     const navigate = useNavigate();
     
+    let { pathname } = useLocation();
+    
+    useEffect(() => {
+        if (!localStorage.getItem('hasCompletedRequest')) {
+            navigate('/error-page');
+        }
+        localStorage.removeItem('hasCompletedRequest');
+    }, [pathname]);
     // const checkFromStudentProjectId = async () => {
     //     const res = await Axios.post("//")
 
