@@ -48,6 +48,7 @@ function App() {
             <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
             <Route path="/error-page" element={<ErrorPage />}/>
             <Route path="*"  element={<Navigate to={'/error-page'} />} />
+            
           </Routes>
           <Footer />
         </BrowserRouter>

@@ -13,6 +13,8 @@ export const Footer = () => {
 
   useEffect(() => {
     setHideFooter(pathname == "/error-page");
+    const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
+    setHideFooter(!!isRequestPage);
   }, [pathname]);
 
   return (
