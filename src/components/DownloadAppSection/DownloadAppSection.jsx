@@ -24,7 +24,7 @@ const DownloadAppSection = () => {
   }, [inView, entry]);
 
   return (
-    <section id="hero" className="download-sec">
+    <section id="ourApp" className="download-sec">
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">

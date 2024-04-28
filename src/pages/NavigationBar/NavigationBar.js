@@ -115,7 +115,7 @@ const NavigationBar = () => {
               className="logo"
               loading="lazy"
               alt=""
-              src={require("../../images/logo.png")}
+              src={require("../../images/About.png")}
             />
             <div className="spark">SPARK</div>
           </Navbar.Brand>
@@ -134,23 +134,13 @@ const NavigationBar = () => {
               </Link>
               <Link
                 className={classNames(
-                  activeLink === "about" ? "navlink-active" : "navlink"
-                )}
-                to="/about_us"
-                href="#about"
-                onClick={() => handleSetActiveLink("about")}
-              >
-                About US
-              </Link>
-              <Link
-                className={classNames(
                   activeLink === "services" ? "navlink-active" : "navlink"
                 )}
                 to="/services"
                 href="#services"
                 onClick={() => handleSetActiveLink("services")}
               >
-                Services
+                Our Services
               </Link>
               <Link
                 className={classNames(
@@ -161,6 +151,16 @@ const NavigationBar = () => {
                 onClick={() => handleSetActiveLink("ourProject")}
               >
                 Our Projects
+              </Link>
+              <Link
+                className={classNames(
+                  activeLink === "ourApp" ? "navlink-active" : "navlink"
+                )}
+                to="/our_app"
+                href="#ourApp"
+                onClick={() => handleSetActiveLink("ourApp")}
+              >
+                Our App
               </Link>
               <Link
                 className={classNames(
@@ -181,6 +181,16 @@ const NavigationBar = () => {
                 onClick={() => handleSetActiveLink("ourTeam")}
               >
                 Our Team
+              </Link>
+              <Link
+                className={classNames(
+                  activeLink === "about" ? "navlink-active" : "navlink"
+                )}
+                to="/about_us"
+                href="#about"
+                onClick={() => handleSetActiveLink("about")}
+              >
+                About US
               </Link>
             </Nav>
           </Navbar.Collapse>
