@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './animation.css'
+import "./animation.css";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,8 +11,8 @@ import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSection";
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import "swiper/css";
-import CompanyServices from './pages/CompanyServices/CompanyServices';
-import DetailServices from './pages/DetailServices/DetailServices';
+import CompanyServices from "./pages/CompanyServices/CompanyServices";
+import DetailServices from "./pages/DetailServices/DetailServices";
 import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
@@ -22,12 +22,10 @@ import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 
-
 function App() {
-
-
   return (
     <div className="App position-relative">
+
         <BrowserRouter>
           <ScrollToTopOnPageChange />
           <NavigationBar/>
@@ -50,6 +48,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
+
     </div>
   );
 }

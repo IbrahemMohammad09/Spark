@@ -14,7 +14,7 @@ import { useInView } from "react-intersection-observer";
 import TabTitle from "../../utils/TabTitle";
 
 const OurTeam = () => {
-  TabTitle ('Spark | Our team')
+  TabTitle("Spark | Our team");
 
   const [teamData, setTeamData] = useState(null);
 
@@ -33,13 +33,14 @@ const OurTeam = () => {
   const swiperRef = useRef();
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the item is visible
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
   useEffect(() => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
+
   return (
     <section className="our-team" id="ourTeam">
       <Container>

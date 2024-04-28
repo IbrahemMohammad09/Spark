@@ -8,10 +8,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import TabTitle from "../../utils/TabTitle";
 
 const AboutUs = () => {
-
-
-  TabTitle ('Spark | About us');
-
+  TabTitle("Spark | About us");
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,12 +17,7 @@ const AboutUs = () => {
     setIsVisible(true);
   }, []);
   return (
-
     <section id="about" className={`${isVisible ? "fade-in-bottom" : ""}`}>
-
-    
-
-
       <div className="About">
         <div className="about-left">
           <h3>Description</h3>

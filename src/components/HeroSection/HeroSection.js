@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const HeroSection = () => {
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the item is visible
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
   useEffect(() => {
