@@ -17,7 +17,7 @@ const AboutUs = () => {
     setIsVisible(true);
   }, []);
   return (
-    <section id="about" className={`${isVisible ? "fade-in-bottom" : ""}`}>
+    <section id="about_us" className={`${isVisible ? "fade-in-bottom" : ""}`}>
       <div className="About">
         <div className="about-left">
           <h3>Description</h3>

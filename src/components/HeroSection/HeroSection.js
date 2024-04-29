@@ -13,6 +13,7 @@ const HeroSection = () => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
+
   return (
     <section id="hero" className="hero-section">
       <Container>
