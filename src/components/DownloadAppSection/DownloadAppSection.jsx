@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.png";
 import DownloadIcon from "../../images/DownloadAppSection/download.png";
@@ -11,7 +11,7 @@ import { Link } from "react-scroll";
 import TabTitle from "../../utils/TabTitle";
 
 const DownloadAppSection = () => {
-  TabTitle ('Spark | Our App  ');
+  TabTitle("Spark | Our App  ");
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
@@ -24,7 +24,7 @@ const DownloadAppSection = () => {
   }, [inView, entry]);
 
   return (
-    <section id="ourApp" className="download-sec">
+    <section id="our_app" className="download-sec">
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">

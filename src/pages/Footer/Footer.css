@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 
 .Footer {
   width: 100%;
@@ -14,7 +14,7 @@
   display: inline-block;
   min-width: 47px;
   color: #0d0d0d;
-  font-family: 'Roboto Serif, serif';
+  font-family: "Roboto Serif, serif";
   font-style: normal;
 }
 .containerFooter {
@@ -112,10 +112,22 @@
   -o-transition: 3s;
   transition-duration: 300ms;
 }
-.icon:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+
+.face:hover {
+  background-color: #3b5998;
+  color: white;
+}
+.insta:hover {
+  background-color: #bc2a8d;
+  color: white;
+}
+.linked:hover {
+  background-color: #007bb6;
+  color: white;
+}
+.whats:hover {
+  background-color: #25d366;
+  color: white;
 }
 @media (min-width: 641px) and (max-width: 1024px) {
   .Footer {

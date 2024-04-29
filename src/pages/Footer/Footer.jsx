@@ -60,16 +60,16 @@ export const Footer = () => {
         <div className="socialFooter">
           <p>Copyright ® 2024 Company All rights Recerved</p>
           <div className="icons">
-            <div className="icon">
+            <div className="icon face">
               <GrFacebookOption />
             </div>
-            <div className="icon">
+            <div className="icon insta">
               <BiLogoInstagram />
             </div>
-            <div className="icon">
+            <div className="icon whats">
               <MdWhatsapp />
             </div>
-            <div className="icon">
+            <div className="icon linked">
               <TiSocialLinkedin />
             </div>
           </div>

@@ -42,7 +42,7 @@ const OurTeam = () => {
   }, [inView, entry]);
 
   return (
-    <section className="our-team" id="ourTeam">
+    <section className="our-team" id="our_team">
       <Container>
         <h1>Our Team</h1>
       </Container>

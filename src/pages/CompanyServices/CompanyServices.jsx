@@ -4,6 +4,7 @@ import { Axios } from "../../api/axios";
 import "./CompanyServices.css";
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
 import TabTitle from "../../utils/TabTitle";
+import { useInView } from "react-intersection-observer";
 // import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 const CompanyServices = () => {
   TabTitle("Spark | Company services");
@@ -22,10 +23,22 @@ const CompanyServices = () => {
   useEffect(() => {
     getCompanyServicesData();
   }, []);
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
+  });
 
+  // Log values to console whenever inView or entry changes
+  useEffect(() => {
+    console.log("inView:", inView);
+    console.log("entry:", entry);
+  }, [inView, entry]);
   return (
     <section id="services" className="company-services position-relative">
-      <div className="main-container">
+      <div
+        ref={ref}
+        className={`${inView ? "fade-in-bottom" : ""} main-container`}
+      >
         <Container>
           <div className="company-services-grid">
             {services &&

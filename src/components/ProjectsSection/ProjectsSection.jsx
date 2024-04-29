@@ -38,7 +38,7 @@ const ProjectsSection = () => {
     console.log("entry:", entry);
   }, [inView, entry]);
   return (
-    <section id="ourProject">
+    <section id="our_projects">
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>

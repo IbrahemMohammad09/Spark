@@ -23,10 +23,9 @@ const ContactUs = () => {
     console.log("inView:", inView);
     console.log("entry:", entry);
   }, [inView, entry]);
-  
 
   return (
-    <section id="contact" className="contact-us py-6">
+    <section id="contact_us" className="contact-us py-6">
       <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
         <Container>
           <Row className="justify-content-center">
@@ -37,7 +36,7 @@ const ContactUs = () => {
             >
               <h1>Contact Us</h1>
               <div className="d-flex align-items-start gap-1 justify-content-start">
-                <a  href={`mailto:${companyEmail}`}>
+                <a href={`mailto:${companyEmail}`}>
                   <RiMailLine size={30} />
                 </a>
                 <a href="https://wa.me/+963962272881">
