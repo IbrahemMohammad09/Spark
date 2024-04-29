@@ -45,7 +45,7 @@ function App() {
             <Route path={'/completed'} element={<CompleteRequest />}/>
             <Route path={'/student-services/:id'} element={<StudentServices />} />
             <Route path={'/student-projects/:id'} element={<StudentProjects />}/>
-            <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
+            <Route path={'/student-project-request/:pk'} element={<StudentProjectRequest />}/>
             <Route path="/error-page" element={<ErrorPage />}/>
             <Route path="*"  element={<Navigate to={'/error-page'} />} />
           </Routes>

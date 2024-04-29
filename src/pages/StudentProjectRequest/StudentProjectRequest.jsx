@@ -25,12 +25,12 @@ const StudentProjectRequest = () => {
     
     let { pathname } = useLocation();
     
-    useEffect(() => {
-        if (!localStorage.getItem('hasCompletedRequest')) {
-            navigate('/error-page');
-        }
-        localStorage.removeItem('hasCompletedRequest');
-    }, [pathname]);
+    // useEffect(() => {
+    //     if (!localStorage.getItem('hasCompletedRequest')) {
+    //         navigate('/error-page');
+    //     }
+    //     localStorage.removeItem('hasCompletedRequest');
+    // }, [pathname]);
     // const checkFromStudentProjectId = async () => {
     //     const res = await Axios.post("//")
 
