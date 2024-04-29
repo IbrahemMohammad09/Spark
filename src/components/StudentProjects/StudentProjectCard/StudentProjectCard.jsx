@@ -1,18 +1,24 @@
 import MainButton from '../../SharedComponents/MainButton/MainButton'
 import './StudentProjectCard.css'
+import { useLanguageContext } from "../../../hooks/useLanguageContext";
 
 const StudentProjectCard = ( { info } ) => {
+    const { language } = useLanguageContext();
+
     return (
         <div className='student-project-card'>
             <div className='student-project-img-box'>
-                <img src={info.imgs[0]} alt={info.imgs[0]} loading='lazy'/>
-                <img src={info.imgs[1]} alt={info.imgs[1]} loading='lazy'/>
+                    <div>
+                        {info.pictures.map((picture, index) => (
+                            <img key={index} src={picture.image}  />
+                        ))}
+                    </div>
             </div>
             <div className='student-project-info-box'>
-                <h1>{info.title}</h1>
-                <h2>{info.subtitle}</h2>
-                <h3>{[...info.discreption].map((e, i) => i <= 250 && e)}</h3>
-                <MainButton title={'Request Now'} url={`/student-project-request/${info.id}`} addStyle='student-project-card-main-button'/>
+                <h1>{info.project_name[language]}</h1>
+                <h2>{info.project_field[language]}</h2>
+                <h3>{info.project_desc[language]}</h3>
+                <MainButton title={'Request Now'} url={`/student-project-request/${info.pk}`} addStyle='student-project-card-main-button'/>
             </div>
         </div>
     )

@@ -1,15 +1,37 @@
 import "./StudentServices.css";
 import { Container } from "react-bootstrap";
-import InfoStudentServiceCard from "../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard";
-import { Axios } from "../../api/axios";
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import img1 from "../../images/StudentServices/img.jpg";
 import TabTitle from "../../utils/TabTitle";
 import { useInView } from "react-intersection-observer";
+import { useParams,useNavigate } from "react-router-dom";
+import { Axios } from "../../api/axios";
+
 const StudentServices = () => {
 
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const requestId = parseInt(id, 10); 
+  const restUrl = "/"+requestId;
 
+  const getStudentSections = async () => {
+    try {
+      const res = await Axios.get("rest/section_list/");
+      const student = res.data?.sections.find((e) => e.id == requestId);
+      if(!student){
+        navigate('/error-page');
+      } 
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getStudentSections();
+  }, [id]);
+
+    
   
     TabTitle('Spark | Student services');
     const studentServices = [
@@ -53,7 +75,7 @@ const StudentServices = () => {
               <h1>{student.title}</h1>
               <MainButton
                 title={"see more"}
-                url={student.url}
+                url={student.url+restUrl}
                 addStyle="student-card-main-button"
               />
             </div>

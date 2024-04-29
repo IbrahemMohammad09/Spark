@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "./InfoStudentServiceCard.css";
 
-const InfoStudentServiceCard = ({ info, resturl }) => {
+const InfoStudentServiceCard = ({ info }) => {
   const handleTitleSplit = (index) => {
     return info.section_name.split(" ")[index];
   };
@@ -39,7 +39,7 @@ const InfoStudentServiceCard = ({ info, resturl }) => {
         </div>
         <MainButton
           title={"See all"}
-          url={info.id + resturl}
+          url={`/student-services/${info.id}`}
           addStyle="student-service-section-card-main-button"
         />
       </div>
