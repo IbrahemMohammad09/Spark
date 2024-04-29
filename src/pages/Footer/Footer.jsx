@@ -12,10 +12,12 @@ export const Footer = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    setHideFooter(pathname == "/error-page");
-    const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
+    setHideFooter(pathname.includes("/error-page") 
+    || pathname.includes("/student-project-request/") 
+    || pathname.includes("/company-request"));
+    // const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
     
-    setHideFooter(!!isRequestPage);
+    // setHideFooter(!!isRequestPage);
   }, [pathname]);
 
   return (

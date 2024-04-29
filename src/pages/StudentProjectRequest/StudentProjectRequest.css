@@ -16,6 +16,24 @@
     align-items: center;
 }
 
+.student-project-request-page .cover-img div {
+    position: relative;
+}
+
+.student-project-request-page .cover-img div::before {
+    content: attr(data-title);
+    position: absolute;
+    left: 0 ;
+    top: -5rem;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 0.01em;
+}
+
 .student-project-request-page .main-container {
     width: 73%;
     margin-right: 27%;
@@ -24,7 +42,6 @@
 .student-project-request-page .cover-img img {
     object-fit: cover;
     width: 90%;
-    transform: translateY(-50%);
 }
 
 .student-project-request-page button {
@@ -48,7 +65,8 @@
     .student-project-request-page .cover-img {
         width: 50%;
     }
-    .student-project-request-page .cover-img img {
+    .student-project-request-page .cover-img img,
+    .student-project-request-page .cover-img div::before {
         display: none;
     }
     .student-project-request-page-main-button {

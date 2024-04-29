@@ -109,7 +109,10 @@ const CompanyRequestPage = () => {
     return (
         <section className='company-request-page'>
             <div className='cover-img fade-in-bottom'>
-                <img src={Img} alt={Img}/>
+                {/* <h1>Project Request</h1> */}
+                <div data-title="Project Request">
+                    <img src={Img} alt={Img}/>
+                </div>
             </div>
             <div className="main-container">
                 {!error && <Container>
