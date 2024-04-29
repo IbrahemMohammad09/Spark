@@ -100,7 +100,9 @@ const StudentProjectRequest = () => {
     return (
         <section className='student-project-request-page'>
             <div className='cover-img fade-in-bottom'>
-                <img src={Img} alt={Img}/>
+                <div data-title="Student Request">
+                    <img src={Img} alt={Img}/>
+                </div>
             </div>
             <div className="main-container">
                 {!error && <Container>

@@ -22,6 +22,8 @@ import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import StudentCoursesCard from "./components/StudentCourses/StudentCoursesCard/StudentCoursesCard";
+import StudentCourses from "./pages/StudentCourses/StudentCourses";
 
 function App() {
   return (
@@ -45,7 +47,8 @@ function App() {
             <Route path={'/completed'} element={<CompleteRequest />}/>
             <Route path={'/student-services/:id'} element={<StudentServices />} />
             <Route path={'/student-projects/:id'} element={<StudentProjects />}/>
-            <Route path={'/student-project-request/:pk'} element={<StudentProjectRequest />}/>
+            <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
+            <Route path={'/student-courses/:id'} element={<StudentCourses />}/>
             <Route path="/error-page" element={<ErrorPage />}/>
             <Route path="*"  element={<Navigate to={'/error-page'} />} />
           </Routes>

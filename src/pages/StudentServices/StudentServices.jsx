@@ -43,7 +43,7 @@ const StudentServices = () => {
         {
           title: 'Student Courses',
           img: img1,
-          url: '/students-courses'
+          url: '/student-courses'
         }
       ];
 
