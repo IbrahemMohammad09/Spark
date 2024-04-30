@@ -1,5 +1,5 @@
 import "./Footer.css";
-import logo from "../../images/About.png";
+import logo from "../../images/log.png";
 import { GrFacebookOption } from "react-icons/gr";
 import { BiLogoInstagram } from "react-icons/bi";
 import { MdWhatsapp } from "react-icons/md";

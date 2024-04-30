@@ -97,7 +97,7 @@ const NavigationBar = () => {
               className="logo"
               loading="lazy"
               alt=""
-              src={require("../../images/About.png")}
+              src={require("../../images/log.png")}
             />
             <div className="spark">SPARK</div>
           </Navbar.Brand>
