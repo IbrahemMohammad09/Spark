@@ -23,12 +23,7 @@ const OurServices = () => {
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
-
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
+  
   return (
     <div className="main-section our-services fade-in-bottom">
       <MainHomeTitle title={"Our Services"} />

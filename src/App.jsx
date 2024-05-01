@@ -22,13 +22,11 @@ import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import StudentCoursesCard from "./components/StudentCourses/StudentCoursesCard/StudentCoursesCard";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 
 function App() {
   return (
     <div className="App position-relative">
-
         <BrowserRouter>
           <ScrollToTopOnPageChange />
           <NavigationBar/>

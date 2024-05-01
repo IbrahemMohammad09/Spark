@@ -6,15 +6,12 @@ import DownloadAppSection from "../../components/DownloadAppSection/DownloadAppS
 import ContactUs from "../../components/ContactUs/ContactUs";
 import OurTeam from "../../components/OurTeam/OurTeam";
 import HeroSection from "../../components/HeroSection/HeroSection";
-import TabTitle from "../../utils/TabTitle";
-
-
+import SEO from "../../components/SharedComponents/SEO/SEO";
 
 const Home = () => {
-  TabTitle ('Spark');
   return (
     <main className="position-relative">
-      <div  className="main-container">
+      <div className="main-container">
           <HeroSection />
           <BrushImage key={0} type={"l"} postion={"brush1"} />
           <BrushImage key={1} type={"r"} postion={"brush2"} />
@@ -24,8 +21,8 @@ const Home = () => {
           <DownloadAppSection />
           <ContactUs />
           <OurTeam />
-        
       </div>
+      <SEO title={'Spark'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
     </main>
   );
 };

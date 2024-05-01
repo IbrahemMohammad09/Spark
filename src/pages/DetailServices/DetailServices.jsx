@@ -7,11 +7,9 @@ import MainButton from "../../components/SharedComponents/MainButton/MainButton"
 import { useLanguageContext } from "../../hooks/useLanguageContext";
 import { useInView } from "react-intersection-observer";
 import "./DetailServices.css";
-import TabTitle from "../../utils/TabTitle";
+import SEO from "../../components/SharedComponents/SEO/SEO";
 
 const DetailServices = () => {
-  TabTitle("Spark | Service details");
-
   const [serviceData, setServiceData] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
@@ -32,7 +30,6 @@ const DetailServices = () => {
       } else {
         setServiceData(service);
       }
-      console.log(id, serviceData);
     } catch (error) {
       setError("Error fetching services.");
     }
@@ -42,29 +39,17 @@ const DetailServices = () => {
     getServiceData();
   }, [id]);
 
-  // if (error) {
-  //     return <div>{error}</div>;
-  // }
-
-  // if (!serviceData) {
-  //     return <div>Loading...</div>;
-  // }
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
   return (
     <section
       id="services"
       ref={ref}
-      className={`${inView ? "fade-in-bottom " : ""} service-details`}
-    >
+      className={`${inView ? "fade-in-bottom " : ""} service-details`}>
+      <SEO title={'Spark | Service details'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container>
         <div>
           <div className="img-cover">

@@ -5,12 +5,10 @@ import Img2 from "../../images/OurProjectsImage/Home Page 9.png";
 import InfoCard from "./InfoCard/InfoCard";
 import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
-import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import TabTitle from "../../utils/TabTitle";
+import SEO from "../SharedComponents/SEO/SEO";
 
 const ProjectsSection = () => {
-  TabTitle("Spark | Our projects");
   const projects = [
     {
       title: "MStore",
@@ -32,13 +30,9 @@ const ProjectsSection = () => {
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
   return (
     <section id="our_projects">
+      <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>

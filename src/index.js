@@ -4,14 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { LanguageContextProvider } from './context/LanguageContext';
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+const helmetContext = {};
+
 root.render(
   <React.StrictMode>
-    <LanguageContextProvider>
-      <App />
-    </LanguageContextProvider>
+      <HelmetProvider context={helmetContext}>
+        <LanguageContextProvider>
+          <App />
+        </LanguageContextProvider>
+      </HelmetProvider>
   </React.StrictMode>
 );
 

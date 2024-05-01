@@ -11,7 +11,6 @@ const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("hero");
   const [activeClass, setActiveClass] = useState("active1");
   const [test, setTest] = useState("");
-  console.log("🚀 ~ NavigationBar ~ test:", test);
   let isLastSectionActive = false;
   const location = useLocation();
   useEffect(() => {
@@ -56,10 +55,7 @@ const NavigationBar = () => {
     setActiveLink(location.pathname.substring(1) || "hero");
     setTest("");
   }, [location]);
-  console.log(
-    "🚀 ~ useEffect ~ location.pathname.substring(1):",
-    location.pathname.substring(1)
-  );
+
   useEffect(() => {
     if (
       location.pathname === "/student_courses" ||
@@ -96,7 +92,7 @@ const NavigationBar = () => {
             <img
               className="logo"
               loading="lazy"
-              alt=""
+              alt="spark logo"
               src={require("../../images/log.png")}
             />
             <div className="spark">SPARK</div>

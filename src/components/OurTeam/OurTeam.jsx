@@ -11,38 +11,32 @@ import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
-import TabTitle from "../../utils/TabTitle";
+import SEO from "../SharedComponents/SEO/SEO";
 
 const OurTeam = () => {
-  TabTitle("Spark | Our team");
-
   const [teamData, setTeamData] = useState(null);
 
   const getTeamData = async () => {
     try {
       const res = await Axios.get("rest/member_list/");
       setTeamData(res.data);
-      console.log(res);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {
     getTeamData();
   }, []);
+
   const swiperRef = useRef();
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
-
   return (
     <section className="our-team" id="our_team">
+      <SEO title={'Spark | Our team'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container>
         <h1>Our Team</h1>
       </Container>
@@ -78,7 +72,7 @@ const OurTeam = () => {
                       <img
                         className="d-block mx-auto"
                         src={BaseURL + member?.member_picture}
-                        alt=""
+                        alt="member picture"
                       />
                     </div>
                     <div className="text-container">
