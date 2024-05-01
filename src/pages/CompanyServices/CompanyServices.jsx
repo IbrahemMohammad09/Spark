@@ -12,7 +12,7 @@ const CompanyServices = () => {
 
   const getCompanyServicesData = async () => {
     try {
-      const res = await Axios.get("rest/service_web/");
+      const res = await Axios.get("rest/service_list_web/");
       setServices(res.data.services);
       console.log(res.data.services);
     } catch (error) {

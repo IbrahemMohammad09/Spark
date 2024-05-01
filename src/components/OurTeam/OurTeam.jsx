@@ -20,7 +20,7 @@ const OurTeam = () => {
 
   const getTeamData = async () => {
     try {
-      const res = await Axios.get("rest/member_list/");
+      const res = await Axios.get("rest/member_list_web/");
       setTeamData(res.data);
       console.log(res);
     } catch (error) {
