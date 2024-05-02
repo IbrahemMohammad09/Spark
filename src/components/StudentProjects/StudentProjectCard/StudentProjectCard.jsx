@@ -10,7 +10,7 @@ const StudentProjectCard = ( { info } ) => {
             <div className='student-project-img-box'>
                     <div>
                         {info.pictures.map((picture, index) => (
-                            <img key={index} src={picture.image}  />
+                            <img key={index} src={picture.image}  alt={picture.image}/>
                         ))}
                     </div>
             </div>

@@ -10,7 +10,7 @@ const StudentCoursesCard = ( { info } ) => {
             <div className='student-course-img-box'>
                     <div>
                         {info.pictures.map((picture, index) => (
-                            <img key={index} src={picture.image}  />
+                            <img key={index} src={picture.image} alt={picture.image} />
                         ))}
                     </div>
             </div>

@@ -9,11 +9,6 @@ const HeroSection = () => {
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
-
   return (
     <section id="hero" className="hero-section">
       <Container>

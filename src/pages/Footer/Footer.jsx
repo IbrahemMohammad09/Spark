@@ -26,7 +26,7 @@ export const Footer = () => {
         <div className="containerFooter">
           <div className="logoFooter">
             <div>
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="spark logo" />
             </div>
             <p className="spark-footer">SPARK</p>
           </div>

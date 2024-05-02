@@ -22,13 +22,12 @@ import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import StudentCoursesCard from "./components/StudentCourses/StudentCoursesCard/StudentCoursesCard";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
+import OurProjects from "./pages/OurProjects/OurProjects";
 
 function App() {
   return (
     <div className="App position-relative">
-
         <BrowserRouter>
           <ScrollToTopOnPageChange />
           <NavigationBar/>
@@ -49,6 +48,7 @@ function App() {
             <Route path={'/student-projects/:id'} element={<StudentProjects />}/>
             <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
             <Route path={'/student-courses/:id'} element={<StudentCourses />}/>
+            <Route path={'/our-projects/'} element={<OurProjects />}/>
             <Route path="/error-page" element={<ErrorPage />}/>
             <Route path="*"  element={<Navigate to={'/error-page'} />} />
           </Routes>

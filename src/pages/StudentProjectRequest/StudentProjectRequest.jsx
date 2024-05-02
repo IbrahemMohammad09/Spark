@@ -6,12 +6,9 @@ import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
 import Img from '../../images/CompanyRequestPageImages/company-request-page.png'
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
-import TabTitle from '../../utils/TabTitle';
+import SEO from '../../components/SharedComponents/SEO/SEO';
 
 const StudentProjectRequest = () => {
-
-    TabTitle('Spark | student request');
-
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -88,17 +85,17 @@ const StudentProjectRequest = () => {
 
         Axios.post('/rest/student_project_request/', data)
             .then(response => {
-                console.log(response.data);
                 navigate('/completed');
             })
             .catch(error => {
-                console.log(error.response.data);
+                // console.log(error.response.data);
                 setErrorRequest(error.response.data)
             });
     }
 
     return (
         <section className='student-project-request-page'>
+            <SEO title={'Spark | Student request'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <div className='cover-img fade-in-bottom'>
                 <div data-title="Student Request">
                     <img src={Img} alt={Img}/>
