@@ -17,3 +17,9 @@
 .error-page-main-button {
     color: white;
 }
+
+@media screen and (max-width:450px) {
+    .error-page h1 {
+        font-size: 8rem;
+    }    
+}

@@ -128,11 +128,11 @@ const NavigationBar = () => {
               </NavLink>
               <NavLink
                 className={classNames(
-                  activeLink === "our_projects" || test === "ourProject"
+                  activeLink === "our-projects" || test === "ourProject"
                     ? "navlink-active"
                     : "navlink"
                 )}
-                to="/our_projects"
+                to="/our-projects"
                 href="#ourProject"
                 onClick={() => handleSetActiveLink("ourProject")}
               >

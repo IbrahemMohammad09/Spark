@@ -5,7 +5,7 @@ import "./CompanyServices.css";
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
-// import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
+
 const CompanyServices = () => {
   const [services, setServices] = useState([]);
 
