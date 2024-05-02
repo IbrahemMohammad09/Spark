@@ -27,7 +27,7 @@ const InfoStudentServiceCard = ({ info }) => {
     >
       <div className="img-cover">
         <img
-          src={`${BaseURL}/${info.section_image}`}
+          src={`${BaseURL}${info.section_image_web}`}
           alt={info.section_image}
           loading="lazy"
         />
@@ -39,7 +39,7 @@ const InfoStudentServiceCard = ({ info }) => {
         </div>
         <MainButton
           title={"See all"}
-          url={`/student-services/${info.id}`}
+          url={`/student-services/${info.pk}`}
           addStyle="student-service-section-card-main-button"
         />
       </div>

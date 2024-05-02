@@ -9,7 +9,7 @@ const StudentServicesSection = () => {
 
   const getStudentSectionsServicesData = async () => {
     try {
-      const res = await Axios.get("rest/section_list/");
+      const res = await Axios.get("rest/sections_list_web/");
       setServices(res.data.sections);
     } catch (error) {
       // console.log(error);
