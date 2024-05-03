@@ -26,8 +26,8 @@ const ProjectsSection = () => {
     },
   ];
   const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
+    triggerOnce: true, 
+    threshold: 0.1, 
   });
 
   return (
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
             ))}
           </div>
           <MainButton
-            url={"/"}
+            url={"/our-projects/"}
             title={"See all"}
             addStyle={"projects-button-see-all"}
           />
