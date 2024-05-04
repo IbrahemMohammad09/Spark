@@ -16,7 +16,7 @@ const StudentCourses = () => {
 
     const getStudentSections = async () => {
         try {
-            const res = await Axios.get("rest/section_list/");
+            const res = await Axios.get("rest/student_courses/");
             const student = res.data?.sections.find((e) => e.id == requestId);
             if(!student){
                 navigate('/error-page');

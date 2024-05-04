@@ -8,6 +8,7 @@ import OurTeam from "../../components/OurTeam/OurTeam";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 
+
 const Home = () => {
   return (
     <main className="position-relative">

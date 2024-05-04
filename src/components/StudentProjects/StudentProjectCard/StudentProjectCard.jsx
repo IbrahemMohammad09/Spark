@@ -1,6 +1,7 @@
 import MainButton from '../../SharedComponents/MainButton/MainButton'
 import './StudentProjectCard.css'
 import { useLanguageContext } from "../../../hooks/useLanguageContext";
+import {BaseURL} from '../../../utils/constants'
 
 const StudentProjectCard = ( { info } ) => {
     const { language } = useLanguageContext();
@@ -8,11 +9,11 @@ const StudentProjectCard = ( { info } ) => {
     return (
         <div className='student-project-card'>
             <div className='student-project-img-box'>
-                    <div>
-                        {info.pictures.map((picture, index) => (
-                            <img key={index} src={picture.image}  alt={picture.image}/>
-                        ))}
-                    </div>
+                <div>
+                    {info.web_pictures.map((picture, index) => (
+                        <img key={index} src={`${BaseURL}/${picture.image}`}  alt={picture.image}/>
+                    ))}
+                </div>
             </div>
             <div className='student-project-info-box'>
                 <h1>{info.project_name[language]}</h1>

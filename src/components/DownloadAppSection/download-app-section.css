@@ -1,8 +1,8 @@
 .download-sec {
   position: relative;
   background-color: #2fb0cd;
-  margin: 50px 0;
-  padding: 40px 0;
+  margin: 100px 0;
+  padding: 60px 0;
 }
 
 .download-sec::after {

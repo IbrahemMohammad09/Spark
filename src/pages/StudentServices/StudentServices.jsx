@@ -16,8 +16,8 @@ const StudentServices = () => {
 
   const getStudentSections = async () => {
     try {
-      const res = await Axios.get("rest/section_list/");
-      const student = res.data?.sections.find((e) => e.id == requestId);
+      const res = await Axios.get("rest/sections_list_web/");
+      const student = res.data?.sections.find((e) => e.pk == requestId);
       if(!student){
         navigate('/error-page');
       } 
@@ -61,10 +61,10 @@ const StudentServices = () => {
             }  student-section-card bounceInUp`}
           >
             <div className="img-cover">
-              <img src={student.img} alt={student.img}/>
+              <img src={student.section_image_web} />
             </div>
             <div>
-              <h1>{student.title}</h1>
+              <h1>{student.section_name}</h1>
               <MainButton
                 title={"see more"}
                 url={student.url+restUrl}

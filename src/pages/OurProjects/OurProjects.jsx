@@ -4,6 +4,7 @@ import Img1 from '../../images/OurProjectsImages/Bill Sitting using laptop 1.web
 import Img2 from '../../images/OurProjectsImages/Frame 1597884239.webp'
 import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProjectCard"
 import Img from '../../images/OurProjectsImages/project.webp'
+import '../../animation.css'
 
 const OurProjects = () => {
     const projects = [
@@ -44,8 +45,13 @@ const OurProjects = () => {
     const description = 'Our projects involve creating user-friendly interfaces that make navigating websites or apps a breeze. we focus on understanding the needs and behaviors of users to create designs that not only look good but also function intuitively.';
 
     return (
+<<<<<<< HEAD
         <section className="our-projects-page position-relative">
             <SEO title={'Spark | Our projects'} description={description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+=======
+        <section className="our-projects-page position-relative ">
+            <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+>>>>>>> b186281122da69b43cf8dc794d27e2c50e5aac08
             <div className="top-section">
                 <div className="design-box">
                     <img src={Img1} alt={Img1} loading="lazy" />
@@ -53,9 +59,9 @@ const OurProjects = () => {
                 </div>
                 <h1 className="title-text">{description}</h1>
             </div>
-            <div className="our-projects-cards main-container">
+            <div className="our-projects-cards main-container bounceInUp">
                 <h2 className="title">Our Projects</h2>
-                <div className="our-projects-grid">
+                <div className="our-projects-grid ">
                     {projects.map((e, i) => <OurProjectCard key={i} info={e}/>)}
                 </div>
             </div>
