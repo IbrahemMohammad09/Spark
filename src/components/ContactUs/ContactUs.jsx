@@ -5,6 +5,8 @@ import { useInView } from "react-intersection-observer";
 import { RiMailLine } from "react-icons/ri";
 import { RiWhatsappLine } from "react-icons/ri";
 import SEO from "../SharedComponents/SEO/SEO";
+import mailIcon from "../../images/ContactUSSection/mail.jpg"
+import callIcon from "../../images/ContactUSSection/call.jpg"
 
 const ContactUs = () => {
   const companyEmail = "Spark.contact.it@gmail.com";
@@ -25,14 +27,26 @@ const ContactUs = () => {
               xs={10}
               lg={3}
             >
-              <h1>Contact Us</h1>
-              <div className="d-flex align-items-start gap-1 justify-content-start">
-                <a href={`mailto:${companyEmail}`}>
-                  <RiMailLine size={30} />
-                </a>
-                <a href="https://wa.me/+963962272881">
-                  <RiWhatsappLine size={30} />
-                </a>
+              <div className="contact-container">
+                <h1 className="contact-h1">Contact Us</h1>
+                <div className="d-flex align-items-start gap-1 justify-content-start contact-box">
+                  <a href={`mailto:${companyEmail}`}>
+                    {/* <RiMailLine size={30} /> */}
+                    <div className="contact">
+                      <img src={mailIcon} className="contact-icon" />
+                      <p className="contact-do">Mail Us</p>
+                      <p className="contact-where">Spark.contact.it@gmail.com</p>
+                    </div>
+                  </a>
+                  <a href="https://wa.me/+963962272881">
+                    {/* <RiWhatsappLine size={30} /> */}
+                    <div className="contact">
+                      <img src={callIcon} className="contact-icon" />
+                      <p className="contact-do">Call Us</p>
+                      <p className="contact-where">+001 6547 658</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </Col>
             <Col xs={10} lg={9}>
