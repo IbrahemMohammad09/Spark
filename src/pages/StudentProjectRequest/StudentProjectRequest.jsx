@@ -95,9 +95,9 @@ const StudentProjectRequest = () => {
 
     return (
         <section className='student-project-request-page'>
-            <SEO title={'Spark | Student request'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+            <SEO title={'Spark | Student Project Request'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <div className='cover-img fade-in-bottom'>
-                <div data-title="Student Request">
+                <div data-title="Student Project Request">
                     <img src={Img} alt={Img}/>
                 </div>
             </div>
