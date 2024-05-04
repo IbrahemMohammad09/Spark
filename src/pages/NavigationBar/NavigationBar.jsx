@@ -11,8 +11,12 @@ const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("hero");
   const [activeClass, setActiveClass] = useState("active1");
   const [test, setTest] = useState("");
+  const [hideNav, setHideNav] = useState(false);
+
   let isLastSectionActive = false;
+
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -50,6 +54,7 @@ const NavigationBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array to run effect only once on mount
+
   useEffect(() => {
     // تحديث الرابط النشط استنادًا إلى المسار
     setActiveLink(location.pathname.substring(1) || "hero");
@@ -84,8 +89,15 @@ const NavigationBar = () => {
     );
   }
 
+  useEffect(() => {
+    setHideNav(
+      location.pathname.includes('/view-project')
+    );
+  }, [location.pathname])
+  
+
   return (
-    <div className={classNames("nav", activeClass)}>
+    <div className={`${classNames("nav", activeClass)} ${hideNav && 'd-none'}`}>
       <Navbar expand="sm" fixed="top">
         <Container>
           <Navbar.Brand to="/">

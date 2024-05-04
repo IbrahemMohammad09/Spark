@@ -24,6 +24,7 @@ import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectR
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 import OurProjects from "./pages/OurProjects/OurProjects";
+import ViewProject from "./pages/ViewProject/ViewProject";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path={'/student-project-request/:id'} element={<StudentProjectRequest />}/>
             <Route path={'/student-courses/:id'} element={<StudentCourses />}/>
             <Route path={'/our-projects/'} element={<OurProjects />}/>
+            <Route path={'/view-project/:id'} element={<ViewProject />}/>
             <Route path="/error-page" element={<ErrorPage />}/>
             <Route path="*"  element={<Navigate to={'/error-page'} />} />
           </Routes>

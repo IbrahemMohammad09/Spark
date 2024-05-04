@@ -14,7 +14,9 @@ export const Footer = () => {
   useEffect(() => {
     setHideFooter(pathname.includes("/error-page") 
     || pathname.includes("/student-project-request/") 
-    || pathname.includes("/company-request"));
+    || pathname.includes("/company-request")
+    || pathname.includes("/view-project")
+    );
     // const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
     
     // setHideFooter(!!isRequestPage);

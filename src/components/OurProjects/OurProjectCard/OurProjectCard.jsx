@@ -12,7 +12,7 @@ const OurProjectCard = ( { info } ) => {
                 <h2>{info.type}</h2>
                 <h3>{info.subtitle}</h3>
                 <a href={info.url} className='url'>{info.url}</a>
-                <Link to={info.link} className='link'>Visit</Link>
+                <Link to={'/view-project/'+info.id} className='link'>Visit</Link>
             </div>
         </div>
     )
