@@ -43,7 +43,7 @@ const ContactUs = () => {
                     <div className="contact">
                       <img src={callIcon} className="contact-icon" />
                       <p className="contact-do">Call Us</p>
-                      <p className="contact-where">+001 6547 658</p>
+                      <p className="contact-where">+963 962 272 881</p>
                     </div>
                   </a>
                 </div>
