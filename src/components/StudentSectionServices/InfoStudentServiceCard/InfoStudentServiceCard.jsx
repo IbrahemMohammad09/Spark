@@ -1,10 +1,11 @@
 import MainButton from "../../SharedComponents/MainButton/MainButton";
 import { BaseURL } from "../../../utils/constants";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import "./InfoStudentServiceCard.css";
-
+import { Loading } from "../../Loading/Loading";
 const InfoStudentServiceCard = ({ info }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const handleTitleSplit = (index) => {
     return info.section_name.split(" ")[index];
   };
@@ -26,10 +27,13 @@ const InfoStudentServiceCard = ({ info }) => {
       } student-service-section-card bounceInUp`}
     >
       <div className="img-cover">
+        {isLoading && <Loading color="#2fb0cd" />}
         <img
           src={`${BaseURL}/${info.section_image}`}
           alt={info.section_image}
           loading="lazy"
+          style={{ display: isLoading ? "none" : "block" }}
+          onLoad={() => setIsLoading(false)}
         />
       </div>
       <div>

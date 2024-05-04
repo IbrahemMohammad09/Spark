@@ -27,21 +27,37 @@ const ProjectsSection = () => {
       img: Img2,
     },
   ];
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
+  const [userHasScrolled, setUserHasScrolled] = useState(false);
+  const [hasBeenInView, setHasBeenInView] = useState(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
-  // Log values to console whenever inView or entry changes
+  const handleUserScroll = () => {
+    setUserHasScrolled(true);
+  };
+
   useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
+    // إضافة event listener للتمرير
+    window.addEventListener("scroll", handleUserScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleUserScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (inView && userHasScrolled) {
+      setHasBeenInView(true);
+    }
+  }, [inView, userHasScrolled]);
   return (
     <section id="our_projects">
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
-        <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
+        <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
           <div className="our-projects-cards">
             {projects?.map((e, i) => (
               <InfoCard key={i} info={e} />

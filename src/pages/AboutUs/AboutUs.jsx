@@ -6,11 +6,12 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
 import TabTitle from "../../utils/TabTitle";
-
+import { Loading } from "../../components/Loading/Loading";
 const AboutUs = () => {
   TabTitle("Spark | About us");
 
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Set isVisible to true after component mounts
@@ -35,7 +36,14 @@ const AboutUs = () => {
         </div>
         <div className="about-right">
           <div>
-            <img src={about} alt="" className="about-image" />
+            {isLoading && <Loading color="#2fb0cd" />}
+            <img
+              src={about}
+              alt=""
+              className="about-image"
+              style={{ display: isLoading ? "none" : "block" }}
+              onLoad={() => setIsLoading(false)}
+            />
           </div>
           <div className="about-contact">
             <h3>SPARK</h3>

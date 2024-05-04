@@ -1,11 +1,12 @@
-
+import React, { useEffect } from "react";
 import MainHomeTitle from "../../SharedComponents/MainHomeTitle/MainHomeTitle";
-import "./OurServices.css";
+import InfoCard from "./InfoCard/InfoCard";
 import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).png";
 import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.png";
-import InfoCard from "./InfoCard/InfoCard";
-import { useEffect } from "react";
+import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
+
 const OurServices = () => {
   const services = [
     {
@@ -19,28 +20,29 @@ const OurServices = () => {
       img: Img2,
     },
   ];
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
-  });
 
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
+  const { inView, ref } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  let topRef = useRef(null);
+  topRef = ref;
+
   return (
-    <div className="main-section our-services fade-in-bottom">
+    <section
+      ref={topRef}
+      id="services"
+      className={`main-section our-services ${inView ? "fade-in-bottom" : ""}`}
+    >
       <MainHomeTitle title={"Our Services"} />
       <div className="wallpaper position-relative z-1" />
       <div className="services-cards d-flex justify-content-between flex-wrap align-items-center position-relative z-1">
-        {services.map((e, i) => (
-          <InfoCard key={i} info={e} />
+        {services.map((service, index) => (
+          <InfoCard key={index} info={service} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-
-export default OurServices
+export default OurServices;

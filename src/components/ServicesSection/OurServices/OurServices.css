@@ -13,6 +13,17 @@
   transform: translateY(-50%);
 }
 
+/* .our-services .wallpaper {
+  background-color: rgba(44, 144, 167, 1);
+  border-radius: 12px;
+  width: 100%; 
+  max-width: 1380px; 
+  height: 263px;
+  margin: 0 auto; 
+  position: relative;
+  z-index: 0;
+} */
+
 @media screen and (max-width: 1229px) {
   .our-services .wallpaper {
     width: 100vmax;
