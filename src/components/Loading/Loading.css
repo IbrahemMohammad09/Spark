@@ -1,0 +1,12 @@
+.spinner-large {
+  width: 4rem;
+  height: 4rem;
+}
+.spinner-large .spinner-border {
+  border-width: 0.5rem; /* تخصيص سمك الحد لجعله أكبر */
+}
+.spinner-border {
+  width: 5rem !important;
+  height: 5rem !important;
+  margin: 0 15px !important;
+}

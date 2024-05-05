@@ -1,10 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.webp";
 import DownloadIcon from "../../images/DownloadAppSection/download.png";
 import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
+import TabTitle from "../../utils/TabTitle";
+import { Link } from "react-router-dom";
+import { Loading } from "../Loading/Loading";
 // import { Link } from "react-scroll";
 import SEO from "../SharedComponents/SEO/SEO";
 import { Link } from "react-router-dom";
@@ -14,6 +18,12 @@ const DownloadAppSection = () => {
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
+  const [isLoading, setIsLoading] = useState(true);
+  // Log values to console whenever inView or entry changes
+  useEffect(() => {
+    console.log("inView:", inView);
+    console.log("entry:", entry);
+  }, [inView, entry]);
 
   return (
     <section id="our_app" className="download-sec">
@@ -22,7 +32,14 @@ const DownloadAppSection = () => {
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
             <Col xs={6} md={3} className="d-flex p-0">
-              <img className="girl-with-mobile" src={GirlWithMobile} alt="girl-with-mobile" />
+              {isLoading && <Loading color="white" />}
+              <img
+                className="girl-with-mobile"
+                src={GirlWithMobile}
+                alt=""
+                style={{ display: isLoading ? "none" : "block" }}
+                onLoad={() => setIsLoading(false)}
+              />
             </Col>
             <Col xs={5} md={6} className="p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
@@ -63,7 +80,14 @@ const DownloadAppSection = () => {
               md={3}
               className="d-flex justify-content-center align-items-center"
             >
-              <img className="mobiles" src={Mobiles} alt="mobiles" />
+              {isLoading && <Loading color="white" />}
+              <img
+                className="mobiles"
+                src={Mobiles}
+                alt=""
+                style={{ display: isLoading ? "none" : "block" }}
+                onLoad={() => setIsLoading(false)}
+              />
             </Col>
           </Row>
         </div>

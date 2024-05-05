@@ -5,10 +5,12 @@ import { GrFacebookOption } from "react-icons/gr";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
+import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsVisible(true);
@@ -36,7 +38,14 @@ const AboutUs = () => {
         </div>
         <div className="about-right">
           <div>
-            <img src={about} alt="spark-logo" className="about-image" />
+            {isLoading && <Loading color="#2fb0cd" />}
+            <img
+              src={about}
+              alt=""
+              className="about-image"
+              style={{ display: isLoading ? "none" : "block" }}
+              onLoad={() => setIsLoading(false)}
+            />
           </div>
           <div className="about-contact">
             <h3>SPARK</h3>

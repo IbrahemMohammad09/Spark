@@ -11,11 +11,13 @@ import { Axios } from "../../api/axios";
 import { BaseURL } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
+import TabTitle from "../../utils/TabTitle";
+import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(true);
   const getTeamData = async () => {
     try {
       const res = await Axios.get("rest/member_list_web/");
@@ -69,10 +71,13 @@ const OurTeam = () => {
                 <div className="slide-body">
                   <div className="slide-content">
                     <div className="image-container">
+                      {/* {isLoading && <Loading color="#2fb0cd" />} */}
                       <img
                         className="d-block mx-auto"
-                        src={BaseURL + member?.member_picture_web}
-                        alt="member picture"
+                        src={BaseURL + member?.member_picture}
+                        alt=""
+                        style={{ display: isLoading ? "none" : "block" }}
+                        onLoad={() => setIsLoading(false)}
                       />
                     </div>
                     <div className="text-container">

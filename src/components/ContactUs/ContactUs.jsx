@@ -1,16 +1,18 @@
 import { Col, Container, Row } from "react-bootstrap";
 import WorldMap from "../../images/ContactUSSection/Huge Global.svg";
 import "./contact-us.css";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { RiMailLine } from "react-icons/ri";
-import { RiWhatsappLine } from "react-icons/ri";
+import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 import mailIcon from "../../images/ContactUSSection/mail.jpg"
 import callIcon from "../../images/ContactUSSection/call.jpg"
 
+
+
 const ContactUs = () => {
   const companyEmail = "Spark.contact.it@gmail.com";
-
+  const [isLoading, setIsLoading] = useState(true);
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
@@ -50,7 +52,14 @@ const ContactUs = () => {
               </div>
             </Col>
             <Col xs={10} lg={9}>
-              <img className="world-map" src={WorldMap} alt="world-map" />
+              {isLoading && <Loading color="white" />}
+              <img
+                className="world-map"
+                src={WorldMap}
+                alt=""
+                style={{ display: isLoading ? "none" : "block" }}
+                onLoad={() => setIsLoading(false)}
+              />
             </Col>
           </Row>
         </Container>

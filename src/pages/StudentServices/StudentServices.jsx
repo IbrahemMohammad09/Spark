@@ -1,26 +1,28 @@
 import "./StudentServices.css";
 import { Container } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import { useEffect } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import img1 from "../../images/StudentServices/img.jpg";
 import { useInView } from "react-intersection-observer";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Axios } from "../../api/axios";
+import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 
 const StudentServices = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const requestId = parseInt(id, 10); 
-  const restUrl = "/"+requestId;
-
+  const requestId = parseInt(id, 10);
+  const restUrl = "/" + requestId;
+  const [isLoading, setIsLoading] = useState(true);
   const getStudentSections = async () => {
     try {
       const res = await Axios.get("rest/sections_list_web/");
       const student = res.data?.sections.find((e) => e.pk == requestId);
-      if(!student){
-        navigate('/error-page');
-      } 
+      if (!student) {
+        navigate("/error-page");
+      }
     } catch (error) {
       // console.log(error);
     }
@@ -61,13 +63,18 @@ const StudentServices = () => {
             }  student-section-card bounceInUp`}
           >
             <div className="img-cover">
-              <img src={student.section_image_web} />
+              {isLoading && <Loading color="#2fb0cd" />}
+              <img
+                src={student.section_image_web}
+                style={{ display: isLoading ? "none" : "block" }}
+                onLoad={() => setIsLoading(false)}
+              />
             </div>
             <div>
               <h1>{student.section_name}</h1>
               <MainButton
                 title={"see more"}
-                url={student.url+restUrl}
+                url={student.url + restUrl}
                 addStyle="student-card-main-button"
               />
             </div>

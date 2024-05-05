@@ -1,11 +1,20 @@
 import "./InfoCard.css";
 import Icon from "../../../../images/ServicesSectionImages/uil_arrow-up (1).svg";
 import { Link } from "react-router-dom";
-
+import { Loading } from "../../../Loading/Loading";
+import { useState } from "react";
 const InfoCard = ({ info, num }) => {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className={`${num} topservice-info-card`}>
-      <img className="topservice-icon" src={info.icon} alt={info.icon} />
+      {isLoading && <Loading color="white" />}
+      <img
+        className="topservice-icon"
+        src={info.icon}
+        alt={info.icon}
+        style={{ display: isLoading ? "none" : "block" }}
+        onLoad={() => setIsLoading(false)}
+      />
       <h1>{info.title}</h1>
       <h6>{info.subtitle}</h6>
       <span>

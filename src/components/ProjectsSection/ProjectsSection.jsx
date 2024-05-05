@@ -25,17 +25,38 @@ const ProjectsSection = () => {
       img: Img2,
     },
   ];
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true, 
-    threshold: 0.1, 
+  const [userHasScrolled, setUserHasScrolled] = useState(false);
+  const [hasBeenInView, setHasBeenInView] = useState(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
+  const handleUserScroll = () => {
+    setUserHasScrolled(true);
+  };
+
+  useEffect(() => {
+    // إضافة event listener للتمرير
+    window.addEventListener("scroll", handleUserScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleUserScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (inView && userHasScrolled) {
+      setHasBeenInView(true);
+    }
+  }, [inView, userHasScrolled]);
   return (
     <section id="our_projects">
       <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
-        <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
+        <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
           <div className="our-projects-cards">
             {projects?.map((e, i) => (
               <InfoCard key={i} info={e} />
