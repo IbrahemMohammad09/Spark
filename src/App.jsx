@@ -23,7 +23,7 @@ import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
-import ViewProject from "./components/ViewProject/ViewProject";
+
 function App() {
   return (
     <div className="App position-relative">
