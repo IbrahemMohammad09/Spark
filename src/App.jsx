@@ -7,7 +7,7 @@ import { Footer } from "./pages/Footer/Footer";
 import AboutUs from "../src/pages/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import OurTeam from "./components/OurTeam/OurTeam";
-import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import OurProjects from "../src/pages/OurProjects/OurProjects";
 import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSection";
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import "swiper/css";
@@ -36,7 +36,7 @@ function App() {
           <Route path={"/contact_us"} element={<ContactUs />} />
           <Route path={"/services"} element={<ServicesSection />} />
           <Route path={"/our_team"} element={<OurTeam />} />
-          <Route path={"/our_projects"} element={<ProjectsSection />} />
+          <Route path={"/our-projects"} element={<OurProjects />} />
           <Route path={"/our_app"} element={<DownloadAppSection />} />
           <Route path={"/company-services"} element={<CompanyServices />} />
           <Route path={"/service/:id"} element={<DetailServices />} />
