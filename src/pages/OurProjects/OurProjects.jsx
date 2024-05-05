@@ -45,9 +45,9 @@ const OurProjects = () => {
     const description = 'Our projects involve creating user-friendly interfaces that make navigating websites or apps a breeze. we focus on understanding the needs and behaviors of users to create designs that not only look good but also function intuitively.';
 
     return (
+        <section className="our-projects-page position-relative">
+            <SEO title={'Spark | Our projects'} description={description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
 
-        <section className="our-projects-page position-relative ">
-            <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <div className="top-section">
                 <div className="design-box">
                     <img src={Img1} alt={Img1} loading="lazy" />

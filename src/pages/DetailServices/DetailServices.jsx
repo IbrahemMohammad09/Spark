@@ -7,6 +7,8 @@ import MainButton from "../../components/SharedComponents/MainButton/MainButton"
 import { useLanguageContext } from "../../hooks/useLanguageContext";
 import { useInView } from "react-intersection-observer";
 import "./DetailServices.css";
+import TabTitle from "../../utils/TabTitle";
+import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 
 const DetailServices = () => {
@@ -17,7 +19,7 @@ const DetailServices = () => {
   const { language } = useLanguageContext();
 
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(true);
   const getServiceData = async () => {
     try {
       const res = await Axios.get("/rest/service_web/");
@@ -26,7 +28,7 @@ const DetailServices = () => {
 
       if (!service) {
         setError(`Service with ID ${id} not found.`);
-        navigate('/error-page');
+        navigate("/error-page");
       } else {
         setServiceData(service);
       }
@@ -53,11 +55,14 @@ const DetailServices = () => {
       <Container>
         <div>
           <div className="img-cover">
+            {isLoading && <Loading color="#2fb0cd" />}
             <img
               className="detail-img"
               src={`${BaseURL}/${serviceData?.service_picture}`}
               alt={serviceData?.service_picture}
               loading="lazy"
+              style={{ display: isLoading ? "none" : "block" }}
+              onLoad={() => setIsLoading(false)}
             />
           </div>
           <div>
