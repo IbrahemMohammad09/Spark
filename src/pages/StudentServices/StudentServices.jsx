@@ -1,7 +1,6 @@
 import "./StudentServices.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { useEffect } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import img1 from "../../images/StudentServices/img.jpg";
 import { useInView } from "react-intersection-observer";

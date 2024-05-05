@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import OurServices from "./OurServices/OurServices";
 import OurTopServices from "./OurTopServices/OurTopServices";
 import TabTitle from "../../utils/TabTitle";
+import SEO from '../SharedComponents/SEO/SEO'
 const ServicesSection = () => {
   // Set tab title
 

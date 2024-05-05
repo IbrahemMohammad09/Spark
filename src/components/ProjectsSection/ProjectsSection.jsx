@@ -7,6 +7,7 @@ import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
+import { useEffect , useState } from "react";
 
 const ProjectsSection = () => {
   const projects = [

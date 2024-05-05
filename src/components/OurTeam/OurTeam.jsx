@@ -71,10 +71,10 @@ const OurTeam = () => {
                 <div className="slide-body">
                   <div className="slide-content">
                     <div className="image-container">
-                      {/* {isLoading && <Loading color="#2fb0cd" />} */}
+                      {isLoading && <Loading color="#2fb0cd" />}
                       <img
                         className="d-block mx-auto"
-                        src={BaseURL + member?.member_picture}
+                        src={BaseURL + member?.member_picture_web}
                         alt=""
                         style={{ display: isLoading ? "none" : "block" }}
                         onLoad={() => setIsLoading(false)}

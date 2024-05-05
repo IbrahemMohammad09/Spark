@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { Loading } from "../Loading/Loading";
 // import { Link } from "react-scroll";
 import SEO from "../SharedComponents/SEO/SEO";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const DownloadAppSection = () => {
   const { ref, inView, entry } = useInView({
