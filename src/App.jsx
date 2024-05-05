@@ -23,6 +23,7 @@ import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
+import ViewProject from'./pages/ViewProject/ViewProject'
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             path={"/student-project-request/:id"}
             element={<StudentProjectRequest />}
           />
+          <Route path="/view-project/:id" element={<ViewProject />}/>
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
