@@ -8,17 +8,17 @@ const ImagesSwiper = ( { imgs, setHoveredImage, mainImage, setMainImage } ) => {
     useEffect(() => {
         const handleMedia = () => {
             if(window.innerWidth < 460) {
-                setPerView(1)
-            } else if(window.innerWidth < 768) {
                 setPerView(2)
-            } else if(window.innerWidth < 1150) {
+            } else if(window.innerWidth < 768) {
                 setPerView(3)
-            } else if(window.innerWidth < 1400) {
+            } else if(window.innerWidth < 1150) {
                 setPerView(4)
-            }  else if(window.innerWidth < 1850) {
+            } else if(window.innerWidth < 1400) {
                 setPerView(5)
+            }  else if(window.innerWidth < 1850) {
+                setPerView(6)
             } else if(window.innerWidth < 2400) {
-                setPerView(4)    
+                setPerView(7)    
             }
         }
         window.addEventListener('resize', handleMedia)
