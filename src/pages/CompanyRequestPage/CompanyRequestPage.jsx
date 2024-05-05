@@ -6,12 +6,9 @@ import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
 import Img from '../../images/CompanyRequestPageImages/company-request-page.png'
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
-import TabTitle from '../../utils/TabTitle';
+import SEO from '../../components/SharedComponents/SEO/SEO';
 
 const CompanyRequestPage = () => {
-
-    TabTitle('Spark | service request');
-
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -92,7 +89,6 @@ const CompanyRequestPage = () => {
 
         Axios.post('rest/company_request/', data)
             .then(response => {
-                console.log(response.data);
                 localStorage.setItem('hasCompletedRequest');
                 if(response.data.message !== 'Request Duplicated') {
                     navigate('/completed');
@@ -101,17 +97,17 @@ const CompanyRequestPage = () => {
                 }
             })
             .catch(error => {
-                console.log(error.response.data);
+                // console.log(error.response.data);
                 setErrorRequest(error.response.data)
             });
     }
 
     return (
         <section className='company-request-page'>
+            <SEO title={'Spark | service request'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <div className='cover-img fade-in-bottom'>
-                {/* <h1>Project Request</h1> */}
                 <div data-title="Project Request">
-                    <img src={Img} alt={Img}/>
+                    <img src={Img} alt={'software developer'}/>
                 </div>
             </div>
             <div className="main-container">

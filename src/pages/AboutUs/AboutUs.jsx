@@ -5,20 +5,22 @@ import { GrFacebookOption } from "react-icons/gr";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { TiSocialLinkedin } from "react-icons/ti";
-import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../../components/Loading/Loading";
-const AboutUs = () => {
-  TabTitle("Spark | About us");
+import SEO from "../../components/SharedComponents/SEO/SEO";
 
+const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Set isVisible to true after component mounts
     setIsVisible(true);
   }, []);
+
+  const description = "As a UX designer, I specialize in crafting seamless user experiences that align with your brand and resonate with your audience. My services encompass comprehensive user research, wireframing, prototyping, and interface design. I focus on understanding user behaviors, pain points, and preferences to create intuitive and engaging digital products. Whether it's improving existing interfaces or creating new ones from scratch, I ensure designs that are user-centric, visually appealing, and optimized for usability across devices and platforms.";
+
   return (
     <section id="about_us" className={`${isVisible ? "fade-in-bottom" : ""}`}>
+      <SEO title={'Spark | About Us'} description={description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <div className="About">
         <div className="about-left">
           <h3>Description</h3>

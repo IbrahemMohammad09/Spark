@@ -5,12 +5,10 @@ import Img2 from "../../images/OurProjectsImage/Home Page 9.png";
 import InfoCard from "./InfoCard/InfoCard";
 import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
-import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import TabTitle from "../../utils/TabTitle";
+import SEO from "../SharedComponents/SEO/SEO";
 
 const ProjectsSection = () => {
-  TabTitle("Spark | Our projects");
   const projects = [
     {
       title: "MStore",
@@ -55,6 +53,7 @@ const ProjectsSection = () => {
   }, [inView, userHasScrolled]);
   return (
     <section id="our_projects">
+      <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
         <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
@@ -64,7 +63,7 @@ const ProjectsSection = () => {
             ))}
           </div>
           <MainButton
-            url={"/"}
+            url={"/our-projects/"}
             title={"See all"}
             addStyle={"projects-button-see-all"}
           />

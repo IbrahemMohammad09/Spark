@@ -1,14 +1,82 @@
 .contact-us {
+  position: relative;
   background-color: #2fb0cd;
   margin: 100px 0;
   padding: 60px 0;
   padding-bottom: 0px;
 }
+.contact-us::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  background-color: white;
+  z-index: 2;
+  width: 105%;
+  height: 50px;
+  border-radius: 100% 100% 0 0;
+}
 
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  background-color: white;
+  z-index: 2;
+  width: 105%;
+  height: 50px;
+  border-radius: 0 0 100% 100%;
+}
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 180px;
+}
+.contact-box{
+  display: flex;
+  flex-direction: column;
+}
+.contact{
+  display: flex;
+  background: #ffffff;
+  align-items: center;
+  border-radius: 10px;
+  width: 270px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+.contact:hover{
+  box-shadow: 0px 0px 10px rgb(2, 2, 2);
+}
+.contact-h1{
+  margin-bottom: 30px;
+}
+.contact-icon{
+  width: 30px;
+  height: 30px;
+  margin: 0px 2px 0px 10px;
+}
+.contact-do{
+  font-size: 10px;
+  margin: 0px 0px 0px 0px;
+}
+.contact-where{
+  font-size: 10px;
+  margin-left: 40px;
+  margin: 0px 0px 0px 50px;
+}
 .contact-us img.world-map {
   width: 100%;
 }
 
 .contact-us a {
   color: #212529;
+  text-decoration: none;
+}
+
+@media screen and (width < 992px) {
+  .contact-container{
+    margin-bottom: 0px;
+  }
 }

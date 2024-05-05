@@ -13,36 +13,32 @@ import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
 import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../Loading/Loading";
-const OurTeam = () => {
-  TabTitle("Spark | Our team");
+import SEO from "../SharedComponents/SEO/SEO";
 
+const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const getTeamData = async () => {
     try {
       const res = await Axios.get("rest/member_list_web/");
       setTeamData(res.data);
-      console.log(res);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {
     getTeamData();
   }, []);
+
   const swiperRef = useRef();
   const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
+    triggerOnce: true, 
+    threshold: 0.1, 
   });
-
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
 
   return (
     <section className="our-team" id="our_team">
+      <SEO title={'Spark | Our team'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container>
         <h1>Our Team</h1>
       </Container>

@@ -11,9 +11,12 @@ const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("hero");
   const [activeClass, setActiveClass] = useState("active1");
   const [test, setTest] = useState("");
-  console.log("🚀 ~ NavigationBar ~ test:", test);
+  const [hideNav, setHideNav] = useState(false);
+
   let isLastSectionActive = false;
+
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -51,15 +54,13 @@ const NavigationBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array to run effect only once on mount
+
   useEffect(() => {
     // تحديث الرابط النشط استنادًا إلى المسار
     setActiveLink(location.pathname.substring(1) || "hero");
     setTest("");
   }, [location]);
-  console.log(
-    "🚀 ~ useEffect ~ location.pathname.substring(1):",
-    location.pathname.substring(1)
-  );
+
   useEffect(() => {
     if (
       location.pathname === "/student_courses" ||
@@ -88,15 +89,22 @@ const NavigationBar = () => {
     );
   }
 
+  useEffect(() => {
+    setHideNav(
+      location.pathname.includes('/view-project')
+    );
+  }, [location.pathname])
+  
+
   return (
-    <div className={classNames("nav", activeClass)}>
+    <div className={`${classNames("nav", activeClass)} ${hideNav && 'd-none'}`}>
       <Navbar expand="sm" fixed="top">
         <Container>
           <Navbar.Brand to="/">
             <img
               className="logo"
               loading="lazy"
-              alt=""
+              alt="spark logo"
               src={require("../../images/log.png")}
             />
             <div className="spark">SPARK</div>
@@ -132,11 +140,11 @@ const NavigationBar = () => {
               </NavLink>
               <NavLink
                 className={classNames(
-                  activeLink === "our_projects" || test === "ourProject"
+                  activeLink === "our-projects" || test === "ourProject"
                     ? "navlink-active"
                     : "navlink"
                 )}
-                to="/our_projects"
+                to="/our-projects"
                 href="#ourProject"
                 onClick={() => handleSetActiveLink("ourProject")}
               >

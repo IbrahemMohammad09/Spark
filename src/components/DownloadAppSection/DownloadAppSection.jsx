@@ -1,17 +1,19 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.png";
+import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.webp";
 import DownloadIcon from "../../images/DownloadAppSection/download.png";
-// import GooglePlayIcon from "../../images/DownloadAppSection/google-play.svg";
 import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
 import TabTitle from "../../utils/TabTitle";
 import { Link } from "react-router-dom";
 import { Loading } from "../Loading/Loading";
+// import { Link } from "react-scroll";
+import SEO from "../SharedComponents/SEO/SEO";
+import { Link } from "react-router-dom";
+
 const DownloadAppSection = () => {
-  TabTitle("Spark | Our App  ");
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
@@ -25,6 +27,7 @@ const DownloadAppSection = () => {
 
   return (
     <section id="our_app" className="download-sec">
+      <SEO title={'Spark | Our App'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
@@ -40,7 +43,7 @@ const DownloadAppSection = () => {
             </Col>
             <Col xs={5} md={6} className="p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
-                <img className="download-icon " src={DownloadIcon} alt="" />
+                <img className="download-icon" src={DownloadIcon} alt="download-icon" />
                 Download Our App
               </h1>
               <p className="text-white">
@@ -55,7 +58,6 @@ const DownloadAppSection = () => {
                 target="_blank"
                 className="download-btn d-none d-md-flex"
               >
-                {/* <img src={GooglePlayIcon} alt="" /> */}
                 <RiGooglePlayFill size={30} />
                 google play
               </Link>
@@ -70,7 +72,6 @@ const DownloadAppSection = () => {
                 className="download-btn"
               >
                 <RiGooglePlayFill size={30} />
-                {/* <img src={GooglePlayIcon} alt="" /> */}
                 google play
               </Link>
             </Col>

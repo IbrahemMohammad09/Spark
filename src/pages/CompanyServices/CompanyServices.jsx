@@ -3,38 +3,33 @@ import { Container } from "react-bootstrap";
 import { Axios } from "../../api/axios";
 import "./CompanyServices.css";
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
-import TabTitle from "../../utils/TabTitle";
 import { useInView } from "react-intersection-observer";
-// import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
+import SEO from "../../components/SharedComponents/SEO/SEO";
+
 const CompanyServices = () => {
-  TabTitle("Spark | Company services");
   const [services, setServices] = useState([]);
 
   const getCompanyServicesData = async () => {
     try {
       const res = await Axios.get("rest/service_list_web/");
       setServices(res.data.services);
-      console.log(res.data.services);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
   useEffect(() => {
     getCompanyServicesData();
   }, []);
+
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
   return (
     <section id="services" className="company-services position-relative">
+      <SEO title={'Spark | Company services'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <div
         ref={ref}
         className={`${inView ? "fade-in-bottom" : ""} main-container`}
@@ -46,8 +41,6 @@ const CompanyServices = () => {
           </div>
         </Container>
       </div>
-      {/* <BrushImage key={3} type={"r"} postion={"brush4"} />
-            <BrushImage key={4} type={"l"} postion={"brush5"} /> */}
     </section>
   );
 };
