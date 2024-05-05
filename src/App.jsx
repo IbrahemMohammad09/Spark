@@ -58,7 +58,7 @@ function App() {
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
-          <Route path="/view" element={<ViewProject />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>
