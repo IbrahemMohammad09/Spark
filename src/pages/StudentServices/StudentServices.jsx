@@ -27,9 +27,9 @@ const StudentServices = () => {
     }
   };
 
-  useEffect(() => {
-    getStudentSections();
-  }, [id]);
+    useEffect(() => {
+      getStudentSections();
+    }, [id]);
   
     const studentServices = [
         {
@@ -44,11 +44,11 @@ const StudentServices = () => {
         }
       ];
 
+    const { ref, inView, entry } = useInView({
+      triggerOnce: true, // Only trigger once
+      threshold: 0.1, // Trigger animation when 50% of the item is visible
+    });
 
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
-  });
 
   return (
     <section id="services" className="student-section main-container">

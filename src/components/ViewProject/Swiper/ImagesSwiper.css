@@ -1,0 +1,32 @@
+.images-swiper {
+    position: absolute;
+    bottom: 1%;
+    padding: 2rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    width: 100%;
+}
+
+.images-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images-swiper .scroll-img {
+    width: 120px;
+    height: 150px;
+    border-radius: 8px;
+    transition: .5s ease;
+    cursor: pointer;
+    filter: blur(1px);
+    overflow: hidden;
+}
+
+.images-swiper .scroll-img:hover,
+.images-swiper .scroll-img.active {
+    transform: translateY(-5%) scale(1.08);
+    filter: blur(0);
+}

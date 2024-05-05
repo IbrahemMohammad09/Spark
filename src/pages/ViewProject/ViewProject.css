@@ -1,5 +1,5 @@
 .view-project {
-    min-height: 110vh;
+    min-height: 100vh;
     padding: 7rem 0;
     overflow: hidden;
 }
@@ -13,7 +13,7 @@
     z-index: 0;
     object-fit: fill;
     opacity: 0;
-    filter: grayscale(80%);
+    filter: grayscale(20%);
     transition: 1s ease;
 }
 
@@ -23,13 +23,19 @@
 
 .view-project .info-box {
     position: absolute;
-    left: 5%;
-    top: 10%;
+    left: -100%;
+    top: 12%;
     z-index: 2;
     width: 40%;
-    background-color: rgba(255, 255, 255, 0.56);
+    background-color: #42bcecde;
+    box-shadow: 1px -1px 10px -8px white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 0 0 4%;
+    transition: .4s ease;
+}
+
+.view-project .info-box.active {
+    left: -3%;
 }
 
 .view-project .info-box h1 {
@@ -61,6 +67,20 @@
 
 .view-project .info-box h3 a:hover {
     text-decoration: underline;
+}
+
+.view-project .back-button {
+    position: absolute;
+    left: 1%;
+    top: 3%;
+}
+
+.view-project .back-button .main-back-button {
+    padding: .8rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 @media screen and (max-width: 1000px) {
