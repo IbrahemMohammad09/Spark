@@ -64,13 +64,13 @@ const StudentServices = () => {
             <div className="img-cover">
               {isLoading && <Loading color="#2fb0cd" />}
               <img
-                src={student.section_image_web}
+                src={img1}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />
             </div>
             <div>
-              <h1>{student.section_name}</h1>
+              <h1>{student.title}</h1>
               <MainButton
                 title={"see more"}
                 url={student.url + restUrl}
