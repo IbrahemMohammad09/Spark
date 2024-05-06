@@ -1,7 +1,7 @@
-import "@leenguyen/react-flip-clock-countdown/dist/index.css";
-import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import { useInView } from "react-intersection-observer";
 import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
+import coming from "../../images/ComingSoon/coming.svg";
+import { Link } from "react-router-dom";
 import "./ComingSoon.css";
 export const ComingSoon = () => {
   const { inView, ref } = useInView({
@@ -18,13 +18,16 @@ export const ComingSoon = () => {
       >
         <h1>We are almost there</h1>
         <h3>Stay tuned for something amazing.</h3>
-        <FlipClockCountdown
-          className="flip-clock"
-          to={new Date().getTime() + 24 * 3600 * 1000 + 5000}
-          labels={["DAYS", "HOURS", "MINUTES", "SECONDS"]}
-          duration={0.5}
-        />
-        <button className="button">Notify Me</button>
+        <div className="dynamic-background">
+          <img
+            src={coming}
+            alt="coming"
+            style={{ width: "400px", height: "400px" }}
+          />
+        </div>
+        <Link to="/">
+          <button className="button">Go To Home</button>
+        </Link>
       </div>
     </section>
   );

@@ -8,13 +8,18 @@
   background-color: white;
   overflow-x: hidden;
 }
-
+.dynamic-background {
+  object-fit: contain; /* إبقاء contain لتجنب فقدان جوانب الصورة */
+  margin: auto; /* تأكد من تمركز الصورة في الفضاء المتاح */
+}
 .clock_content {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   text-align: center;
+  padding-top: 60px;
 }
 
 .clock_content h1 {
@@ -53,6 +58,7 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  margin-top: 20px;
 }
 
 .button:hover {

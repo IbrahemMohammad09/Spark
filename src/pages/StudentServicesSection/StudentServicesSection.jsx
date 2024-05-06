@@ -2,6 +2,7 @@ import "./StudentServicesSection.css";
 import { Container } from "react-bootstrap";
 import InfoStudentServiceCard from "../../components/StudentSectionServices/InfoStudentServiceCard/InfoStudentServiceCard";
 import { Axios } from "../../api/axios";
+import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 const StudentServicesSection = () => {
@@ -15,26 +16,38 @@ const StudentServicesSection = () => {
       // console.log(error);
     }
   };
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   useEffect(() => {
     getStudentSectionsServicesData();
   }, []);
 
   return (
     <section id="services" className="student-section-services main-container">
-      <SEO title={'Spark | Student section'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
-      <Container className="student-section-services-grid">
+      <SEO
+        title={"Spark | Student section"}
+        description={""}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
+      <Container
+        ref={ref}
+        className={`${
+          inView ? "fade-in-bottom" : ""
+        } student-section-services-grid`}
+      >
         {services &&
-          services.map((e, i) => (
-            <InfoStudentServiceCard
-              key={i}
-              info={e}
-            />
-          ))}
+          services.map((e, i) => <InfoStudentServiceCard key={i} info={e} />)}
       </Container>
     </section>
   );
 };
-
 
 export default StudentServicesSection;
