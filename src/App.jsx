@@ -23,7 +23,8 @@ import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
-import ViewProject from "./components/ViewProject/ViewProject";
+import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
+// import ViewProject from "./components/ViewProject/ViewProject";
 function App() {
   return (
     <div className="App position-relative">
@@ -58,7 +59,7 @@ function App() {
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
-
+          <Route path="/coming" element={<ComingSoon />} />
         </Routes>
         <Footer />
       </BrowserRouter>

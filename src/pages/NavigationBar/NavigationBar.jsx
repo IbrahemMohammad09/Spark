@@ -90,16 +90,15 @@ const NavigationBar = () => {
   }
 
   useEffect(() => {
-    setHideNav(
-      location.pathname.includes('/view-project')
-    );
-  }, [location.pathname])
-  
+    setHideNav(location.pathname.includes("/view-project"));
+  }, [location.pathname]);
 
   return (
-    <div className={`${classNames("nav", activeClass)} ${hideNav && 'd-none'}`}>
+    <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
       <Navbar expand="sm" fixed="top">
-        <Container>
+        <Container
+          style={{ width: "100%", height: "100%", overflowX: "hidden" }}
+        >
           <Navbar.Brand to="/">
             <img
               className="logo"
@@ -110,9 +109,12 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-          <Navbar.Collapse style={{ paddingLeft: "15px" }}>
+          <Navbar.Collapse
+            style={{ paddingLeft: "50px" }}
+            id="basic-navbar-nav"
+          >
             <Nav className="justify-content-center" style={{ width: "85%" }}>
               <NavLink
                 className={

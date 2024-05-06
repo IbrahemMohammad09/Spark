@@ -5,7 +5,6 @@ import Img1 from "./../../../images/ServicesSectionImages/student_services-remov
 import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.png";
 import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
 
 const OurServices = () => {
   const services = [
@@ -23,20 +22,19 @@ const OurServices = () => {
 
   const { inView, ref } = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.1,
   });
-  let topRef = useRef(null);
-  topRef = ref;
 
   return (
-    <section
-      ref={topRef}
-      id="services"
-      className={`main-section our-services ${inView ? "fade-in-bottom" : ""}`}
-    >
+    <section id="services" className="main-section our-services ">
       <MainHomeTitle title={"Our Services"} />
       <div className="wallpaper position-relative z-1" />
-      <div className="services-cards d-flex justify-content-between flex-wrap align-items-center position-relative z-1">
+      <div
+        ref={ref}
+        className={` ${
+          inView ? "fade-in-bottom-services" : ""
+        } services-cards d-flex justify-content-between flex-wrap align-items-center position-relative z-1`}
+      >
         {services.map((service, index) => (
           <InfoCard key={index} info={service} />
         ))}

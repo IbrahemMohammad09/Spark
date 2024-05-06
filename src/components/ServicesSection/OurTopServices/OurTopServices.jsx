@@ -79,7 +79,7 @@ const OurTopServices = () => {
       <div
         ref={ref}
         className={`top-services-cards ${
-          hasBeenInView ? "fade-top-services" : ""
+          hasBeenInView && inView ? "fade-top-services" : ""
         }`}
       >
         {topServices.map((service, index) => (
