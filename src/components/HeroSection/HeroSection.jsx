@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./HeroSection.css";
-import hero from "../../images/HeroSectionImags/hero.svg";
+import hero from "../../images/HeroSectionImags/spark.png";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Loading } from "../Loading/Loading";
 const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(true);
