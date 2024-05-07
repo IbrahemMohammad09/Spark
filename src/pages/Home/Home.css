@@ -1,25 +1,28 @@
 .main-container {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .main-section {
-    margin-top: 5rem;
-} 
+  margin-top: 5rem;
+}
 
 .brush1 {
-    left: 0;
-    top: 20%;
+  left: 0;
+  top: 20%;
 }
 
 .brush2 {
-    right: 0;
-    top: 35%;
+  right: 0;
+  top: 35%;
 }
 
 .brush3 {
-    left: 0;
-    top: 43%;
+  left: 0;
+  top: 43%;
 }

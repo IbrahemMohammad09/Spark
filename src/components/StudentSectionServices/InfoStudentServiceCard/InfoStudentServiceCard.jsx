@@ -1,7 +1,6 @@
 import MainButton from "../../SharedComponents/MainButton/MainButton";
 import { BaseURL } from "../../../utils/constants";
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 import "./InfoStudentServiceCard.css";
 import { Loading } from "../../Loading/Loading";
 const InfoStudentServiceCard = ({ info }) => {
@@ -9,23 +8,9 @@ const InfoStudentServiceCard = ({ info }) => {
   const handleTitleSplit = (index) => {
     return info.section_name.split(" ")[index];
   };
-  const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
-  });
 
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
   return (
-    <div
-      ref={ref}
-      className={`${
-        inView ? "fade-in-bottom" : ""
-      } student-service-section-card bounceInUp`}
-    >
+    <div className="student-service-section-card bounceInUp">
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img

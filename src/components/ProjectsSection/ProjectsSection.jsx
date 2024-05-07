@@ -7,7 +7,7 @@ import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -30,8 +30,8 @@ const ProjectsSection = () => {
   const [hasBeenInView, setHasBeenInView] = useState(false);
 
   const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
+    triggerOnce: false,
+    threshold: 0.1,
   });
 
   const handleUserScroll = () => {
@@ -53,12 +53,27 @@ const ProjectsSection = () => {
     }
   }, [inView, userHasScrolled]);
   return (
-    <section id="our_projects">
-      <SEO title={'Spark | Our projects'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+    <section id="our-projects">
+      <SEO
+        title={"Spark | Our projects"}
+        description={""}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
       <Container className="main-section our-projects position-relative">
         <MainHomeTitle title={"Our Projects"} />
-        <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
-          <div className="our-projects-cards">
+        <div>
+          <div
+            ref={ref}
+            className={`${
+              hasBeenInView ? "fade-in-bottom" : ""
+            } our-projects-cards`}
+          >
             {projects?.map((e, i) => (
               <InfoCard key={i} info={e} />
             ))}

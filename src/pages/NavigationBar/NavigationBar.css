@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 
 .logo {
   height: 45px;
@@ -10,7 +9,7 @@
 }
 
 .spark {
-  font-family: 'Roboto Serif, serif';
+  font-family: "Roboto Serif, serif";
   font-style: normal;
   padding-left: 10px;
   position: relative;
@@ -23,6 +22,7 @@
 .nav {
   background-color: aliceblue;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 .navlink {
@@ -85,4 +85,17 @@
 }
 .active2 .navlink:hover {
   color: #1a92ce;
+}
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    padding-left: 0;
+  }
+  .nav .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar > .container {
+    display: flex;
+    flex-direction: row;
+  }
 }

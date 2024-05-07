@@ -1,0 +1,135 @@
+.containerComing {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  overflow-x: hidden;
+}
+.dynamic-background {
+  object-fit: contain; /* إبقاء contain لتجنب فقدان جوانب الصورة */
+  margin: auto; /* تأكد من تمركز الصورة في الفضاء المتاح */
+}
+.clock_content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.clock_content h1 {
+  color: #292b2c; /* تغيير لون الخط من الأبيض إلى الغامق لتحسين القراءة */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.clock_content h3 {
+  color: #27a9e1; /* تغيير لون الخط إلى لون أساسي فاتح */
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.flip-clock {
+  /* الاحتفاظ بالتعديلات السابقة وتغيير لون المحور */
+  /* للقيم التي قد تكون معرفة مسبقاً */
+  --fcc-background: #f8f9fa; /* تغيير لون الخلفية من الأبيض إلى لون أخف */
+  --fcc-digit-color: #343a40; /* تغيير لون الأرقام إلى الغامق */
+  --fcc-divider-color: #adb5bd; /* تغيير لون القسامات إلى الفضي */
+  margin-bottom: 2rem;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #000;
+  background-color: #e4e5e6; /* لون خلفية الزر أكثر تناسقاً */
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #27a9e1; /* نفس لون العنوان الفرعي */
+  color: #fff;
+  transform: translateY(-7px);
+  box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
+}
+
+@media (min-width: 900px) {
+  .clock_content h1 {
+    font-size: 3rem;
+  }
+
+  .clock_content h3 {
+    font-size: 1.5rem;
+  }
+
+  .flip-clock {
+    --fcc-digit-block-width: 80px;
+    --fcc-digit-block-height: 120px;
+    --fcc-digit-font-size: 60px;
+    --fcc-label-font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .clock_content h1 {
+    font-size: 1.5rem; /* تصغير الخط */
+  }
+
+  .clock_content h3 {
+    font-size: 1rem; /* تصغير الخط */
+  }
+
+  .flip-clock {
+    --fcc-digit-block-width: 50px; /* تصغير الكارت الرقمي */
+    --fcc-digit-block-height: 100px; /* تصغير ارتفاع الكارت الرقمي */
+    --fcc-digit-font-size: 2rem; /* تصغير حجم الخط */
+    --fcc-label-font-size: 0.75rem; /* تصغير حجم خط التسمية */
+    --fcc-separator-size: 5px; /* تصغير حجم الفاصل */
+  }
+
+  .button {
+    width: 100px; /* تصغير الزر */
+    height: 40px; /* تصغير الزر */
+    font-size: 0.8rem; /* تصغير خط الزر */
+  }
+}
+
+/* تعديلات لشاشات جوالات أصغر من 576px */
+@media only screen and (max-width: 576px) {
+  .clock_content h1 {
+    font-size: 1.25rem; /* تصغير الخط */
+  }
+
+  .clock_content h3 {
+    font-size: 0.875rem; /* تصغير الخط */
+  }
+
+  .flip-clock {
+    --fcc-digit-block-width: 30px; /* تصغير الكارت الرقمي */
+    --fcc-digit-block-height: 70px; /* تصغير ارتفاع الكارت الرقمي */
+    --fcc-digit-font-size: 1.5rem; /* تصغير حجم الخط */
+    --fcc-label-font-size: 0.5rem; /* تصغير حجم خط التسمية */
+    --fcc-separator-size: 4px; /* تصغير حجم الفاصل */
+  }
+
+  .button {
+    width: 90px; /* تصغير الزر */
+    height: 35px; /* تصغير الزر */
+    font-size: 0.75rem; /* تصغير خط الزر */
+  }
+}
