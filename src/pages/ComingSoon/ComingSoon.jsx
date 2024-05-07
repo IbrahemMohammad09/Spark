@@ -19,11 +19,7 @@ export const ComingSoon = () => {
         <h1>We are almost there</h1>
         <h3>Stay tuned for something amazing.</h3>
         <div className="dynamic-background">
-          <img
-            src={coming}
-            alt="coming"
-            style={{ width: "400px", height: "400px" }}
-          />
+          <img src={coming} alt="coming" className="img-coming" />
         </div>
         <Link to="/">
           <button className="button">Go To Home</button>

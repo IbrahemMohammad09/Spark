@@ -67,7 +67,10 @@
   transform: translateY(-7px);
   box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
 }
-
+.img-coming {
+  height: 400px;
+  width: 400px;
+}
 @media (min-width: 900px) {
   .clock_content h1 {
     font-size: 3rem;
@@ -126,7 +129,10 @@
     --fcc-label-font-size: 0.5rem; /* تصغير حجم خط التسمية */
     --fcc-separator-size: 4px; /* تصغير حجم الفاصل */
   }
-
+  .img-coming {
+    height: 300px;
+    width: 300px;
+  }
   .button {
     width: 90px; /* تصغير الزر */
     height: 35px; /* تصغير الزر */

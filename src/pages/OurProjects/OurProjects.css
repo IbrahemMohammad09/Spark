@@ -65,14 +65,15 @@
 }
 .more {
   background-color: rgba(47, 176, 205, 1);
-  width: 105px;
+  width: 125px;
   height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 600;
   outline: none;
   border: 1px solid rgba(47, 176, 205, 1);
 }

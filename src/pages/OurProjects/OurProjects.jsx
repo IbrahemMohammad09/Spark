@@ -4,6 +4,7 @@ import Img1 from "../../images/OurProjectsImages/Bill Sitting using laptop 1.web
 import Img2 from "../../images/OurProjectsImages/Frame 1597884239.webp";
 import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProjectCard";
 import Img from "../../images/OurProjectsImages/project.webp";
+import img2 from "../../images/OurProjectsImage/UI Design.png";
 import "../../animation.css";
 import { useEffect, useState } from "react";
 
@@ -45,6 +46,24 @@ const OurProjects = () => {
         "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
       url: "https://MRR.com",
     },
+    {
+      id: 4,
+      img: Img,
+      title: "Memory App",
+      type: "Flutter App",
+      subtitle:
+        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
+      url: "https://MRR.com",
+    },
+    {
+      id: 4,
+      img: img2,
+      title: "Memory App",
+      type: "Flutter App",
+      subtitle:
+        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
+      url: "https://MRR.com",
+    },
   ];
   const [isAll, setIsAll] = useState(false);
   const description =
@@ -75,13 +94,6 @@ const OurProjects = () => {
       </div>
       <div className="our-projects-cards main-container bounceInUp">
         <h2 className="title">Our Projects</h2>
-        {isAll === false && (
-          <div className="our-projects-grid">
-            {projects.slice(0, 2).map((e, i) => (
-              <OurProjectCard key={i} info={e} />
-            ))}
-          </div>
-        )}
         {isAll === true && (
           <div className="our-projects-grid">
             {projects.map((e, i) => (
@@ -89,11 +101,21 @@ const OurProjects = () => {
             ))}
           </div>
         )}
-        <div className="button-all">
-          <button className="more" onClick={() => setIsAll(true)}>
-            See All
-          </button>
-        </div>
+        {isAll === false && (
+          <div className="our-projects-grid">
+            {projects.slice(0, 4).map((e, i) => (
+              <OurProjectCard key={i} info={e} />
+            ))}
+          </div>
+        )}
+
+        {!isAll && (
+          <div className="button-all">
+            <button className="more" onClick={() => setIsAll(true)}>
+              See All
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
