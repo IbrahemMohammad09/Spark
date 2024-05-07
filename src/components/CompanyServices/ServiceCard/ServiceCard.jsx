@@ -4,6 +4,8 @@ import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
+
+
 const ServiceCard = ({ info }) => {
   const { language } = useLanguageContext();
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +14,7 @@ const ServiceCard = ({ info }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          src={`${BaseURL}/${info?.service_picture}`}
+          src={`${BaseURL}/${info?.service_picture_web}`}
           alt={info?.service_picture}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
@@ -23,7 +25,7 @@ const ServiceCard = ({ info }) => {
         <h1>{info?.service_name[language]}</h1>
         <MainButton
           title={"See more details"}
-          url={`/service/${info.id}`}
+          url={`/service/${info.pk}`}
           addStyle="company-service-card-button"
         />
       </div>

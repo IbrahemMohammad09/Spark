@@ -58,8 +58,8 @@ const DetailServices = () => {
             {isLoading && <Loading color="#2fb0cd" />}
             <img
               className="detail-img"
-              src={`${BaseURL}/${serviceData?.service_picture}`}
-              alt={serviceData?.service_picture}
+              src={`${BaseURL}/${serviceData?.service_picture_web}`}
+              alt={serviceData?.service_picture_web}
               loading="lazy"
               style={{ display: isLoading ? "none" : "block" }}
               onLoad={() => setIsLoading(false)}

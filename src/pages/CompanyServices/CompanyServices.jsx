@@ -37,7 +37,7 @@ const CompanyServices = () => {
         <Container>
           <div className="company-services-grid">
             {services &&
-              services.map((e) => <ServiceCard key={e.id} info={e} />)}
+              services.map((e) => <ServiceCard key={e.pk} info={e} />)}
           </div>
         </Container>
       </div>
