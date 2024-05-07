@@ -1,15 +1,22 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import './ViewProject.css'
 import { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import Img from '../../images/OurProjectsImages/project.webp'
 import SEO from '../../components/SharedComponents/SEO/SEO';
-import Img1 from '../../images/ViewProjectImages/Rectangle 4.png'
-import Img2 from '../../images/ViewProjectImages/Rectangle 5.png'
-import Img3 from '../../images/ViewProjectImages/Rectangle 7.png'
-import Img4 from '../../images/ViewProjectImages/Rectangle 8.png'
-import Img5 from '../../images/ViewProjectImages/Rectangle 9.png'
+// import Img from '../../images/OurProjectsImages/project.webp'
+// import Img1 from '../../images/ViewProjectImages/Rectangle 4.png'
+// import Img2 from '../../images/ViewProjectImages/Rectangle 5.png'
+// import Img3 from '../../images/ViewProjectImages/Rectangle 7.png'
+// import Img4 from '../../images/ViewProjectImages/Rectangle 8.png'
+// import Img5 from '../../images/ViewProjectImages/Rectangle 9.png'
+import Img from '../../images/ViewProjectImages/Mykonos.jpeg'
+import Img1 from '../../images/ViewProjectImages/ww.jpeg'
+import Img2 from '../../images/ViewProjectImages/71fc178a-3216-4f88-a91f-c70a41eb749a.jpeg'
+import Img3 from '../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg'
+import Img4 from '../../images/ViewProjectImages/download (40).jpeg'
+import Img5 from '../../images/ViewProjectImages/PeqCi.jpeg'
 import ImagesSwiper from '../../components/ViewProject/Swiper/ImagesSwiper';
+import MainButton from '../../components/SharedComponents/MainButton/MainButton';
+import { BiArrowBack } from 'react-icons/bi';
 
 
 const ViewProject = () => {
@@ -72,18 +79,20 @@ const ViewProject = () => {
         }
 
     }, [id]);
-
-
+    
     return (
-        <section className="view-project main-container">
+        <section className="view-project main-container position-relative">
             <SEO title={'Spark | View project'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
-            {imgs && imgs?.map((e, i) => <img key={i} src={e} alt={e} loading='lazy' className={`bg-img ${hoveredImage == e && 'active'}`} onMouseEnter={() => setHoveredImage(e)} onMouseLeave={() => setHoveredImage(mainImage)} onClick={() => setMainImage(e)}/>)}
-            <div className='info-box'>
+            {imgs && imgs?.map((e, i) => <img key={i} src={e} alt={e} loading='lazy' className={`bg-img ${(mainImage == e || hoveredImage == e) && 'active'}`}/>)}
+            <div className={`info-box ${mainImage == imgs[0] && 'active'}`}>
                 <h1>{project.title}</h1>
                 <h2>{project.subtitle}</h2>
                 <h3>
                     <a href={project.url}>{project.url}</a>
                 </h3>
+            </div>
+            <div onClick={() => window.history.back()} className='back-button'>
+                <MainButton title={<><BiArrowBack/> Back</>} addStyle='main-back-button'/>
             </div>
             <ImagesSwiper imgs={imgs} mainImage={mainImage} setHoveredImage={setHoveredImage} setMainImage={setMainImage}/>
         </section>

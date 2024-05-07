@@ -24,7 +24,9 @@ import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectR
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
-// import ViewProject from "./components/ViewProject/ViewProject";
+import ViewProject from'./pages/ViewProject/ViewProject'
+
+
 function App() {
   return (
     <div className="App position-relative">
@@ -41,21 +43,13 @@ function App() {
           <Route path={"/our_app"} element={<DownloadAppSection />} />
           <Route path={"/company-services"} element={<CompanyServices />} />
           <Route path={"/service/:id"} element={<DetailServices />} />
-          <Route
-            path={"/student-section-services"}
-            element={<StudentServicesSection />}
-          />
-          <Route
-            path={"/company-request/:id"}
-            element={<CompanyRequestPage />}
-          />
+          <Route path={"/student-section-services"} element={<StudentServicesSection />} />
+          <Route path={"/company-request/:id"} element={<CompanyRequestPage />} />
           <Route path={"/completed"} element={<CompleteRequest />} />
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
-          <Route
-            path={"/student-project-request/:id"}
-            element={<StudentProjectRequest />}
-          />
+          <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
+          <Route path="/view-project/:id" element={<ViewProject />}/>
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
