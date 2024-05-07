@@ -17,11 +17,11 @@
   transition-duration: 300ms;
 }
 .topservice-info-card:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
+  transform: scale(1.1) !important;
+  -webkit-transform: scale(1.1) !important;
+  -moz-transform: scale(1.1) !important;
+  -ms-transform: scale(1.1) !important;
+  -o-transform: scale(1.1) !important;
 }
 .topservice-info-card .topservice-icon {
   width: 60px;
