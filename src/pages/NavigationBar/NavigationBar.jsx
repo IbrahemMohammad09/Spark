@@ -94,16 +94,8 @@ const NavigationBar = () => {
   }, [location.pathname]);
 
   return (
-    <div
-      className={`${classNames("nav", activeClass)}`}
-      style={{ display: hideNav ? "none" : "" }}
-    >
-      <Navbar
-        expand="lg"
-        fixed="top"
-        expanded={expanded}
-        onToggle={() => setExpanded((prevExpanded) => !prevExpanded)}
-      >
+    <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
+      <Navbar expand="lg" fixed="top">
         <Container
           style={{ width: "100%", height: "100%", overflowX: "hidden" }}
         >
@@ -117,16 +109,12 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse
             style={{
               paddingLeft: "20px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
             }}
-            id="basic-navbar-nav"
           >
             <Nav className="justify-content-center" style={{ width: "90%" }}>
               <NavLink
