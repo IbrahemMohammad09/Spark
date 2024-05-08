@@ -120,6 +120,8 @@ const OurProjects = () => {
     // إذا كانت الشاشة أكبر من شاشات اللابتوب، أعرض 6 مشاريع
     if (windowWidth > 1740) {
       setDisplayedProjects(projects.slice(0, 6));
+    } else if (windowWidth <= 640) {
+      setDisplayedProjects(projects.slice(0, 2));
     } else {
       // إذا كانت الشاشة بحجم اللابتوب أو أصغر، أعرض 4 مشاريع
       setDisplayedProjects(projects.slice(0, 4));
