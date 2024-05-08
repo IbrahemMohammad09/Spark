@@ -5,6 +5,7 @@ import Img2 from "../../images/OurProjectsImages/Frame 1597884239.webp";
 import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProjectCard";
 import Img from "../../images/OurProjectsImages/project.webp";
 import "../../animation.css";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const OurProjects = () => {
   const projects = [
@@ -65,8 +66,8 @@ const OurProjects = () => {
 
       <div className="top-section">
         <div className="design-box">
-          <img src={Img1} alt={Img1} loading="lazy" />
-          <img src={Img2} alt={Img2} loading="lazy" />
+          <img src={Img1} alt={generateAlt(Img1)} loading="lazy" />
+          <img src={Img2} alt={generateAlt(Img2)} loading="lazy" />
         </div>
         <h1 className="title-text">{description}</h1>
       </div>

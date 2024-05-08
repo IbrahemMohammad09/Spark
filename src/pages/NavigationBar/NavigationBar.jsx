@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import classNames from "classnames";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("hero");
@@ -103,7 +104,7 @@ const NavigationBar = () => {
             <img
               className="logo"
               loading="lazy"
-              alt="spark logo"
+              alt={generateAlt(require("../../images/log.webp"))}
               src={require("../../images/log.webp")}
             />
             <div className="spark">SPARK</div>

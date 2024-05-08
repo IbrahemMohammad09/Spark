@@ -8,6 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Axios } from "../../api/axios";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const StudentServices = () => {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ const StudentServices = () => {
               {isLoading && <Loading color="#2fb0cd" />}
               <img
                 src={img1}
+                alt={generateAlt(img1)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

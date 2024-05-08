@@ -14,6 +14,7 @@ import { useInView } from "react-intersection-observer";
 import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
@@ -75,7 +76,7 @@ const OurTeam = () => {
                       <img
                         className="d-block mx-auto"
                         src={BaseURL + member?.member_picture_web}
-                        alt=""
+                        alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
                         onLoad={() => setIsLoading(false)}
                       />

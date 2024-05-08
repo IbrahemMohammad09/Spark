@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
-import mailIcon from "../../images/ContactUSSection/mail.jpg"
-import callIcon from "../../images/ContactUSSection/call.jpg"
+import mailIcon from "../../images/ContactUSSection/mail.webp"
+import callIcon from "../../images/ContactUSSection/call.webp"
+import generateAlt from "../../utils/GenerateImageAlt";
 
 
 
@@ -17,6 +18,7 @@ const ContactUs = () => {
     triggerOnce: true, // Only trigger once
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
+
 
   return (
     <section id="contact_us" className="contact-us py-6">
@@ -35,7 +37,7 @@ const ContactUs = () => {
                   <a href={`mailto:${companyEmail}`}>
                     {/* <RiMailLine size={30} /> */}
                     <div className="contact">
-                      <img src={mailIcon} className="contact-icon" />
+                      <img src={mailIcon} alt={generateAlt(mailIcon)} className="contact-icon" />
                       <p className="contact-do">Mail Us</p>
                       <p className="contact-where">Spark.contact.it@gmail.com</p>
                     </div>
@@ -43,7 +45,7 @@ const ContactUs = () => {
                   <a href="https://wa.me/+963962272881">
                     {/* <RiWhatsappLine size={30} /> */}
                     <div className="contact">
-                      <img src={callIcon} className="contact-icon" />
+                      <img src={callIcon}  alt={generateAlt(callIcon)} className="contact-icon" />
                       <p className="contact-do">Call Us</p>
                       <p className="contact-where">+963 962 272 881</p>
                     </div>
@@ -56,7 +58,7 @@ const ContactUs = () => {
               <img
                 className="world-map"
                 src={WorldMap}
-                alt=""
+                alt={generateAlt(WorldMap)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

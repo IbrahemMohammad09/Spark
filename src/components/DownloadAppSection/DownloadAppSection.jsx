@@ -6,12 +6,10 @@ import DownloadIcon from "../../images/DownloadAppSection/download.webp";
 import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
-import TabTitle from "../../utils/TabTitle";
 import { Link } from "react-router-dom";
 import { Loading } from "../Loading/Loading";
-// import { Link } from "react-scroll";
 import SEO from "../SharedComponents/SEO/SEO";
-// import { Link } from "react-router-dom";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const DownloadAppSection = () => {
   const { ref, inView, entry } = useInView({
@@ -36,14 +34,14 @@ const DownloadAppSection = () => {
               <img
                 className="girl-with-mobile"
                 src={GirlWithMobile}
-                alt=""
+                alt={generateAlt(GirlWithMobile)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />
             </Col>
             <Col xs={5} md={6} className="p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
-                <img className="download-icon" src={DownloadIcon} alt="download-icon" />
+                <img className="download-icon" src={DownloadIcon} alt={generateAlt(DownloadIcon)} />
                 Download Our App
               </h1>
               <p className="text-white">
@@ -84,7 +82,7 @@ const DownloadAppSection = () => {
               <img
                 className="mobiles"
                 src={Mobiles}
-                alt=""
+                alt={generateAlt(Mobiles)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

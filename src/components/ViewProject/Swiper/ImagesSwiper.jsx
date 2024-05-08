@@ -2,6 +2,7 @@ import { SwiperSlide } from 'swiper/react'
 import './ImagesSwiper.css'
 import { Swiper } from 'swiper/react'
 import { useEffect, useState } from 'react'
+import generateAlt from '../../../utils/GenerateImageAlt'
 
 const ImagesSwiper = ( { imgs, setHoveredImage, mainImage, setMainImage } ) => {  
     const [perView, setPerView] = useState(5);
@@ -33,7 +34,7 @@ const ImagesSwiper = ( { imgs, setHoveredImage, mainImage, setMainImage } ) => {
         >
             {imgs && imgs?.map((e, i) => 
             <SwiperSlide onClick={() => setMainImage(e)} onMouseEnter={() => setHoveredImage(e)} onMouseLeave={() => setHoveredImage(mainImage)}>
-                <img key={i} src={e} alt={e} loading='lazy' className={`scroll-img ${mainImage == e && "active"}`}/>
+                <img key={i} src={e} alt={generateAlt(e)} loading='lazy' className={`scroll-img ${mainImage == e && "active"}`}/>
             </SwiperSlide>
             )}
         </Swiper>

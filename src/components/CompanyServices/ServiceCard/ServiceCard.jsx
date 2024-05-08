@@ -4,11 +4,13 @@ import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
+// import generateAlt from "../../../utils/GenerateImageAlt";
 
 
 const ServiceCard = ({ info }) => {
   const { language } = useLanguageContext();
   const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="company-service-card">
       <div className="img-cover">

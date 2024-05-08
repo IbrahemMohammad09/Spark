@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./OurProjectCard.css";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef } from "react";
+import generateAlt from "../../../utils/GenerateImageAlt";
 
 const OurProjectCard = ({ info }) => {
   const [userHasScrolled, setUserHasScrolled] = useState(false);
@@ -30,6 +31,7 @@ const OurProjectCard = ({ info }) => {
       setHasBeenInView(true);
     }
   }, [inView, userHasScrolled]);
+  
   return (
     <div
       className={`${
@@ -38,7 +40,7 @@ const OurProjectCard = ({ info }) => {
       ref={ref}
     >
       <div className="img">
-        <img src={info.img} alt={info.img} loading="lazy" />
+        <img src={info.img} alt={generateAlt(info.img)} loading="lazy" />
       </div>
       <div className="info">
         <h1>{info.title}</h1>

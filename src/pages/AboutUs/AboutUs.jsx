@@ -8,6 +8,7 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { useInView } from "react-intersection-observer";
+import generateAlt from "../../utils/GenerateImageAlt";
 const AboutUs = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -60,7 +61,7 @@ const AboutUs = () => {
             {isLoading && <Loading color="#2fb0cd" />}
             <img
               src={about}
-              alt=""
+              alt={generateAlt(about)}
               className="about-image"
               style={{ display: isLoading ? "none" : "block" }}
               onLoad={() => setIsLoading(false)}
