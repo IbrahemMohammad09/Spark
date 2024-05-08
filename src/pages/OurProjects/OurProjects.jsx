@@ -65,6 +65,33 @@ const OurProjects = () => {
         "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
       url: "https://MRR.com",
     },
+    {
+      id: 4,
+      img: img2,
+      title: "Memory App",
+      type: "Flutter App",
+      subtitle:
+        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
+      url: "https://MRR.com",
+    },
+    {
+      id: 4,
+      img: img2,
+      title: "Memory App",
+      type: "Flutter App",
+      subtitle:
+        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
+      url: "https://MRR.com",
+    },
+    {
+      id: 4,
+      img: img2,
+      title: "Memory App",
+      type: "Flutter App",
+      subtitle:
+        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
+      url: "https://MRR.com",
+    },
   ];
   const [isAll, setIsAll] = useState(false);
   const description =
@@ -75,6 +102,29 @@ const OurProjects = () => {
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
   const initScrollY = useRef(window.scrollY);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [displayedProjects, setDisplayedProjects] = useState([]);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  useEffect(() => {
+    // إذا كانت الشاشة أكبر من شاشات اللابتوب، أعرض 6 مشاريع
+    if (windowWidth > 1740) {
+      setDisplayedProjects(projects.slice(0, 6));
+    } else {
+      // إذا كانت الشاشة بحجم اللابتوب أو أصغر، أعرض 4 مشاريع
+      setDisplayedProjects(projects.slice(0, 4));
+    }
+  }, [windowWidth, projects]);
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -130,8 +180,8 @@ const OurProjects = () => {
             </div>
           )}
           {isAll === false && (
-            <div className="our-projects-grid">
-              {projects.slice(0, 4).map((e, i) => (
+            <div className="our-projects-grid large">
+              {displayedProjects.map((e, i) => (
                 <OurProjectCard key={i} info={e} />
               ))}
             </div>

@@ -2,7 +2,12 @@
   min-height: 100vh;
   padding: 0;
 }
-
+.our-projects-grid .xLarge {
+  display: none;
+}
+.our-projects-grid .large {
+  display: block;
+}
 .our-projects-page .top-section {
   display: flex;
   align-items: center;
@@ -94,5 +99,13 @@
 @media screen and (max-width: 460px) {
   .our-projects-page .top-section {
     height: 1200px;
+  }
+}
+@media (min-width: 1281px) {
+  .our-projects-grid.xLarge {
+    display: block;
+  }
+  .our-projects-grid.large {
+    display: none;
   }
 }
