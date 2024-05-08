@@ -1,7 +1,7 @@
 import MainButton from "../SharedComponents/MainButton/MainButton";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
-import Img1 from "../../images/OurProjectsImage/UI Design.png";
-import Img2 from "../../images/OurProjectsImage/Home Page 9.png";
+import Img1 from "../../images/OurProjectsImage/UI Design.webp";
+import Img2 from "../../images/OurProjectsImage/Home Page 9.webp";
 import InfoCard from "./InfoCard/InfoCard";
 import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";

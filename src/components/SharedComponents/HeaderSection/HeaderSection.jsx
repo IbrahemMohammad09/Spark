@@ -1,4 +1,4 @@
-import Img1 from '../../../images/SharedImages/Group 34389.png'
+import Img1 from '../../../images/SharedImages/Group 34389.webp'
 import './HeaderSection.css'
 
 const HeaderSection = ( { title } ) => {

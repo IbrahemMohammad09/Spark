@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import MainHomeTitle from "../../SharedComponents/MainHomeTitle/MainHomeTitle";
 import InfoCard from "./InfoCard/InfoCard";
-import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).png";
-import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.png";
+import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).webp";
+import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.webp";
 import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
 

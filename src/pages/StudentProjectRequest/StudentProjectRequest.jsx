@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../api/axios";
 import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
-import Img from '../../images/CompanyRequestPageImages/company-request-page.png'
+import Img from '../../images/CompanyRequestPageImages/company-request-page.webp'
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
 import SEO from '../../components/SharedComponents/SEO/SEO';
 

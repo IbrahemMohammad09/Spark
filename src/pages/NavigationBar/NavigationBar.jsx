@@ -104,7 +104,7 @@ const NavigationBar = () => {
               className="logo"
               loading="lazy"
               alt="spark logo"
-              src={require("../../images/log.png")}
+              src={require("../../images/log.webp")}
             />
             <div className="spark">SPARK</div>
           </Navbar.Brand>

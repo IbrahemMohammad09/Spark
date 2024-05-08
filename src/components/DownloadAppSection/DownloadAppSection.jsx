@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.webp";
-import DownloadIcon from "../../images/DownloadAppSection/download.png";
+import DownloadIcon from "../../images/DownloadAppSection/download.webp";
 import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
