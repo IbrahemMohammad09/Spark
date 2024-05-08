@@ -63,24 +63,12 @@
   justify-content: center;
   align-items: center;
 }
-.more {
-  background-color: rgba(47, 176, 205, 1);
-  width: 125px;
-  height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  color: white;
-  font-size: 22px;
-  font-weight: 600;
-  outline: none;
-  border: 1px solid rgba(47, 176, 205, 1);
-}
-.more:hover {
-  background-color: #27a9e1; /* نفس لون العنوان الفرعي */
-  color: #fff;
-  transform: translateY(-7px);
+
+.see-all {
+  margin: 40px auto;
+  padding: 17px 110.5px;
+  font-size: 1.375rem;
+  line-height: 25.78px;
 }
 @media screen and (max-width: 991px) {
   .our-projects-page .design-box {
