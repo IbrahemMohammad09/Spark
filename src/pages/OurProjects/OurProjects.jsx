@@ -6,8 +6,9 @@ import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProje
 import Img from "../../images/OurProjectsImages/project.webp";
 import img2 from "../../images/OurProjectsImage/UI Design.png";
 import "../../animation.css";
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 const OurProjects = () => {
   const projects = [
     {
@@ -71,6 +72,32 @@ const OurProjects = () => {
   useEffect(() => {
     setIsAll(false);
   }, []);
+  const [userHasScrolled, setUserHasScrolled] = useState(false);
+  const [hasBeenInView, setHasBeenInView] = useState(false);
+  const initScrollY = useRef(window.scrollY);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY !== initScrollY.current) {
+        setUserHasScrolled(true);
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (inView && userHasScrolled) {
+      setHasBeenInView(true);
+    }
+  }, [inView, userHasScrolled]);
   return (
     <section className="our-projects-page position-relative">
       <SEO
@@ -94,26 +121,26 @@ const OurProjects = () => {
       </div>
       <div className="our-projects-cards main-container bounceInUp">
         <h2 className="title">Our Projects</h2>
-        {isAll === true && (
-          <div className="our-projects-grid">
-            {projects.map((e, i) => (
-              <OurProjectCard key={i} info={e} />
-            ))}
-          </div>
-        )}
-        {isAll === false && (
-          <div className="our-projects-grid">
-            {projects.slice(0, 4).map((e, i) => (
-              <OurProjectCard key={i} info={e} />
-            ))}
-          </div>
-        )}
+        <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
+          {isAll === true && (
+            <div className="our-projects-grid">
+              {projects.map((e, i) => (
+                <OurProjectCard key={i} info={e} />
+              ))}
+            </div>
+          )}
+          {isAll === false && (
+            <div className="our-projects-grid">
+              {projects.slice(0, 4).map((e, i) => (
+                <OurProjectCard key={i} info={e} />
+              ))}
+            </div>
+          )}
+        </div>
 
         {!isAll && (
-          <div className="button-all">
-            <button className="more" onClick={() => setIsAll(true)}>
-              See All
-            </button>
+          <div className="button-all" onClick={() => setIsAll(true)}>
+            <MainButton title={"See all"} addStyle={"see-all"} />
           </div>
         )}
       </div>
