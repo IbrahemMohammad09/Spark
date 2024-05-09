@@ -4,6 +4,7 @@ import OurServices from "./OurServices/OurServices";
 import OurTopServices from "./OurTopServices/OurTopServices";
 import TabTitle from "../../utils/TabTitle";
 import SEO from '../SharedComponents/SEO/SEO'
+import { metaSEO } from "../../utils/constants";
 const ServicesSection = () => {
   // Set tab title
 
@@ -12,9 +13,10 @@ const ServicesSection = () => {
       window.scrollTo(0, 0);
     });
   }, []);
+
   return (
     <section id="services" className="services">
-      <SEO title={'Spark | Services'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Services'} description={metaSEO.services.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="services-section">
         <OurServices />
         <OurTopServices />

@@ -4,6 +4,7 @@ import hero from "../../images/HeroSectionImags/spark.png";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { Loading } from "../Loading/Loading";
+import generateAlt from "../../utils/GenerateImageAlt";
 const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -26,7 +27,7 @@ const HeroSection = () => {
             <img
               className="hero-img"
               src={hero}
-              alt="hero img"
+              alt={generateAlt(hero)}
               onLoad={() => setIsLoading(false)}
               style={{ display: isLoading ? "none" : "block" }}
             />

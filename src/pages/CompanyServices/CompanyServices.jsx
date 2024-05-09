@@ -5,6 +5,7 @@ import "./CompanyServices.css";
 import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCard";
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import { metaSEO } from "../../utils/constants";
 
 const CompanyServices = () => {
   const [services, setServices] = useState([]);
@@ -29,7 +30,7 @@ const CompanyServices = () => {
 
   return (
     <section id="services" className="company-services position-relative">
-      <SEO title={'Spark | Company services'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Company services'} description={metaSEO.services.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <div
         ref={ref}
         className={`${inView ? "fade-in-bottom" : ""} main-container`}

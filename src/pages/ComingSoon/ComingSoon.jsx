@@ -3,6 +3,7 @@ import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage"
 import coming from "../../images/ComingSoon/coming.svg";
 import { Link } from "react-router-dom";
 import "./ComingSoon.css";
+import generateAlt from "../../utils/GenerateImageAlt";
 export const ComingSoon = () => {
   const { inView, ref } = useInView({
     triggerOnce: true,
@@ -19,7 +20,13 @@ export const ComingSoon = () => {
         <h1>We are almost there</h1>
         <h3>Stay tuned for something amazing.</h3>
         <div className="dynamic-background">
-          <img src={coming} alt="coming" className="img-coming" />
+
+          <img
+            src={coming}
+            alt={generateAlt(coming)}
+            style={{ width: "400px", height: "400px" }}
+          />
+
         </div>
         <Link to="/">
           <button className="button">Go To Home</button>

@@ -6,9 +6,15 @@ import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProje
 import Img from "../../images/OurProjectsImages/project.webp";
 import img2 from "../../images/OurProjectsImage/UI Design.png";
 import "../../animation.css";
+
+import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
+
+
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
+
 const OurProjects = () => {
   const projects = [
     {
@@ -93,6 +99,7 @@ const OurProjects = () => {
       url: "https://MRR.com",
     },
   ];
+
   const [isAll, setIsAll] = useState(false);
   const description =
     "Our projects involve creating user-friendly interfaces that make navigating websites or apps a breeze. we focus on understanding the needs and behaviors of users to create designs that not only look good but also function intuitively.";
@@ -108,6 +115,7 @@ const OurProjects = () => {
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
+
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -154,7 +162,7 @@ const OurProjects = () => {
     <section className="our-projects-page position-relative">
       <SEO
         title={"Spark | Our projects"}
-        description={description}
+        description={metaSEO.ourProjects.description}
         name={"Spark"}
         type={"website"}
         keywords={[
@@ -166,10 +174,10 @@ const OurProjects = () => {
 
       <div className="top-section">
         <div className="design-box">
-          <img src={Img1} alt={Img1} loading="lazy" />
-          <img src={Img2} alt={Img2} loading="lazy" />
+          <img src={Img1} alt={generateAlt(Img1)} loading="lazy" />
+          <img src={Img2} alt={generateAlt(Img2)} loading="lazy" />
         </div>
-        <h1 className="title-text">{description}</h1>
+        <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
       </div>
       <div className="our-projects-cards main-container bounceInUp">
         <h2 className="title">Our Projects</h2>
