@@ -113,7 +113,7 @@ const NavigationBar = () => {
 
           <Navbar.Collapse
             style={{
-              paddingLeft: "20px",
+              paddingLeft: "75px",
             }}
           >
             <Nav className="justify-content-center" style={{ width: "90%" }}>
