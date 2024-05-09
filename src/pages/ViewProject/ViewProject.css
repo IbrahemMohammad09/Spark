@@ -13,7 +13,7 @@
     z-index: 0;
     object-fit: fill;
     opacity: 0;
-    filter: grayscale(20%);
+    filter: grayscale(20%) ;
     transition: 1s ease;
 }
 
@@ -24,14 +24,14 @@
 .view-project .info-box {
     position: absolute;
     left: -100%;
-    top: 12%;
+    top: 15%;
     z-index: 2;
     width: 40%;
-    background-color: #42bcecde;
-    box-shadow: 1px -1px 10px -8px white;
-    border-radius: 10px;
-    padding: 10px 0 0 4%;
+    background: rgba(47, 176, 205, 0.81);
+    border-radius: 0 200px 200px 0;
+    padding: 10px 0 10px 4%;
     transition: .4s ease;
+    z-index: 1;    
 }
 
 .view-project .info-box.active {
@@ -60,7 +60,7 @@
     font-weight: 700;
     line-height: 42.18px;
     letter-spacing: 0.01em;
-    color: rgba(0, 3, 10, 1);
+    color: whitesmoke;
     transition: .3s ease;
     text-decoration: none;
 }
@@ -83,16 +83,23 @@
     gap: 10px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     .view-project .info-box {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
+        width: 60%;
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 767px) {
     .view-project .info-box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .view-project .info-box.active {
+        border-radius: 0;
         text-align: center;
+        left: 0;
+        padding: 10px;
     }
 }

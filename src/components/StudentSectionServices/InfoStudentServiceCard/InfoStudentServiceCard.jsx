@@ -3,6 +3,7 @@ import { BaseURL } from "../../../utils/constants";
 import { useState } from "react";
 import "./InfoStudentServiceCard.css";
 import { Loading } from "../../Loading/Loading";
+import generateAlt from "../../../utils/GenerateImageAlt";
 const InfoStudentServiceCard = ({ info }) => {
   const [isLoading, setIsLoading] = useState(true);
   const handleTitleSplit = (index) => {
@@ -15,7 +16,7 @@ const InfoStudentServiceCard = ({ info }) => {
         {isLoading && <Loading color="#2fb0cd" />}
         <img
           src={`${BaseURL}${info.section_image_web}`}
-          alt={info.section_image}
+          alt={ generateAlt(info.section_image)}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}

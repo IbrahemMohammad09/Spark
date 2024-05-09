@@ -10,6 +10,7 @@ import "./DetailServices.css";
 import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import generateAlt from "../../utils/GenerateImageAlt";
 
 const DetailServices = () => {
   const [serviceData, setServiceData] = useState(null);
@@ -59,7 +60,7 @@ const DetailServices = () => {
             <img
               className="detail-img"
               src={`${BaseURL}/${serviceData?.service_picture_web}`}
-              alt={serviceData?.service_picture_web}
+              alt={generateAlt(serviceData?.service_picture_web)}
               loading="lazy"
               style={{ display: isLoading ? "none" : "block" }}
               onLoad={() => setIsLoading(false)}

@@ -7,6 +7,7 @@ import { Container } from "react-bootstrap";
 import './StudentCourses.css'
 import StudentCoursesCard from "../../components/StudentCourses/StudentCoursesCard/StudentCoursesCard";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import { metaSEO } from "../../utils/constants";
 
 const StudentCourses = () => {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ const StudentCourses = () => {
 
     return (
         <section className='overflow-hidden'>
-            <SEO title={'Spark | Student courses'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+            <SEO title={'Spark | Student courses'} description={metaSEO.studentCourses.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <HeaderSection title={'Student Courses'}/>
             <div className="student-courses main-container">
                 <Container className='student-courses-flex bounceInUp'>

@@ -17,6 +17,7 @@ import Img5 from '../../images/ViewProjectImages/PeqCi.jpeg'
 import ImagesSwiper from '../../components/ViewProject/Swiper/ImagesSwiper';
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
 import { BiArrowBack } from 'react-icons/bi';
+import generateAlt from '../../utils/GenerateImageAlt';
 
 
 const ViewProject = () => {
@@ -83,7 +84,7 @@ const ViewProject = () => {
     return (
         <section className="view-project main-container position-relative">
             <SEO title={'Spark | View project'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
-            {imgs && imgs?.map((e, i) => <img key={i} src={e} alt={e} loading='lazy' className={`bg-img ${(mainImage == e || hoveredImage == e) && 'active'}`}/>)}
+            {imgs && imgs?.map((e, i) => <img key={i} src={e} alt={generateAlt(e)} loading='lazy' className={`bg-img ${(mainImage == e || hoveredImage == e) && 'active'}`}/>)}
             <div className={`info-box ${mainImage == imgs[0] && 'active'}`}>
                 <h1>{project.title}</h1>
                 <h2>{project.subtitle}</h2>

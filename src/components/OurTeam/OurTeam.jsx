@@ -8,12 +8,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Axios } from "../../api/axios";
-import { BaseURL } from "../../utils/constants";
+import { BaseURL, metaSEO } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
 import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
+import generateAlt from "../../utils/GenerateImageAlt";
+import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
@@ -38,20 +40,13 @@ const OurTeam = () => {
 
   return (
     <section className="our-team" id="our_team">
-      <SEO
-        title={"Spark | Our team"}
-        description={""}
-        name={"Spark"}
-        type={"website"}
-        keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
-        ]}
-      />
-      <Container>
+      <SEO title={'Spark | Our team'} description={metaSEO.ourTeam.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <MainHomeTitle title={'Our Team'} subtitle={metaSEO.ourTeam.description}/>
+
+      {/* <Container>
         <h1>Our Team</h1>
-      </Container>
+      </Container> */}
+
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
@@ -85,7 +80,7 @@ const OurTeam = () => {
                       <img
                         className="d-block mx-auto"
                         src={BaseURL + member?.member_picture_web}
-                        alt=""
+                        alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
                         onLoad={() => setIsLoading(false)}
                       />
