@@ -70,9 +70,9 @@ const OurTeam = () => {
             className="swiper-button-next"
             onClick={() => swiperRef.current.slideNext()}
           ></div>
-          {teamData?.members.map((member) =>
+          {teamData?.members.map((member, index) =>
             member ? (
-              <SwiperSlide key={member.id}>
+              <SwiperSlide key={index} id={member.id}>
                 <div className="slide-body">
                   <div className="slide-content">
                     {isLoading && <Loading color="#2fb0cd" />}
