@@ -6,6 +6,7 @@ import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProje
 import Img from "../../images/OurProjectsImages/project.webp";
 import "../../animation.css";
 import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 const OurProjects = () => {
   const projects = [
@@ -47,14 +48,12 @@ const OurProjects = () => {
     },
   ];
 
-  const description =
-    "Our projects involve creating user-friendly interfaces that make navigating websites or apps a breeze. we focus on understanding the needs and behaviors of users to create designs that not only look good but also function intuitively.";
 
   return (
     <section className="our-projects-page position-relative">
       <SEO
         title={"Spark | Our projects"}
-        description={description}
+        description={metaSEO.ourProjects.description}
         name={"Spark"}
         type={"website"}
         keywords={[
@@ -69,7 +68,7 @@ const OurProjects = () => {
           <img src={Img1} alt={generateAlt(Img1)} loading="lazy" />
           <img src={Img2} alt={generateAlt(Img2)} loading="lazy" />
         </div>
-        <h1 className="title-text">{description}</h1>
+        <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
       </div>
       <div className="our-projects-cards main-container bounceInUp">
         <h2 className="title">Our Projects</h2>

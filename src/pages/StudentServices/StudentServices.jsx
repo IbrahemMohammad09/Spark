@@ -9,6 +9,7 @@ import { Axios } from "../../api/axios";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 const StudentServices = () => {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ const StudentServices = () => {
 
   return (
     <section id="services" className="student-section main-container">
-      <SEO title={'Spark | Student services'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Student services'} description={metaSEO.studentServices.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="student-section-grid">
         {studentServices.map((student) => (
           <div

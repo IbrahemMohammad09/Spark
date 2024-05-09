@@ -8,6 +8,7 @@ import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
 import { useEffect, useState } from "react";
+import { metaSEO } from "../../utils/constants";
 
 const ProjectsSection = () => {
   const projects = [
@@ -56,7 +57,7 @@ const ProjectsSection = () => {
     <section id="our-projects">
       <SEO
         title={"Spark | Our projects"}
-        description={""}
+        description={metaSEO.projects.description}
         name={"Spark"}
         type={"website"}
         keywords={[
@@ -66,7 +67,7 @@ const ProjectsSection = () => {
         ]}
       />
       <Container className="main-section our-projects position-relative">
-        <MainHomeTitle title={"Our Projects"} />
+        <MainHomeTitle title={"Our Projects"} subtitle={metaSEO.projects.description}/>
         <div>
           <div
             ref={ref}

@@ -8,6 +8,7 @@ import SEO from "../SharedComponents/SEO/SEO";
 import mailIcon from "../../images/ContactUSSection/mail.webp"
 import callIcon from "../../images/ContactUSSection/call.webp"
 import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 
 
@@ -22,7 +23,7 @@ const ContactUs = () => {
 
   return (
     <section id="contact_us" className="contact-us py-6">
-      <SEO title={'Spark | Contact us'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Contact us'} description={metaSEO.contactUs.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
         <Container>
           <Row className="justify-content-center">
@@ -33,6 +34,7 @@ const ContactUs = () => {
             >
               <div className="contact-container">
                 <h1 className="contact-h1">Contact Us</h1>
+                {/* <h2>{metaSEO.contactUs.description}</h2> */}
                 <div className="d-flex align-items-start gap-1 justify-content-start contact-box">
                   <a href={`mailto:${companyEmail}`}>
                     {/* <RiMailLine size={30} /> */}

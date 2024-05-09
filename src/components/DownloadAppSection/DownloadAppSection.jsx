@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 const DownloadAppSection = () => {
   const { ref, inView, entry } = useInView({
@@ -25,7 +26,7 @@ const DownloadAppSection = () => {
 
   return (
     <section id="our_app" className="download-sec">
-      <SEO title={'Spark | Our App'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Our App'} description={metaSEO.downloadApp.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
@@ -45,8 +46,9 @@ const DownloadAppSection = () => {
                 Download Our App
               </h1>
               <p className="text-white">
-                Download the application to benefit from our comprehensive and
-                diverse services
+                {/* Download the application to benefit from our comprehensive and
+                diverse services */}
+                {metaSEO.downloadApp.description}
               </p>
               {/* Google Play Link */}
               <Link

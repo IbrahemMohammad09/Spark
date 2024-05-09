@@ -7,6 +7,7 @@ import ContactUs from "../../components/ContactUs/ContactUs";
 import OurTeam from "../../components/OurTeam/OurTeam";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import { metaSEO } from "../../utils/constants";
 
 const Home = () => {
   return (
@@ -24,7 +25,7 @@ const Home = () => {
       </div>
       <SEO
         title={"Spark"}
-        description={""}
+        description={metaSEO.about.description}
         name={"Spark"}
         type={"website"}
         keywords={[
