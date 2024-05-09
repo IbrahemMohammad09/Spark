@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./OurProjectCard.css";
+
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
@@ -32,13 +33,12 @@ const OurProjectCard = ({ info }) => {
     }
   }, [inView, userHasScrolled]);
   
+
+
+
+
   return (
-    <div
-      className={`${
-        hasBeenInView && inView ? "fade-in-bottom" : ""
-      } our-project-card-info`}
-      ref={ref}
-    >
+    <div className="our-project-card-info">
       <div className="img">
         <img src={info.img} alt={generateAlt(info.img)} loading="lazy" />
       </div>

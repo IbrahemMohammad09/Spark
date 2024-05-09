@@ -12,9 +12,8 @@ const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("hero");
   const [activeClass, setActiveClass] = useState("active1");
   const [test, setTest] = useState("");
-  const [hideNav, setHideNav] = useState(false);
-
-  let isLastSectionActive = false;
+  const [hideNav, setHideNav] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const location = useLocation();
 
@@ -42,7 +41,6 @@ const NavigationBar = () => {
           ) {
             // This means we're at the bottom of the page
             // The -1 is to ensure this condition is true even when the user is at the absolute bottom
-            isLastSectionActive = true;
             setActiveLink(sectionId);
           }
         }
@@ -72,7 +70,9 @@ const NavigationBar = () => {
       setActiveClass("active2");
     }
   }, [location.pathname]);
-
+  useEffect(() => {
+    setExpanded(false);
+  }, []);
   const handleSetActiveLink = (link) => {
     setActiveLink("");
     setTest(link);
@@ -96,7 +96,7 @@ const NavigationBar = () => {
 
   return (
     <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
-      <Navbar expand="sm" fixed="top">
+      <Navbar expand="lg" fixed="top">
         <Container
           style={{ width: "100%", height: "100%", overflowX: "hidden" }}
         >
@@ -110,13 +110,14 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse
-            style={{ paddingLeft: "50px" }}
-            id="basic-navbar-nav"
+            style={{
+              paddingLeft: "20px",
+            }}
           >
-            <Nav className="justify-content-center" style={{ width: "85%" }}>
+            <Nav className="justify-content-center" style={{ width: "90%" }}>
               <NavLink
                 className={
                   activeLink === "hero" || test === "home"
