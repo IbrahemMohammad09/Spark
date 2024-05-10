@@ -4,7 +4,7 @@ import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
-// import generateAlt from "../../../utils/GenerateImageAlt";
+
 
 
 const ServiceCard = ({ info }) => {

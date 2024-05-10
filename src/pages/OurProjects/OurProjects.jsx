@@ -4,7 +4,7 @@ import Img1 from "../../images/OurProjectsImages/Bill Sitting using laptop 1.web
 import Img2 from "../../images/OurProjectsImages/Frame 1597884239.webp";
 import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProjectCard";
 import Img from "../../images/OurProjectsImages/project.webp";
-import img2 from "../../images/OurProjectsImage/UI Design.png";
+import img2 from "../../images/OurProjectsImage/UI Design.webp";
 import "../../animation.css";
 
 import generateAlt from "../../utils/GenerateImageAlt";
