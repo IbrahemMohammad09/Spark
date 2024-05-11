@@ -106,7 +106,9 @@ const OurProjects = () => {
   const [displayedProjects, setDisplayedProjects] = useState([]);
 
   const handleResize = () => {
-    setWindowWidth(window.innerWidth);
+    if (window.innerWidth !== windowWidth) {
+      setWindowWidth(window.innerWidth);
+    }
   };
 
   useEffect(() => {
@@ -115,18 +117,30 @@ const OurProjects = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [windowWidth]);
   useEffect(() => {
-    // إذا كانت الشاشة أكبر من شاشات اللابتوب، أعرض 6 مشاريع
-    if (windowWidth > 1740) {
-      setDisplayedProjects(projects.slice(0, 6));
-    } else if (windowWidth <= 640) {
-      setDisplayedProjects(projects.slice(0, 2));
-    } else {
-      // إذا كانت الشاشة بحجم اللابتوب أو أصغر، أعرض 4 مشاريع
-      setDisplayedProjects(projects.slice(0, 4));
-    }
-  }, [windowWidth, projects]);
+    let isMounted = true; // علامة لتتبع حالة mount/unmount
+
+    const updateDisplayedProjects = () => {
+      // تأكد من أن العنصر لا يزال محملاً قبل التحديث
+      if (isMounted) {
+        if (windowWidth <= 640) {
+          setDisplayedProjects(projects.slice(0, 2));
+        } else if (windowWidth > 640 && windowWidth <= 1740) {
+          setDisplayedProjects(projects.slice(0, 4));
+        } else if (windowWidth > 1740) {
+          setDisplayedProjects(projects.slice(0, 6));
+        }
+      }
+    };
+
+    updateDisplayedProjects();
+
+    // عند الـ unmounting، يقوم بتغيير isMounted إلى false
+    return () => {
+      isMounted = false;
+    };
+  }, [windowWidth]);
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -151,7 +165,7 @@ const OurProjects = () => {
     }
   }, [inView, userHasScrolled]);
   return (
-    <section className="our-projects-page position-relative">
+    <section id="our-projects" className="our-projects-page position-relative">
       <SEO
         title={"Spark | Our projects"}
         description={description}

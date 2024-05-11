@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
 .App {
   background-color: #ffff;
 }
@@ -5,5 +7,3 @@
 a {
   text-decoration: none;
 }
-
-
