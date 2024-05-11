@@ -98,7 +98,12 @@ const NavigationBar = () => {
     <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
       <Navbar expand="lg" fixed="top">
         <Container
-          style={{ width: "100%", height: "100%", overflowX: "hidden" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            overflowX: "hidden",
+            overflowY: "hidden",
+          }}
         >
           <Navbar.Brand to="/">
             <img
