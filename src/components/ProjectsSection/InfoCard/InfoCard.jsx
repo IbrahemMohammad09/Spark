@@ -2,6 +2,8 @@ import MainButton from "../../SharedComponents/MainButton/MainButton";
 import "./InfoCard.css";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
+import generateAlt from "../../../utils/GenerateImageAlt";
+
 const InfoCard = ({ info }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
@@ -15,7 +17,7 @@ const InfoCard = ({ info }) => {
         {isLoading && <Loading color="#2fb0cd" />}
         <img
           src={info.img}
-          alt={info.img}
+          alt={generateAlt(info.img)}
           style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}
         />

@@ -2,12 +2,14 @@ import "./StudentServices.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
-import img1 from "../../images/StudentServices/img.jpg";
+import img1 from "../../images/StudentServices/img.webp";
 import { useInView } from "react-intersection-observer";
 import { useParams, useNavigate } from "react-router-dom";
 import { Axios } from "../../api/axios";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
+import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 const StudentServices = () => {
   const navigate = useNavigate();
@@ -52,7 +54,7 @@ const StudentServices = () => {
 
   return (
     <section id="services" className="student-section main-container">
-      <SEO title={'Spark | Student services'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Student services'} description={metaSEO.studentServices.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <Container className="student-section-grid">
         {studentServices.map((student) => (
           <div
@@ -65,6 +67,7 @@ const StudentServices = () => {
               {isLoading && <Loading color="#2fb0cd" />}
               <img
                 src={img1}
+                alt={generateAlt(img1)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

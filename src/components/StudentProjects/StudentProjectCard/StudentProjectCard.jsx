@@ -3,6 +3,7 @@ import "./StudentProjectCard.css";
 import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
+import generateAlt from "../../../utils/GenerateImageAlt";
 
 const StudentProjectCard = ({ info }) => {
   const { language } = useLanguageContext();
@@ -17,6 +18,7 @@ const StudentProjectCard = ({ info }) => {
               <img
                 key={index}
                 src={picture.image}
+                alt={generateAlt(picture.image)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

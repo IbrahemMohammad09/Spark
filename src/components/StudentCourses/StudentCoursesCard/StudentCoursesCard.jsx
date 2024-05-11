@@ -3,6 +3,7 @@ import "./StudentCoursesCard.css";
 import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
+import generateAlt from "../../../utils/GenerateImageAlt";
 const StudentCoursesCard = ({ info }) => {
   const { language } = useLanguageContext();
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ const StudentCoursesCard = ({ info }) => {
               {isLoading && <Loading color="#2fb0cd" />}
               <img
                 key={index}
-                src={picture.image}
+                src={generateAlt(picture.image)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

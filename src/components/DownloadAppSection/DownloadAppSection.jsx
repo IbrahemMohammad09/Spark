@@ -2,16 +2,15 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.webp";
-import DownloadIcon from "../../images/DownloadAppSection/download.png";
+import DownloadIcon from "../../images/DownloadAppSection/download.webp";
 import { RiGooglePlayFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
-import TabTitle from "../../utils/TabTitle";
 import { Link } from "react-router-dom";
 import { Loading } from "../Loading/Loading";
-// import { Link } from "react-scroll";
 import SEO from "../SharedComponents/SEO/SEO";
-// import { Link } from "react-router-dom";
+import generateAlt from "../../utils/GenerateImageAlt";
+import { metaSEO } from "../../utils/constants";
 
 const DownloadAppSection = () => {
   const { ref, inView, entry } = useInView({
@@ -22,17 +21,9 @@ const DownloadAppSection = () => {
 
   return (
     <section id="our_app" className="download-sec">
-      <SEO
-        title={"Spark | Our App"}
-        description={""}
-        name={"Spark"}
-        type={"website"}
-        keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
-        ]}
-      />
+
+      <SEO title={'Spark | Our App'} description={metaSEO.downloadApp.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
@@ -41,23 +32,24 @@ const DownloadAppSection = () => {
               <img
                 className="girl-with-mobile"
                 src={GirlWithMobile}
-                alt=""
+                alt={generateAlt(GirlWithMobile)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />
             </Col>
             <Col xs={5} md={6} className="p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
-                <img
-                  className="download-icon"
-                  src={DownloadIcon}
-                  alt="download-icon"
-                />
+
+
+
+                <img className="download-icon" src={DownloadIcon} alt={generateAlt(DownloadIcon)} />
+
                 Download Our App
               </h1>
               <p className="text-white">
-                Download the application to benefit from our comprehensive and
-                diverse services
+                {/* Download the application to benefit from our comprehensive and
+                diverse services */}
+                {metaSEO.downloadApp.description}
               </p>
               {/* Google Play Link */}
               <Link
@@ -93,7 +85,7 @@ const DownloadAppSection = () => {
               <img
                 className="mobiles"
                 src={Mobiles}
-                alt=""
+                alt={generateAlt(Mobiles)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

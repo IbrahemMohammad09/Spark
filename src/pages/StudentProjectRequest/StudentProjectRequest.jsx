@@ -4,9 +4,10 @@ import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../api/axios";
 import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
-import Img from '../../images/CompanyRequestPageImages/company-request-page.png'
+import Img from '../../images/CompanyRequestPageImages/company-request-page.webp'
 import MainButton from '../../components/SharedComponents/MainButton/MainButton';
 import SEO from '../../components/SharedComponents/SEO/SEO';
+import generateAlt from '../../utils/GenerateImageAlt';
 
 const StudentProjectRequest = () => {
     const [error, setError] = useState(null);
@@ -98,7 +99,7 @@ const StudentProjectRequest = () => {
             <SEO title={'Spark | Student Project Request'} description={''} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
             <div className='cover-img fade-in-bottom'>
                 <div data-title="Student Project Request">
-                    <img src={Img} alt={Img}/>
+                    <img src={Img} alt={generateAlt(Img)}/>
                 </div>
             </div>
             <div className="main-container">

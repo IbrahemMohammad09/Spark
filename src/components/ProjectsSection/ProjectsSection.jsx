@@ -1,13 +1,14 @@
 import MainButton from "../SharedComponents/MainButton/MainButton";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
-import Img1 from "../../images/OurProjectsImage/UI Design.png";
-import Img2 from "../../images/OurProjectsImage/Home Page 9.png";
+import Img1 from "../../images/OurProjectsImage/UI Design.webp";
+import Img2 from "../../images/OurProjectsImage/Home Page 9.webp";
 import InfoCard from "./InfoCard/InfoCard";
 import "./ProjectsSection.css";
 import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
 import { useEffect, useState } from "react";
+import { metaSEO } from "../../utils/constants";
 
 const ProjectsSection = () => {
   const projects = [
@@ -56,7 +57,7 @@ const ProjectsSection = () => {
     <section id="our-projects">
       <SEO
         title={"Spark | Our projects"}
-        description={""}
+        description={metaSEO.projects.description}
         name={"Spark"}
         type={"website"}
         keywords={[
@@ -66,7 +67,7 @@ const ProjectsSection = () => {
         ]}
       />
       <Container className="main-section our-projects position-relative">
-        <MainHomeTitle title={"Our Projects"} />
+        <MainHomeTitle title={"Our Projects"} subtitle={metaSEO.projects.description}/>
         <div>
           <div
             ref={ref}

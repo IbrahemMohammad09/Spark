@@ -7,32 +7,31 @@ import Icon3 from "../../../images/ServicesSectionImages/Frame 1597884164.svg";
 import Icon4 from "../../../images/ServicesSectionImages/Frame 1597884165.svg";
 import "./OurTopServices.css";
 import { useInView } from "react-intersection-observer";
+import { metaSEO } from "../../../utils/constants";
 const OurTopServices = () => {
   const topServices = [
     {
       title: "Web Development",
       url: "/",
-      subtitle:
-        "Developing websites using the latest technologies with continuous and permanent technical support",
+      subtitle: metaSEO.servicesDetails.web.description[0],
       icon: Icon1,
     },
     {
       title: "UI/UX Design",
       url: "/",
-      subtitle:
-        "Designing user interfaces for a wider and easier experience with applications",
+      subtitle:metaSEO.servicesDetails.ui.description[0],
       icon: Icon2,
     },
     {
       title: "Branding",
       url: "/",
-      subtitle: "Visual identity design including logos, colors, and fonts",
+      subtitle: metaSEO.servicesDetails.branding.description[0],
       icon: Icon3,
     },
     {
       title: "E-Marketing",
       url: "/",
-      subtitle: "E-marketing and social media platform management",
+      subtitle: metaSEO.servicesDetails.markiting.description[1],
       icon: Icon4,
     },
   ];
@@ -72,9 +71,7 @@ const OurTopServices = () => {
     <section id="services" className="top-services position-relative z-1">
       <MainHomeTitle
         title={"Our Top Services"}
-        subtitle={
-          "We are committed to providing advanced and innovative technological services that meet customer needs and exceed their expectations, focusing on quality, innovation and efficiency."
-        }
+        subtitle={metaSEO.topServices.description}
       />
       <div
         ref={ref}

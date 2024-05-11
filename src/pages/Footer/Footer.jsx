@@ -1,11 +1,12 @@
 import "./Footer.css";
-import logo from "../../images/log.png";
+import logo from "../../images/log.webp";
 import { GrFacebookOption } from "react-icons/gr";
 import { BiLogoInstagram } from "react-icons/bi";
 import { MdWhatsapp } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import generateAlt from "../../utils/GenerateImageAlt";
 export const Footer = () => {
   const [hideFooter, setHideFooter] = useState(false);
 
@@ -28,7 +29,7 @@ export const Footer = () => {
         <div className="containerFooter">
           <div className="logoFooter">
             <div>
-              <img src={logo} alt="spark logo" />
+              <img src={logo} alt={generateAlt(logo)} />
             </div>
             <p className="spark-footer">SPARK</p>
           </div>

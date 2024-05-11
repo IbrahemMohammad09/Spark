@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import MainHomeTitle from "../../SharedComponents/MainHomeTitle/MainHomeTitle";
 import InfoCard from "./InfoCard/InfoCard";
-import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).png";
-import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.png";
+import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).webp";
+import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.webp";
 import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
+import { metaSEO } from "../../../utils/constants";
 
 const OurServices = () => {
   const services = [
@@ -27,7 +28,7 @@ const OurServices = () => {
 
   return (
     <section id="services" className="main-section our-services ">
-      <MainHomeTitle title={"Our Services"} />
+      <MainHomeTitle title={"Our Services"} subtitle={metaSEO.services.description} />
       <div className="wallpaper position-relative z-1" />
       <div
         ref={ref}
