@@ -1,6 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 import coming from "../../images/ComingSoon/coming.svg";
+import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import { Link } from "react-router-dom";
 import "./ComingSoon.css";
 import generateAlt from "../../utils/GenerateImageAlt";
@@ -28,9 +29,7 @@ export const ComingSoon = () => {
           />
 
         </div>
-        <Link to="/">
-          <button className="button">Go To Home</button>
-        </Link>
+        <MainButton title={"Go To Home"} addStyle={"see-all"} url={"/"} />
       </div>
     </section>
   );

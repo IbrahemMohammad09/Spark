@@ -7,6 +7,7 @@
   flex-direction: column;
   background-color: white;
   overflow-x: hidden;
+  margin-top: 50px;
 }
 .dynamic-background {
   object-fit: contain; /* إبقاء contain لتجنب فقدان جوانب الصورة */
@@ -70,6 +71,13 @@
 .img-coming {
   height: 400px;
   width: 400px;
+}
+.link-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 20px;
 }
 @media (min-width: 900px) {
   .clock_content h1 {
