@@ -1,6 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import BrushImage from "../../components/SharedComponents/BrushImage/BrushImage";
 import coming from "../../images/ComingSoon/coming.svg";
+import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import { Link } from "react-router-dom";
 import "./ComingSoon.css";
 export const ComingSoon = () => {
@@ -21,9 +22,7 @@ export const ComingSoon = () => {
         <div className="dynamic-background">
           <img src={coming} alt="coming" className="img-coming" />
         </div>
-        <Link to="/">
-          <button className="button">Go To Home</button>
-        </Link>
+        <MainButton title={"Go To Home"} addStyle={"see-all"} url={"/"} />
       </div>
     </section>
   );
