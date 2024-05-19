@@ -16,10 +16,11 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
   const [test, setTest] = useState(false);
   const [test2, setTest2] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [direction, setDirection] = useState("horizontal");
   useEffect(() => {
     const handleMedia = () => {
       if (window.innerWidth < 460) {
-        setPerView(2);
+        setPerView(1);
       } else if (window.innerWidth < 768) {
         setPerView(3);
       } else if (window.innerWidth < 1150) {
@@ -37,6 +38,22 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
   useEffect(() => {
     setTest(false);
     setTest2(false);
+  }, []);
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth <= 640) {
+        setDirection("vertical");
+      } else {
+        setDirection("horizontal");
+      }
+    };
+
+    onResize(); // تشغيل الوظيفة عند بداية تحميل المكون
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
   const handleImageClick = (img) => {
     setSelectedImage(img === selectedImage ? null : img); // تحديث الصورة المحددة عند النقر
@@ -59,6 +76,7 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
         loop={10}
         slidesPerView={perView}
         navigation={false}
+        direction={direction}
         spaceBetween={10}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
