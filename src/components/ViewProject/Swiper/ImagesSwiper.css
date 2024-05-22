@@ -81,7 +81,8 @@
   .swiper-arrow-container .swiper-custom-button {
     display: inline-flex;
   }
-  .container {
+  .swiper-custom-button.prev,
+  .swiper-custom-button.next {
     display: none;
   }
   .swiper-arrow-container {
@@ -109,7 +110,8 @@
     margin-right: 30px;
     margin-left: 30px;
   }
-  .container {
+  .swiper-custom-button.prev,
+  .swiper-custom-button.next {
     display: none;
   }
   .swiper-wrapper {

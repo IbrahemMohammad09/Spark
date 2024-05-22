@@ -1,29 +1,44 @@
 .company-services {
-    padding: 7rem 0 92px; 
-    min-height: 100vh;
-    width: 100%;
+  padding: 7rem 0 92px;
+  min-height: 100vh;
+  width: 100%;
 }
 
+.company-service-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .company-services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(552px ,1fr));
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 32px;
 }
-
 
 .company-services .brush4 {
-    right: 0;
-    top: 50%;
+  right: 0;
+  top: 50%;
 }
 
 .company-services .brush5 {
-    left: 0;
-    top: 25%;
+  left: 0;
+  top: 25%;
 }
 
 @media screen and (max-width: 767px) {
-    .company-services-grid {
-        grid-template-columns: 1fr;
-    }
+  .company-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-button {
+    padding: 10px 30px;
+  }
 }
-
+@media (max-width: 1140px) {
+  .company-services-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
