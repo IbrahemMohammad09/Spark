@@ -6,9 +6,15 @@ import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCar
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
-import img from "../../images/StudentServices/img.webp"
+import img from "../../images/StudentServices/b.jpg"
 const CompanyServices = () => {
   const services =[
+    {
+      id:1,
+      service_name:"web development",
+      service_description:"this is the best service",
+      service_picture_web: img ,
+    },
     {
       id:1,
       service_name:"web development",
