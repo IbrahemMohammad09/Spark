@@ -23,11 +23,12 @@ const CompanyRequestPage = () => {
     const navigate = useNavigate();
     
     const checkFromServiceId = async () => {
-        const res = await Axios.get("/rest/service_web/")
-        const service = res.data?.services.find(e => e.id == id);
+        const res = await Axios.get("/rest/service_list_web/")
+        const service = res.data?.services.find(e => e.pk == id);
 
         if (!service) {
             setError(`Service with ID ${id} not found.`);
+            navigate("/error-page");
         }
     };
 
