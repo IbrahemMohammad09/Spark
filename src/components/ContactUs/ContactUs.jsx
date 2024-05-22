@@ -23,7 +23,7 @@ const ContactUs = () => {
 
   return (
     <section id="contact_us" className="contact-us py-6">
-      <SEO title={'Spark | Contact us'} description={metaSEO.contactUs.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Contact us'} description={metaSEO.contactUs.description} name={'Spark'} type={'website'} keywords={["socail media", "contact", "get in touch"]} />
       <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
         <Container>
           <Row className="justify-content-center">

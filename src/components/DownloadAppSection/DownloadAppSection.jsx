@@ -26,7 +26,7 @@ const DownloadAppSection = () => {
 
   return (
     <section id="our_app" className="download-sec">
-      <SEO title={'Spark | Our App'} description={metaSEO.downloadApp.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Our App'} description={metaSEO.downloadApp.description} name={'Spark'} type={'website'} keywords={["software application", "google app", "android app"]} />
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
