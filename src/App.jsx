@@ -25,6 +25,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
 import ViewProject from'./pages/ViewProject/ViewProject'
+import StudentCourseRequest from "./pages/StudentCourseRequest/StudentCourseRequest";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
           <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
+          <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
           <Route path="/view-project/:id" element={<ViewProject />}/>
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />

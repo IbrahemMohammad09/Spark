@@ -1,6 +1,6 @@
-import './CompanyRequestPage.css'
+import './StudentCourseRequest.css'
 import { Container } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../api/axios";
 import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
@@ -10,13 +10,12 @@ import SEO from '../../components/SharedComponents/SEO/SEO';
 import generateAlt from '../../utils/GenerateImageAlt';
 import { Loading } from '../../components/Loading/Loading';
 
-const CompanyRequestPage = () => {
+const StudentCourseRequest = () => {
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [companyName, setCompanyName] = useState('');
     const [task, setTask] = useState('');
+    const [universityName, setUniversityName] = useState('');
     const [errorRequest, setErrorRequest] = useState({});
     const [loading, setLoading] = useState(false);
 
@@ -24,36 +23,23 @@ const CompanyRequestPage = () => {
 
     const navigate = useNavigate();
     
+    // const checkFromStudentCourseId = async () => {
+    //     const res = await Axios.get("rest/student_courses/"+id)
 
-    // const checkFromServiceId = async () => {
-    //     // const res = await Axios.get("/rest/service_web/")
-    //     // const service = res.data?.services.find(e => e.id == id);
-
-    //     // if (!service) {
-    //     //     setError(`Service with ID ${id} not found.`);
-    //     // }
+    //     console.log(res);
     // };
 
-
     // useEffect(() => {
-    //     checkFromServiceId();
+    //     checkFromStudentCourseId();
     // }, []);
 
     const inputs = [
         {
             label: 'Full Name',
             type: 'text',
-            name: 'agent_name',
+            name: 'name',
             value: name,
             setValue: setName,
-            required: true,
-        },
-        {
-            label: 'Email Address',
-            type: 'email',
-            name: 'email',
-            value: email,
-            setValue: setEmail,
             required: true,
         },
         {
@@ -65,11 +51,12 @@ const CompanyRequestPage = () => {
             required: true,
         },
         {
-            label: 'Company Name',
+            label: 'University Name',
             type: 'text',
-            name: 'company_name',
-            value: companyName,
-            setValue: setCompanyName,
+            value: universityName,
+            name: 'university_name',
+            setValue: setUniversityName,
+            required: true,
         },
         {
             label: 'Tell us about your task',
@@ -84,40 +71,37 @@ const CompanyRequestPage = () => {
         e.preventDefault();
 
         let data = {
-            agent_name: name,
-            email,
+            name,
             phone,
-            company_name: companyName,
             desc: task,
-            service: +id
+            course: +id
         };
 
         setLoading(true);
 
-        Axios.post('rest/company_request/', data)
-            .then(response => {
-                if(response.data.message !== 'Request Duplicated') {
-                    localStorage.setItem('hasCompletedRequest');
-                    navigate('/completed');
-                } else {
-                    setError('Request Duplicated');
-                }
-                setLoading(false);
-            })
-            .catch(error => {
-                if(error.response?.data) {
-                    setErrorRequest(error.response.data)
-                    console.log(error.response.data, errorRequest);
-                }
-                setLoading(false);
-            });
+        Axios.post('/rest/student_course_request/', data)
+        .then(response => {
+            if(response.data.message !== 'Request Duplicated') {
+                localStorage.setItem('hasCompletedRequest');
+                navigate('/completed');
+            } else {
+                setError('Request Duplicated');
+            }
+            setLoading(false);
+        }).catch(error => {
+            if(error.response?.data) {
+                setErrorRequest(error.response.data)
+                console.log(error.response.data, errorRequest);
+            }
+            setLoading(false);
+        });
     }
 
     return (
-        <section className='company-request-page'>
-            <SEO title={'Spark | Service Request'} description={''} name={'Spark'} type={'website'} keywords={["company service request", "company services", "company service form"]} />
-            <div className='cover-img fade-in-bottom'>
-                <div data-title="Project Request">
+        <section className='student-course-request-page'>
+            <SEO title={'Spark | Student Course Request'} description={''} name={'Spark'} type={'website'} keywords={["student course request", "student courses", "student course form"]} />
+            <div className='course-cover-img fade-in-bottom'>
+                <div data-title="Student Course Request">
                     <img src={Img} alt={generateAlt(Img)}/>
                 </div>
             </div>
@@ -131,7 +115,7 @@ const CompanyRequestPage = () => {
                     <form method="POST">
                         {inputs.map((e, i) => <MainInput key={i} label={e.label} required={e.required} setValue={e.setValue} type={e.type} textarea={e.textarea} errorRequest={errorRequest} filed={e.name}/>)}
                         <button onClick={handleSendRequest} disabled={loading}>
-                            <MainButton title={'Send request'} url={'#'} addStyle='company-request-page-main-button'/>
+                            <MainButton title={'Send request'} url={'#'} addStyle='student-course-request-page-main-button'/>
                         </button>
                     </form>
                 </Container>}
@@ -140,4 +124,4 @@ const CompanyRequestPage = () => {
     )
 }
 
-export default CompanyRequestPage
+export default StudentCourseRequest
