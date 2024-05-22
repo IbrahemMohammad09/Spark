@@ -1,4 +1,4 @@
-import './StudentProjectRequest.css'
+import './StudentCourseRequest.css'
 import { Container } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { Axios } from "../../api/axios";
@@ -10,7 +10,7 @@ import SEO from '../../components/SharedComponents/SEO/SEO';
 import generateAlt from '../../utils/GenerateImageAlt';
 import { Loading } from '../../components/Loading/Loading';
 
-const StudentProjectRequest = () => {
+const StudentCourseRequest = () => {
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -23,14 +23,14 @@ const StudentProjectRequest = () => {
 
     const navigate = useNavigate();
     
-    // const checkFromStudentProjectId = async () => {
-    //     const res = await Axios.get("//")
+    // const checkFromStudentCourseId = async () => {
+    //     const res = await Axios.get("rest/student_courses/"+id)
 
     //     console.log(res);
     // };
 
     // useEffect(() => {
-    //     checkFromStudentProjectId();
+    //     checkFromStudentCourseId();
     // }, []);
 
     const inputs = [
@@ -74,36 +74,34 @@ const StudentProjectRequest = () => {
             name,
             phone,
             desc: task,
-            university_name: universityName,
-            project: id
+            course: +id
         };
 
         setLoading(true);
 
-        Axios.post('/rest/student_project_request/', data)
-            .then(response => {
-                if(response.data.message !== 'Request Duplicated') {
-                    localStorage.setItem('hasCompletedRequest');
-                    navigate('/completed');
-                } else {
-                    setError('Request Duplicated');
-                }
-                setLoading(false);
-            })
-            .catch(error => {
-                if(error.response?.data) {
-                    setErrorRequest(error.response.data)
-                    console.log(error.response.data, errorRequest);
-                }
-                setLoading(false);
-            });
+        Axios.post('/rest/student_course_request/', data)
+        .then(response => {
+            if(response.data.message !== 'Request Duplicated') {
+                localStorage.setItem('hasCompletedRequest');
+                navigate('/completed');
+            } else {
+                setError('Request Duplicated');
+            }
+            setLoading(false);
+        }).catch(error => {
+            if(error.response?.data) {
+                setErrorRequest(error.response.data)
+                console.log(error.response.data, errorRequest);
+            }
+            setLoading(false);
+        });
     }
 
     return (
-        <section className='student-project-request-page'>
-            <SEO title={'Spark | Student Project Request'} description={''} name={'Spark'} type={'website'} keywords={["student project request", "student projects", "student project form"]} />
-            <div className='student-cover-img fade-in-bottom'>
-                <div data-title="Student Project Request">
+        <section className='student-course-request-page'>
+            <SEO title={'Spark | Student Course Request'} description={''} name={'Spark'} type={'website'} keywords={["student course request", "student courses", "student course form"]} />
+            <div className='course-cover-img fade-in-bottom'>
+                <div data-title="Student Course Request">
                     <img src={Img} alt={generateAlt(Img)}/>
                 </div>
             </div>
@@ -117,7 +115,7 @@ const StudentProjectRequest = () => {
                     <form method="POST">
                         {inputs.map((e, i) => <MainInput key={i} label={e.label} required={e.required} setValue={e.setValue} type={e.type} textarea={e.textarea} errorRequest={errorRequest} filed={e.name}/>)}
                         <button onClick={handleSendRequest} disabled={loading}>
-                            <MainButton title={'Send request'} url={'#'} addStyle='student-project-request-page-main-button'/>
+                            <MainButton title={'Send request'} url={'#'} addStyle='student-course-request-page-main-button'/>
                         </button>
                     </form>
                 </Container>}
@@ -126,4 +124,4 @@ const StudentProjectRequest = () => {
     )
 }
 
-export default StudentProjectRequest
+export default StudentCourseRequest
