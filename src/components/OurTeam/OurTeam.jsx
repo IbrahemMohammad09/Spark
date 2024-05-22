@@ -34,14 +34,19 @@ const OurTeam = () => {
 
   const swiperRef = useRef();
   const { ref, inView, entry } = useInView({
-    triggerOnce: true, 
-    threshold: 0.1, 
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   return (
     <section className="our-team" id="our_team">
       <SEO title={'Spark | Our team'} description={metaSEO.ourTeam.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <MainHomeTitle title={'Our Team'} subtitle={metaSEO.ourTeam.description}/>
+
+      {/* <Container>
+        <h1>Our Team</h1>
+      </Container> */}
+
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
@@ -70,8 +75,8 @@ const OurTeam = () => {
               <SwiperSlide key={member.id}>
                 <div className="slide-body">
                   <div className="slide-content">
+                    {isLoading && <Loading color="#2fb0cd" />}
                     <div className="image-container">
-                      {isLoading && <Loading color="#2fb0cd" />}
                       <img
                         className="d-block mx-auto"
                         src={BaseURL + member?.member_picture_web}
