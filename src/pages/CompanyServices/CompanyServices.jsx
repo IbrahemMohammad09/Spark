@@ -10,13 +10,13 @@ import img from "../../images/StudentServices/b.jpg"
 const CompanyServices = () => {
   const services =[
     {
-      id:1,
+      pk:1,
       service_name:"web development",
       service_description:"this is the best service",
       service_picture_web: img ,
     },
     {
-      id:1,
+      pk:1,
       service_name:"web development",
       service_description:"this is the best service",
       service_picture_web: img ,

@@ -15,8 +15,9 @@ const InfoStudentServiceCard = ({ info }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          src={`${BaseURL}${info.section_image_web}`}
-          alt={ generateAlt(info.section_image)}
+          src={info.section_image_web}
+          // src={`${BaseURL}${info.section_image_web}`}
+          // alt={ generateAlt(info.section_image)}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}
