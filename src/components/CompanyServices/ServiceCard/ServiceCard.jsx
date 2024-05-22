@@ -5,8 +5,6 @@ import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
 
-
-
 const ServiceCard = ({ info }) => {
   const { language } = useLanguageContext();
   const [isLoading, setIsLoading] = useState(true);

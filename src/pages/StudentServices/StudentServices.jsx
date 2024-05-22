@@ -29,32 +29,41 @@ const StudentServices = () => {
     }
   };
 
-    useEffect(() => {
-      getStudentSections();
-    }, [id]);
-  
-    const studentServices = [
-        {
-          title: 'Students projects',
-          img: img1,
-          url: '/student-projects'
-        },
-        {
-          title: 'Student Courses',
-          img: img1,
-          url: '/student-courses'
-        }
-      ];
+  useEffect(() => {
+    getStudentSections();
+  }, [id]);
 
-    const { ref, inView, entry } = useInView({
-      triggerOnce: true, // Only trigger once
-      threshold: 0.1, // Trigger animation when 50% of the item is visible
-    });
+  const studentServices = [
+    {
+      title: "Students projects",
+      img: img1,
+      url: "/student-projects",
+    },
+    {
+      title: "Student Courses",
+      img: img1,
+      url: "/student-courses",
+    },
+  ];
 
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.1, // Trigger animation when 50% of the item is visible
+  });
 
   return (
     <section id="services" className="student-section main-container">
-      <SEO title={'Spark | Student services'} description={metaSEO.studentServices.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO
+        title={"Spark | Student services"}
+        description={metaSEO.studentServices.description}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
       <Container className="student-section-grid">
         {studentServices.map((student) => (
           <div

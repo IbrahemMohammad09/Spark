@@ -1,56 +1,65 @@
 .company-service-card {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .company-service-card .img-cover {
-    width: 552px;
-    height: 324px;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: .2s;
+  max-width: 552px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.2s;
 }
 
 .company-service-card .img-cover:hover {
-    box-shadow: 2px 2px 8px #ccc;
-    transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 8px #ccc;
+  transform: translate(-1px, -1px);
 }
 
 .company-service-card .img-cover img {
-    width: 552px;
-    height: 324px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .company-service-card-info {
-    padding: 0 20.5px;
+  padding: 0 20.5px;
 }
 
 .company-service-card h1 {
-    font-size: 1.5rem;
-    line-height: 42.7px;
-    color: rgba(0, 0, 0, 1);
-    letter-spacing: 1%;
-    font-weight: 600;
-    margin: 10px 0;
-    text-align: center;
+  font-size: 1.5rem;
+  line-height: 42.7px;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: 1%;
+  font-weight: 600;
+  margin: 10px 0;
+  text-align: center;
 }
 
 .company-service-card p {
-    font-size: 1.25rem;
-    line-height: 30px;
-    color: rgba(66, 66, 66, 0.65);
-    font-weight: 400;
-    letter-spacing: 1%;
+  font-size: 1.25rem;
+  line-height: 30px;
+  color: rgba(66, 66, 66, 0.65);
+  font-weight: 400;
+  letter-spacing: 1%;
 }
 
 .company-service-card-button {
-    color: rgba(255, 255, 255, 1);
-    margin: 0 auto;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 450px) {
-    .company-service-card p {
-        text-align: center;
-    }
+  .company-service-card p {
+    text-align: center;
+  }
+  .company-service-card .img-cover {
+    /* إزالة قيود الحجم الأقصى للسماح بالتمدد حسب حجم العنصر الأب */
+    max-width: 100%;
+    max-height: none;
+  }
+  .company-service-card-info {
+    /* عدل البادينج أو أي خصائص أخرى لتتلاءم مع العرض الصغير */
+    padding: 0 10px;
+  }
 }
