@@ -16,7 +16,8 @@ const ServiceCard = ({ info }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          src={`${BaseURL}/${info?.service_picture_web}`}
+          src={info?.service_picture_web}
+          // src={`${BaseURL}/${info?.service_picture_web}`}
           alt={info?.service_picture}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
@@ -24,7 +25,7 @@ const ServiceCard = ({ info }) => {
         />
       </div>
       <div className="company-service-card-info">
-        <h1>{info?.service_name[language]}</h1>
+        <h1>{info?.service_name}</h1>
         <MainButton
           title={"See more details"}
           url={`/service/${info.pk}`}

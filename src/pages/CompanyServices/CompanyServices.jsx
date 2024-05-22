@@ -6,22 +6,33 @@ import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCar
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
-
+import img from "../../images/StudentServices/img.webp"
 const CompanyServices = () => {
-  const [services, setServices] = useState([]);
-
-  const getCompanyServicesData = async () => {
-    try {
-      const res = await Axios.get("rest/service_list_web/");
-      setServices(res.data.services);
-    } catch (error) {
-      // console.log(error);
+  const services =[
+    {
+      id:1,
+      service_name:"web development",
+      service_description:"this is the best service",
+      service_picture_web: img ,
     }
-  };
+  ]
 
-  useEffect(() => {
-    getCompanyServicesData();
-  }, []);
+  
+
+  // const [services, setServices] = useState([]);
+
+  // const getCompanyServicesData = async () => {
+  //   try {
+  //     const res = await Axios.get("rest/service_list_web/");
+  //     setServices(res.data.services);
+  //   } catch (error) {
+  //     // console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getCompanyServicesData();
+  // }, []);
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once

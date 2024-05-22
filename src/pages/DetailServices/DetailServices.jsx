@@ -21,26 +21,26 @@ const DetailServices = () => {
 
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const getServiceData = async () => {
-    try {
-      const res = await Axios.get("/rest/service_list_web/");
+  // const getServiceData = async () => {
+  //   try {
+  //     const res = await Axios.get("/rest/service_list_web/");
       
-      const service = res.data?.services.find((e) => e.pk == id);
+  //     const service = res.data?.services.find((e) => e.pk == id);
 
-      if (!service) {
-        setError(`Service with ID ${id} not found.`);
-        navigate("/error-page");
-      } else {
-        setServiceData(service);
-      }
-    } catch (error) {
-      setError("Error fetching services.");
-    }
-  };
+  //     if (!service) {
+  //       setError(`Service with ID ${id} not found.`);
+  //       navigate("/error-page");
+  //     } else {
+  //       setServiceData(service);
+  //     }
+  //   } catch (error) {
+  //     setError("Error fetching services.");
+  //   }
+  // };
 
-  useEffect(() => {
-    getServiceData();
-  }, [id]);
+  // useEffect(() => {
+  //   getServiceData();
+  // }, [id]);
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
