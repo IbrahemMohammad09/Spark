@@ -11,8 +11,18 @@ import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
-
+import img from '../../images/StudentServices/a.jpg'
 const DetailServices = () => {
+
+  const services =
+    { 
+      pk:1,
+      service_name:"web development",
+      service_description:"this is the best service this is the best service this is the best service this is the best service this is the best service this is the best service ",
+      service_picture_web: img ,
+    }
+  
+
   const [serviceData, setServiceData] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
@@ -21,26 +31,26 @@ const DetailServices = () => {
 
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const getServiceData = async () => {
-    try {
-      const res = await Axios.get("/rest/service_web/");
+  // const getServiceData = async () => {
+  //   try {
+  //     const res = await Axios.get("/rest/service_list_web/");
+      
+  //     const service = res.data?.services.find((e) => e.pk == id);
 
-      const service = res.data?.services.find((e) => e.id == id);
+  //     if (!service) {
+  //       setError(`Service with ID ${id} not found.`);
+  //       navigate("/error-page");
+  //     } else {
+  //       setServiceData(service);
+  //     }
+  //   } catch (error) {
+  //     setError("Error fetching services.");
+  //   }
+  // };
 
-      if (!service) {
-        setError(`Service with ID ${id} not found.`);
-        navigate("/error-page");
-      } else {
-        setServiceData(service);
-      }
-    } catch (error) {
-      setError("Error fetching services.");
-    }
-  };
-
-  useEffect(() => {
-    getServiceData();
-  }, [id]);
+  // useEffect(() => {
+  //   getServiceData();
+  // }, [id]);
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
@@ -59,15 +69,17 @@ const DetailServices = () => {
             {isLoading && <Loading color="#2fb0cd" />}
             <img
               className="detail-img"
-              src={`${BaseURL}/${serviceData?.service_picture_web}`}
-              alt={generateAlt(serviceData?.service_picture_web)}
+              // src={`${BaseURL}/${serviceData?.service_picture_web}`}
+              src={services.service_picture_web}
+              alt={services.service_picture_web}
               loading="lazy"
               style={{ display: isLoading ? "none" : "block" }}
               onLoad={() => setIsLoading(false)}
             />
           </div>
           <div>
-            <p>{serviceData?.service_description[language]}</p>
+            {/* <p>{serviceData?.service_description[language]}</p> */}
+            <p>{services.service_description}</p>
             <h2>What, Why and How?</h2>
             <MainButton
               title={"Service Request"}

@@ -37,7 +37,7 @@ const ContactUs = () => {
                 {/* <h2>{metaSEO.contactUs.description}</h2> */}
                 <div className="d-flex align-items-start gap-1 justify-content-start contact-box">
                   <a href={`mailto:${companyEmail}`}>
-                    {/* <RiMailLine size={30} /> */}
+                    
                     <div className="contact">
                       <img src={mailIcon} alt={generateAlt(mailIcon)} className="contact-icon" />
                       <p className="contact-do">Mail Us</p>
@@ -45,7 +45,7 @@ const ContactUs = () => {
                     </div>
                   </a>
                   <a href="https://wa.me/+963962272881">
-                    {/* <RiWhatsappLine size={30} /> */}
+                    
                     <div className="contact">
                       <img src={callIcon}  alt={generateAlt(callIcon)} className="contact-icon" />
                       <p className="contact-do">Call Us</p>

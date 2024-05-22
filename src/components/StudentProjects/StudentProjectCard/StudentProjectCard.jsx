@@ -12,7 +12,7 @@ const StudentProjectCard = ({ info }) => {
     <div className="student-project-card">
       <div className="student-project-img-box">
         <div>
-          {info.pictures.map((picture, index) => (
+          {/* {info.pictures.map((picture, index) => (
             <>
               {isLoading && <Loading color="#2fb0cd" />}
               <img
@@ -23,13 +23,29 @@ const StudentProjectCard = ({ info }) => {
                 onLoad={() => setIsLoading(false)}
               />
             </>
-          ))}
+          ))} */}
+         
+            <>
+              {isLoading && <Loading color="#2fb0cd" />}
+              <img
+                // key={index}
+                src={info.pictures}
+                // alt={generateAlt(picture.image)}
+                style={{ display: isLoading ? "none" : "block" }}
+                onLoad={() => setIsLoading(false)}
+              />
+            </>
+          
+          
         </div>
       </div>
       <div className="student-project-info-box">
-        <h1>{info.project_name[language]}</h1>
+        {/* <h1>{info.project_name[language]}</h1>
         <h2>{info.project_field[language]}</h2>
-        <h3>{info.project_desc[language]}</h3>
+        <h3>{info.project_desc[language]}</h3> */}
+        <h1>{info.project_name}</h1>
+        <h2>{info.project_field}</h2>
+        <h3>{info.project_desc}</h3>
         <MainButton
           title={"Request Now"}
           url={`/student-project-request/${info.pk}`}

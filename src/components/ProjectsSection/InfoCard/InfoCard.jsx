@@ -3,6 +3,7 @@ import "./InfoCard.css";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
+
 const InfoCard = ({ info }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (

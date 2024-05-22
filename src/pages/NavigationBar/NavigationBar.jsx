@@ -98,7 +98,12 @@ const NavigationBar = () => {
     <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
       <Navbar expand="lg" fixed="top">
         <Container
-          style={{ width: "100%", height: "100%", overflowX: "hidden" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            overflowX: "hidden",
+            overflowY: "hidden",
+          }}
         >
           <Navbar.Brand to="/">
             <img
@@ -114,7 +119,7 @@ const NavigationBar = () => {
 
           <Navbar.Collapse
             style={{
-              paddingLeft: "20px",
+              paddingLeft: "75px",
             }}
           >
             <Nav className="justify-content-center" style={{ width: "90%" }}>

@@ -1,75 +1,74 @@
-.hero-section{
-    position: relative;
-    padding-top: 100px;
-    background-image: url('../../images/HeroSectionImags/hero.jpg');
-    background-size: cover;
-    padding-bottom: 30px;
+.hero-section {
+  position: relative;
+  padding-top: 100px;
+  background-image: url("../../images/HeroSectionImags/hero.jpg");
+  background-size: cover;
+  padding-bottom: 30px;
 }
-.hero-text{
-    margin-top: 170px;
-    justify-content: center; 
-    align-items: center;
+.hero-text {
+  margin-top: 170px;
+  justify-content: center;
+  align-items: center;
 }
-.hero-h1{
-    font-family: 'Times New Roman';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 89px;
-    letter-spacing: -3.5px;
-    color: rgba(255, 255, 255, 0.94);
-    text-align: center;
+.hero-h1 {
+  /* font-family: 'Times New Roman'; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 89px;
+  letter-spacing: -3.5px;
+  color: rgba(255, 255, 255, 0.94);
+  text-align: center;
 }
-.hero-p{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 35px;
-    text-align: center;
-    color: #ffffff;
+.hero-p {
+  /* font-family: "Inter"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
 }
-.div-img{
-    display: flex;
-    justify-content: center;
+.div-img {
+  display: flex;
+  justify-content: center;
 }
-.hero-img{
-    width: 550px;
-    height: 489px;
-    }
-
-@media  (max-width:1199px) {
-    .hero-h1{
-        font-size: 60px;
-    }
-    .hero-p{
-        font-size: 20px;
-    }
-    .hero-img{
-        width: 450px;
-        height: 380;
-    }
+.hero-img {
+  width: 550px;
+  height: 489px;
 }
 
-@media  (max-width:991px) {
-    .hero-text{
-        margin-top: 100px;
-    }
- 
-    .hero-h1{
-        font-size: 45px;
-    }
-    .hero-p{
-        font-size: 17px;
-    }
-    .hero-img{
-        width: 400px;
-        height: 330px;
-    }
-}
-@media  (max-width:344px) {
-    .hero-img{
-        width: 380px;
-    }
+@media (max-width: 1199px) {
+  .hero-h1 {
+    font-size: 60px;
+  }
+  .hero-p {
+    font-size: 20px;
+  }
+  .hero-img {
+    width: 450px;
+    height: 380;
+  }
 }
 
+@media (max-width: 991px) {
+  .hero-text {
+    margin-top: 100px;
+  }
+
+  .hero-h1 {
+    font-size: 45px;
+  }
+  .hero-p {
+    font-size: 17px;
+  }
+  .hero-img {
+    width: 400px;
+    height: 330px;
+  }
+}
+@media (max-width: 344px) {
+  .hero-img {
+    width: 380px;
+  }
+}

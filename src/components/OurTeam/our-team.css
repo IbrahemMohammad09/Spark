@@ -50,14 +50,14 @@
 }
 .our-team .swiper-slide h3 {
   margin: 20px 0 5px 0;
-  font-family: "Mulish", sans-serif;
+  /* font-family: "Mulish", sans-serif; */
   font-size: 20px;
   font-weight: 800;
   line-height: 22px;
 }
 
 .our-team .swiper-slide p {
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-size: 26px;
   font-weight: 400;
   line-height: 39.13px;

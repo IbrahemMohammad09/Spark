@@ -11,7 +11,6 @@ import { Axios } from "../../api/axios";
 import { BaseURL, metaSEO } from "../../utils/constants";
 import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
-import TabTitle from "../../utils/TabTitle";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
@@ -25,7 +24,7 @@ const OurTeam = () => {
       const res = await Axios.get("rest/member_list_web/");
       setTeamData(res.data);
     } catch (error) {
-      // console.log(error);
+      
     }
   };
   useEffect(() => {
@@ -42,11 +41,6 @@ const OurTeam = () => {
     <section className="our-team" id="our_team">
       <SEO title={'Spark | Our team'} description={metaSEO.ourTeam.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
       <MainHomeTitle title={'Our Team'} subtitle={metaSEO.ourTeam.description}/>
-
-      {/* <Container>
-        <h1>Our Team</h1>
-      </Container> */}
-
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
@@ -70,9 +64,9 @@ const OurTeam = () => {
             className="swiper-button-next"
             onClick={() => swiperRef.current.slideNext()}
           ></div>
-          {teamData?.members.map((member) =>
+          {teamData?.members.map((member, index) =>
             member ? (
-              <SwiperSlide key={member.id}>
+              <SwiperSlide key={index} id={member.id}>
                 <div className="slide-body">
                   <div className="slide-content">
                     {isLoading && <Loading color="#2fb0cd" />}

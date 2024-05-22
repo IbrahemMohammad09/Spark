@@ -18,15 +18,12 @@ const DownloadAppSection = () => {
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
   const [isLoading, setIsLoading] = useState(true);
-  // Log values to console whenever inView or entry changes
-  useEffect(() => {
-    console.log("inView:", inView);
-    console.log("entry:", entry);
-  }, [inView, entry]);
 
   return (
     <section id="our_app" className="download-sec">
+
       <SEO title={'Spark | Our App'} description={metaSEO.downloadApp.description} name={'Spark'} type={'website'} keywords={["software application", "google app", "android app"]} />
+
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Row className="gap-y-4 justify-content-center align-items-center">
@@ -42,7 +39,11 @@ const DownloadAppSection = () => {
             </Col>
             <Col xs={5} md={6} className="p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
+
+
+
                 <img className="download-icon" src={DownloadIcon} alt={generateAlt(DownloadIcon)} />
+
                 Download Our App
               </h1>
               <p className="text-white">
