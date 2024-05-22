@@ -2,7 +2,7 @@ import "./StudentServices.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
-import img1 from "../../images/StudentServices/img.webp";
+import img1 from "../../images/StudentServices/c.jpg";
 import { useInView } from "react-intersection-observer";
 import { useParams, useNavigate } from "react-router-dom";
 import { Axios } from "../../api/axios";

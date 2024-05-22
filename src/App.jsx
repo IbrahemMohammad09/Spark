@@ -24,8 +24,14 @@ import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectR
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
+
 import { ViewProject } from "./pages/ViewProject/ViewProject";
 import ViewProjectButton from "./pages/ViewProjectButton/ViewProjectButton";
+
+import StudentCourseRequest from "./pages/StudentCourseRequest/StudentCourseRequest";
+
+
+
 function App() {
   return (
     <div className="App position-relative">
@@ -53,12 +59,14 @@ function App() {
           <Route path={"/completed"} element={<CompleteRequest />} />
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
-          <Route
-            path={"/student-project-request/:id"}
-            element={<StudentProjectRequest />}
-          />
+        
           <Route path="/view-project" element={<ViewProject />} />
           <Route path="/view-project/:id" element={<ViewProjectButton />} />
+
+          <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
+          <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
+
+
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
