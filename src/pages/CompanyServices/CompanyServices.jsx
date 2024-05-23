@@ -6,21 +6,38 @@ import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCar
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
-import img from "../../images/StudentServices/b.jpg"
+import img1 from "../../images/StudentServices/a.jpg"
+import img2 from "../../images/StudentServices/b.jpg"
+import img3 from "../../images/StudentServices/c.jpg"
+import img4 from "../../images/StudentServices/d.jpg"
 const CompanyServices = () => {
   const services =[
     {
       pk:1,
       service_name:"web development",
       service_description:"this is the best service",
-      service_picture_web: img ,
+      service_picture_web: img1 ,
     },
     {
       pk:1,
       service_name:"web development",
       service_description:"this is the best service",
-      service_picture_web: img ,
+      service_picture_web: img2 ,
     }
+    // ,
+    // {
+    //   pk:1,
+    //   service_name:"web development",
+    //   service_description:"this is the best service",
+    //   service_picture_web: img3 ,
+    // }
+    // ,
+    // {
+    //   pk:1,
+    //   service_name:"web development",
+    //   service_description:"this is the best service",
+    //   service_picture_web: img4 ,
+    // }
   ]
 
   
