@@ -9,6 +9,7 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import SEO from '../../components/SharedComponents/SEO/SEO';
 import generateAlt from '../../utils/GenerateImageAlt';
 import { Loading } from '../../components/Loading/Loading';
+import AlertMessage from '../../components/SharedComponents/Alert/Alert';
 
 const CompanyRequestPage = () => {
     const [error, setError] = useState(null);
@@ -109,6 +110,9 @@ const CompanyRequestPage = () => {
                     setErrorRequest(error.response.data)
                     console.log(error.response.data, errorRequest);
                 }
+                if(error.response?.data?.message) {
+                    setError(error.response.data.message);
+                }
                 setLoading(false);
             });
     }
@@ -135,6 +139,7 @@ const CompanyRequestPage = () => {
                         </button>
                     </form>
                 </Container>}
+                {error && <AlertMessage variant={'danger'} message={error}/>}
             </div>
         </section>
     )
