@@ -7,7 +7,7 @@ import generateAlt from "../../../utils/GenerateImageAlt";
 const InfoStudentServiceCard = ({ info }) => {
   const [isLoading, setIsLoading] = useState(true);
   const handleTitleSplit = (index) => {
-    return info.section_name.split(" ")[index];
+    return info.name.split(" ")[index];
   };
 
   return (
