@@ -32,10 +32,6 @@ const OurProjectCard = ({ info }) => {
       setHasBeenInView(true);
     }
   }, [inView, userHasScrolled]);
-  
-
-
-
 
   return (
     <div className="our-project-card-info">
@@ -49,7 +45,7 @@ const OurProjectCard = ({ info }) => {
         <a href={info.url} className="url">
           {info.url}
         </a>
-        <Link to={"/view-project/" + info.id} className="link">
+        <Link to={"/view-project"} className="link">
           Visit
         </Link>
       </div>
