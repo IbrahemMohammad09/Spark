@@ -1,3 +1,22 @@
+.viewContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Added to ensure child elements are positioned correctly */
+}
+
+.back-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  object-fit: cover; /* Changed from fill to cover to maintain aspect ratio */
+}
+
 .shadow {
   position: absolute;
   width: 100%;
@@ -11,6 +30,7 @@
     rgba(115, 115, 115, 0) 56.47%
   );
 }
+
 .info-box {
   position: absolute;
   left: -100%;
@@ -19,15 +39,15 @@
   width: 40%;
   padding: 10px 0 10px 4%;
   transition: 0.7s ease-in-out;
-  z-index: 1;
   margin-bottom: 50px;
 }
+
 .info-box.active {
   left: 0%;
   top: 5%;
 }
+
 .info-box h1 {
-  /* font-family: Abhaya Libre Medium; */
   font-size: 3.75rem;
   font-weight: 500;
   line-height: 70.78px;
@@ -35,7 +55,6 @@
 }
 
 .info-box h2 {
-  /* font-family: Poppins; */
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 41.87px;
@@ -43,7 +62,6 @@
 }
 
 .info-box h3 a {
-  font-family: Roboto;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 42.18px;
@@ -64,6 +82,7 @@
   color: white;
   cursor: pointer;
   font-size: 25px;
+  z-index: 1;
 }
 
 .visit-button {
@@ -71,6 +90,119 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .visit-button .projects-button-see-all:hover {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.right-image {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  margin: auto;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.right-image img {
+  object-fit: cover; /* Ensure image covers the container without being cut off */
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  max-width: 16/9;
+  max-height: 400px;
+  transition: transform 0.3s ease;
+}
+
+.right-image img:hover {
+  transform: scale(1.03) !important;
+  border-radius: 10px;
+}
+
+.right-image:hover {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theContain .back-button {
+  position: absolute;
+  left: 1%;
+  top: 3%;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+@media (max-width: 1024px) {
+  .viewContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Added to center align content */
+  }
+
+  .info-box {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 90%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .right-image {
+    position: relative;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    max-width: none;
+    margin: 20px auto 0;
+    box-shadow: none;
+  }
+
+  .right-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 70vh; /* Ensure the image does not exceed the viewport height */
+  }
+
+  .shadow {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .right-image {
+    position: relative;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    max-width: none;
+    margin: 20px auto 0;
+    box-shadow: none;
+  }
+
+  .right-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 50vh; /* Ensure the image does not exceed the viewport height on very small screens */
+  }
+
+  .shadow {
+    display: none;
+  }
 }

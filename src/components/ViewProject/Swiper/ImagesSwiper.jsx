@@ -22,9 +22,9 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
       if (window.innerWidth < 460) {
         setPerView(1);
       } else if (window.innerWidth < 768) {
-        setPerView(3);
-      } else if (window.innerWidth < 1150) {
-        setPerView(4);
+        setPerView(1);
+      } else if (window.innerWidth <= 1024) {
+        setPerView(1);
       } else if (window.innerWidth < 1400) {
         setPerView(5);
       } else if (window.innerWidth < 1850) {
@@ -41,7 +41,7 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
   }, []);
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth <= 640) {
+      if (window.innerWidth <= 1024) {
         setDirection("vertical");
       } else {
         setDirection("horizontal");
@@ -70,6 +70,7 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
       swiperRef.current.slideNext();
     }
   };
+
   return (
     <>
       <Swiper
@@ -82,6 +83,7 @@ const ImagesSwiper = ({ imgs, setHoveredImage, mainImage, setMainImage }) => {
           swiperRef.current = swiper;
         }}
         className="images-swiper swiper-2"
+        allowTouchMove={window.innerWidth > 640}
       >
         {imgs &&
           imgs?.map((e, i) => (

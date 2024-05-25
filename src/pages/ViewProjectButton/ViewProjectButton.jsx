@@ -12,6 +12,8 @@ import ImagesSwiper from "../../components/ViewProject/Swiper/ImagesSwiper";
 import { BiArrowBack } from "react-icons/bi";
 import generateAlt from "../../utils/GenerateImageAlt";
 import { useInView } from "react-intersection-observer";
+import { BiArrowFromTop } from "react-icons/bi";
+
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 const ViewProjectButton = () => {
   // const [project, setProject] = useState({});
@@ -104,6 +106,7 @@ const ViewProjectButton = () => {
   ];
 
   const imgs = [Img, Img1, Img2, Img3, Img4, Img5];
+  const [visible, setVisible] = useState(false);
   const data = projects?.find((e) => e.id == id);
   const handleSetMainImage = (img) => {
     setMainImage(img);
@@ -121,6 +124,29 @@ const ViewProjectButton = () => {
   useEffect(() => {
     setIsClicked(false);
   }, []);
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="view-project main-container position-relative">
       <SEO
@@ -150,6 +176,12 @@ const ViewProjectButton = () => {
       <div onClick={() => window.history.back()} className="back-button">
         <BiArrowBack />
       </div>
+      <button
+        className={`scroll-to-top ${visible ? "visible" : ""}`}
+        onClick={scrollToTop}
+      >
+        <BiArrowFromTop />
+      </button>
       <ImagesSwiper
         hoveredImage={hoveredImage}
         imgs={imgs}
