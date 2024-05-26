@@ -1,7 +1,6 @@
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import { useInView } from "react-intersection-observer";
 import image1 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
-import image2 from "../../images/ViewProjectImages/Mykonos.jpeg";
 import { BiArrowBack } from "react-icons/bi";
 import "./ViewProject.css";
 import Img from "../../images/ViewProjectImages/Mykonos.jpeg";
@@ -58,9 +57,6 @@ export const ViewProject = () => {
       <div className="viewContainer">
         <img src={image1} alt="image1" className="back-image" />
         <div className="shadow"></div>
-        {/* <div className="info-box active">
-        <h1>Drop-in audio chat</h1>
-      </div> */}
         <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
           <Slider {...settings}>
             {images.map((image, index )=>(
@@ -70,10 +66,6 @@ export const ViewProject = () => {
             ))}
           </Slider>
         </div>
-        
-          
-        
-
         <div
           ref={ref}
           className={`info-box active ${inView ? "fade-in-bottom" : ""} `}
@@ -93,7 +85,6 @@ export const ViewProject = () => {
                 addStyle={"projects-button-see-all"}
               />
             </div>
-            
           </div>
         </div>
       </div>

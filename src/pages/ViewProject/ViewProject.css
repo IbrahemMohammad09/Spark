@@ -115,7 +115,7 @@
 }
 
 .right-image img {
-  object-fit: cover; /* Ensure image covers the container without being cut off */
+  object-fit: cover;
   border-radius: 10px;
   width: 100%;
   height: auto;

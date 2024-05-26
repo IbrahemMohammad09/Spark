@@ -24,11 +24,9 @@ import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectR
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import StudentCourses from "./pages/StudentCourses/StudentCourses";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
-
 import { ViewProject } from "./pages/ViewProject/ViewProject";
-import ViewProjectButton from "./pages/ViewProjectButton/ViewProjectButton";
-
 import StudentCourseRequest from "./pages/StudentCourseRequest/StudentCourseRequest";
+
 
 
 
@@ -61,7 +59,6 @@ function App() {
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
         
           <Route path="/view-project" element={<ViewProject />} />
-          <Route path="/view-project/:id" element={<ViewProjectButton />} />
 
           <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
           <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
