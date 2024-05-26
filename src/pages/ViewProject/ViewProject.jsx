@@ -3,9 +3,49 @@ import { useInView } from "react-intersection-observer";
 import image1 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
 import image2 from "../../images/ViewProjectImages/Mykonos.jpeg";
 import { BiArrowBack } from "react-icons/bi";
-
 import "./ViewProject.css";
+import Img from "../../images/ViewProjectImages/Mykonos.jpeg";
+import Img1 from "../../images/ViewProjectImages/ww.jpeg";
+import Img2 from "../../images/ViewProjectImages/71fc178a-3216-4f88-a91f-c70a41eb749a.jpeg";
+import Img3 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
+import Img4 from "../../images/ViewProjectImages/download (40).jpeg";
+import Img5 from "../../images/ViewProjectImages/PeqCi.jpeg";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
 export const ViewProject = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+  };
+  const images= [
+    {
+      img:Img
+    },
+    {
+      img:Img1
+    },
+    {
+      img:Img2
+    },
+    {
+      img:Img3
+    },
+    {
+      img:Img4
+    },
+    {
+      img:Img5
+    }
+  ];
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -22,8 +62,17 @@ export const ViewProject = () => {
         <h1>Drop-in audio chat</h1>
       </div> */}
         <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
-          <img src={image2} alt="" />
+          <Slider {...settings}>
+            {images.map((image, index )=>(
+              <div key={index}>
+                <img src={image.img} alt={`Slide ${index}`} style={{ width: '100%' }} />
+              </div>
+            ))}
+          </Slider>
         </div>
+        
+          
+        
 
         <div
           ref={ref}
@@ -44,13 +93,7 @@ export const ViewProject = () => {
                 addStyle={"projects-button-see-all"}
               />
             </div>
-            <div className="visit-button">
-              <MainButton
-                url={"/view-project/1"}
-                title={"See Project Photo"}
-                addStyle={"projects-button-see-all"}
-              />
-            </div>
+            
           </div>
         </div>
       </div>
