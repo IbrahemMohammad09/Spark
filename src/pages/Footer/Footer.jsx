@@ -13,19 +13,20 @@ export const Footer = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    setHideFooter(pathname.includes("/error-page") 
-    || pathname.includes("/student-project-request/") 
-    || pathname.includes("/student-course-request/") 
-    || pathname.includes("/company-request")
-    || pathname.includes("/view-project")
+    setHideFooter(
+      pathname.includes("/error-page") ||
+        pathname.includes("/student-project-request/") ||
+        pathname.includes("/student-course-request/") ||
+        pathname.includes("/company-request") ||
+        pathname.includes("/view-project")
     );
     // const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
-    
+
     // setHideFooter(!!isRequestPage);
   }, [pathname]);
 
   return (
-    <section className={`${hideFooter && 'd-none'}`}>
+    <section className={`${hideFooter && "d-none"}`}>
       <div className="Footer position-relative z-1">
         <div className="containerFooter">
           <div className="logoFooter">
@@ -52,7 +53,7 @@ export const Footer = () => {
               </Link>
             </div>
             <div className="links">
-              <Link className="theLink" to="/our_projects">
+              <Link className="theLink" to="/our-projects">
                 Our Projects
               </Link>
               <Link className="theLink" to="/our_app">
