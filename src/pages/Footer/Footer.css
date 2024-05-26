@@ -48,6 +48,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  text-align: center;
   gap: 5px;
 }
 
@@ -155,5 +156,8 @@
   }
   .icons {
     margin: 0;
+  }
+  .containerFooter {
+    padding-left: 22px;
   }
 }

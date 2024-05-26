@@ -6,24 +6,24 @@ import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCar
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
-import img1 from "../../images/StudentServices/a.jpg"
-import img2 from "../../images/StudentServices/b.jpg"
-import img3 from "../../images/StudentServices/c.jpg"
-import img4 from "../../images/StudentServices/d.jpg"
+import img1 from "../../images/StudentServices/a.jpg";
+import img2 from "../../images/StudentServices/b.jpg";
+import img3 from "../../images/StudentServices/c.jpg";
+import img4 from "../../images/StudentServices/d.jpg";
 const CompanyServices = () => {
-  const services =[
+  const services = [
     {
-      pk:1,
-      service_name:"web development",
-      service_description:"this is the best service",
-      service_picture_web: img1 ,
+      pk: 1,
+      service_name: "web development",
+      service_description: "this is the best service",
+      service_picture_web: img1,
     },
     {
-      pk:1,
-      service_name:"web development",
-      service_description:"this is the best service",
-      service_picture_web: img2 ,
-    }
+      pk: 2,
+      service_name: "web development",
+      service_description: "this is the best service",
+      service_picture_web: img2,
+    },
     // ,
     // {
     //   pk:1,
@@ -38,9 +38,7 @@ const CompanyServices = () => {
     //   service_description:"this is the best service",
     //   service_picture_web: img4 ,
     // }
-  ]
-
-  
+  ];
 
   // const [services, setServices] = useState([]);
 
@@ -64,7 +62,17 @@ const CompanyServices = () => {
 
   return (
     <section id="services" className="company-services position-relative">
-      <SEO title={'Spark | Company services'} description={metaSEO.services.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO
+        title={"Spark | Company services"}
+        description={metaSEO.services.description}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
       <div
         ref={ref}
         className={`${inView ? "fade-in-bottom" : ""} main-container`}

@@ -1,11 +1,11 @@
 .student-courses {
-    padding: 7rem 0 92px; 
-    min-height: 100vh;
-    width: 100%;
+  padding: 7rem 0 92px;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .student-courses-flex {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }

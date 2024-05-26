@@ -12,15 +12,14 @@ const StudentCoursesCard = ({ info }) => {
       <div className="student-course-img-box">
         <div>
           {info.pictures.map((picture, index) => (
-            <>
+            <div key={index}>
               {isLoading && <Loading color="#2fb0cd" />}
               <img
-                key={index}
-                src={generateAlt(picture.image)}
+                src={picture.image}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />
-            </>
+            </div>
           ))}
         </div>
       </div>

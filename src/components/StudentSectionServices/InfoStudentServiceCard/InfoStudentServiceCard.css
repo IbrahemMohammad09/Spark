@@ -1,46 +1,52 @@
 .student-service-section-card .img-cover {
-    overflow: hidden;
-    border-radius: 10px;
-    height: 324px;
-    transition: .2s;
+  overflow: hidden;
+  border-radius: 10px;
+  max-height: 324px;
+  height: auto;
+  max-width: 550px;
+  width: 100%;
+  transition: 0.2s;
 }
-
-.student-service-section-card .img-cover:hover {
-    box-shadow: 2px 2px 8px #ccc;
-    transform: translate(-1px, -1px);
-}
-
 .student-service-section-card .img-cover img {
-    width: 552px;
-    height: 324px;
-    object-fit: cover;
+  max-height: 324px;
+  height: auto;
+  max-width: 550px;
+  width: 100%;
+}
+.student-service-section-card .img-cover:hover {
+  box-shadow: 2px 2px 8px #ccc;
+  transform: translate(-1px, -1px);
 }
 
+/* .student-service-section-card .img-cover img {
+  width: 552px;
+  height: 324px;
+  object-fit: cover;
+} */
 
 .student-service-section-card h1 {
-    font-size: 3.125rem;
-    line-height: 75px;
-    color: rgba(22, 80, 105, 1);
-    font-weight: 600;
+  font-size: 3.125rem;
+  line-height: 75px;
+  color: rgba(22, 80, 105, 1);
+  font-weight: 600;
 }
 
 .student-service-section-card h2 {
-    font-size: 2.1875rem;
-    line-height: 20px;
-    color: rgba(22, 80, 105, 1);
-    letter-spacing: -1%;
-    font-weight: 600;
+  font-size: 2.1875rem;
+  line-height: 20px;
+  color: rgba(22, 80, 105, 1);
+  letter-spacing: -1%;
+  font-weight: 600;
 }
 
-
 .student-service-section-card .student-service-section-card-main-button {
-    margin-top: 32px;
-    color: rgba(255, 255, 255, 1);
+  margin-top: 32px;
+  color: rgba(255, 255, 255, 1);
 }
 
 @media screen and (min-width: 450px) {
-    .student-service-section-card .student-service-section-card-main-button {
-        padding-right: 110.5px;
-        padding-left: 110.5px
-    }
+  .student-service-section-card .student-service-section-card-main-button {
+    padding-right: 110.5px;
+    padding-left: 110.5px;
+  }
 }

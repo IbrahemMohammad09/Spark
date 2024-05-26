@@ -6,9 +6,9 @@ import { Loading } from "../../Loading/Loading";
 import generateAlt from "../../../utils/GenerateImageAlt";
 const InfoStudentServiceCard = ({ info }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const handleTitleSplit = (index) => {
-    return info.name.split(" ")[index];
-  };
+  // const handleTitleSplit = (index) => {
+  //   return info.name.split(" ")[index];
+  // };
 
   return (
     <div className="student-service-section-card bounceInUp">
@@ -25,8 +25,8 @@ const InfoStudentServiceCard = ({ info }) => {
       </div>
       <div>
         <div>
-          <h1>{handleTitleSplit(0)}</h1>
-          <h2>{handleTitleSplit(1) || "Engineering"}</h2>
+          {/* <h1>{handleTitleSplit(0)}</h1>
+          <h2>{handleTitleSplit(1) || "Engineering"}</h2> */}
         </div>
         <MainButton
           title={"See all"}
