@@ -37,36 +37,36 @@ const StudentProjects = () => {
     const requestId = parseInt(id, 10); 
     const restUrl = "/"+requestId;
   
-    // const getStudentSections = async () => {
-    //   try {
-    //     const res = await Axios.get("rest/section_list/");
-    //     const student = res.data?.sections.find((e) => e.id == requestId);
-    //     if(!student){
-    //       navigate('/error-page');
-    //     } 
-    //   } catch (error) {
-    //     // console.log(error);
-    //   }
-    // };
+    const getStudentSections = async () => {
+      try {
+        const res = await Axios.get("rest/sections_list_web/");
+        const student = res.data?.sections.find((e) => e.pk == requestId);
+        if(!student){
+          navigate('/error-page');
+        } 
+      } catch (error) {
+        // console.log(error);
+      }
+    };
   
-    // useEffect(() => {
-    //   getStudentSections();  
-    // }, [id]);
+    useEffect(() => {
+      getStudentSections();  
+    }, [id]);
 
-  //   const [studentProjects, setStudentProjects] = useState([]);
+    const [studentProjects, setStudentProjects] = useState([]);
 
-  //   const getstudentProjectsData = async () => {
-  //       try {
-  //         const res = await Axios.get("rest/student_projects/"+restUrl);
-  //         setStudentProjects(res.data.projects);
-  //       } catch (error) {
-  //         // console.log(error);
-  //       }
-  //   };
+    const getstudentProjectsData = async () => {
+        try {
+          const res = await Axios.get("rest/student_projects/"+restUrl);
+          setStudentProjects(res.data.projects);
+        } catch (error) {
+          // console.log(error);
+        }
+    };
 
-  // useEffect(() => {
-  //   getstudentProjectsData();
-  // }, []);
+  useEffect(() => {
+    getstudentProjectsData();
+  }, []);
 
     return (
         <section className='overflow-hidden'>
@@ -74,7 +74,7 @@ const StudentProjects = () => {
             <HeaderSection title={'Student Projects'}/>
             <div className="student-projects main-container">
                 <Container className='student-projects-flex bounceInUp'>
-                    {services?.map((e, i) => <StudentProjectCard key={i} info={e}/>)}
+                    {studentProjects?.map((e, i) => <StudentProjectCard key={i} info={e}/>)}
                 </Container>
             </div>
         </section>

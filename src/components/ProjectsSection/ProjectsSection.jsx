@@ -9,24 +9,43 @@ import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
 import { useEffect, useState } from "react";
 import { metaSEO } from "../../utils/constants";
+import {Axios} from "../../api/axios"
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "MStore",
-      subtitle:
-        "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
-      type: "Development Project",
-      img: Img1,
-    },
-    {
-      title: "Beauty",
-      subtitle:
-        "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
-      type: "Development Project",
-      img: Img2,
-    },
-  ];
+  // const projects = [
+  //   {
+  //     title: "MStore",
+  //     subtitle:
+  //       "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
+  //     type: "Development Project",
+  //     img: Img1,
+  //   },
+  //   {
+  //     title: "Beauty",
+  //     subtitle:
+  //       "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
+  //     type: "Development Project",
+  //     img: Img2,
+  //   },
+  // ];
+  const [allProjects , setAllProjects] = useState();
+  const [projects , setProjects] = useState();
+  const getProjects = async ()=>{
+    try {
+      const res = await Axios.get("rest/our_projects_list/");
+      setAllProjects(res.data);
+    } catch (error) {
+      // console.log(error);
+    }
+    // const project = allProjects.slice(0,2)
+    setProjects(allProjects);
+  }
+
+  useEffect((()=>{
+    getProjects();
+  }),[])
+
+
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
 
@@ -40,7 +59,7 @@ const ProjectsSection = () => {
   };
 
   useEffect(() => {
-    // إضافة event listener للتمرير
+    
     window.addEventListener("scroll", handleUserScroll);
 
     return () => {
@@ -53,6 +72,7 @@ const ProjectsSection = () => {
       setHasBeenInView(true);
     }
   }, [inView, userHasScrolled]);
+  
   return (
     <section id="our-projects">
       <SEO

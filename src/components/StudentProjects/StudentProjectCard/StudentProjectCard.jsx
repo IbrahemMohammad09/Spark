@@ -6,6 +6,7 @@ import { useState } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
 
 const StudentProjectCard = ({ info }) => {
+
   const { language } = useLanguageContext();
   const [isLoading, setIsLoading] = useState(true);
   return (
@@ -40,12 +41,13 @@ const StudentProjectCard = ({ info }) => {
         </div>
       </div>
       <div className="student-project-info-box">
-        {/* <h1>{info.project_name[language]}</h1>
+        <h1>{info.project_name[language]}</h1>
+        
         <h2>{info.project_field[language]}</h2>
-        <h3>{info.project_desc[language]}</h3> */}
-        <h1>{info.project_name}</h1>
+        <h3>{info.project_desc[language]}</h3>
+        {/* <h1>{info.project_name}</h1>
         <h2>{info.project_field}</h2>
-        <h3>{info.project_desc}</h3>
+        <h3>{info.project_desc}</h3> */}
         <MainButton
           title={"Request Now"}
           url={`/student-project-request/${info.pk}`}

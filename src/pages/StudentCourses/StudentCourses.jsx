@@ -14,59 +14,59 @@ import img3 from "../../images/StudentServices/c.jpg";
 const StudentCourses = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  // const requestId = parseInt(id, 10);
-  // const restUrl = "/"+requestId;
+  const requestId = parseInt(id, 10);
+  const restUrl = "/"+requestId;
 
-  // const getStudentSections = async () => {
-  //     try {
-  //         const res = await Axios.get("rest/student_courses/");
-  //         const student = res.data?.sections.find((e) => e.id == requestId);
-  //         if(!student){
-  //             navigate('/error-page');
-  //         }
-  //     } catch (error) {
-  //         // console.log(error);
-  //     }
-  // };
+  const getStudentSections = async () => {
+      try {
+          const res = await Axios.get("rest/student_courses/");
+          const student = res.data?.sections.find((e) => e.id == requestId);
+          if(!student){
+              navigate('/error-page');
+          }
+      } catch (error) {
+          // console.log(error);
+      }
+  };
 
-  // useEffect(() => {
-  //     getStudentSections();
-  // }, [id]);
+  useEffect(() => {
+      getStudentSections();
+  }, [id]);
 
-  // const [studentCourses, setStudentCourses] = useState([]);
+  const [studentCourses, setStudentCourses] = useState([]);
 
-  // const getstudentCoursesData = async () => {
-  //     try {
-  //         const res = await Axios.get("rest/student_courses/"+restUrl);
-  //         setStudentCourses(res.data.projects);
-  //     } catch (error) {
-  //         // console.log(error);
-  //     }
-  // };
+  const getstudentCoursesData = async () => {
+      try {
+          const res = await Axios.get("rest/student_courses/"+restUrl);
+          setStudentCourses(res.data.courses);
+      } catch (error) {
+          // console.log(error);
+      }
+  };
 
-  // useEffect(() => {
-  //     getstudentCoursesData();
-  // }, []);
-  const studentCourses = [
-    {
-      pictures: [img1, img2, img3],
-      project_name: {
-        en: "Web Development Course",
-        fr: "Cours de développement web",
-        es: "Curso de desarrollo web",
-      },
-      project_field: {
-        en: "Technology",
-        fr: "Technologie",
-        es: "Tecnología",
-      },
-      project_desc: {
-        en: "Learn how to build modern web applications using the latest technologies.",
-        fr: "Apprenez à construire des applications web modernes en utilisant les dernières technologies.",
-        es: "Aprende a construir aplicaciones web modernas utilizando las últimas tecnologías.",
-      },
-    },
-  ];
+  useEffect(() => {
+      getstudentCoursesData();
+  }, []);
+  // const studentCourses = [
+  //   {
+  //     pictures: [img1, img2, img3],
+  //     project_name: {
+  //       en: "Web Development Course",
+  //       fr: "Cours de développement web",
+  //       es: "Curso de desarrollo web",
+  //     },
+  //     project_field: {
+  //       en: "Technology",
+  //       fr: "Technologie",
+  //       es: "Tecnología",
+  //     },
+  //     project_desc: {
+  //       en: "Learn how to build modern web applications using the latest technologies.",
+  //       fr: "Apprenez à construire des applications web modernes en utilisant les dernières technologies.",
+  //       es: "Aprende a construir aplicaciones web modernas utilizando las últimas tecnologías.",
+  //     },
+  //   },
+  // ];
   return (
     <section className="overflow-hidden">
       <SEO

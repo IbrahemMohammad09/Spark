@@ -17,21 +17,21 @@ const StudentServices = () => {
   const requestId = parseInt(id, 10);
   const restUrl = "/" + requestId;
   const [isLoading, setIsLoading] = useState(true);
-  // const getStudentSections = async () => {
-  //   try {
-  //     const res = await Axios.get("rest/sections_list_web/");
-  //     const student = res.data?.sections.find((e) => e.pk == requestId);
-  //     if (!student) {
-  //       navigate("/error-page");
-  //     }
-  //   } catch (error) {
-  //     // console.log(error);
-  //   }
-  // };
+  const getStudentSections = async () => {
+    try {
+      const res = await Axios.get("rest/sections_list_web/");
+      const student = res.data?.sections.find((e) => e.pk == requestId);
+      if (!student) {
+        navigate("/error-page");
+      }
+    } catch (error) {
+      // console.log(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   getStudentSections();
-  // }, [id]);
+  useEffect(() => {
+    getStudentSections();
+  }, [id]);
 
   const studentServices = [
     {
