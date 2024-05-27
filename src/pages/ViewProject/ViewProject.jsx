@@ -9,9 +9,9 @@ import Img2 from "../../images/ViewProjectImages/71fc178a-3216-4f88-a91f-c70a41e
 import Img3 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
 import Img4 from "../../images/ViewProjectImages/download (40).jpeg";
 import Img5 from "../../images/ViewProjectImages/PeqCi.jpeg";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 export const ViewProject = () => {
   const settings = {
@@ -24,25 +24,25 @@ export const ViewProject = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
-  const images= [
+  const images = [
     {
-      img:Img
+      img: Img,
     },
     {
-      img:Img1
+      img: Img1,
     },
     {
-      img:Img2
+      img: Img2,
     },
     {
-      img:Img3
+      img: Img3,
     },
     {
-      img:Img4
+      img: Img4,
     },
     {
-      img:Img5
-    }
+      img: Img5,
+    },
   ];
 
   const { ref, inView } = useInView({
@@ -59,9 +59,9 @@ export const ViewProject = () => {
         <div className="shadow"></div>
         <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
           <Slider {...settings}>
-            {images.map((image, index )=>(
+            {images.map((image, index) => (
               <div key={index}>
-                <img src={image.img} alt={`Slide ${index}`} style={{ width: '100%' }} />
+                <img src={image.img} alt={`Slide ${index}`} />
               </div>
             ))}
           </Slider>

@@ -4,7 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* Added to ensure child elements are positioned correctly */
+  position: relative;
+}
+.theContain {
+  overflow-y: hidden;
 }
 
 .back-image {
@@ -14,7 +17,7 @@
   left: 0;
   top: 0;
   z-index: 0;
-  object-fit: cover; /* Changed from fill to cover to maintain aspect ratio */
+  object-fit: cover;
 }
 
 .shadow {
@@ -108,8 +111,7 @@
   right: 5%;
   width: 100%;
   max-width: 700px;
-  height: 411px;
-  /* overflow: hidden; */
+  padding-bottom: 56.25%;
   margin: auto;
   transition: box-shadow 0.3s ease !important;
 }
@@ -117,10 +119,11 @@
 .right-image img {
   object-fit: cover;
   border-radius: 10px;
+  max-width: 700px;
+  max-height: 400px;
   width: 100%;
   height: auto;
-  max-width: 16/9;
-  max-height: 400px;
+
   transition: transform 0.3s ease;
 }
 
@@ -130,8 +133,7 @@
 }
 
 .right-image:hover {
-  border-radius: 10px; 
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  border-radius: 10px;
 }
 
 .theContain .back-button {
@@ -149,7 +151,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Added to center align content */
+    justify-content: center;
   }
 
   .info-box {
@@ -162,21 +164,23 @@
   }
 
   .right-image {
-    position: relative;
-    top: auto;
+    position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
     width: 90%;
-    max-width: none;
+    max-width: 90%;
+    height: auto;
     margin: 20px auto 0;
     box-shadow: none;
   }
 
   .right-image img {
-    width: 100%;
+    width: 90%;
+    max-width: 90%;
     height: auto;
     object-fit: cover;
-    max-height: 70vh; /* Ensure the image does not exceed the viewport height */
+    /* max-height: 70vh; */
   }
 
   .shadow {
@@ -186,21 +190,23 @@
 
 @media (max-width: 500px) {
   .right-image {
-    position: relative;
-    top: auto;
+    position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
     width: 90%;
-    max-width: none;
+    max-width: 90%;
+    height: auto;
     margin: 20px auto 0;
     box-shadow: none;
   }
 
   .right-image img {
-    width: 100%;
+    width: 90%;
+    max-width: 90%;
     height: auto;
     object-fit: cover;
-    max-height: 50vh; /* Ensure the image does not exceed the viewport height on very small screens */
+    /* max-height: 50vh; */
   }
 
   .shadow {
