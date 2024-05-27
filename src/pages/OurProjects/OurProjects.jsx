@@ -6,11 +6,8 @@ import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProje
 import Img from "../../images/OurProjectsImages/project.webp";
 import img2 from "../../images/OurProjectsImage/UI Design.webp";
 import "../../animation.css";
-
 import generateAlt from "../../utils/GenerateImageAlt";
 import { metaSEO } from "../../utils/constants";
-
-
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";

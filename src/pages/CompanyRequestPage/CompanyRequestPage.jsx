@@ -26,19 +26,19 @@ const CompanyRequestPage = () => {
     const navigate = useNavigate();
     
 
-    // const checkFromServiceId = async () => {
-    //     // const res = await Axios.get("/rest/service_web/")
-    //     // const service = res.data?.services.find(e => e.id == id);
+    const checkFromServiceId = async () => {
+        const res = await Axios.get("/rest/service_list_web/")
+        const service = res.data?.services.find(e => e.pk == id);
 
-    //     // if (!service) {
-    //     //     setError(`Service with ID ${id} not found.`);
-    //     // }
-    // };
+        if (!service) {
+            setError(`Service with ID ${id} not found.`);
+        }
+    };
 
 
-    // useEffect(() => {
-    //     checkFromServiceId();
-    // }, []);
+    useEffect(() => {
+        checkFromServiceId();
+    }, []);
 
     const inputs = [
         {
@@ -97,8 +97,10 @@ const CompanyRequestPage = () => {
 
         Axios.post('rest/company_request/', data)
             .then(response => {
-                if(response.data.message !== 'Request Duplicated') {
+                console.log(localStorage)
+                if(response.data.message !== 'Duplicate request') {
                     localStorage.setItem('hasCompletedRequest');
+                    
                     navigate('/completed');
                 } else {
                     setError('Request Duplicated');

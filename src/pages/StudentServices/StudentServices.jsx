@@ -70,7 +70,7 @@ const StudentServices = () => {
             ref={ref}
             className={`${
               inView ? "fade-in-bottom" : ""
-            }  student-section-card bounceInUp`}
+            }  student-section-card`}
             key={index}
           >
             <div className="img-cover">

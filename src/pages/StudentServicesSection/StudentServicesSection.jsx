@@ -7,41 +7,42 @@ import { useEffect, useState } from "react";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import img from "../../images/StudentServices/b.jpg"
 const StudentServicesSection = () => {
-  // const [services, setServices] = useState([]);
+  const [services, setServices] = useState([]);
 
-  // const getStudentSectionsServicesData = async () => {
-  //   try {
-  //     const res = await Axios.get("rest/sections_list_web/");
-  //     setServices(res.data.sections);
-  //   } catch (error) {
-  //     // console.log(error);
-  //   }
-  // };
-
-  const services =[
-    {
-      pk:1,
-      section_name:"IT",
-      section_image_web: img ,
-    },
-    {
-      pk:1,
-      section_name:"IT",
-      section_image_web: img ,
-    },
-    {
-      pk:1,
-      section_name:"IT",
-      section_image_web: img ,
+  const getStudentSectionsServicesData = async () => {
+    try {
+      const res = await Axios.get("rest/sections_list_web/");
+      setServices(res.data.sections);
+    } catch (error) {
+      // console.log(error);
     }
-  ]
+  };
+
+  // const services =[
+  //   {
+  //     pk:1,
+  //     section_name:"IT",
+  //     section_image_web: img ,
+  //   },
+  //   {
+  //     pk:1,
+  //     section_name:"IT",
+  //     section_image_web: img ,
+  //   },
+  //   {
+  //     pk:1,
+  //     section_name:"IT",
+  //     section_image_web: img ,
+  //   }
+  // ]
+  useEffect((()=>{
+    getStudentSectionsServicesData();
+  }),[])
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  // useEffect(() => {
-  //   getStudentSectionsServicesData();
-  // }, []);
+  
 
   return (
     <section id="services" className="student-section-services main-container">

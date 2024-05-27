@@ -11,49 +11,36 @@ import img2 from "../../images/StudentServices/b.jpg";
 import img3 from "../../images/StudentServices/c.jpg";
 import img4 from "../../images/StudentServices/d.jpg";
 const CompanyServices = () => {
-  const services = [
-    {
-      pk: 1,
-      service_name: "web development",
-      service_description: "this is the best service",
-      service_picture_web: img1,
-    },
-    {
-      pk: 2,
-      service_name: "web development",
-      service_description: "this is the best service",
-      service_picture_web: img2,
-    },
-    // ,
-    // {
-    //   pk:1,
-    //   service_name:"web development",
-    //   service_description:"this is the best service",
-    //   service_picture_web: img3 ,
-    // }
-    // ,
-    // {
-    //   pk:1,
-    //   service_name:"web development",
-    //   service_description:"this is the best service",
-    //   service_picture_web: img4 ,
-    // }
-  ];
+  // const services = [
+  //   {
+  //     pk: 1,
+  //     service_name: "web development",
+  //     service_description: "this is the best service",
+  //     service_picture_web: img1,
+  //   },
+  //   {
+  //     pk: 2,
+  //     service_name: "web development",
+  //     service_description: "this is the best service",
+  //     service_picture_web: img2,
+  //   },
+ 
+  // ];
 
-  // const [services, setServices] = useState([]);
+  const [services, setServices] = useState([]);
 
-  // const getCompanyServicesData = async () => {
-  //   try {
-  //     const res = await Axios.get("rest/service_list_web/");
-  //     setServices(res.data.services);
-  //   } catch (error) {
-  //     // console.log(error);
-  //   }
-  // };
+  const getCompanyServicesData = async () => {
+    try {
+      const res = await Axios.get("rest/service_list_web/");
+      setServices(res.data.services);
+    } catch (error) {
+      // console.log(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   getCompanyServicesData();
-  // }, []);
+  useEffect(() => {
+    getCompanyServicesData();
+  }, []);
 
   const { ref, inView, entry } = useInView({
     triggerOnce: true, // Only trigger once
