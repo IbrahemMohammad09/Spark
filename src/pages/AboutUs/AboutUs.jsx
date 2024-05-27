@@ -75,22 +75,22 @@ const AboutUs = () => {
             <hr />
             <div className="about-icons">
               <div className="icon-about">
-                <a>
+                <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL">
                   <GrFacebookOption size={56} />
                 </a>
               </div>
               <div className="icon-about">
-                <a>
+                <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3">
                   <PiInstagramLogoFill size={46} />
                 </a>
               </div>
               <div className="icon-about">
-                <a>
+                <a href="https://wa.me/+963962272881">
                   <RiWhatsappFill size={46} />
                 </a>
               </div>
               <div className="icon-about">
-                <a>
+                <a href="https://www.linkedin.com/company/spark-engineering-company/">
                   <TiSocialLinkedin size={56} />
                 </a>
               </div>

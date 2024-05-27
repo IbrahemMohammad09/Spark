@@ -66,16 +66,24 @@ export const Footer = () => {
           <p>Copyright ® 2024 Company All rights Recerved</p>
           <div className="icons">
             <div className="icon face">
-              <GrFacebookOption />
+              <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL">
+                <GrFacebookOption />
+              </a>
             </div>
             <div className="icon insta">
-              <BiLogoInstagram />
+              <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3">
+                <BiLogoInstagram />
+              </a>
             </div>
             <div className="icon whats">
-              <MdWhatsapp />
+              <a href="https://wa.me/+963962272881">
+                <MdWhatsapp />
+              </a>
             </div>
             <div className="icon linked">
-              <TiSocialLinkedin />
+              <a href="https://www.linkedin.com/company/spark-engineering-company/">
+                <TiSocialLinkedin />
+              </a>
             </div>
           </div>
         </div>

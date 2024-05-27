@@ -84,6 +84,9 @@
   line-height: 24.78px;
   padding: 22px;
 }
+.socialFooter a {
+  color: inherit;
+}
 .icons {
   display: flex;
   align-items: center;

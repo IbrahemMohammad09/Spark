@@ -90,6 +90,7 @@
   -ms-transition: 3s;
   -o-transition: 3s;
   transition-duration: 300ms;
+  color: #165069;
 }
 .icon-about a:hover {
   padding-bottom: 20px;
