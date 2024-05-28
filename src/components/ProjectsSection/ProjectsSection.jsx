@@ -33,12 +33,14 @@ const ProjectsSection = () => {
   const getProjects = async ()=>{
     try {
       const res = await Axios.get("rest/our_projects_list/");
-      setAllProjects(res.data);
+      setProjects(res.data);
+      
     } catch (error) {
       // console.log(error);
     }
     // const project = allProjects.slice(0,2)
-    setProjects(allProjects);
+    
+    
   }
 
   useEffect((()=>{

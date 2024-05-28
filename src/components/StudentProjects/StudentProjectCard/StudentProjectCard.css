@@ -5,7 +5,7 @@
 }
 
 .student-project-card .student-project-img-box {
-    background-color: rgba(168, 219, 239, 1);
+    /* background-color: rgba(168, 219, 239, 1); */
     border-radius: 12px;
     position: relative;
     height: 348px;

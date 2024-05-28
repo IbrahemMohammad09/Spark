@@ -10,27 +10,27 @@ import img from "../../images/StudentServices/d.jpg"
 
 
 const StudentProjects = () => {
-  const services =[
-    {
-      pk:1,
-      project_name:"IT",
-      project_field:"It ",
-      project_desc:"this the best project ever",
-      pictures: img ,
-    },{
-      pk:1,
-      project_name:"IT",
-      project_field:"It ",
-      project_desc:"this the best project ever",
-      pictures: img ,
-    },{
-      pk:1,
-      project_name:"IT",
-      project_field:"It ",
-      project_desc:"this the best project ever",
-      pictures: img ,
-    }
-  ]
+  // const services =[
+  //   {
+  //     pk:1,
+  //     project_name:"IT",
+  //     project_field:"It ",
+  //     project_desc:"this the best project ever",
+  //     pictures: img ,
+  //   },{
+  //     pk:1,
+  //     project_name:"IT",
+  //     project_field:"It ",
+  //     project_desc:"this the best project ever",
+  //     pictures: img ,
+  //   },{
+  //     pk:1,
+  //     project_name:"IT",
+  //     project_field:"It ",
+  //     project_desc:"this the best project ever",
+  //     pictures: img ,
+  //   }
+  // ]
 
     const navigate = useNavigate();
     const { id } = useParams();

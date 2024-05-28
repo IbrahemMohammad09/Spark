@@ -23,7 +23,7 @@ const CompanyRequestPage = () => {
 
     const { id } = useParams();
 
-    const navigate = useNavigate();
+    let navigate = useNavigate();
     
 
     const checkFromServiceId = async () => {
@@ -97,13 +97,25 @@ const CompanyRequestPage = () => {
 
         Axios.post('rest/company_request/', data)
             .then(response => {
-                console.log(localStorage)
-                if(response.data.message !== 'Duplicate request') {
-                    localStorage.setItem('hasCompletedRequest');
-                    
+                console.log(response.data);
+                console.log(response.data.message);
+                // const re = JSON.stringify(response.data.message)
+                // console.log(re);
+                // if(re === "Request submitted successfully") {
+                if(response.data.id === 1) {
+                    console.log("hi")
+                    localStorage.setItem("1",'hasCompletedRequest');
+                    for (let i = 0; i < localStorage.length; i++) {
+                        // استرجاع اسم المفتاح
+                        const key = localStorage.key(i);
+                        // استرجاع القيمة المرتبطة بالمفتاح
+                        const value = localStorage.getItem(key);
+                        // طباعة اسم المفتاح وقيمته 
+                        console.log(`Key: ${key}, Value: ${value}`);
+                      }
                     navigate('/completed');
                 } else {
-                    setError('Request Duplicated');
+                    setError('The request has already been successfully sent ');
                 }
                 setLoading(false);
             })

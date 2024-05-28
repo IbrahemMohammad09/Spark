@@ -18,7 +18,7 @@ const InfoCard = ({ info }) => {
         {isLoading && <Loading color="#2fb0cd" />}
         <img
           src={`${info?.first_image}`}
-          alt={generateAlt(info.img)}
+          alt={generateAlt(info.first_image)}
           style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}
         />

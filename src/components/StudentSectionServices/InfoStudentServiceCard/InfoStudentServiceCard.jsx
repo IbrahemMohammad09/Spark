@@ -17,7 +17,7 @@ const InfoStudentServiceCard = ({ info }) => {
         <img
           // src={info.section_image_web}
           src={`${BaseURL}${info.section_image_web}`}
-          alt={ generateAlt(info.section_image)}
+          alt={ generateAlt(info.section_image_web)}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}

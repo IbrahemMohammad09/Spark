@@ -11,6 +11,7 @@ import { metaSEO } from "../../utils/constants";
 import img1 from "../../images/StudentServices/a.jpg";
 import img2 from "../../images/StudentServices/b.jpg";
 import img3 from "../../images/StudentServices/c.jpg";
+
 const StudentCourses = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -19,8 +20,8 @@ const StudentCourses = () => {
 
   const getStudentSections = async () => {
       try {
-          const res = await Axios.get("rest/student_courses/");
-          const student = res.data?.sections.find((e) => e.id == requestId);
+          const res = await Axios.get("rest/sections_list_web/");
+          const student = res.data?.sections.find((e) => e.pk == requestId);
           if(!student){
               navigate('/error-page');
           }
