@@ -10,8 +10,12 @@ import SEO from '../../components/SharedComponents/SEO/SEO';
 import generateAlt from '../../utils/GenerateImageAlt';
 import { Loading } from '../../components/Loading/Loading';
 import AlertMessage from '../../components/SharedComponents/Alert/Alert';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const StudentProjectRequest = () => {
+    const MySwal = withReactContent(Swal);
+
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -24,15 +28,15 @@ const StudentProjectRequest = () => {
 
     const navigate = useNavigate();
     
-    // const checkFromStudentProjectId = async () => {
-    //     const res = await Axios.get("//")
+    const checkFromStudentProjectId = async () => {
+        const res = await Axios.get("//")
 
-    //     console.log(res);
-    // };
+        console.log(res);
+    };
 
-    // useEffect(() => {
-    //     checkFromStudentProjectId();
-    // }, []);
+    useEffect(() => {
+        checkFromStudentProjectId();
+    }, []);
 
     const inputs = [
         {
@@ -83,11 +87,22 @@ const StudentProjectRequest = () => {
 
         Axios.post('/rest/student_project_request/', data)
             .then(response => {
-                if(response.data.message !== 'Request Duplicated') {
-                    localStorage.setItem('hasCompletedRequest');
-                    navigate('/completed');
+                if(response.data.id === 1) {
+                    MySwal.fire({
+                        title: 'Success!',
+                        text: 'Request was successful!',
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                        customClass: {
+                            popup: 'custom-popup',
+                            title: 'custom-title',
+                            content: 'custom-content',
+                            confirmButton: 'custom-confirm-button'
+                        }
+                    });
+                    navigate("/student-section-services");
                 } else {
-                    setError('Request Duplicated');
+                    setError('The request has already been successfully sent ');
                 }
                 setLoading(false);
             })

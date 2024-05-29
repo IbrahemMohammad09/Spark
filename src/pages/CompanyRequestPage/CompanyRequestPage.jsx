@@ -10,8 +10,14 @@ import SEO from '../../components/SharedComponents/SEO/SEO';
 import generateAlt from '../../utils/GenerateImageAlt';
 import { Loading } from '../../components/Loading/Loading';
 import AlertMessage from '../../components/SharedComponents/Alert/Alert';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+
 
 const CompanyRequestPage = () => {
+    const MySwal = withReactContent(Swal);
+
     const [error, setError] = useState(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -98,9 +104,19 @@ const CompanyRequestPage = () => {
         Axios.post('rest/company_request/', data)
             .then(response => {
                 if(response.data.id === 1) {
-                    console.log("hi")
-                    localStorage.setItem('hasCompletedRequest',true);
-                    navigate('/completed');
+                    MySwal.fire({
+                        title: 'Success!',
+                        text: 'Request was successful!',
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                        customClass: {
+                            popup: 'custom-popup',
+                            title: 'custom-title',
+                            content: 'custom-content',
+                            confirmButton: 'custom-confirm-button'
+                        }
+                    });
+                    navigate("/company-services");
                 } else {
                     setError('The request has already been successfully sent ');
                 }
