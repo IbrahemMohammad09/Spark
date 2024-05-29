@@ -12,7 +12,7 @@ import Img5 from "../../images/ViewProjectImages/PeqCi.jpeg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Container,Row,Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 export const ViewProject = () => {
   const settings = {
@@ -27,22 +27,22 @@ export const ViewProject = () => {
   };
   const images = [
     {
-      img: Img,
+      img: Img1,
     },
     {
       img: Img,
     },
     {
-      img: Img,
+      img: Img2,
     },
     {
-      img: Img,
+      img: Img3,
     },
     {
-      img: Img,
+      img: Img4,
     },
     {
-      img: Img,
+      img: Img5,
     },
   ];
 
@@ -56,8 +56,6 @@ export const ViewProject = () => {
         <BiArrowBack />
       </div>
       <div className="viewContainer">
-
-      
         <img src={image1} alt="image1" className="back-image" />
         <div className="shadow"></div>
         <div
@@ -82,9 +80,6 @@ export const ViewProject = () => {
           </div>
         </div>
 
-        
-
-
         <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
           <Slider {...settings}>
             {images.map((image, index) => (
@@ -94,11 +89,7 @@ export const ViewProject = () => {
             ))}
           </Slider>
         </div>
-
       </div>
-
-
-
     </div>
   );
 };

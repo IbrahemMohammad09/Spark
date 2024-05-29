@@ -29,13 +29,14 @@ const DetailServices = () => {
   const { language } = useLanguageContext();
 
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
   const getServiceData = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("/rest/service_list_web/");
 
       const service = res.data?.services.find((e) => e.pk == id);
-
+      setIsLoading(false);
       if (!service) {
         setError(`Service with ID ${id} not found.`);
         navigate("/error-page");
@@ -84,7 +85,6 @@ const DetailServices = () => {
               // alt={serviceData.service_picture_web}
               loading="lazy"
               style={{ display: isLoading ? "none" : "block" }}
-              onLoad={() => setIsLoading(false)}
             />
           </div>
           <div>

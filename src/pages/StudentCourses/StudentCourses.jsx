@@ -16,37 +16,40 @@ const StudentCourses = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const requestId = parseInt(id, 10);
-  const restUrl = "/"+requestId;
+  const restUrl = "/" + requestId;
+  const [isLoading, setIsLoading] = useState(null);
 
   const getStudentSections = async () => {
-      try {
-          const res = await Axios.get("rest/sections_list_web/");
-          const student = res.data?.sections.find((e) => e.pk == requestId);
-          if(!student){
-              navigate('/error-page');
-          }
-      } catch (error) {
-          // console.log(error);
+    try {
+      const res = await Axios.get("rest/sections_list_web/");
+      const student = res.data?.sections.find((e) => e.pk == requestId);
+      if (!student) {
+        navigate("/error-page");
       }
+    } catch (error) {
+      // console.log(error);
+    }
   };
 
   useEffect(() => {
-      getStudentSections();
+    getStudentSections();
   }, [id]);
 
   const [studentCourses, setStudentCourses] = useState([]);
 
   const getstudentCoursesData = async () => {
-      try {
-          const res = await Axios.get("rest/student_courses/"+restUrl);
-          setStudentCourses(res.data.courses);
-      } catch (error) {
-          // console.log(error);
-      }
+    setIsLoading(true);
+    try {
+      const res = await Axios.get("rest/student_courses/" + restUrl);
+      setIsLoading(false);
+      setStudentCourses(res.data.courses);
+    } catch (error) {
+      // console.log(error);
+    }
   };
 
   useEffect(() => {
-      getstudentCoursesData();
+    getstudentCoursesData();
   }, []);
   // const studentCourses = [
   //   {
@@ -85,7 +88,7 @@ const StudentCourses = () => {
       <div className="student-courses main-container">
         <Container className="student-courses-flex bounceInUp">
           {studentCourses.map((e, i) => (
-            <StudentCoursesCard key={i} info={e} />
+            <StudentCoursesCard key={i} info={e} isLoading={isLoading} />
           ))}
         </Container>
       </div>

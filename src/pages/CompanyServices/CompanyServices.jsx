@@ -24,15 +24,17 @@ const CompanyServices = () => {
   //     service_description: "this is the best service",
   //     service_picture_web: img2,
   //   },
- 
+
   // ];
 
   const [services, setServices] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(null);
   const getCompanyServicesData = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("rest/service_list_web/");
       setServices(res.data.services);
+      setIsLoading(false);
     } catch (error) {
       // console.log(error);
     }
@@ -67,7 +69,9 @@ const CompanyServices = () => {
         <Container>
           <div className="company-services-grid">
             {services &&
-              services.map((e) => <ServiceCard key={e.pk} info={e} />)}
+              services.map((e) => (
+                <ServiceCard key={e.pk} info={e} isLoading={isLoading} />
+              ))}
           </div>
         </Container>
       </div>

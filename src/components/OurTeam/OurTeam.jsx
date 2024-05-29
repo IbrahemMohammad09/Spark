@@ -18,14 +18,14 @@ import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
   const getTeamData = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("rest/member_list_web/");
       setTeamData(res.data);
-    } catch (error) {
-      
-    }
+      setIsLoading(false);
+    } catch (error) {}
   };
   useEffect(() => {
     getTeamData();
@@ -39,8 +39,21 @@ const OurTeam = () => {
 
   return (
     <section className="our-team" id="our_team">
-      <SEO title={'Spark | Our team'} description={metaSEO.ourTeam.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
-      <MainHomeTitle title={'Our Team'} subtitle={metaSEO.ourTeam.description}/>
+      <SEO
+        title={"Spark | Our team"}
+        description={metaSEO.ourTeam.description}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
+      <MainHomeTitle
+        title={"Our Team"}
+        subtitle={metaSEO.ourTeam.description}
+      />
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
@@ -76,7 +89,6 @@ const OurTeam = () => {
                         src={BaseURL + member?.member_picture_web}
                         alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
-                        onLoad={() => setIsLoading(false)}
                       />
                     </div>
                     <div className="text-container">

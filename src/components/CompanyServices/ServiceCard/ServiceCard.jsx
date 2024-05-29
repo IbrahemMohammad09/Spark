@@ -5,9 +5,8 @@ import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
 
-const ServiceCard = ({ info }) => {
+const ServiceCard = ({ info, isLoading }) => {
   const { language } = useLanguageContext();
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="company-service-card">
@@ -19,7 +18,6 @@ const ServiceCard = ({ info }) => {
           alt={info?.service_picture}
           loading="lazy"
           style={{ display: isLoading ? "none" : "block" }}
-          onLoad={() => setIsLoading(false)}
         />
       </div>
       <div className="company-service-card-info">
