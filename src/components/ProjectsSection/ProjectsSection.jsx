@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 import SEO from "../SharedComponents/SEO/SEO";
 import { useEffect, useState } from "react";
 import { metaSEO } from "../../utils/constants";
-import {Axios} from "../../api/axios"
+import { Axios } from "../../api/axios";
 
 const ProjectsSection = () => {
   // const projects = [
@@ -28,25 +28,24 @@ const ProjectsSection = () => {
   //     img: Img2,
   //   },
   // ];
-  const [allProjects , setAllProjects] = useState();
-  const [projects , setProjects] = useState();
-  const getProjects = async ()=>{
+  const [allProjects, setAllProjects] = useState();
+  const [projects, setProjects] = useState();
+  const [isLoading, setIsLoading] = useState(null);
+  const getProjects = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("rest/our_projects_list/");
       setProjects(res.data);
-      
+      setIsLoading(false);
     } catch (error) {
       // console.log(error);
     }
     // const project = allProjects.slice(0,2)
-    
-    
-  }
+  };
 
-  useEffect((()=>{
+  useEffect(() => {
     getProjects();
-  }),[])
-
+  }, []);
 
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
@@ -61,7 +60,6 @@ const ProjectsSection = () => {
   };
 
   useEffect(() => {
-    
     window.addEventListener("scroll", handleUserScroll);
 
     return () => {
@@ -74,7 +72,7 @@ const ProjectsSection = () => {
       setHasBeenInView(true);
     }
   }, [inView, userHasScrolled]);
-  
+
   return (
     <section id="our-projects">
       <SEO
@@ -89,7 +87,10 @@ const ProjectsSection = () => {
         ]}
       />
       <Container className="main-section our-projects position-relative">
-        <MainHomeTitle title={"Our Projects"} subtitle={metaSEO.projects.description}/>
+        <MainHomeTitle
+          title={"Our Projects"}
+          subtitle={metaSEO.projects.description}
+        />
         <div>
           <div
             ref={ref}
@@ -98,7 +99,7 @@ const ProjectsSection = () => {
             } our-projects-cards`}
           >
             {projects?.map((e, i) => (
-              <InfoCard key={i} info={e} />
+              <InfoCard key={i} info={e} isLoading={isLoading} />
             ))}
           </div>
           <MainButton

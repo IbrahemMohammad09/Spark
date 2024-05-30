@@ -4,19 +4,17 @@ import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
-import {BaseURL} from '../../../utils/constants'
-const StudentCoursesCard = ({ info }) => {
+import { BaseURL } from "../../../utils/constants";
+const StudentCoursesCard = ({ info, isLoading }) => {
   const { language } = useLanguageContext();
-  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="student-course-card">
       <div className="student-course-img-box">
-              {isLoading && <Loading color="#2fb0cd" />}
-              <img
-                src={`${BaseURL}/${info.image_web}`}
-                style={{ display: isLoading ? "none" : "block" }}
-                onLoad={() => setIsLoading(false)}
-              />
+        {isLoading && <Loading color="#2fb0cd" />}
+        <img
+          src={`${BaseURL}/${info.image_web}`}
+          style={{ display: isLoading ? "none" : "block" }}
+        />
       </div>
       <div className="student-course-info-box">
         <h1>{info.name[language]}</h1>

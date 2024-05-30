@@ -4,11 +4,10 @@ import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
-import {BaseURL} from "../../../utils/constants"
+import { BaseURL } from "../../../utils/constants";
 
-const StudentProjectCard = ({ info }) => {
+const StudentProjectCard = ({ info, isLoading }) => {
   const { language } = useLanguageContext();
-  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="student-project-card">
       <div className="student-project-img-box">
@@ -20,7 +19,6 @@ const StudentProjectCard = ({ info }) => {
                 src={`${BaseURL}/${picture.image}`}
                 alt={generateAlt(picture.image)}
                 style={{ display: isLoading ? "none" : "block" }}
-                onLoad={() => setIsLoading(false)}
               />
             </div>
           ))}

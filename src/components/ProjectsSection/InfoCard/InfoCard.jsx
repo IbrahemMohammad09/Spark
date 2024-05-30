@@ -3,10 +3,9 @@ import "./InfoCard.css";
 import { Loading } from "../../Loading/Loading";
 import { useState } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
-import {BaseURL} from "../../../utils/constants"
+import { BaseURL } from "../../../utils/constants";
 
-const InfoCard = ({ info }) => {
-  const [isLoading, setIsLoading] = useState(true);
+const InfoCard = ({ info, isLoading }) => {
   return (
     <div className="project-card">
       <div className="project-card-top">
@@ -20,7 +19,6 @@ const InfoCard = ({ info }) => {
           src={`${info?.first_image}`}
           alt={generateAlt(info.first_image)}
           style={{ display: isLoading ? "none" : "block" }}
-          onLoad={() => setIsLoading(false)}
         />
       </div>
       <div className="project-card-bottom">

@@ -115,7 +115,6 @@ const OurProjects = () => {
     }
   };
 
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
