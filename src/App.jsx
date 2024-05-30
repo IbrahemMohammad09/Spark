@@ -17,7 +17,7 @@ import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
-import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
+
 import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
@@ -54,7 +54,7 @@ function App() {
             path={"/company-request/:id"}
             element={<CompanyRequestPage />}
           />
-          <Route path={"/completed"} element={<CompleteRequest />} />
+         
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
         

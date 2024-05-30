@@ -4,22 +4,31 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Axios } from "../../api/axios";
 import { useEffect, useState } from "react";
 import MainInput from "../../components/SharedComponents/MainInput/MainInput";
-import Img from "../../images/CompanyRequestPageImages/company-request-page.webp";
-import MainButton from "../../components/SharedComponents/MainButton/MainButton";
-import SEO from "../../components/SharedComponents/SEO/SEO";
-import generateAlt from "../../utils/GenerateImageAlt";
-import { Loading } from "../../components/Loading/Loading";
-import AlertMessage from "../../components/SharedComponents/Alert/Alert";
+
+
+import Img from '../../images/CompanyRequestPageImages/company-request-page.webp'
+import MainButton from '../../components/SharedComponents/MainButton/MainButton';
+import SEO from '../../components/SharedComponents/SEO/SEO';
+import generateAlt from '../../utils/GenerateImageAlt';
+import { Loading } from '../../components/Loading/Loading';
+import AlertMessage from '../../components/SharedComponents/Alert/Alert';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+
 
 const CompanyRequestPage = () => {
-  const [error, setError] = useState(null);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [task, setTask] = useState("");
-  const [errorRequest, setErrorRequest] = useState({});
-  const [loading, setLoading] = useState(null);
+    const MySwal = withReactContent(Swal);
+
+    const [error, setError] = useState(null);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [task, setTask] = useState('');
+    const [errorRequest, setErrorRequest] = useState({});
+    const [loading, setLoading] = useState(false);
+
 
   const { id } = useParams();
 
@@ -94,28 +103,40 @@ const CompanyRequestPage = () => {
 
     setLoading(true);
 
-    Axios.post("rest/company_request/", data)
-      .then((response) => {
-        if (response.data.id === 1) {
-          console.log("hi");
-          localStorage.setItem("hasCompletedRequest", true);
-          navigate("/completed");
-        } else {
-          setError("The request has already been successfully sent ");
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        if (error.response?.data) {
-          setErrorRequest(error.response.data);
-          console.log(error.response.data, errorRequest);
-        }
-        if (error.response?.data?.message) {
-          setError(error.response.data.message);
-        }
-        setLoading(false);
-      });
-  };
+
+        Axios.post('rest/company_request/', data)
+            .then(response => {
+                if(response.data.id === 1) {
+                    MySwal.fire({
+                        title: 'Success!',
+                        text: 'Request was successful!',
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                        customClass: {
+                            popup: 'custom-popup',
+                            title: 'custom-title',
+                            content: 'custom-content',
+                            confirmButton: 'custom-confirm-button'
+                        }
+                    });
+                    navigate("/company-services");
+                } else {
+                    setError('The request has already been successfully sent ');
+                }
+                setLoading(false);
+            })
+            .catch(error => {
+                if(error.response?.data) {
+                    setErrorRequest(error.response.data)
+                    console.log(error.response.data, errorRequest);
+                }
+                if(error.response?.data?.message) {
+                    setError(error.response.data.message);
+                }
+                setLoading(false);
+            });
+    }
+
 
   return (
     <section className="company-request-page">
