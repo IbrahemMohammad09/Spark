@@ -1,14 +1,14 @@
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import { useInView } from "react-intersection-observer";
-import image1 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
+import image1 from "../../images/gg.jpg";
 import { BiArrowBack } from "react-icons/bi";
 import "./ViewProject.css";
 import Img from "../../images/ViewProjectImages/Mykonos.jpeg";
-import Img1 from "../../images/ViewProjectImages/ww.jpeg";
-import Img2 from "../../images/ViewProjectImages/71fc178a-3216-4f88-a91f-c70a41eb749a.jpeg";
-import Img3 from "../../images/ViewProjectImages/Blue Caves - Zante, Greece.jpeg";
-import Img4 from "../../images/ViewProjectImages/download (40).jpeg";
-import Img5 from "../../images/ViewProjectImages/PeqCi.jpeg";
+import Img1 from "../../images/WhatsApp Image 2024-06-07 at 16.58.23_f2acbe47.jpg";
+import Img2 from "../../images/1,2.jpg";
+import Img3 from "../../images/1,3.jpg";
+import Img4 from "../../images/1,4-01.jpg";
+import Img5 from "../../images/1,5-01.jpg";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -56,7 +56,6 @@ export const ViewProject = () => {
       </div>
       <div className="viewContainer">
         <img src={image1} alt="image1" className="back-image" />
-        <div className="shadow"></div>
         <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
           <Slider {...settings}>
             {images.map((image, index )=>(

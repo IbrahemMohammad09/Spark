@@ -4,6 +4,7 @@ import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
 import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
+import Img from '../../../images/WhatsApp Image 2024-06-08 at 18.25.16_ec88dbfd.jpg'
 
 const ServiceCard = ({ info }) => {
   const { language } = useLanguageContext();
@@ -14,11 +15,11 @@ const ServiceCard = ({ info }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          // src={info?.service_picture_web}
-          src={`${BaseURL}/${info?.service_picture_web}`}
+          src={Img}
+          // src={`${BaseURL}/${info?.service_picture_web}`}
           alt={info?.service_picture}
           loading="lazy"
-          style={{ display: isLoading ? "none" : "block" }}
+          // style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}
         />
       </div>
