@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 
+.navbar {
+  box-shadow: 0 0 10px 0px #ccc;
+}
+
 .logo {
   height: 45px;
   width: 45px;

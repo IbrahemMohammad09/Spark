@@ -20,9 +20,6 @@ export const Footer = () => {
         pathname.includes("/company-request") ||
         pathname.includes("/view-project")
     );
-    // const isRequestPage = pathname.match(/^\/company-request\/\d+$/);
-
-    // setHideFooter(!!isRequestPage);
   }, [pathname]);
 
   return (

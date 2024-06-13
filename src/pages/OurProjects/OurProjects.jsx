@@ -3,111 +3,31 @@ import "./OurProjects.css";
 import Img1 from "../../images/OurProjectsImages/Bill Sitting using laptop 1.webp";
 import Img2 from "../../images/OurProjectsImages/Frame 1597884239.webp";
 import OurProjectCard from "../../components/OurProjects/OurProjectCard/OurProjectCard";
-import Img from "../../images/OurProjectsImages/project.webp";
-import img2 from "../../images/OurProjectsImage/UI Design.webp";
 import "../../animation.css";
 import generateAlt from "../../utils/GenerateImageAlt";
 import { metaSEO } from "../../utils/constants";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const OurProjects = () => {
-  const projects = [
-    {
-      id: 1,
-      img: Img,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 2,
-      img: Img,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 3,
-      img: Img,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: Img,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: Img,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: img2,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: img2,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: img2,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-    {
-      id: 4,
-      img: img2,
-      title: "Memory App",
-      type: "Flutter App",
-      subtitle:
-        "From automation to advanced analytics and seamless experiences, we can embed AI in busines",
-      url: "https://MRR.com",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
 
   const [isAll, setIsAll] = useState(false);
-  const description =
-    "Our projects involve creating user-friendly interfaces that make navigating websites or apps a breeze. we focus on understanding the needs and behaviors of users to create designs that not only look good but also function intuitively.";
+
   useEffect(() => {
     setIsAll(false);
   }, []);
+
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
   const initScrollY = useRef(window.scrollY);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [displayedProjects, setDisplayedProjects] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleResize = () => {
     if (window.innerWidth !== windowWidth) {
@@ -122,6 +42,7 @@ const OurProjects = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [windowWidth]);
+
   useEffect(() => {
     let isMounted = true; // علامة لتتبع حالة mount/unmount
 
@@ -168,6 +89,21 @@ const OurProjects = () => {
       setHasBeenInView(true);
     }
   }, [inView, userHasScrolled]);
+
+  useEffect(() => {
+    axios.get('https://sparkeng.pythonanywhere.com/rest/our_projects_list/')
+      .then(res => {
+        if(res.data) {
+          setProjects(res.data)
+        } else {
+          navigate('/error');
+        }
+      })
+      .catch( err => {
+        navigate('/error');
+      });
+  }, []);
+
   return (
     <section id="our-projects" className="our-projects-page position-relative">
       <SEO
@@ -189,31 +125,34 @@ const OurProjects = () => {
         </div>
         <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
       </div>
-      <div className="our-projects-cards main-container bounceInUp">
-        <h2 className="title">Our Projects</h2>
-        <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
-          {isAll === true && (
-            <div className="our-projects-grid">
-              {projects.map((e, i) => (
-                <OurProjectCard key={i} info={e} />
-              ))}
-            </div>
-          )}
-          {isAll === false && (
-            <div className="our-projects-grid large">
-              {displayedProjects.map((e, i) => (
-                <OurProjectCard key={i} info={e} />
-              ))}
-            </div>
-          )}
-        </div>
+        {projects && 
+          <div className="our-projects-cards main-container bounceInUp">
+                <h2 className="title">Our Projects</h2>
+                <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
+                  {isAll === true && (
+                    <div className="our-projects-grid">
+                      {projects.map((e, i) => (
+                        <OurProjectCard key={i} info={e} />
+                      ))}
+                    </div>
+                  )}
+                  {isAll === false && (
+                    <div className="our-projects-grid large">
+                      {projects.map((e, i) => (
+                        i <= 3 &&
+                        <OurProjectCard key={i} info={e} />
+                      ))}
+                    </div>
+                  )}
+                </div>
 
-        {!isAll && (
-          <div className="button-all" onClick={() => setIsAll(true)}>
-            <MainButton title={"See all"} addStyle={"see-all"} />
+                {!isAll && (
+                  <div className="button-all" onClick={() => setIsAll(true)}>
+                    <MainButton title={"See all"} addStyle={"see-all"} />
+                  </div>
+                )}
           </div>
-        )}
-      </div>
+        }
     </section>
   );
 };

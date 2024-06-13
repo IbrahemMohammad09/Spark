@@ -10,37 +10,28 @@ import SEO from "../SharedComponents/SEO/SEO";
 import { useEffect, useState } from "react";
 import { metaSEO } from "../../utils/constants";
 import { Axios } from "../../api/axios";
+import { useNavigate } from "react-router-dom";
 
 const ProjectsSection = () => {
-  // const projects = [
-  //   {
-  //     title: "MStore",
-  //     subtitle:
-  //       "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
-  //     type: "Development Project",
-  //     img: Img1,
-  //   },
-  //   {
-  //     title: "Beauty",
-  //     subtitle:
-  //       "Mangcodeing is bigest company in indonesia, who provides the services in Development Website, Shopify and WordPress",
-  //     type: "Development Project",
-  //     img: Img2,
-  //   },
-  // ];
   const [allProjects, setAllProjects] = useState();
   const [projects, setProjects] = useState();
   const [isLoading, setIsLoading] = useState(null);
+
+  const navigate = useNavigate();
+
   const getProjects = async () => {
     setIsLoading(true);
     try {
       const res = await Axios.get("rest/our_projects_list/");
-      setProjects(res.data);
-      setIsLoading(false);
+      if(res.data) {
+        setProjects(res.data);
+        setIsLoading(false);
+      } else {
+        navigate('/error');
+      }
     } catch (error) {
-      // console.log(error);
+      navigate('/error');
     }
-    // const project = allProjects.slice(0,2)
   };
 
   useEffect(() => {
@@ -98,7 +89,7 @@ const ProjectsSection = () => {
               hasBeenInView ? "fade-in-bottom" : ""
             } our-projects-cards`}
           >
-            {projects?.map((e, i) => (
+            {projects && projects?.map((e, i) => (
               <InfoCard key={i} info={e} isLoading={isLoading} />
             ))}
           </div>

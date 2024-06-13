@@ -3,10 +3,10 @@ import "./OurProjectCard.css";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
+import { useLanguageContext } from "../../../hooks/useLanguageContext";
 
 const OurProjectCard = ({ info }) => {
-  
-
+  const { language } = useLanguageContext();
 
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
@@ -38,16 +38,16 @@ const OurProjectCard = ({ info }) => {
   return (
     <div className="our-project-card-info">
       <div className="img">
-        <img src={info.img} alt={generateAlt(info.img)} loading="lazy" />
+        <img src={info.first_image} alt={generateAlt(info.first_image)} loading="lazy" />
       </div>
       <div className="info">
-        <h1>{info.title}</h1>
-        <h2>{info.type}</h2>
-        <h3>{info.subtitle}</h3>
-        <a href={info.url} className="url">
+        <h1>{info.project_name[language]}</h1>
+        <h2>{info.project_field[language]}</h2>
+        <h3>{info.project_desc[language]}</h3>
+        {/* <a href={info.url} className="url">
           {info.url}
-        </a>
-        <Link to={"/view-project"} className="link">
+        </a> */}
+        <Link to={"/view-project/"+info.pk} className="link">
           Visit
         </Link>
       </div>

@@ -16,9 +16,22 @@ import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 
+import Img from '../../images/mm.jpg'
+import Img1 from '../../images/qq.jpg'
+
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
+
+  const projects = [
+    {
+      id: 1,
+      member_picture_web: Img
+    },{
+      id: 2,
+      member_picture_web: Img1
+    }
+  ]
   const getTeamData = async () => {
     setIsLoading(true);
     try {
@@ -77,7 +90,7 @@ const OurTeam = () => {
             className="swiper-button-next"
             onClick={() => swiperRef.current.slideNext()}
           ></div>
-          {teamData?.members.map((member, index) =>
+          {projects.map((member, index) =>
             member ? (
               <SwiperSlide key={index} id={member.id}>
                 <div className="slide-body">
@@ -86,18 +99,18 @@ const OurTeam = () => {
                     <div className="image-container">
                       <img
                         className="d-block mx-auto"
-                        src={BaseURL + member?.member_picture_web}
+                        src={member?.member_picture_web}
                         alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
                       />
                     </div>
-                    <div className="text-container">
+                    {/* <div className="text-container">
                       <div className="head-swiper">
                         <h3>{member?.member_name.EN}.,</h3>
                         <span>{member?.member_position.EN}</span>
                       </div>
                       <p>{member?.member_desc.EN}</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>

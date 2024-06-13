@@ -1,9 +1,8 @@
 import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import MainButton from "../../SharedComponents/MainButton/MainButton";
-import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
-import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
+import { BaseURL } from "../../../utils/constants";
 
 const ServiceCard = ({ info, isLoading }) => {
   const { language } = useLanguageContext();
@@ -13,7 +12,6 @@ const ServiceCard = ({ info, isLoading }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          // src={info?.service_picture_web}
           src={`${BaseURL}/${info?.service_picture_web}`}
           alt={info?.service_picture}
           loading="lazy"

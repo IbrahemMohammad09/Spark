@@ -18,7 +18,7 @@ const HeroSection = () => {
         <Row ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Col md="6">
             <div className="hero-text">
-              <h1 className="hero-h1">Biuld Your Dreams</h1>
+              <h1 className="hero-h1">Build Your Dreams</h1>
               <p className="hero-p">With us dreams will turn into reality</p>
             </div>
           </Col>

@@ -59,8 +59,8 @@ const StudentServices = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
+          "IT services",
+          "student projects",
           "student services",
         ]}
       />
