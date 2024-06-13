@@ -6,35 +6,21 @@ import ServiceCard from "../../components/CompanyServices/ServiceCard/ServiceCar
 import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
-import img1 from "../../images/StudentServices/a.jpg";
-import img2 from "../../images/StudentServices/b.jpg";
-import img3 from "../../images/StudentServices/c.jpg";
-import img4 from "../../images/StudentServices/d.jpg";
+import { useNavigate } from "react-router-dom";
 const CompanyServices = () => {
-  // const services = [
-  //   {
-  //     pk: 1,
-  //     service_name: "web development",
-  //     service_description: "this is the best service",
-  //     service_picture_web: img1,
-  //   },
-  //   {
-  //     pk: 2,
-  //     service_name: "web development",
-  //     service_description: "this is the best service",
-  //     service_picture_web: img2,
-  //   },
- 
-  // ];
-
   const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(null);
+
+  const navigate = useNavigate();
 
   const getCompanyServicesData = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("rest/service_list_web/");
       setServices(res.data.services);
+      setIsLoading(false);
     } catch (error) {
-      // console.log(error);
+      navigate('/error-page')
     }
   };
 
@@ -55,9 +41,9 @@ const CompanyServices = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "company services",
+          "software services",
+          "engineered services",
         ]}
       />
       <div
@@ -67,7 +53,9 @@ const CompanyServices = () => {
         <Container>
           <div className="company-services-grid">
             {services &&
-              services.map((e) => <ServiceCard key={e.pk} info={e} />)}
+              services.map((e) => (
+                <ServiceCard key={e.pk} info={e} isLoading={isLoading} />
+              ))}
           </div>
         </Container>
       </div>

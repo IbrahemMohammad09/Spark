@@ -96,7 +96,6 @@
   cursor: pointer;
 }
 .icon {
-  padding: 5px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -105,8 +104,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background-color: black;
   color: white;
   transition: 3s;

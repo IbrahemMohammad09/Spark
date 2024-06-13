@@ -95,7 +95,7 @@ const NavigationBar = () => {
   }, [location.pathname]);
 
   return (
-    <div className={`${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
+    <div className={`navbar ${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
       <Navbar expand="lg" fixed="top">
         <Container
           style={{

@@ -16,16 +16,29 @@ import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 
+import Img from '../../images/mm.jpg'
+import Img1 from '../../images/qq.jpg'
+
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
+
+  const projects = [
+    {
+      id: 1,
+      member_picture_web: Img
+    },{
+      id: 2,
+      member_picture_web: Img1
+    }
+  ]
   const getTeamData = async () => {
+    setIsLoading(true);
     try {
       const res = await Axios.get("rest/member_list_web/");
       setTeamData(res.data);
-    } catch (error) {
-      
-    }
+      setIsLoading(false);
+    } catch (error) {}
   };
   useEffect(() => {
     getTeamData();
@@ -39,8 +52,21 @@ const OurTeam = () => {
 
   return (
     <section className="our-team" id="our_team">
-      <SEO title={'Spark | Our team'} description={metaSEO.ourTeam.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
-      <MainHomeTitle title={'Our Team'} subtitle={metaSEO.ourTeam.description}/>
+      <SEO
+        title={"Spark | Our team"}
+        description={metaSEO.ourTeam.description}
+        name={"Spark"}
+        type={"website"}
+        keywords={[
+          "software develpoment",
+          "software engineer",
+          "student services",
+        ]}
+      />
+      <MainHomeTitle
+        title={"Our Team"}
+        subtitle={metaSEO.ourTeam.description}
+      />
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
@@ -64,7 +90,7 @@ const OurTeam = () => {
             className="swiper-button-next"
             onClick={() => swiperRef.current.slideNext()}
           ></div>
-          {teamData?.members.map((member, index) =>
+          {projects.map((member, index) =>
             member ? (
               <SwiperSlide key={index} id={member.id}>
                 <div className="slide-body">
@@ -73,19 +99,18 @@ const OurTeam = () => {
                     <div className="image-container">
                       <img
                         className="d-block mx-auto"
-                        src={BaseURL + member?.member_picture_web}
+                        src={member?.member_picture_web}
                         alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
-                        onLoad={() => setIsLoading(false)}
                       />
                     </div>
-                    <div className="text-container">
+                    {/* <div className="text-container">
                       <div className="head-swiper">
                         <h3>{member?.member_name.EN}.,</h3>
                         <span>{member?.member_position.EN}</span>
                       </div>
                       <p>{member?.member_desc.EN}</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>

@@ -1,26 +1,21 @@
 import { useLanguageContext } from "../../../hooks/useLanguageContext";
 import MainButton from "../../SharedComponents/MainButton/MainButton";
-import { BaseURL } from "../../../utils/constants";
 import "./ServiceCard.css";
-import { useState } from "react";
 import { Loading } from "../../Loading/Loading";
-import Img from '../../../images/WhatsApp Image 2024-06-08 at 18.25.16_ec88dbfd.jpg'
+import { BaseURL } from "../../../utils/constants";
 
-const ServiceCard = ({ info }) => {
+const ServiceCard = ({ info, isLoading }) => {
   const { language } = useLanguageContext();
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="company-service-card">
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          src={Img}
-          // src={`${BaseURL}/${info?.service_picture_web}`}
+          src={`${BaseURL}/${info?.service_picture_web}`}
           alt={info?.service_picture}
           loading="lazy"
-          // style={{ display: isLoading ? "none" : "block" }}
-          onLoad={() => setIsLoading(false)}
+          style={{ display: isLoading ? "none" : "block" }}
         />
       </div>
       <div className="company-service-card-info">

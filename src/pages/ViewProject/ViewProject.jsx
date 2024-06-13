@@ -3,19 +3,39 @@ import { useInView } from "react-intersection-observer";
 import image1 from "../../images/gg.jpg";
 import { BiArrowBack } from "react-icons/bi";
 import "./ViewProject.css";
-import Img from "../../images/ViewProjectImages/Mykonos.jpeg";
-import Img1 from "../../images/WhatsApp Image 2024-06-07 at 16.58.23_f2acbe47.jpg";
-import Img2 from "../../images/1,2.jpg";
-import Img3 from "../../images/1,3.jpg";
-import Img4 from "../../images/1,4-01.jpg";
-import Img5 from "../../images/1,5-01.jpg";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useLanguageContext } from "../../hooks/useLanguageContext";
 
 export const ViewProject = () => {
+  const [project, setProject] = useState();
+
+  const { language } = useLanguageContext();
+
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios.get(`https://sparkeng.pythonanywhere.com/rest/our_project_details/${id}`)
+      .then(res => {
+        if(res.data) {
+          setProject(res.data);
+        } else {
+          navigate('/error');
+        }
+      })
+      .catch(err => {
+        navigate('/error');
+      });
+  }, []);
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -24,69 +44,53 @@ export const ViewProject = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
-  const images= [
-    {
-      img:Img
-    },
-    {
-      img:Img1
-    },
-    {
-      img:Img2
-    },
-    {
-      img:Img3
-    },
-    {
-      img:Img4
-    },
-    {
-      img:Img5
-    }
-  ];
 
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
   return (
-    <div className="theContain">
-      <div onClick={() => window.history.back()} className="back-button">
-        <BiArrowBack />
-      </div>
-      <div className="viewContainer">
-        <img src={image1} alt="image1" className="back-image" />
-        <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
-          <Slider {...settings}>
-            {images.map((image, index )=>(
-              <div key={index}>
-                <img src={image.img} alt={`Slide ${index}`} style={{ width: '100%' }} />
-              </div>
-            ))}
-          </Slider>
+      project && 
+      <div className="theContain">
+        <div onClick={() => window.history.back()} className="back-button">
+          <BiArrowBack />
         </div>
-        <div
-          ref={ref}
-          className={`info-box active ${inView ? "fade-in-bottom" : ""} `}
-        >
-          <h1>Drop-in audio chat</h1>
-          <h2>
-            Spark is a software engineering company that specializes in
-            developing cutting-edge solutions for various domains. We have a
-            team of talented and passionate engineers who are always ready to
-            take on new challenges and deliver high-quality products.
-          </h2>
-          <div className="buttons">
-            <div className="visit-button">
-              <MainButton
-                url={"https://MRR.com"}
-                title={"visit project"}
-                addStyle={"projects-button-see-all"}
-              />
+        <div className="viewContainer">
+          <img src={image1} alt="image1" className="back-image" />
+          <div
+            ref={ref}
+            className={`info-box active ${inView ? "fade-in-bottom" : ""} `}
+          >
+            <h1>{project.project_name[language]}</h1>
+            <h3>{project.project_field[language]}</h3>
+            <h2>
+              {project.project_desc[language]}
+            </h2>
+            <div className="buttons">
+              <div className="visit-button">
+                {
+                  project.project_link !== 'https://www.google.com' &&
+                  <MainButton
+                    url={project.project_link}
+                    title={"visit project"}
+                    addStyle={"projects-button-see-all"}
+                  />
+                }
+              </div>
             </div>
+          </div>
+
+          <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
+            <Slider {...settings}>
+              {project.web_pictures.map((e, index) => (
+                <div key={index}>
+                  <img src={e.image} alt={`Slide ${index}`} />
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
-    </div>
   );
 };

@@ -1,10 +1,14 @@
 import "./InfoCard.css";
 import MainButton from "../../../SharedComponents/MainButton/MainButton";
 import { Loading } from "../../../Loading/Loading";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import generateAlt from "../../../../utils/GenerateImageAlt";
+
 const InfoCard = ({ info }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
   return (
     <div className="info-card">
       <div>
@@ -21,8 +25,8 @@ const InfoCard = ({ info }) => {
           src={info.img}
           alt={generateAlt(info.img)}
           loading="lazy"
-          style={{ display: isLoading ? "none" : "block" }}
           onLoad={() => setIsLoading(false)}
+          style={{ display: isLoading ? "none" : "block" }}
         />
       </div>
     </div>

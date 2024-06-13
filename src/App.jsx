@@ -17,7 +17,7 @@ import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import StudentServicesSection from "./pages/StudentServicesSection/StudentServicesSection";
 import CompanyRequestPage from "./pages/CompanyRequestPage/CompanyRequestPage";
-import CompleteRequest from "./pages/CompleteRequest/CompleteRequest";
+
 import StudentServices from "./pages/StudentServices/StudentServices";
 import StudentProjects from "./pages/StudentProjects/StudentProjects";
 import StudentProjectRequest from "./pages/StudentProjectRequest/StudentProjectRequest";
@@ -54,20 +54,18 @@ function App() {
             path={"/company-request/:id"}
             element={<CompanyRequestPage />}
           />
-          <Route path={"/completed"} element={<CompleteRequest />} />
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
         
-          <Route path="/view-project" element={<ViewProject />} />
+          <Route path="/view-project/:id" element={<ViewProject />} />
 
           <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
           <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
 
-
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
-          <Route path="*" element={<Navigate to={"/error-page"} />} />
           <Route path="/coming" element={<ComingSoon />} />
+          <Route path="*" element={<Navigate to={"/error-page"} />} />
         </Routes>
         <Footer />
       </BrowserRouter>

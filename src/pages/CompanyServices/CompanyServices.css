@@ -11,10 +11,8 @@
   flex-direction: column;
 }
 .company-services-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
   gap: 32px;
 }
 
