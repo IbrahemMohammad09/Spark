@@ -32,9 +32,9 @@ const AboutUs = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "spark company",
+          "our company",
+          "our services",
         ]}
       />
       <div className="About">

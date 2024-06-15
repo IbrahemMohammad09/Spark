@@ -61,9 +61,9 @@ const StudentCourses = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "software courses",
+          "engineering courses",
+          "student courses",
         ]}
       />
         <HeaderSection title={"Student Courses"} />

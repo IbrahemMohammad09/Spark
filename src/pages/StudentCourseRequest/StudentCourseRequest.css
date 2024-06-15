@@ -37,6 +37,7 @@
 .student-course-request-page .main-container {
     width: 73%;
     margin-right: 27%;
+    position: relative;
 }
 
 .student-course-request-page .course-cover-img img {

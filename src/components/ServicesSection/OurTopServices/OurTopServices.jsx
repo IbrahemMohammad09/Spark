@@ -12,25 +12,25 @@ const OurTopServices = () => {
   const topServices = [
     {
       title: "Web Development",
-      url: "/",
+      url: "/service/1",
       subtitle: metaSEO.servicesDetails.web.description[0],
       icon: Icon1,
     },
     {
       title: "UI/UX Design",
-      url: "/",
+      url: "/service/8",
       subtitle:metaSEO.servicesDetails.ui.description[0],
       icon: Icon2,
     },
     {
       title: "Branding",
-      url: "/",
+      url: "/service/5",
       subtitle: metaSEO.servicesDetails.branding.description[0],
       icon: Icon3,
     },
     {
       title: "E-Marketing",
-      url: "/",
+      url: "/service/3",
       subtitle: metaSEO.servicesDetails.markiting.description[1],
       icon: Icon4,
     },

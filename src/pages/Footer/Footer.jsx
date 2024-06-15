@@ -14,7 +14,8 @@ export const Footer = () => {
 
   useEffect(() => {
     setHideFooter(
-      pathname.includes("/error-page") ||
+        pathname.includes("/error-page") ||
+        pathname.includes("/coming") ||
         pathname.includes("/student-project-request/") ||
         pathname.includes("/student-course-request/") ||
         pathname.includes("/company-request") ||

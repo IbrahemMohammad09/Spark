@@ -10,9 +10,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLanguageContext } from "../../hooks/useLanguageContext";
+import { Loading } from "../../components/Loading/Loading";
 
 export const ViewProject = () => {
   const [project, setProject] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const { language } = useLanguageContext();
 
@@ -21,15 +23,19 @@ export const ViewProject = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    setIsLoading(true)
     axios.get(`https://sparkeng.pythonanywhere.com/rest/our_project_details/${id}`)
       .then(res => {
         if(res.data) {
           setProject(res.data);
+          setIsLoading(false)
         } else {
+          setIsLoading(false)
           navigate('/error');
         }
       })
       .catch(err => {
+        setIsLoading(false)
         navigate('/error');
       });
   }, []);
@@ -51,13 +57,14 @@ export const ViewProject = () => {
   });
 
   return (
-      project && 
-      <div className="theContain">
-        <div onClick={() => window.history.back()} className="back-button">
-          <BiArrowBack />
+    <div className="theContain">
+        {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
+        <div onClick={() => window.history.back()} className="back-button" title="back">
+          <BiArrowBack className="text-dark"/>
         </div>
         <div className="viewContainer">
           <img src={image1} alt="image1" className="back-image" />
+          {project && <>
           <div
             ref={ref}
             className={`info-box active ${inView ? "fade-in-bottom" : ""} `}
@@ -80,7 +87,6 @@ export const ViewProject = () => {
               </div>
             </div>
           </div>
-
           <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
             <Slider {...settings}>
               {project.web_pictures.map((e, index) => (
@@ -89,7 +95,7 @@ export const ViewProject = () => {
                 </div>
               ))}
             </Slider>
-          </div>
+          </div></>}
         </div>
       </div>
   );
