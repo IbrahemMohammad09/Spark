@@ -23,17 +23,19 @@ const ProjectsSection = () => {
   const getProjects = async () => {
     setIsLoading(true);
     try {
-      const res = await Axios.get("rest/our_projects_list/");
-      if(res.data) {
-        setProjects(res.data);
-        setIsLoading(false);
-      } else {
-        navigate('/error');
-      }
+        const res = await Axios.get("rest/our_projects_list/");
+        if (res.data && Array.isArray(res.data)) {
+            const firstTwoProjects = res.data.slice(0, 2);
+            setProjects(firstTwoProjects);
+            setIsLoading(false);
+        } else {
+            navigate('/error');
+        }
     } catch (error) {
-      navigate('/error');
+        navigate('/error');
     }
-  };
+};
+
 
   useEffect(() => {
     getProjects();

@@ -2,7 +2,8 @@ import "./StudentServices.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
-import img1 from "../../images/StudentServices/c.jpg";
+import img1 from "../../images/StudentServices/courses_services.webp";
+import img2 from "../../images/StudentServices/project_services.webp";
 import { useInView } from "react-intersection-observer";
 import { useParams, useNavigate } from "react-router-dom";
 import { Axios } from "../../api/axios";
@@ -39,7 +40,7 @@ const StudentServices = () => {
   const studentServices = [
     {
       title: "Students projects",
-      img: img1,
+      img: img2,
       url: "/student-projects",
     },
     {
