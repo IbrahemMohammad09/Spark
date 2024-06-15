@@ -3,7 +3,6 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 import SEO from '../../components/SharedComponents/SEO/SEO';
 
 const ErrorPage = () => {
-    // console.log(window.history.go());
     return (
         <div className="error-page zoomIn">
             <SEO title={'Spark | 404'} description={''} name={'Spark'} type={'website'} keywords={["page not found", "error in connection", "error, sorry"]} />
