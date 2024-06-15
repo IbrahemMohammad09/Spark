@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import { metaSEO } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
+import { Loading } from "../../components/Loading/Loading";
 const CompanyServices = () => {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
@@ -52,6 +53,9 @@ const CompanyServices = () => {
       >
         <Container>
           <div className="company-services-grid">
+          <div className="center-loading">
+            {isLoading && <Loading color={'#2fb0cd'}/>}
+          </div>
             {services &&
               services.map((e) => (
                 <ServiceCard key={e.pk} info={e} isLoading={isLoading} />

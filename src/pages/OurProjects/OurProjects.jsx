@@ -11,9 +11,11 @@ import { useInView } from "react-intersection-observer";
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Loading } from "../../components/Loading/Loading";
 
 const OurProjects = () => {
   const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isAll, setIsAll] = useState(false);
 
@@ -91,15 +93,19 @@ const OurProjects = () => {
   }, [inView, userHasScrolled]);
 
   useEffect(() => {
+    setIsLoading(true)
     axios.get('https://sparkeng.pythonanywhere.com/rest/our_projects_list/')
       .then(res => {
         if(res.data) {
+          setIsLoading(false)
           setProjects(res.data)
         } else {
+          setIsLoading(false)
           navigate('/error');
         }
       })
       .catch( err => {
+        setIsLoading(false)
         navigate('/error');
       });
   }, []);
@@ -112,9 +118,9 @@ const OurProjects = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "software projects",
+          "engineer projects",
+          "student projects",
         ]}
       />
 
@@ -125,6 +131,7 @@ const OurProjects = () => {
         </div>
         <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
       </div>
+        {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
         {projects && 
           <div className="our-projects-cards main-container bounceInUp">
                 <h2 className="title">Our Projects</h2>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import "./our-team.css";
@@ -16,29 +15,18 @@ import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 
-import Img from '../../images/mm.jpg'
-import Img1 from '../../images/qq.jpg'
-
 const OurTeam = () => {
-  const [teamData, setTeamData] = useState(null);
+  const [teamData, setTeamData] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
-
-  const projects = [
-    {
-      id: 1,
-      member_picture_web: Img
-    },{
-      id: 2,
-      member_picture_web: Img1
-    }
-  ]
   const getTeamData = async () => {
     setIsLoading(true);
     try {
       const res = await Axios.get("rest/member_list_web/");
-      setTeamData(res.data);
+      setTeamData(res.data.members);
       setIsLoading(false);
-    } catch (error) {}
+    } catch (error) {
+      // Navigate('/error-page')
+    }
   };
   useEffect(() => {
     getTeamData();
@@ -58,9 +46,9 @@ const OurTeam = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "team management",
+          "software team",
+          "our team",
         ]}
       />
       <MainHomeTitle
@@ -90,7 +78,8 @@ const OurTeam = () => {
             className="swiper-button-next"
             onClick={() => swiperRef.current.slideNext()}
           ></div>
-          {projects.map((member, index) =>
+          {isLoading && <Loading color={'#2fb0cd'}/>}
+          {teamData && teamData?.map((member, index) =>
             member ? (
               <SwiperSlide key={index} id={member.id}>
                 <div className="slide-body">
@@ -99,18 +88,18 @@ const OurTeam = () => {
                     <div className="image-container">
                       <img
                         className="d-block mx-auto"
-                        src={member?.member_picture_web}
+                        src={BaseURL + member?.member_picture_web}
                         alt={generateAlt(member?.member_picture_web)}
                         style={{ display: isLoading ? "none" : "block" }}
                       />
                     </div>
-                    {/* <div className="text-container">
+                    <div className="text-container">
                       <div className="head-swiper">
-                        <h3>{member?.member_name.EN}.,</h3>
+                        <h3>{member?.member_name.EN}</h3>
                         <span>{member?.member_position.EN}</span>
                       </div>
                       <p>{member?.member_desc.EN}</p>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>

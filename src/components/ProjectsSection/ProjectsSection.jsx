@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { metaSEO } from "../../utils/constants";
 import { Axios } from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import { Loading } from "../Loading/Loading";
 
 const ProjectsSection = () => {
   const [allProjects, setAllProjects] = useState();
@@ -72,9 +73,9 @@ const ProjectsSection = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "software projects",
+          "mobile projects",
+          "student projects",
         ]}
       />
       <Container className="main-section our-projects position-relative">
@@ -89,6 +90,7 @@ const ProjectsSection = () => {
               hasBeenInView ? "fade-in-bottom" : ""
             } our-projects-cards`}
           >
+            {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
             {projects && projects?.map((e, i) => (
               <InfoCard key={i} info={e} isLoading={isLoading} />
             ))}

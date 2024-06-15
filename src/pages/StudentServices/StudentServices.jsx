@@ -17,10 +17,13 @@ const StudentServices = () => {
   const requestId = parseInt(id, 10);
   const restUrl = "/" + requestId;
   const [isLoading, setIsLoading] = useState(true);
+
   const getStudentSections = async () => {
+    setIsLoading(true)
     try {
       const res = await Axios.get("rest/sections_list_web/");
       const student = res.data?.sections.find((e) => e.pk == requestId);
+      setIsLoading(false)
       if (!student) {
         navigate("/error-page");
       }
@@ -60,12 +63,15 @@ const StudentServices = () => {
         type={"website"}
         keywords={[
           "IT services",
-          "student projects",
-          "student services",
+          "Marketing services",
+          "Graphic services",
         ]}
       />
+        <div className="center-loading">
+          {isLoading && <Loading color="#2fb0cd" />}
+        </div>
       <Container className="student-section-grid">
-        {studentServices.map((student, index) => (
+        {!isLoading && studentServices.map((student, index) => (
           <div
             ref={ref}
             className={`${

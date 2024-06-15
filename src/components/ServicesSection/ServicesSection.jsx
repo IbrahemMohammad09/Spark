@@ -16,7 +16,7 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="services">
-      <SEO title={'Spark | Services'} description={metaSEO.services.description} name={'Spark'} type={'website'} keywords={["software develpoment", "software engineer", "student services"]} />
+      <SEO title={'Spark | Services'} description={metaSEO.services.description} name={'Spark'} type={'website'} keywords={["software services", "engineering services", "student services"]} />
       <Container className="services-section">
         <OurServices />
         <OurTopServices />

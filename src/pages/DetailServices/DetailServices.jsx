@@ -69,11 +69,12 @@ const DetailServices = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "software service",
+          "engineering service",
+          "student service",
         ]}
       />
+      {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
       <Container>
         <div className="details">
           <div className="img-cover">

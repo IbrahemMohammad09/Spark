@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 import img from "../../images/StudentServices/b.jpg";
+import { Loading } from "../../components/Loading/Loading";
 const StudentServicesSection = () => {
   const [services, setServices] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
@@ -21,23 +22,6 @@ const StudentServicesSection = () => {
     }
   };
 
-  // const services =[
-  //   {
-  //     pk:1,
-  //     section_name:"IT",
-  //     section_image_web: img ,
-  //   },
-  //   {
-  //     pk:1,
-  //     section_name:"IT",
-  //     section_image_web: img ,
-  //   },
-  //   {
-  //     pk:1,
-  //     section_name:"IT",
-  //     section_image_web: img ,
-  //   }
-  // ]
   useEffect(() => {
     getStudentSectionsServicesData();
   }, []);
@@ -54,18 +38,21 @@ const StudentServicesSection = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software develpoment",
-          "software engineer",
-          "student services",
+          "Branding services",
+          "Mobile apps services",
+          "Desktop apps services",
         ]}
       />
+      <div className="center-loading">
+          {isLoading && <Loading color={'#2fb0cd'}/>}
+      </div>
       <Container
         ref={ref}
         className={`${
           inView ? "fade-in-bottom" : ""
         } student-section-services-grid`}
       >
-        {services &&
+        {services && !isLoading &&
           services.map((e, i) => (
             <InfoStudentServiceCard key={i} info={e} isLoading={isLoading} />
           ))}

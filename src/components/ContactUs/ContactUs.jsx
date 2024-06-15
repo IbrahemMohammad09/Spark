@@ -20,7 +20,6 @@ const ContactUs = () => {
     threshold: 0.1, // Trigger animation when 50% of the item is visible
   });
 
-
   return (
     <section id="contact_us" className="contact-us py-6">
       <SEO title={'Spark | Contact us'} description={metaSEO.contactUs.description} name={'Spark'} type={'website'} keywords={["socail media", "contact", "get in touch"]} />
@@ -34,10 +33,8 @@ const ContactUs = () => {
             >
               <div className="contact-container">
                 <h1 className="contact-h1">Contact Us</h1>
-                {/* <h2>{metaSEO.contactUs.description}</h2> */}
                 <div className="d-flex align-items-start gap-1 justify-content-start contact-box">
-                  <a href={`mailto:${companyEmail}`}>
-                    
+                  <a href={`mailto:${companyEmail}`}>                    
                     <div className="contact">
                       <img src={mailIcon} alt={generateAlt(mailIcon)} className="contact-icon" />
                       <p className="contact-do">Mail Us</p>
@@ -45,7 +42,6 @@ const ContactUs = () => {
                     </div>
                   </a>
                   <a href="https://wa.me/+963962272881">
-                    
                     <div className="contact">
                       <img src={callIcon}  alt={generateAlt(callIcon)} className="contact-icon" />
                       <p className="contact-do">Call Us</p>
