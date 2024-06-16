@@ -4,6 +4,37 @@
   box-shadow: 0 0 10px 0px #ccc;
 }
 
+.navbar .burger-btn {
+  border: none;
+  margin-right: 10px;
+}
+
+.navbar .burger-btn:focus {
+  outline: none !important;
+  border: none !important;;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar .nav-links {
+    padding-left: 0 !important;
+    margin-left: 0;
+    border-top: 1px solid #ccc;
+    padding: 7px 0;
+  }
+
+  .navbar .nav-links a {
+    display: block;
+    padding: 7px 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navbar .nav-links a {
+    text-align: center;
+  }
+}
+
 .logo {
   height: 45px;
   width: 45px;

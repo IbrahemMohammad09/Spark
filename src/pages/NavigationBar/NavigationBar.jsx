@@ -69,9 +69,11 @@ const NavigationBar = () => {
       setActiveClass("active2");
     }
   }, [location.pathname]);
+
   useEffect(() => {
     setExpanded(false);
   }, []);
+
   const handleSetActiveLink = (link) => {
     setActiveLink("");
     setTest(link);
@@ -91,6 +93,10 @@ const NavigationBar = () => {
   useEffect(() => {
     setHideNav(location.pathname.includes("/view-project") || location.pathname.includes("/coming"));
   }, [location.pathname]);
+
+  // useEffect(() => {
+  //   setExpanded(false);
+  // }, [location.pathname]);
 
   return (
     <div className={`navbar ${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
@@ -113,9 +119,10 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="burger-btn" />
 
           <Navbar.Collapse
+            className="nav-links"
             style={{
               paddingLeft: "75px",
             }}

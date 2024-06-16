@@ -50,7 +50,7 @@ const ContactUs = () => {
                   </a>
                 </div>
               </div>
-            </Col>
+     s       </Col>
             <Col xs={10} lg={9}>
               {isLoading && <Loading color="white" />}
               <img

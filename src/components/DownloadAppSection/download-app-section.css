@@ -13,6 +13,7 @@
   bottom: -30px;
   left: -30px;
   background-color: white;
+  border: none !important;
   z-index: 2;
   width: 105%;
   height: 50px;
@@ -28,6 +29,9 @@
   z-index: 2;
   width: 105%;
   height: 50px;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   border-radius: 0 0 100% 100%;
 }
 
@@ -112,5 +116,32 @@
   }
   .download-sec img.mobiles {
     width: 180px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .download-app-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .download-app-container .info-app {
+    width: 90% !important;
+    margin: 0 auto !important;
+    text-align: center;
+  }
+
+  .download-app-container .info-app h1 {
+    justify-content: center;
+  }
+
+  .girl-with-mobile {
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .mobiles {
+    display: none !important;
   }
 }
