@@ -34,12 +34,10 @@ const NavigationBar = () => {
             isElementInViewport(section)
           ) {
             setActiveLink(sectionId);
-
           } else if (
             window.innerHeight + window.scrollY >=
             document.body.offsetHeight
           ) {
-
             setActiveLink(sectionId);
           }
         }
@@ -51,10 +49,9 @@ const NavigationBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); 
+  }, []);
 
   useEffect(() => {
- 
     setActiveLink(location.pathname.substring(1) || "hero");
     setTest("");
   }, [location]);
@@ -71,12 +68,17 @@ const NavigationBar = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    setExpanded(false);
-  }, []);
+    setHideNav(
+      location.pathname.includes("/view-project") ||
+        location.pathname.includes("/coming") ||
+        location.pathname.includes("/error-page")
+    );
+  }, [location.pathname]);
 
   const handleSetActiveLink = (link) => {
     setActiveLink("");
     setTest(link);
+    setExpanded(false); // Collapse the navbar when a link is clicked
   };
 
   function isElementInViewport(element) {
@@ -90,19 +92,13 @@ const NavigationBar = () => {
     );
   }
 
-  useEffect(() => {
-    setHideNav(location.pathname.includes("/view-project") 
-    || location.pathname.includes("/coming") 
-    || location.pathname.includes("/error-page"));
-  }, [location.pathname]);
-
-  // useEffect(() => {
-  //   setExpanded(false);
-  // }, [location.pathname]);
-
   return (
-    <div className={`navbar ${classNames("nav", activeClass)} ${hideNav && "d-none"}`}>
-      <Navbar expand="lg" fixed="top">
+    <div
+      className={`navbar ${classNames("nav", activeClass)} ${
+        hideNav && "d-none"
+      }`}
+    >
+      <Navbar expand="lg" fixed="top" expanded={expanded}>
         <Container
           style={{
             width: "100%",
@@ -121,10 +117,15 @@ const NavigationBar = () => {
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="burger-btn" />
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            className="burger-btn"
+            onClick={() => setExpanded(!expanded)}
+          />
 
           <Navbar.Collapse
             className="nav-links"
+            id="responsive-navbar-nav"
             style={{
               paddingLeft: "75px",
             }}

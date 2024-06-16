@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  height: auto;
 }
 
 .slick-arrow.slick-prev::before,
@@ -12,7 +13,8 @@
 
 .back-image {
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
+  /* height: auto; */
   position: absolute;
   left: 0;
   top: 0;
@@ -197,6 +199,7 @@
 @media screen and (max-width: 600px) {
   .right-image {
     width: 90%;
+    padding-top: 10px;
   }
   .info-box {
     text-align: center;
