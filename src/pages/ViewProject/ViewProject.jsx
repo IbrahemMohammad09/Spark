@@ -58,12 +58,12 @@ export const ViewProject = () => {
 
   return (
     <div className="theContain">
+        <img src={image1} alt="image1" className="back-image" />
         {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
         <div onClick={() => window.history.back()} className="back-button" title="back">
           <BiArrowBack className="text-dark"/>
         </div>
         <div className="viewContainer">
-          <img src={image1} alt="image1" className="back-image" />
           {project && <>
           <div
             ref={ref}

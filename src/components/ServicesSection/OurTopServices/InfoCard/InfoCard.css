@@ -16,13 +16,7 @@
   -o-transition: 3s;
   transition-duration: 300ms;
 }
-.topservice-info-card:hover {
-  transform: scale(1.1) !important;
-  -webkit-transform: scale(1.1) !important;
-  -moz-transform: scale(1.1) !important;
-  -ms-transform: scale(1.1) !important;
-  -o-transform: scale(1.1) !important;
-}
+
 .topservice-info-card .topservice-icon {
   width: 60px;
   height: 60px;
@@ -60,4 +54,15 @@
 .topservice-info-card span img {
   width: 20px;
   height: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .topservice-info-card:hover {
+    transform: scale(1.1) !important;
+    -webkit-transform: scale(1.1) !important;
+    -moz-transform: scale(1.1) !important;
+    -ms-transform: scale(1.1) !important;
+    -o-transform: scale(1.1) !important;
+  }
 }

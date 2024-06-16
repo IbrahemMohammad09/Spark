@@ -17,6 +17,7 @@
   width: 105%;
   height: 50px;
   border-radius: 100% 100% 0 0;
+  border: none !important;
 }
 
 .contact-us::before {
@@ -59,6 +60,7 @@
 }
 .contact-h1 {
   margin-bottom: 30px;
+  text-align: center;
 }
 .contact-icon {
   width: 30px;

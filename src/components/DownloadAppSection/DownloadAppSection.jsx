@@ -26,7 +26,7 @@ const DownloadAppSection = () => {
 
       <Container>
         <div ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
-          <Row className="gap-y-4 justify-content-center align-items-center">
+          <Row className="download-app-container gap-y-4 justify-content-center align-items-center">
             <Col xs={6} md={3} className="d-flex p-0">
               {isLoading && <Loading color="white" />}
               <img
@@ -37,45 +37,29 @@ const DownloadAppSection = () => {
                 onLoad={() => setIsLoading(false)}
               />
             </Col>
-            <Col xs={5} md={6} className="p-0">
+            
+            <Col xs={5} md={6} className="info-app p-0">
               <h1 className="d-flex align-items-center gap-1 text-white">
-
-
 
                 <img className="download-icon" src={DownloadIcon} alt={generateAlt(DownloadIcon)} />
 
                 Download Our App
               </h1>
               <p className="text-white">
-                {/* Download the application to benefit from our comprehensive and
-                diverse services */}
                 {metaSEO.downloadApp.description}
               </p>
-              {/* Google Play Link */}
               <Link
                 to={{
                   pathname: "",
                 }}
                 target="_blank"
-                className="download-btn d-none d-md-flex"
+                className="download-btn d-flex"
               >
                 <RiGooglePlayFill size={30} />
                 google play
               </Link>
             </Col>
             {/* Repeat for media query */}
-            <Col xs={5} className="d-flex d-md-none">
-              <Link
-                to={{
-                  pathname: "",
-                }}
-                target="_blank"
-                className="download-btn"
-              >
-                <RiGooglePlayFill size={30} />
-                google play
-              </Link>
-            </Col>
             <Col
               xs={5}
               md={3}
