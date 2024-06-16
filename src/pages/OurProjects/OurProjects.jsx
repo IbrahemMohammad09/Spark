@@ -46,10 +46,10 @@ const OurProjects = () => {
   }, [windowWidth]);
 
   useEffect(() => {
-    let isMounted = true; 
+    let isMounted = true; // علامة لتتبع حالة mount/unmount
 
     const updateDisplayedProjects = () => {
-    
+      // تأكد من أن العنصر لا يزال محملاً قبل التحديث
       if (isMounted) {
         if (windowWidth <= 640) {
           setDisplayedProjects(projects.slice(0, 2));
@@ -63,7 +63,7 @@ const OurProjects = () => {
 
     updateDisplayedProjects();
 
-
+    // عند الـ unmounting، يقوم بتغيير isMounted إلى false
     return () => {
       isMounted = false;
     };
