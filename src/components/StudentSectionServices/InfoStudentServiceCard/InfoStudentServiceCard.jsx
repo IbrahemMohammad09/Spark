@@ -1,6 +1,6 @@
 import MainButton from "../../SharedComponents/MainButton/MainButton";
 import { BaseURL } from "../../../utils/constants";
-import { useState } from "react";
+
 import "./InfoStudentServiceCard.css";
 import { Loading } from "../../Loading/Loading";
 import generateAlt from "../../../utils/GenerateImageAlt";
@@ -14,7 +14,7 @@ const InfoStudentServiceCard = ({ info, isLoading }) => {
       <div className="img-cover">
         {isLoading && <Loading color="#2fb0cd" />}
         <img
-          // src={info.section_image_web}
+
           src={`${BaseURL}${info.section_image_web}`}
           alt={generateAlt(info.section_image_web)}
           loading="lazy"

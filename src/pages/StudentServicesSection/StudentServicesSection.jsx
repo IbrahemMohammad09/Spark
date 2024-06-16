@@ -5,7 +5,6 @@ import { Axios } from "../../api/axios";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import SEO from "../../components/SharedComponents/SEO/SEO";
-import img from "../../images/StudentServices/b.jpg";
 import { Loading } from "../../components/Loading/Loading";
 const StudentServicesSection = () => {
   const [services, setServices] = useState([]);

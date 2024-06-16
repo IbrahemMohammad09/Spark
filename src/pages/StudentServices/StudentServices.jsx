@@ -29,7 +29,7 @@ const StudentServices = () => {
         navigate("/error-page");
       }
     } catch (error) {
-      // console.log(error);
+
     }
   };
 
@@ -83,8 +83,8 @@ const StudentServices = () => {
             <div className="img-cover">
               {isLoading && <Loading color="#2fb0cd" />}
               <img
-                src={img1}
-                alt={generateAlt(img1)}
+                src={student.img}
+                alt={generateAlt(student.img)}
                 style={{ display: isLoading ? "none" : "block" }}
                 onLoad={() => setIsLoading(false)}
               />

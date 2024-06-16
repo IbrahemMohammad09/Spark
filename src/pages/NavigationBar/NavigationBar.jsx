@@ -34,13 +34,12 @@ const NavigationBar = () => {
             isElementInViewport(section)
           ) {
             setActiveLink(sectionId);
-            // setTest("");
+
           } else if (
             window.innerHeight + window.scrollY >=
             document.body.offsetHeight
           ) {
-            // This means we're at the bottom of the page
-            // The -1 is to ensure this condition is true even when the user is at the absolute bottom
+
             setActiveLink(sectionId);
           }
         }
@@ -52,10 +51,10 @@ const NavigationBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array to run effect only once on mount
+  }, []); 
 
   useEffect(() => {
-    // تحديث الرابط النشط استنادًا إلى المسار
+ 
     setActiveLink(location.pathname.substring(1) || "hero");
     setTest("");
   }, [location]);
@@ -78,7 +77,6 @@ const NavigationBar = () => {
     setTest(link);
   };
 
-  // دالة للتحقق مما إذا كان العنصر مرئيًا على الشاشة
   function isElementInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (

@@ -16,17 +16,18 @@ const OurTopServices = () => {
       subtitle: metaSEO.servicesDetails.web.description[0],
       icon: Icon1,
     },
+    
+    {
+      title: "Mobile Apps Development",
+      url: "/service/2",
+      subtitle: metaSEO.servicesDetails.branding.description[0],
+      icon: Icon3,
+    },
     {
       title: "UI/UX Design",
       url: "/service/8",
       subtitle:metaSEO.servicesDetails.ui.description[0],
       icon: Icon2,
-    },
-    {
-      title: "Branding",
-      url: "/service/5",
-      subtitle: metaSEO.servicesDetails.branding.description[0],
-      icon: Icon3,
     },
     {
       title: "E-Marketing",

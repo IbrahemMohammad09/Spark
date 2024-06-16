@@ -3,19 +3,19 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './animation.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './swiper.css';
 import NavigationBar from './pages/NavigationBar/NavigationBar';
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import { Footer } from './pages/Footer/Footer';
 import LoadingPage from "./pages/loadingPage/loadingPage";
 
+
 const Home = lazy(() => import('./pages/Home/Home'));
 const AboutUs = lazy(() => import('../src/pages/AboutUs/AboutUs'));
 const ContactUs = lazy(() => import('./components/ContactUs/ContactUs'));
-const OurTeam = lazy(() => import('./components/OurTeam/OurTeam'));
+const OurTeamPage = lazy(() => import('./pages/ourTeamPage/ourTeamPage'));
 const OurProjects = lazy(() => import('../src/pages/OurProjects/OurProjects'));
 const DownloadAppSection = lazy(() => import('./components/DownloadAppSection/DownloadAppSection'));
-const ServicesSection = lazy(() => import('./components/ServicesSection/ServicesSection'));
+const OurServicesPage = lazy(() => import('./pages/ourServicesPage/ourServicesPage'));
 const CompanyServices = lazy(() => import('./pages/CompanyServices/CompanyServices'));
 const DetailServices = lazy(() => import('./pages/DetailServices/DetailServices'));
 const StudentServicesSection = lazy(() => import('./pages/StudentServicesSection/StudentServicesSection'));
@@ -40,8 +40,8 @@ function App() {
             <Route path="/" exact element={<Home />} />
             <Route path="/about_us" element={<AboutUs />} />
             <Route path="/contact_us" element={<ContactUs />} />
-            <Route path="/services" element={<ServicesSection />} />
-            <Route path="/our_team" element={<OurTeam />} />
+            <Route path="/services" element={<OurServicesPage />} />
+            <Route path="/our_team" element={<OurTeamPage />} />
             <Route path="/our-projects" element={<OurProjects />} />
             <Route path="/our_app" element={<DownloadAppSection />} />
             <Route path="/company-services" element={<CompanyServices />} />

@@ -55,8 +55,8 @@ export const metaSEO = {
         },
         branding: {
             description: [
-                "Your brand is more than just a logo or tagline - it's the essence of your business",
-                "We're dedicated to helping you build a brand that inspires loyaltyand drives growth."
+                "Our app development team designs custom applications that drive user engagement and business growth. We specialize in creating fast, secure, and scalable apps optimized for performance and user experience.",
+                "Our app development team designs custom applications that drive user engagement and business growth. We specialize in creating fast, secure, and scalable apps optimized for performance and user experience. Our focus is on developing apps that stand out in app stores and provide seamless functionality across devices. We believe an app is more than just a digital product - it's a powerful tool for engaging with your audience and enhancing your brand's reach."
             ]
         }
     }

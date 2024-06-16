@@ -65,6 +65,7 @@ const OurTeam = () => {
           pagination
           navigation={false}
           modules={[Navigation]}
+          loop={true}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
