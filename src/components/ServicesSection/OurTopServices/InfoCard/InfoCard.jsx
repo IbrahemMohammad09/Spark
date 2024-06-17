@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Loading } from "../../../Loading/Loading";
 import { useState } from "react";
 import generateAlt from "../../../../utils/GenerateImageAlt";
+
 const InfoCard = ({ info, num }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
