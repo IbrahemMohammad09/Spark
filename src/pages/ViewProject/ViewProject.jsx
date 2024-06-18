@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLanguageContext } from "../../hooks/useLanguageContext";
 import { Loading } from "../../components/Loading/Loading";
+import SEO from "../../components/SharedComponents/SEO/SEO";
 
 export const ViewProject = () => {
   const [project, setProject] = useState();
@@ -58,8 +59,19 @@ export const ViewProject = () => {
 
   return (
     <div className="theContain">
+        <SEO
+          title={"Spark - View Project"}
+          description={project && project?.project_desc[language]}
+          name={"Spark"}
+          type={"website"}
+          keywords={[
+            "software project",
+            project && project?.project_name[language],
+            project && project?.project_field[language],
+          ]}
+        />
+        {isLoading && <div><Loading color={'#2fb0cd'}/></div>}
         <img src={image1} alt="image1" className="back-image" />
-        {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
         <div onClick={() => window.history.back()} className="back-button" title="back">
           <BiArrowBack className="text-dark"/>
         </div>

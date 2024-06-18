@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   height: auto;
+  margin-top: 50px !important;
 }
 
 .slick-arrow.slick-prev::before,
@@ -13,13 +14,12 @@
 
 .back-image {
   width: 100%;
-  min-height: 120vh;
+  min-height: 150vh;
   /* height: auto; */
   position: absolute;
   left: 0;
-  top: 0;
   z-index: 0;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .info-box {
@@ -69,18 +69,18 @@
 
 .back-button {
   position: absolute;
-  left: 2%;
-  top: 3% !important;
+  left: 1% !important;
   color: black;
   cursor: pointer;
   font-size: 25px;
   z-index: 10;
   transition: .3s ease;
+  transform: translateY(-50%);
 }
 
 
 .back-button:hover {
-  transform: translate(-10%);
+  transform: translate(-10%, -50%);
 }
 
 .visit-button {
@@ -171,6 +171,7 @@
   .right-image {
     position: static !important;
     margin: 0 !important;
+    padding-top: 100px;
   }
   .info-box {
     position: static !important;
@@ -199,9 +200,9 @@
 @media screen and (max-width: 600px) {
   .right-image {
     width: 90%;
-    padding-top: 10px;
   }
   .info-box {
+    padding: 0 !important;
     text-align: center;
   }
   .slick-arrow.slick-prev,
@@ -209,13 +210,6 @@
     display: none !important;
   }
   
-  .info-box h2 {
-    font-size: 1.5rem !important;
-  }
-  
-  .info-box h3 a {
-    font-size: 1.25rem !important;
-  }
   .viewContainer {
     width: 100%;
   }
