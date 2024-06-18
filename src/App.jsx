@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Footer } from "./pages/Footer/Footer";
 import AboutUs from "../src/pages/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
-import OurTeam from "./components/OurTeam/OurTeam";
+import OurTeam from "./pages/ourTeamPage/ourTeamPage";
 import OurProjects from "../src/pages/OurProjects/OurProjects";
 import DownloadAppSection from "./components/DownloadAppSection/DownloadAppSection";
 import ServicesSection from "./components/ServicesSection/ServicesSection";
@@ -56,16 +56,12 @@ function App() {
           />
           <Route path={"/student-services/:id"} element={<StudentServices />} />
           <Route path={"/student-projects/:id"} element={<StudentProjects />} />
-        
           <Route path="/view-project/:id" element={<ViewProject />} />
-
           <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
           <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
-
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="/coming" element={<ComingSoon />} />
-          {/* <Route path="/1" element={<LoadingPage />} />/ */}
           <Route path="*" element={<Navigate to={"/error-page"} />} />
         </Routes>
         <Footer />
