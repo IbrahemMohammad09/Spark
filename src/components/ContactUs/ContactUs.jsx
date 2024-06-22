@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import WorldMap from "../../images/ContactUSSection/Huge Global.svg";
 import "./contact-us.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
@@ -50,7 +50,7 @@ const ContactUs = () => {
                   </a>
                 </div>
               </div>
-     s       </Col>
+             </Col>
             <Col xs={10} lg={9}>
               {isLoading && <Loading color="white" />}
               <img
