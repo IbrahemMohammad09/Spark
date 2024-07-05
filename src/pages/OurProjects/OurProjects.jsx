@@ -131,11 +131,11 @@ const OurProjects = () => {
         </div>
         <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
       </div>
-        {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
         {projects && 
           <div className="our-projects-cards main-container bounceInUp">
                 <h2 className="title">Our Projects</h2>
                 <div ref={ref} className={`${hasBeenInView ? "fade-in-bottom" : ""}`}>
+                  {isLoading && <div className="center-loading mt-5"><Loading color={'#2fb0cd'}/></div>}
                   {isAll === true && (
                     <div className="our-projects-grid">
                       {projects.map((e, i) => (
@@ -154,7 +154,7 @@ const OurProjects = () => {
                 </div>
 
                 {!isAll && (
-                  <div className="button-all" onClick={() => setIsAll(true)}>
+                  <div className="button-all" onClick={() => setIsAll(true)} style={{marginTop: isLoading? '100px': '10px'}}>
                     <MainButton title={"See all"} addStyle={"see-all"} />
                   </div>
                 )}

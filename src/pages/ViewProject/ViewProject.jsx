@@ -9,15 +9,12 @@ import Slider from "react-slick";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useLanguageContext } from "../../hooks/useLanguageContext";
 import { Loading } from "../../components/Loading/Loading";
 import SEO from "../../components/SharedComponents/SEO/SEO";
 
 export const ViewProject = () => {
   const [project, setProject] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
-  const { language } = useLanguageContext();
 
   const navigate = useNavigate();
 
@@ -58,34 +55,32 @@ export const ViewProject = () => {
   });
 
   return (
-    <div className="theContain">
+    <div className="view-project">
         <SEO
-          title={"Spark - View Project"}
-          description={project && project?.project_desc[language]}
+          title={project && "Spark - " + project?.project_name['EN']}
+          description={project && project?.project_desc['EN']}
           name={"Spark"}
           type={"website"}
           keywords={[
             "software project",
-            project && project?.project_name[language],
-            project && project?.project_field[language],
+            project && project?.project_name['EN'],
+            project && project?.project_field['EN'],
           ]}
         />
-        {isLoading && <div><Loading color={'#2fb0cd'}/></div>}
-        <img src={image1} alt="image1" className="back-image" />
-        <div onClick={() => window.history.back()} className="back-button" title="back">
-          <BiArrowBack className="text-dark"/>
-        </div>
-        <div className="viewContainer">
-          {project && <>
+          {isLoading && <div className="view-project-loading"><Loading color={'#2fb0cd'}/></div>}
+          <img src={image1} alt="background as wallpaper" className="back-image desktop-style" />
+          <div onClick={() => window.history.back()} className="back-button" title="back">
+            <BiArrowBack className="text-dark fs-5"/>
+          </div>
+          {project && <div className="content container">
           <div
-            ref={ref}
-            className={`info-box active ${inView ? "fade-in-bottom" : ""} `}
+            className={`info-box ${inView ? "fade-in-bottom" : ""} `}
           >
-            <h1>{project.project_name[language]}</h1>
-            <h3>{project.project_field[language]}</h3>
-            <h2>
-              {project.project_desc[language]}
-            </h2>
+            <h1>{project.project_name['EN']}</h1>
+            <h2>{project.project_field['EN']}</h2>
+            <h3>
+              {project.project_desc['EN']}
+            </h3>
             <div className="buttons">
               <div className="visit-button">
                 {
@@ -99,16 +94,16 @@ export const ViewProject = () => {
               </div>
             </div>
           </div>
-          <div className={`right-image ${inView ? "fade-in-bottom" : ""}`}>
+          <div className={`projects-slider ${inView ? "fade-in-bottom" : ""}`}>
             <Slider {...settings}>
               {project.web_pictures.map((e, index) => (
-                <div key={index}>
+                <div key={index} className="project-slide">
                   <img src={e.image} alt={`Slide ${index}`} />
                 </div>
               ))}
             </Slider>
-          </div></>}
+          </div>
+        </div>}
         </div>
-      </div>
   );
 };

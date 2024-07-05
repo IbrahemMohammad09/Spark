@@ -41,12 +41,9 @@ const OurProjectCard = ({ info }) => {
         <img src={info.first_image} alt={generateAlt(info.first_image)} loading="lazy" />
       </div>
       <div className="info">
-        <h1>{info.project_name[language]}</h1>
-        <h2>{info.project_field[language]}</h2>
-        <h3>{info.project_desc[language]}</h3>
-        {/* <a href={info.url} className="url">
-          {info.url}
-        </a> */}
+        <h1>{info.project_name["EN"]}</h1>
+        <h2>{info.project_field["EN"]}</h2>
+        <h3>{info.project_desc["EN"]}</h3>
         <Link to={"/view-project/"+info.pk} className="link">
           Visit
         </Link>

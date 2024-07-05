@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import "./our-team.css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Axios } from "../../api/axios";
 import { BaseURL, metaSEO } from "../../utils/constants";
-import Skeleton from "react-loading-skeleton";
+// import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
+import Slider from "react-slick";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { BsArrowDown } from "react-icons/bs";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
+
   const getTeamData = async () => {
     setIsLoading(true);
     try {
@@ -25,18 +27,30 @@ const OurTeam = () => {
       setTeamData(res.data.members);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       // Navigate('/error-page')
     }
   };
   useEffect(() => {
     getTeamData();
   }, []);
+  
 
-  const swiperRef = useRef();
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+  };
+
   const { ref, inView, entry } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const sliderRef = useRef();
 
   return (
     <section className="our-team" id="our_team">
@@ -59,30 +73,14 @@ const OurTeam = () => {
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
       >
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          pagination
-          navigation={false}
-          modules={[Navigation]}
-          loop={true}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          className="test"
+        <Slider
+          {...settings}
+          ref={sliderRef}
+          className="swiper"
         >
-          <div
-            className="swiper-button-prev"
-            onClick={() => swiperRef.current.slidePrev()}
-          ></div>
-          <div
-            className="swiper-button-next"
-            onClick={() => swiperRef.current.slideNext()}
-          ></div>
           {isLoading && <Loading color={'#2fb0cd'}/>}
-          {teamData && teamData?.map((member, index) =>
-            member ? (
-              <SwiperSlide key={index} id={member.id}>
+          {teamData && teamData?.map((member, index) => (
+              <div className="swiper-slide" key={index}>
                 <div className="slide-body">
                   <div className="slide-content">
                     {isLoading && <Loading color="#2fb0cd" />}
@@ -103,14 +101,22 @@ const OurTeam = () => {
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ) : (
-              <SwiperSlide>
-                <Skeleton height={300} />
-              </SwiperSlide>
+              </div>
             )
           )}
-        </Swiper>
+        </Slider>
+        <div
+            className="swiper-button-prev text-white"
+            onClick={() => sliderRef.current.slickPrev()}
+          >
+            <MdArrowBackIos className="slider-icon"/>
+          </div>
+          <div
+            className="swiper-button-next text-white"
+            onClick={() => sliderRef.current.slickNext()}
+          >
+            <MdArrowForwardIos className="slider-icon"/>
+          </div>
       </div>
     </section>
   );
