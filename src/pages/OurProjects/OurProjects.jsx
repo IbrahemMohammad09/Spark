@@ -101,12 +101,12 @@ const OurProjects = () => {
           setProjects(res.data)
         } else {
           setIsLoading(false)
-          navigate('/error');
+          // navigate('/error');
         }
       })
       .catch( err => {
         setIsLoading(false)
-        navigate('/error');
+        // navigate('/error');
       });
   }, []);
 

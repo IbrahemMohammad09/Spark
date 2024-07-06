@@ -22,7 +22,7 @@ const StudentProjects = () => {
         navigate("/error-page");
       }
     } catch (error) {
-      navigate("/error-page");
+      // navigate("/error-page");
     }
   };
 
@@ -42,7 +42,7 @@ const StudentProjects = () => {
       setIsLoading(false);
       setStudentProjects(res.data.projects);
     } catch (error) {
-      navigate("/error-page");
+      // navigate("/error-page");
     }
   };
 

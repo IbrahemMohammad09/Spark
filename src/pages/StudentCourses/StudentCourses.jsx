@@ -24,7 +24,7 @@ const StudentCourses = () => {
         navigate("/error-page");
       }
     } catch (error) {
-      navigate("/error-page");
+      // navigate("/error-page");
     }
   };
 
@@ -44,7 +44,7 @@ const StudentCourses = () => {
       }
       setStudentCourses(res.data.courses);
     } catch (error) {
-      navigate("/error-page");
+      // nsavigate("/error-page");
     }
   };
 

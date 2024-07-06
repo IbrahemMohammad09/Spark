@@ -73,12 +73,14 @@ const OurTeam = () => {
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}
       >
+            {isLoading && <div className="center-loading">
+            <Loading color={'#2fb0cd'}/>
+          </div>}
         <Slider
           {...settings}
           ref={sliderRef}
           className="swiper"
         >
-          {isLoading && <Loading color={'#2fb0cd'}/>}
           {teamData && teamData?.map((member, index) => (
               <div className="swiper-slide" key={index}>
                 <div className="slide-body">
@@ -105,18 +107,19 @@ const OurTeam = () => {
             )
           )}
         </Slider>
-        <div
+        {inView && 
+          <div
             className="swiper-button-prev text-white"
             onClick={() => sliderRef.current.slickPrev()}
           >
             <MdArrowBackIos className="slider-icon"/>
-          </div>
-          <div
+          </div>}
+          {inView && <div
             className="swiper-button-next text-white"
             onClick={() => sliderRef.current.slickNext()}
           >
             <MdArrowForwardIos className="slider-icon"/>
-          </div>
+          </div>}
       </div>
     </section>
   );

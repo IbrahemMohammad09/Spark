@@ -31,7 +31,7 @@ const StudentCourseRequest = () => {
     const checkFromStudentCourseId = async () => {
         const res = await Axios.get("rest/student_courses/"+id)
 
-        console.log(res);
+        // console.log(res);
     };
 
     useEffect(() => {

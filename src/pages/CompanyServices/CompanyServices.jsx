@@ -21,7 +21,7 @@ const CompanyServices = () => {
       setServices(res.data.services);
       setIsLoading(false);
     } catch (error) {
-      navigate('/error-page')
+      // navigate('/error-page')
     }
   };
 
