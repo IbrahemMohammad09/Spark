@@ -29,12 +29,12 @@ export const ViewProject = () => {
           setIsLoading(false)
         } else {
           setIsLoading(false)
-          navigate('/error');
+          // navigate('/error');
         }
       })
       .catch(err => {
         setIsLoading(false)
-        navigate('/error');
+        // navigate('/error');
       });
   }, []);
 

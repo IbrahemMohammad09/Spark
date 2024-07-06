@@ -31,7 +31,7 @@ const StudentProjectRequest = () => {
     const checkFromStudentProjectId = async () => {
         const res = await Axios.get("//")
 
-        console.log(res);
+        // console.log(res);
     };
 
     useEffect(() => {

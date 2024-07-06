@@ -29,10 +29,10 @@ const ProjectsSection = () => {
             setProjects(firstTwoProjects);
             setIsLoading(false);
         } else {
-            navigate('/error');
+            // navigate('/error');
         }
     } catch (error) {
-        navigate('/error');
+        // navigate('/error');
     }
 };
 
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
               hasBeenInView ? "fade-in-bottom" : ""
             } our-projects-cards`}
           >
-            {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
+            {isLoading && <div className="center-loading mt-4"><Loading color={'#2fb0cd'}/></div>}
             {projects && projects?.map((e, i) => (
               <InfoCard key={i} info={e} isLoading={isLoading} />
             ))}
