@@ -5,35 +5,47 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Axios } from "../../api/axios";
 import { BaseURL, metaSEO } from "../../utils/constants";
-// import Skeleton from "react-loading-skeleton";
 import { useInView } from "react-intersection-observer";
 import { Loading } from "../Loading/Loading";
 import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 import Slider from "react-slick";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { BsArrowDown } from "react-icons/bs";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import axios from "axios";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
 
-  const getTeamData = async () => {
-    setIsLoading(true);
-    try {
-      const res = await Axios.get("rest/member_list_web/");
-      setTeamData(res.data.members);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      // Navigate('/error-page')
-    }
-  };
+  // const getTeamData = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     const res = await Axios.get("rest/member_list_web/");
+  //     setTeamData(res.data.members);
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     setIsLoading(false);
+  //     // Navigate('/error-page')
+  //   }
+  // };
+  
   useEffect(() => {
-    getTeamData();
-  }, []);
+    // getTeamData();
+    setIsLoading(true);
+    axios.get("https://sparkeng.pythonanywhere.com/rest/member_list_web/")
+      .then(res=>{
+        if(res.data){
+          setTeamData(res.data.members);
+          setIsLoading(false);
+        }else{
+          setIsLoading(false);
+        }
+      })
+      .catch(error=>{
+        setIsLoading(false);
+      });
+    }, []);
   
 
   const settings = {
