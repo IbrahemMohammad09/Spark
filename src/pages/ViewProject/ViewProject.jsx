@@ -43,7 +43,7 @@ export const ViewProject = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     pauseOnHover: true,
   };
 
@@ -66,7 +66,7 @@ export const ViewProject = () => {
           ]}
         />
           {isLoading && <div className="view-project-loading"><Loading color={'#2fb0cd'}/></div>}
-          <img src={image1} alt="background as wallpaper" className="back-image desktop-style" />
+          {/* <img src={image1} alt="background as wallpaper" className="back-image desktop-style" />  */}
           <div onClick={() => window.history.back()} className="back-button" title="back">
             <BiArrowBack className="text-dark fs-5"/>
           </div>

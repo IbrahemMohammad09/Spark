@@ -1,5 +1,6 @@
 .view-project {
   width: 100%;
+  height: auto;
   /* max-height: 100vh; */
   /* overflow: hidden; */
   position: relative;
@@ -61,14 +62,14 @@
 }
 
 .projects-slider {
-  width: 550px !important;
-  height: 323px !important;
+  width: 552px !important;
+  height: 353px !important;
   border: 1px solid black;
 }
 
 .projects-slider .project-slide {
   width: 550px !important;
-  height: 323px !important;
+  height: 348px !important;
 }
 
 .projects-slider .project-slide img {
