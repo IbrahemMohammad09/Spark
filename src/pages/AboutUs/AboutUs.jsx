@@ -13,12 +13,6 @@ import { metaSEO } from "../../utils/constants";
 const AboutUs = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   setIsVisible(true);
-  //   window.addEventListener("load", () => {
-  //     setIsVisible(true);
-  //   });
-  // }, []);
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -32,9 +26,9 @@ const AboutUs = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "spark company",
-          "our company",
-          "our services",
+          "spark company for engineering and software services",
+          "spark company for web services",
+          "spark company for marketing services",
         ]}
       />
       <div className="About">
@@ -42,17 +36,8 @@ const AboutUs = () => {
           ref={ref}
           className={`${inView ? "fade-in-bottom" : ""} about-left`}
         >
-          <h3>About</h3>
+          <h3>About us</h3>
           <p>
-            {/* As a UX designer, I specialize in crafting seamless user experiences
-            that align with your brand and resonate with your audience. My
-            services encompass comprehensive user research, wireframing,
-            prototyping, and interface design. I focus on understanding user
-            behaviors, pain points, and preferences to create intuitive and
-            engaging digital products. Whether it's improving existing
-            interfaces or creating new ones from scratch, I ensure designs that
-            are user-centric, visually appealing, and optimized for usability
-            across devices and platforms. */}
             {metaSEO.about.description}
           </p>
         </div>
@@ -76,22 +61,22 @@ const AboutUs = () => {
             <div className="about-icons">
               <div className="icon-about">
                 <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL">
-                  <GrFacebookOption size={56} />
+                  <GrFacebookOption />
                 </a>
               </div>
               <div className="icon-about">
                 <a href="https://www.instagram.com/spark.eng.company?igsh=NGJucWhrMHA4MDI3">
-                  <PiInstagramLogoFill size={46} />
+                  <PiInstagramLogoFill />
                 </a>
               </div>
               <div className="icon-about">
                 <a href="https://wa.me/+963962272881">
-                  <RiWhatsappFill size={46} />
+                  <RiWhatsappFill />
                 </a>
               </div>
               <div className="icon-about">
                 <a href="https://www.linkedin.com/company/spark-engineering-company/">
-                  <TiSocialLinkedin size={56} />
+                  <TiSocialLinkedin />
                 </a>
               </div>
             </div>

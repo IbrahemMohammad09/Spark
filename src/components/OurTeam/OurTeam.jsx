@@ -12,8 +12,6 @@ import SEO from "../SharedComponents/SEO/SEO";
 import generateAlt from "../../utils/GenerateImageAlt";
 import MainHomeTitle from "../SharedComponents/MainHomeTitle/MainHomeTitle";
 import Slider from "react-slick";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { BsArrowDown } from "react-icons/bs";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 const OurTeam = () => {

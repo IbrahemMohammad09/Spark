@@ -29,10 +29,12 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 .logoFooter img {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
 }
 .logoFooter p {
   font-size: 27px;
@@ -79,7 +81,7 @@
   padding-top: 15px;
 }
 .socialFooter p {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24.78px;
   padding: 22px;
@@ -147,10 +149,17 @@
     display: flex;
     flex-direction: column;
   }
+  .socialFooter p {
+    padding-top: 40px;
+    font-size: 13px;
+  }
   .gridLinks p {
     padding-top: 20px;
     line-height: 23.53px;
     white-space: nowrap;
+  }
+  .gridLinks a{
+    margin: 0 auto;
   }
   .socialFooter {
     display: flex;
@@ -161,5 +170,11 @@
   }
   .containerFooter {
     padding-left: 22px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .gridLinks a {
+    font-size: 15px;
   }
 }

@@ -27,12 +27,12 @@ export const Footer = () => {
     <section className={`${hideFooter && "d-none"}`}>
       <div className="Footer position-relative z-1">
         <div className="containerFooter">
-          <div className="logoFooter">
+          <Link to={'/'} className="logoFooter">
             <div>
               <img src={logo} alt={generateAlt(logo)} />
             </div>
             <p className="spark-footer">SPARK</p>
-          </div>
+          </Link>
           <div className="gridLinks">
             <div className="links">
               <Link className="theLink" to="/about_us">
@@ -61,7 +61,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="socialFooter">
-          <p>Copyright ® 2024 Company All rights Recerved</p>
+          <p>Copyright ® 2024 Company All rights reserved</p>
           <div className="icons">
             <div className="icon face">
               <a href="https://www.facebook.com/profile.php?id=61553751250143&mibextid=ZbWKwL">

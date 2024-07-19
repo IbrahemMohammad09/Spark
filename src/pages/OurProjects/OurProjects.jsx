@@ -12,6 +12,7 @@ import MainButton from "../../components/SharedComponents/MainButton/MainButton"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../../components/Loading/Loading";
+import { FaArrowDown } from "react-icons/fa";
 
 const OurProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -118,8 +119,8 @@ const OurProjects = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software projects",
-          "engineer projects",
+          "software projects like websites and mobile applications",
+          "engineering projects",
           "student projects",
         ]}
       />
@@ -130,6 +131,9 @@ const OurProjects = () => {
           <img src={Img2} alt={generateAlt(Img2)} loading="lazy" />
         </div>
         <h1 className="title-text">{metaSEO.ourProjects.description}</h1>
+        <div className="see-our-projects-now">
+          <FaArrowDown/>
+        </div>
       </div>
         {projects && 
           <div className="our-projects-cards main-container bounceInUp">

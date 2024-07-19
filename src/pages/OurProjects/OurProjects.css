@@ -13,6 +13,30 @@
   align-items: center;
   height: 882px;
   gap: 2rem;
+  position: relative;
+}
+.our-projects-page .top-section .see-our-projects-now {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: none;
+}
+.our-projects-page .top-section .see-our-projects-now svg {
+  font-size: 30px;
+  animation: topAndDown 1s infinite forwards;
+}
+@keyframes topAndDown {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 .our-projects-page .design-box {
   min-width: 475px;
@@ -79,6 +103,9 @@
   .our-projects-page .design-box {
     display: none;
   }
+  .see-our-projects-now {
+    display: block !important;
+  }
   .our-projects-page .title-text {
     height: 100%;
     display: flex;
@@ -86,6 +113,9 @@
     align-items: center;
     background-color: rgba(47, 176, 205, 1);
     border-bottom-right-radius: 300px;
+  }
+  .top-section {
+    transform: translateY(-15%);
   }
 }
 
