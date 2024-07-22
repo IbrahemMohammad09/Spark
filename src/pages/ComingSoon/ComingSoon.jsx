@@ -28,7 +28,7 @@ export const ComingSoon = () => {
           />
 
         </div>
-        <MainButton title={"Go To Home"} addStyle={"see-all"} url={"/"} />
+        <MainButton title={"Go To Home"} addStyle={"text-white"} url={"/"} />
       </div>
     </section>
   );
