@@ -75,8 +75,8 @@ const ProjectsSection = () => {
         name={"Spark"}
         type={"website"}
         keywords={[
-          "software projects",
-          "mobile projects",
+          "software projects like web development",
+          "mobile projects like flutter development",
           "student projects",
         ]}
       />

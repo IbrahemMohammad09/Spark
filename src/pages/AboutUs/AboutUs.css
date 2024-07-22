@@ -37,8 +37,10 @@
   /* margin-bottom: 150px; */
 }
 .about-image {
-  width: 524px;
-  height: 498px;
+  /* width: 524px; */
+  /* height: 498px; */
+  width: 370px;
+  height: 350px;
 }
 
 .about-contact h3 {
@@ -84,18 +86,18 @@
   cursor: pointer;
 }
 .icon-about a {
-  transition: 3s;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  -o-transition: 3s;
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
   transition-duration: 300ms;
   color: #165069;
+  font-size: 40px !important;
+    display: block;
 }
 .icon-about a:hover {
-  padding-bottom: 20px;
-  color: #14455b;
-  border-bottom: 1px solid #165069;
+  transform: scale(1.1);
 }
 @media (max-width: 640px) {
   .About {
@@ -107,6 +109,7 @@
     padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center !important;
   }
   .about-left p {
     width: 100%;
@@ -149,5 +152,15 @@
   .about-image {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 400px){
+  .about-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+  .About .about-icons .icon-about a {
+    font-size: 30px !important;
   }
 }

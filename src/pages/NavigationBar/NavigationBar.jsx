@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./NavigationBar.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import classNames from "classnames";
@@ -76,6 +76,7 @@ const NavigationBar = () => {
   }, [location.pathname]);
 
   const handleSetActiveLink = (link) => {
+    window.scrollTo(0, 0);
     setActiveLink("");
     setTest(link);
     setExpanded(false); // Collapse the navbar when a link is clicked
@@ -107,13 +108,15 @@ const NavigationBar = () => {
             overflowY: "hidden",
           }}
         >
-          <Navbar.Brand to="/">
+          <Navbar.Brand className="ms-3">
+            <Link to={'/'} onClick={() => window.scrollTo(0, 0)}>
             <img
               className="logo"
               loading="lazy"
               alt={generateAlt(require("../../images/log.webp"))}
               src={require("../../images/log.webp")}
             />
+            </Link>
             <div className="spark">SPARK</div>
           </Navbar.Brand>
 
@@ -130,7 +133,7 @@ const NavigationBar = () => {
               paddingLeft: "75px",
             }}
           >
-            <Nav className="justify-content-center" style={{ width: "90%" }}>
+            <Nav className="justify-content-center mx-auto" style={{ width: "90%" }}>
               <NavLink
                 className={
                   activeLink === "hero" || test === "home"
