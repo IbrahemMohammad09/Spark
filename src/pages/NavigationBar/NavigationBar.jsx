@@ -116,8 +116,8 @@ const NavigationBar = () => {
               alt={generateAlt(require("../../images/log.webp"))}
               src={require("../../images/log.webp")}
             />
-            </Link>
             <div className="spark">SPARK</div>
+            </Link>
           </Navbar.Brand>
 
           <Navbar.Toggle
