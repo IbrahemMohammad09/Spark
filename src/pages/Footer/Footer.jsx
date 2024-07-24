@@ -27,7 +27,7 @@ export const Footer = () => {
     <section className={`${hideFooter && "d-none"}`}>
       <div className="Footer position-relative z-1">
         <div className="containerFooter">
-          <Link to={'/'} className="logoFooter">
+          <Link to={'/'} className="logoFooter" onClick={() => window.scrollTo(0,0)}>
             <div>
               <img src={logo} alt={generateAlt(logo)} />
             </div>

@@ -14,14 +14,6 @@ import generateAlt from "../../utils/GenerateImageAlt";
 import img from "../../images/StudentServices/a.jpg";
 
 const DetailServices = () => {
-  // const services = {
-  //   pk: 1,
-  //   service_name: "web development",
-  //   service_description:
-  //     "this is the best service this is the best service this is the best service this is the best service this is the best service this is the best service ",
-  //   service_picture_web: img,
-  // };
-
   const [serviceData, setServiceData] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
@@ -36,11 +28,12 @@ const DetailServices = () => {
       const res = await Axios.get("/rest/service_list_web/");
 
       const service = res.data?.services.find((e) => e.pk == id);
-      setIsLoading(false);
       if (!service) {
+        setIsLoading(false);
         setError(`Service with ID ${id} not found.`);
         navigate("/error-page");
       } else {
+        setIsLoading(false);
         setServiceData(service);
       }
     } catch (error) {
@@ -65,13 +58,13 @@ const DetailServices = () => {
     >
       <SEO
         title={"Spark | Service details"}
-        description={serviceData?.service_description[language]}
+        description={serviceData?.service_description["EN"]}
         name={"Spark"}
         type={"website"}
         keywords={[
           "software service",
           "engineering service",
-          "student service",
+          serviceData?.name["EN"],
         ]}
       />
       {isLoading && <div className="center-loading"><Loading color={'#2fb0cd'}/></div>}
@@ -82,18 +75,14 @@ const DetailServices = () => {
             <img
               className="detail-img"
               src={`${BaseURL}/${serviceData?.service_picture_web}`}
-              // src={services.service_picture_web}
-              // alt={serviceData.service_picture_web}
+              alt={serviceData?.service_picture_web}
               loading="lazy"
               style={{ display: isLoading ? "none" : "block" }}
             />
           </div>
           <div>
-            <p>{serviceData?.service_description[language]}</p>
-            {/* <p style={{ textAlign: "center" }}>
-              {serviceData?.service_description[language]}
-            </p> */}
             <h2 style={{ textAlign: "center" }}>What, Why and How?</h2>
+            <p>{serviceData?.service_description["EN"]}</p>
             <MainButton
               title={"Service Request"}
               url={`/company-request/${id}`}

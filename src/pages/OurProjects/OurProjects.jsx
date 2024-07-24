@@ -64,7 +64,6 @@ const OurProjects = () => {
 
     updateDisplayedProjects();
 
-
     return () => {
       isMounted = false;
     };
@@ -142,7 +141,7 @@ const OurProjects = () => {
                   {isLoading && <div className="center-loading mt-5"><Loading color={'#2fb0cd'}/></div>}
                   {isAll === true && (
                     <div className="our-projects-grid">
-                      {projects.map((e, i) => (
+                      {projects?.map((e, i) => (
                         <OurProjectCard key={i} info={e} />
                       ))}
                     </div>

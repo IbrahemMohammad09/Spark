@@ -97,7 +97,7 @@
 }
 
 @media screen and (max-width: 640px) {
-    .our-project-card-info .info {
+    .our-project-card-info div {
         min-height: 279px;
     }
 }

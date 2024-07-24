@@ -92,7 +92,7 @@ const StudentServices = () => {
             <div>
               <h1>{student.title}</h1>
               <MainButton
-                title={"see more"}
+                title={"See more"}
                 url={student.url + restUrl}
                 addStyle="student-card-main-button"
               />

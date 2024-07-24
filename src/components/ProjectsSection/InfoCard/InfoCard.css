@@ -54,6 +54,10 @@
     .project-card .project-card-top {
         flex-direction: column-reverse;
         gap: 10px;
+        text-align: center;
+    }
+    .project-card .project-card-button {
+        margin: 0 auto;
     }
 }
 

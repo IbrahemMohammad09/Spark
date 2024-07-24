@@ -3,7 +3,6 @@ import { useRef } from "react";
 import "./our-team.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Axios } from "../../api/axios";
 import { BaseURL, metaSEO } from "../../utils/constants";
 import { useInView } from "react-intersection-observer";
 import { Loading } from "../Loading/Loading";
@@ -17,21 +16,8 @@ import axios from "axios";
 const OurTeam = () => {
   const [teamData, setTeamData] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
-
-  // const getTeamData = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const res = await Axios.get("rest/member_list_web/");
-  //     setTeamData(res.data.members);
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     setIsLoading(false);
-  //     // Navigate('/error-page')
-  //   }
-  // };
   
   useEffect(() => {
-    // getTeamData();
     setIsLoading(true);
     axios.get("https://sparkeng.pythonanywhere.com/rest/member_list_web/")
       .then(res=>{
@@ -54,9 +40,7 @@ const OurTeam = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    autoplaySpeed: 5000,
   };
 
   const { ref, inView, entry } = useInView({
@@ -79,10 +63,15 @@ const OurTeam = () => {
           "our team",
         ]}
       />
-      <MainHomeTitle
-        title={"Our Team"}
-        subtitle={metaSEO.ourTeam.description}
-      />
+      <div style={{
+        paddingRight: '9.750px',
+        paddingLeft: '9.750px',        
+      }}>
+        <MainHomeTitle
+          title={"Our Team"}
+          subtitle={metaSEO.ourTeam.description}
+        />
+      </div>
       <div
         ref={ref}
         className={`swiper-container ${inView ? "fade-in-bottom" : ""}`}

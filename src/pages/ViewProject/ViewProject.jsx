@@ -1,6 +1,5 @@
 import MainButton from "../../components/SharedComponents/MainButton/MainButton";
 import { useInView } from "react-intersection-observer";
-import image1 from "../../images/gg.jpg";
 import { BiArrowBack } from "react-icons/bi";
 import "./ViewProject.css";
 import "slick-carousel/slick/slick.css";
@@ -43,7 +42,7 @@ export const ViewProject = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
   };
 
@@ -65,7 +64,9 @@ export const ViewProject = () => {
             project && project?.project_field['EN'],
           ]}
         />
-          {isLoading && <div className="view-project-loading"><Loading color={'#2fb0cd'}/></div>}
+          <div className="back-image">
+            {isLoading && <div className="view-project-loading"><Loading color={'#2fb0cd'}/></div>}
+          </div>
           {/* <img src={image1} alt="background as wallpaper" className="back-image desktop-style" />  */}
           <div onClick={() => window.history.back()} className="back-button" title="back">
             <BiArrowBack className="text-dark fs-5"/>

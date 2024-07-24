@@ -1,6 +1,6 @@
 .view-project {
   width: 100%;
-  height: auto;
+  height: 100vh;
   /* max-height: 100vh; */
   /* overflow: hidden; */
   position: relative;
@@ -9,7 +9,7 @@
 .view-project .back-image {
   width: 100% !important;
   height: 100vh !important;
-  object-fit: cover;
+  position: relative;
 }
 
 .view-project .back-button {
@@ -125,18 +125,18 @@
 
 
 @media (max-height: 797px) {
-  .view-project .back-image {
+  .view-project {
     height: 150vh !important;
   }
 }
 
 @media (max-height: 600px) {
-  .view-project .back-image {
+  .view-project {
     height: 200vh !important;
   }
 }
 @media (max-height: 500px) {
-  .view-project .back-image {
+  .view-project {
     height: 300vh !important;
   }
 }

@@ -3,11 +3,8 @@ import "./OurProjectCard.css";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef } from "react";
 import generateAlt from "../../../utils/GenerateImageAlt";
-import { useLanguageContext } from "../../../hooks/useLanguageContext";
 
 const OurProjectCard = ({ info }) => {
-  const { language } = useLanguageContext();
-
   const [userHasScrolled, setUserHasScrolled] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
   const initScrollY = useRef(window.scrollY);
