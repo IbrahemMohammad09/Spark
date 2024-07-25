@@ -66,6 +66,7 @@
   padding: 15px;
   border-radius: 10px;
   margin: 10px auto;
+  margin-bottom: 50px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -143,5 +144,12 @@
 
   .mobiles {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .download-sec::after,
+  .download-sec::before {
+    width: 115%;
   }
 }
