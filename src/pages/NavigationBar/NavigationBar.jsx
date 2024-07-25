@@ -96,7 +96,7 @@ const NavigationBar = () => {
   return (
     <div
       className={`navbar ${classNames("nav", activeClass)} ${
-        hideNav && "d-none"
+        hideNav ? "d-none": ""
       }`}
     >
       <Navbar expand="lg" fixed="top" expanded={expanded}>

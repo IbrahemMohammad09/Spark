@@ -78,6 +78,8 @@
 }
 .contact-us img.world-map {
   width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .contact-us a {
@@ -88,5 +90,12 @@
 @media screen and (width < 992px) {
   .contact-container {
     margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact-us::after,
+  .contact-us::before {
+    width: 115%;
   }
 }

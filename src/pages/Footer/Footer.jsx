@@ -24,7 +24,7 @@ export const Footer = () => {
   }, [pathname]);
 
   return (
-    <section className={`${hideFooter && "d-none"}`}>
+    <section className={`${hideFooter ? "d-none": ""}`}>
       <div className="Footer position-relative z-1">
         <div className="containerFooter">
           <Link to={'/'} className="logoFooter" onClick={() => window.scrollTo(0,0)}>

@@ -10,8 +10,6 @@ import callIcon from "../../images/ContactUSSection/call.webp"
 import generateAlt from "../../utils/GenerateImageAlt";
 import { metaSEO } from "../../utils/constants";
 
-
-
 const ContactUs = () => {
   const companyEmail = "Spark.contact.it@gmail.com";
   const [isLoading, setIsLoading] = useState(true);
