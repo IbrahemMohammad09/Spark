@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { Loading } from "../Loading/Loading";
 import generateAlt from "../../utils/GenerateImageAlt";
+import Hero3D from "../Hero3D/Hero3D";
 const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { ref, inView, entry } = useInView({
@@ -14,6 +15,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="hero-section">
+      <Hero3D/>
       <Container>
         <Row ref={ref} className={`${inView ? "fade-in-bottom" : ""}`}>
           <Col md="6">

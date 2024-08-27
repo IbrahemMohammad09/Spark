@@ -58,6 +58,11 @@ export const Footer = () => {
                 Our App
               </Link>
             </div>
+            <div className="">
+              <Link to="/privacy" className="theLink">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
         </div>
         <div className="socialFooter">

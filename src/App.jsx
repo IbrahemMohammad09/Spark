@@ -26,6 +26,7 @@ import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
 import { ViewProject } from "./pages/ViewProject/ViewProject";
 import StudentCourseRequest from "./pages/StudentCourseRequest/StudentCourseRequest";
 import LoadingPage from "./pages/loadingPage/loadingPage";
+import Privacy from "./pages/Privacy/Privacy";
 
 
 
@@ -60,6 +61,7 @@ function App() {
           <Route path={"/student-project-request/:id"} element={<StudentProjectRequest />} />
           <Route path={"/student-course-request/:id"} element={<StudentCourseRequest />} />
           <Route path={"/student-courses/:id"} element={<StudentCourses />} />
+          <Route path={"/privacy"} element={<Privacy />} />          
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="/coming" element={<ComingSoon />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />

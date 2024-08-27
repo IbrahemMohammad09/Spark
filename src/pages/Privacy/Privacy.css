@@ -1,0 +1,25 @@
+.privacy {
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 85px;
+}
+
+.privacy h1 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.privacy h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.privacy h3 {
+    margin: 0 0 50px 0;
+    line-height: 1.5 !important;
+}
+
+.privacy .text {
+    position: relative;
+    z-index: 2;
+}
