@@ -37,17 +37,18 @@ const OurServices = () => {
         title={"Our Services"}
         subtitle={metaSEO.services.description}
       />
-      <div className="wallpaper position-relative z-1" />
+      <div className="wallpaper position-relative z-1" > </div>
       <div
         ref={ref}
         className={` ${
           inView ? "fade-in-bottom-services" : ""
         } services-cards d-flex justify-content-between flex-wrap align-items-center position-relative z-1`}
-      >
+      > 
         {services.map((service, index) => (
           <InfoCard key={index} info={service} />
         ))}
       </div>
+      
     </section>
   );
 };

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import GirlWithMobile from "../../images/DownloadAppSection/girl-with-mobile.webp";
 import DownloadIcon from "../../images/DownloadAppSection/download.webp";
-import { RiGooglePlayFill } from "react-icons/ri";
+import { RiGooglePlayFill,RiAppStoreFill } from "react-icons/ri";
 import Mobiles from "../../images/DownloadAppSection/mobiles.svg";
 import "./download-app-section.css";
 import { Link } from "react-router-dom";
@@ -48,16 +48,25 @@ const DownloadAppSection = () => {
               <p className="text-white">
                 {metaSEO.downloadApp.description}
               </p>
-              <Link
-                to={{
-                  pathname: "",
-                }}
-                target="_blank"
-                className="download-btn d-flex"
-              >
-                <RiGooglePlayFill size={30} />
-                google play
-              </Link>
+              <div className="download-buttons-container flex flex-row justify-content-start">
+                <Link
+                  to="https://play.google.com/store/apps/details?id=com.sparkengdev.app"
+                  target="_blank"
+                  className="download-btn d-flex align-items-center mr-4"
+                >
+                  <RiGooglePlayFill size={30} />
+                  Google Play
+                </Link>
+                <Link
+                  to="https://play.google.com/store/apps/details?id=com.sparkengdev.app"
+                  target="_blank"
+                  className="download-btn d-flex align-items-center"
+                >
+                  <RiAppStoreFill size={30} />
+                  App Store
+                </Link>
+              </div>
+
             </Col>
             {/* Repeat for media query */}
             <Col

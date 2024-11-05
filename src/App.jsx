@@ -7,7 +7,7 @@ import { Footer } from "./pages/Footer/Footer";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import NavigationBar from "./pages/NavigationBar/NavigationBar";
 
-// استخدام React.lazy لتحميل المكونات بشكل ديناميكي
+
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const AboutUs = React.lazy(() => import("./pages/AboutUs/AboutUs"));
 const ContactUs = React.lazy(() => import("./components/ContactUs/ContactUs"));
@@ -37,7 +37,7 @@ function App() {
         <ScrollToTopOnPageChange />
         <NavigationBar />
         <React.Suspense fallback={<div>Loading...</div>}>
-          <Routes>
+          <Routes>``
             <Route path={"/"} exact element={<Home />} />
             <Route path={"/about_us"} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
