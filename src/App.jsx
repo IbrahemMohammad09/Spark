@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Footer } from "./pages/Footer/Footer";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
 import NavigationBar from "./pages/NavigationBar/NavigationBar";
+import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
 
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
@@ -24,11 +25,12 @@ const StudentProjects = React.lazy(() => import("./pages/StudentProjects/Student
 const StudentProjectRequest = React.lazy(() => import("./pages/StudentProjectRequest/StudentProjectRequest"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage/ErrorPage"));
 const StudentCourses = React.lazy(() => import("./pages/StudentCourses/StudentCourses"));
-const ComingSoon = React.lazy(() => import("./pages/ComingSoon/ComingSoon"));
+// const ComingSoon = React.lazy(() => import("./pages/ComingSoon/ComingSoon"));
 const ViewProject = React.lazy(() => import("./pages/ViewProject/ViewProject"));
 const StudentCourseRequest = React.lazy(() => import("./pages/StudentCourseRequest/StudentCourseRequest"));
 const LoadingPage = React.lazy(() => import("./pages/loadingPage/loadingPage"));
 const CodesPage = React.lazy(() => import("./pages/CodesPage/CodesPage"));
+const OurServicesPage = React.lazy (()=> import("./pages/ourServicesPage/ourServicesPage"))
 
 function App() {
   return (
@@ -37,11 +39,11 @@ function App() {
         <ScrollToTopOnPageChange />
         <NavigationBar />
         <React.Suspense fallback={<div>Loading...</div>}>
-          <Routes>``
+          <Routes>
             <Route path={"/"} exact element={<Home />} />
             <Route path={"/about_us"} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
-            <Route path={"/services"} element={<ServicesSection />} />
+            <Route path={"/services"} element={<OurServicesPage />} />
             <Route path={"/our_team"} element={<OurTeam />} />
             <Route path={"/our-projects"} element={<OurProjects />} />
             <Route path={"/our_app"} element={<DownloadAppSection />} />

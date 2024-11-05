@@ -1,8 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import MainHomeTitle from '../../components/SharedComponents/MainHomeTitle/MainHomeTitle';
-import MainButton from '../../components/SharedComponents/MainButton/MainButton';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,45 +9,29 @@ import MainButton from '../../components/SharedComponents/MainButton/MainButton'
 
 const CodesPage = () => {
     const [codes ,setCodes] = useState([]);
-    const data = [
-        {
-            "id": 1,
-            "title": "CSS Cursor",
-            "summary": "lakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lk",
-            "picture": "/images/files_pics/iPhone_15_Pro_Max_Screen_Mockup.png",
-            "file": "https://sparkeng.pythonanywhere.com/files/Dragon_Cursor_Effect.rar"
-        },
-        {
-            "id": 2,
-            "title": "CSS Cursor",
-            "summary": "lakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lk",
-            "picture": "/images/files_pics/iPhone_15_Pro_Max_Screen_Mockup.png",
-            "file": "https://sparkeng.pythonanywhere.com/files/Dragon_Cursor_Effect.rar"
-        },
-        {
-            "id": 3,
-            "title": "CSS Cursor",
-            "summary": "lakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lk",
-            "picture": "/images/files_pics/iPhone_15_Pro_Max_Screen_Mockup.png",
-            "file": "https://sparkeng.pythonanywhere.com/files/Dragon_Cursor_Effect.rar"
-        },
-        {
-            "id": 4,
-            "title": "CSS Cursor",
-            "summary": "lakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lklakdn lan lakn alkn lkan lk",
-            "picture": "/images/files_pics/iPhone_15_Pro_Max_Screen_Mockup.png",
-            "file": "https://sparkeng.pythonanywhere.com/files/Dragon_Cursor_Effect.rar"
-        },
-    ]
+    const navigate = useNavigate();
+
     
 
-    useEffect(()=>{
-        axios.get("https://sparkeng.pythonanywhere.com/files/")
-            .then((response)=>{
-                const data = response.data.files
-                setCodes (data);
-            })
-    },[]);
+
+
+    useEffect(() => {
+      axios
+        .get("https://sparkeng.pythonanywhere.com/files/")
+        .then((response) => {
+          const data = response.data.files;
+          if (data.length === 0) {
+            navigate("/coming"); 
+          } else {
+            setCodes(data); 
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          navigate("/error-page");
+        });
+    }, [navigate]);
+  
 
     
 
@@ -61,7 +44,7 @@ const CodesPage = () => {
                 </h1>
             </div>
             <div className="flex flex-col items-center mt-10">
-                {data.map(item => (
+                {codes.map(item => (
                     <motion.div
                         key={item.id}
                         className="max-w-3xl w-full bg-white shadow-md rounded-lg overflow-hidden mb-4 flex"

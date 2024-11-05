@@ -3,7 +3,7 @@
   background-color: rgba(44, 144, 167, 1);
   border-radius: 12px;
   width: 1229px;
-  height: 563px;
+  height: 763px;
   left: 50%;
   position: relative;
   z-index: 0;
@@ -19,7 +19,7 @@
 
 
 .services-cards {
-  margin-top: -200px;
+  margin-top: -380px;
 
 }
 
@@ -28,7 +28,7 @@
     width: 100vmax;
   }
   .services-cards {
-    margin-top: -200px;
+    margin-top: -380px;
   
   }
 }

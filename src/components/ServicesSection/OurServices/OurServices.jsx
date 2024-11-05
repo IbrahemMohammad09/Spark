@@ -3,6 +3,7 @@ import InfoCard from "./InfoCard/InfoCard";
 import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).webp";
 import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.webp";
 import Img3 from "./../../../images/ServicesSectionImages/free-code.jpg";
+import Img4 from "./../../../images/ServicesSectionImages/crs.jpg"
 import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
 import { metaSEO } from "../../../utils/constants";
@@ -23,6 +24,11 @@ const OurServices = () => {
       title: "Free Codes",
       url: "/free-codes",
       img: Img3,
+    },
+    {
+      title: "SCRS",
+      url: "/coming",
+      img: Img4 ,
     },
   ];
 
