@@ -26,6 +26,7 @@ import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
 import { ViewProject } from "./pages/ViewProject/ViewProject";
 import StudentCourseRequest from "./pages/StudentCourseRequest/StudentCourseRequest";
 import LoadingPage from "./pages/loadingPage/loadingPage";
+import CodesPage from "./pages/CodesPage/CodesPage";
 
 
 
@@ -63,6 +64,7 @@ function App() {
           <Route path="/error-page" element={<ErrorPage />} />
           <Route path="/coming" element={<ComingSoon />} />
           <Route path="*" element={<Navigate to={"/error-page"} />} />
+          <Route path="/free-codes" element={<CodesPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

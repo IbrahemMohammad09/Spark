@@ -108,15 +108,15 @@ const NavigationBar = () => {
             overflowY: "hidden",
           }}
         >
-          <Navbar.Brand className="ms-3">
-            <Link to={'/'} onClick={() => window.scrollTo(0, 0)}>
-            <img
-              className="logo"
-              loading="lazy"
-              alt={generateAlt(require("../../images/log.webp"))}
-              src={require("../../images/log.webp")}
-            />
-            <div className="spark">SPARK</div>
+          <Navbar.Brand className="ms-3 flex items-center">
+            <Link to={'/'} onClick={() => window.scrollTo(0, 0)} className="flex items-center  no-underline font-inherit">
+              <img
+                className="logo"
+                loading="lazy"
+                alt={generateAlt(require("../../images/log.webp"))}
+                src={require("../../images/log.webp")}
+              />
+              <div className="spark">SPARK</div>
             </Link>
           </Navbar.Brand>
 

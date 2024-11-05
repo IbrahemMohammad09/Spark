@@ -2,6 +2,7 @@ import MainHomeTitle from "../../SharedComponents/MainHomeTitle/MainHomeTitle";
 import InfoCard from "./InfoCard/InfoCard";
 import Img1 from "./../../../images/ServicesSectionImages/student_services-removebg 1 (1).webp";
 import Img2 from "./../../../images/ServicesSectionImages/student_services-removebg 1.webp";
+import Img3 from "./../../../images/ServicesSectionImages/free-code.jpg";
 import "./OurServices.css";
 import { useInView } from "react-intersection-observer";
 import { metaSEO } from "../../../utils/constants";
@@ -17,6 +18,11 @@ const OurServices = () => {
       title: "Student Services",
       url: "/student-section-services",
       img: Img2,
+    },
+    {
+      title: "Free Codes",
+      url: "/free-codes",
+      img: Img3,
     },
   ];
 
