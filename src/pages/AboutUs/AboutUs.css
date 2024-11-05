@@ -12,12 +12,14 @@
   flex-direction: column;
   justify-content: start;
   margin-top: 6rem;
+  
 }
 
 .about-right {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  min-width: 370px;
 }
 
 .about-left h3 {
@@ -37,10 +39,10 @@
   /* margin-bottom: 150px; */
 }
 .about-image {
-  /* width: 524px; */
-  /* height: 498px; */
+  /* width: auto; */
   width: 370px;
   height: 350px;
+  
 }
 
 .about-contact h3 {
