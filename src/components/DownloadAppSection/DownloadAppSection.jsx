@@ -58,7 +58,7 @@ const DownloadAppSection = () => {
                   Google Play
                 </Link>
                 <Link
-                  to="https://play.google.com/store/apps/details?id=com.sparkengdev.app"
+                  to="https://apps.apple.com/de/app/spark-company/id6667110509?l=en-GB"
                   target="_blank"
                   className="download-btn d-flex align-items-center"
                 >

@@ -69,7 +69,7 @@ const NavigationBar = () => {
 
   useEffect(() => {
     setHideNav(
-      location.pathname.includes("/view-project") ||
+        location.pathname.includes("/view-project") ||
         location.pathname.includes("/coming") ||
         location.pathname.includes("/error-page")
     );
