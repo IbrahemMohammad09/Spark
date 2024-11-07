@@ -7,7 +7,9 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import generateAlt from "../../utils/GenerateImageAlt";
-export const Footer = () => {
+
+
+const Footer = () => {
   const [hideFooter, setHideFooter] = useState(false);
 
   const { pathname } = useLocation();
@@ -89,3 +91,6 @@ export const Footer = () => {
     </section>
   );
 };
+
+
+export default Footer;

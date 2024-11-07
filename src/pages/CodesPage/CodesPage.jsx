@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
+import { Loading } from '../../components/Loading/Loading';
 
 
 
@@ -10,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 const CodesPage = () => {
     const [codes ,setCodes] = useState([]);
     const navigate = useNavigate();
+    const [isLoading,setIsLoading] = useState(true);
 
     
 
@@ -53,7 +55,8 @@ const CodesPage = () => {
                         transition={{ duration: 0.5, delay: item.id * 0.2 }}
                         viewport={{ once: false, amount: 0.2 }}
                     >
-                        <img src={"https://sparkeng.pythonanywhere.com/"+item.picture} alt={item.title} className="w-1/3 h-auto object-cover" />
+                        {isLoading && <Loading color={"2fb0cd"} />}
+                        <img onLoad={() => setIsLoading(false)} src={"https://sparkeng.pythonanywhere.com/"+item.picture} alt={item.title} className="w-1/3 h-auto object-cover" />
                         <div className="p-4 w-2/3">
                             <h2 className="text-xl font-semibold text-gray-800">{item.title}</h2>
                             <p className="text-gray-600 mt-2">{item.summary}</p>

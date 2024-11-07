@@ -3,12 +3,15 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./animation.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Footer } from "./pages/Footer/Footer";
+// import {Loading} from '../src/components/Loading/Loading'
+// import { Footer } from "./pages/Footer/Footer";
 import ScrollToTopOnPageChange from "./ScrollToTopOnPageChange ";
-import NavigationBar from "./pages/NavigationBar/NavigationBar";
+// import NavigationBar from "./pages/NavigationBar/NavigationBar";
 import { ComingSoon } from "./pages/ComingSoon/ComingSoon";
+import { Loading } from "./components/Loading/Loading";
 
-
+const Footer = React.lazy(()=>import ("./pages/Footer/Footer"));
+const NavigationBar = React.lazy(()=> import ("./pages/NavigationBar/NavigationBar"))
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const AboutUs = React.lazy(() => import("./pages/AboutUs/AboutUs"));
 const ContactUs = React.lazy(() => import("./components/ContactUs/ContactUs"));
@@ -37,9 +40,11 @@ function App() {
     <div className="App position-relative">
       <BrowserRouter>
         <ScrollToTopOnPageChange />
-        <NavigationBar />
-        <React.Suspense fallback={<div>Loading...</div>}>
+        
+        <React.Suspense fallback={<div className="mt-12"><Loading color={"#2fb0cd"}/></div>}>
+          <NavigationBar />
           <Routes>
+
             <Route path={"/"} exact element={<Home />} />
             <Route path={"/about_us"} element={<AboutUs />} />
             <Route path={"/contact_us"} element={<ContactUs />} />
@@ -62,8 +67,9 @@ function App() {
             <Route path="*" element={<Navigate to={"/error-page"} />} />
             <Route path="/free-codes" element={<CodesPage />} />
           </Routes>
+          <Footer />
         </React.Suspense>
-        <Footer />
+
       </BrowserRouter>
     </div>
   );

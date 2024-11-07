@@ -5,11 +5,12 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { Loading } from "../Loading/Loading";
 import generateAlt from "../../utils/GenerateImageAlt";
+
 const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { ref, inView, entry } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.1, // Trigger animation when 50% of the item is visible
+    triggerOnce: true, 
+    threshold: 0.1, 
   });
 
   return (
