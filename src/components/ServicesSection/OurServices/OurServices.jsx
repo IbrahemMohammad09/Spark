@@ -27,7 +27,7 @@ const OurServices = () => {
     },
     {
       title: "SCRS",
-      url: "/coming",
+      url: "https://www.sparkcrs.com/",
       img: Img4 ,
     },
   ];

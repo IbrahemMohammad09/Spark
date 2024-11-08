@@ -46,13 +46,13 @@ const CodesPage = () => {
                 </h1>
             </div>
             <div className="flex flex-col items-center mt-10">
-                {codes.map(item => (
+                {codes.map((item,key) => (
                     <motion.div
-                        key={item.id}
+                        key={item.pk}
                         className="max-w-3xl w-full bg-white shadow-md rounded-lg overflow-hidden mb-4 flex"
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: item.id * 0.2 }}
+                        transition={{ duration: 0.5, delay: item.pk * 0.2 }}
                         viewport={{ once: false, amount: 0.2 }}
                     >
                         {isLoading && <Loading color={"2fb0cd"} />}
@@ -61,7 +61,7 @@ const CodesPage = () => {
                             <h2 className="text-xl font-semibold text-gray-800">{item.title}</h2>
                             <p className="text-gray-600 mt-2">{item.summary}</p>
                             {/* <MainButton title={"Download"} url={item.file} addStyle={"mx-auto mt-3"}/> */}
-                            <a href={item.file} download className="mt-4 no-underline inline-block bg-blue-500 text-white text-center rounded-md px-4 py-2 hover:bg-blue-600 transition">
+                            <a href={item.url} target='_blank' download className="mt-4 no-underline inline-block bg-blue-500 text-white text-center rounded-md px-4 py-2 hover:bg-blue-600 transition">
                                 Download
                             </a>
                         </div>
