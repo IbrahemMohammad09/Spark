@@ -28,7 +28,6 @@ const StudentProjects = React.lazy(() => import("./pages/StudentProjects/Student
 const StudentProjectRequest = React.lazy(() => import("./pages/StudentProjectRequest/StudentProjectRequest"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage/ErrorPage"));
 const StudentCourses = React.lazy(() => import("./pages/StudentCourses/StudentCourses"));
-// const ComingSoon = React.lazy(() => import("./pages/ComingSoon/ComingSoon"));
 const ViewProject = React.lazy(() => import("./pages/ViewProject/ViewProject"));
 const StudentCourseRequest = React.lazy(() => import("./pages/StudentCourseRequest/StudentCourseRequest"));
 const LoadingPage = React.lazy(() => import("./pages/loadingPage/loadingPage"));

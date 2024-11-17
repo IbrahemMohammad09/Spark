@@ -25,7 +25,7 @@ const CodesPage = () => {
           if (data.length === 0) {
             navigate("/coming"); 
           } else {
-            setCodes(data); 
+            setCodes(data.reverse()); 
           }
         })
         .catch((error) => {
